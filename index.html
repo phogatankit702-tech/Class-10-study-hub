@@ -1,1 +1,215 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class 9 Science - Motion | Study Hub</title>
+  <style>
+    /* CSS Variables for Easy Styling */
+    :root {
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --correct: #16a34a;
+      --incorrect: #dc2626;
+      --radius: 8px;
+    }
+
+    /* Base Styling */
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding: 16px; }
+    .container { max-width: 800px; margin: 0 auto; }
+
+    /* Breadcrumbs */
+    .breadcrumb { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 16px; }
+    .breadcrumb a { color: var(--primary); text-decoration: none; }
+
+    /* Header & Quick Formula Card */
+    header { margin-bottom: 24px; }
+    h1 { font-size: 1.75rem; margin-bottom: 8px; }
+    .formula-card {
+      background: #eff6ff;
+      border-left: 4px solid var(--primary);
+      padding: 16px;
+      border-radius: var(--radius);
+      margin-bottom: 24px;
+    }
+    .formula-card h2 { font-size: 1.1rem; color: var(--primary); margin-bottom: 8px; }
+
+    /* Accordions for Notes */
+    .section-title { font-size: 1.3rem; margin: 24px 0 12px; }
+    details {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    summary {
+      padding: 14px 16px;
+      font-weight: 600;
+      cursor: pointer;
+      background: var(--card-bg);
+      user-select: none;
+    }
+    summary:hover { background: #f1f5f9; }
+    .accordion-content { padding: 16px; border-top: 1px solid var(--border); font-size: 0.95rem; }
+
+    /* Interactive Quiz */
+    .quiz-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-top: 16px;
+    }
+    .question { margin-bottom: 20px; }
+    .question p { font-weight: 600; margin-bottom: 10px; }
+    .options label {
+      display: block;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .options label:hover { background: #f8fafc; }
+    .options input { margin-right: 10px; }
+
+    /* Buttons & Feedback */
+    .btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+    }
+    .btn:hover { background: var(--primary-hover); }
+    #quiz-result {
+      margin-top: 16px;
+      padding: 12px;
+      text-align: center;
+      font-weight: bold;
+      border-radius: var(--radius);
+      display: none;
+    }
+
+    /* Option Result Colors */
+    .correct-option { background-color: #dcfce7 !important; border-color: var(--correct) !important; color: var(--correct); }
+    .incorrect-option { background-color: #fee2e2 !important; border-color: var(--incorrect) !important; color: var(--incorrect); }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="#">Home</a> &gt; <a href="#">Class 9 Science</a> &gt; Motion
+    </nav>
+
+    <header>
+      <h1>Chapter: Motion</h1>
+      <p style="color: var(--text-muted);">Key concepts, formula cheat sheet, and practice quiz.</p>
+    </header>
+
+    <div class="formula-card">
+      <h2>⚡ Quick Formula Cheat Sheet</h2>
+      <ul>
+        <li><strong>Speed:</strong> $s = \frac{d}{t}$</li>
+        <li><strong>Velocity:</strong> $v = \frac{\Delta x}{t}$</li>
+        <li><strong>Acceleration:</strong> $a = \frac{v - u}{t}$</li>
+        <li><strong>First Equation of Motion:</strong> $v = u + at$</li>
+      </ul>
+    </div>
+
+    <h2 class="section-title">📖 Chapter Notes</h2>
+
+    <details open>
+      <summary>1. Distance vs. Displacement</summary>
+      <div class="accordion-content">
+        <p><strong>Distance:</strong> The total path length covered by an object during motion. It is a scalar quantity (has magnitude only).</p>
+        <p style="margin-top: 8px;"><strong>Displacement:</strong> The shortest straight-line distance from the initial position to the final position. It is a vector quantity (has magnitude and direction).</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>2. Uniform and Non-Uniform Motion</summary>
+      <div class="accordion-content">
+        <p><strong>Uniform Motion:</strong> When an object covers equal distances in equal intervals of time.</p>
+        <p style="margin-top: 8px;"><strong>Non-Uniform Motion:</strong> When an object covers unequal distances in equal intervals of time.</p>
+      </div>
+    </details>
+
+    <h2 class="section-title">📝 Practice Quiz</h2>
+    <div class="quiz-card">
+      <form id="quizForm">
+        
+        <div class="question" id="q1-container">
+          <p>1. What is the SI unit of acceleration?</p>
+          <div class="options">
+            <label><input type="radio" name="q1" value="m/s"> m/s</label>
+            <label><input type="radio" name="q1" value="m/s2"> m/s²</label>
+            <label><input type="radio" name="q1" value="km/h"> km/h</label>
+          </div>
+        </div>
+
+        <div class="question" id="q2-container">
+          <p>2. Displacement can be zero even if distance traveled is not zero.</p>
+          <div class="options">
+            <label><input type="radio" name="q2" value="True"> True</label>
+            <label><input type="radio" name="q2" value="False"> False</label>
+          </div>
+        </div>
+
+        <button type="button" class="btn" onclick="checkQuiz()">Submit Answers</button>
+      </form>
+
+      <div id="quiz-result"></div>
+    </div>
+  </div>
+
+  <script>
+    function checkQuiz() {
+      const answers = { q1: 'm/s2', q2: 'True' };
+      let score = 0;
+      let total = Object.keys(answers).length;
+
+      for (let key in answers) {
+        const selected = document.querySelector(`input[name="${key}"]:checked`);
+        const questionContainer = document.getElementById(`${key}-container`);
+        const labels = questionContainer.querySelectorAll('label');
+
+        // Reset previous feedback styles
+        labels.forEach(label => {
+          label.classList.remove('correct-option', 'incorrect-option');
+        });
+
+        if (selected) {
+          if (selected.value === answers[key]) {
+            score++;
+            selected.parentElement.classList.add('correct-option');
+          } else {
+            selected.parentElement.classList.add('incorrect-option');
+          }
+        }
+      }
+
+      // Display Result
+      const resultDiv = document.getElementById('quiz-result');
+      resultDiv.style.display = 'block';
+      resultDiv.textContent = `You scored ${score} out of ${total}!`;
+      resultDiv.style.background = score === total ? '#dcfce7' : '#fef3c7';
+      resultDiv.style.color = score === total ? '#16a34a' : '#d97706';
+    }
+  </script>
+</body>
+</html>
