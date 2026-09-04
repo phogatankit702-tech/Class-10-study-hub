@@ -1,215 +1,339 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Class 9 Science - Motion | Study Hub</title>
+  <title>Phogat Study Hub - Class 10 Science</title>
+  
+  <!-- Math Processing (KaTeX) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
   <style>
-    /* CSS Variables for Easy Styling */
     :root {
       --primary: #2563eb;
-      --primary-hover: #1d4ed8;
       --bg: #f8fafc;
       --card-bg: #ffffff;
-      --text: #1e293b;
-      --text-muted: #64748b;
-      --border: #e2e8f0;
-      --correct: #16a34a;
-      --incorrect: #dc2626;
-      --radius: 8px;
+      --text: #0f172a;
+      --accent: #16a34a;
     }
-
-    /* Base Styling */
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
-    body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding: 16px; }
-    .container { max-width: 800px; margin: 0 auto; }
-
-    /* Breadcrumbs */
-    .breadcrumb { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 16px; }
-    .breadcrumb a { color: var(--primary); text-decoration: none; }
-
-    /* Header & Quick Formula Card */
-    header { margin-bottom: 24px; }
-    h1 { font-size: 1.75rem; margin-bottom: 8px; }
-    .formula-card {
-      background: #eff6ff;
-      border-left: 4px solid var(--primary);
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      margin: 0;
       padding: 16px;
-      border-radius: var(--radius);
-      margin-bottom: 24px;
+      line-height: 1.5;
     }
-    .formula-card h2 { font-size: 1.1rem; color: var(--primary); margin-bottom: 8px; }
-
-    /* Accordions for Notes */
-    .section-title { font-size: 1.3rem; margin: 24px 0 12px; }
-    details {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      margin-bottom: 12px;
-      overflow: hidden;
-    }
-    summary {
-      padding: 14px 16px;
-      font-weight: 600;
-      cursor: pointer;
-      background: var(--card-bg);
-      user-select: none;
-    }
-    summary:hover { background: #f1f5f9; }
-    .accordion-content { padding: 16px; border-top: 1px solid var(--border); font-size: 0.95rem; }
-
-    /* Interactive Quiz */
-    .quiz-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px;
-      margin-top: 16px;
-    }
-    .question { margin-bottom: 20px; }
-    .question p { font-weight: 600; margin-bottom: 10px; }
-    .options label {
-      display: block;
-      padding: 10px 14px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      margin-bottom: 8px;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .options label:hover { background: #f8fafc; }
-    .options input { margin-right: 10px; }
-
-    /* Buttons & Feedback */
-    .btn {
+    header {
+      text-align: center;
       background: var(--primary);
       color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: var(--radius);
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      width: 100%;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
     }
-    .btn:hover { background: var(--primary-hover); }
-    #quiz-result {
-      margin-top: 16px;
-      padding: 12px;
-      text-align: center;
+    h1 { margin: 0 0 8px 0; font-size: 22px; }
+    p { margin: 0; opacity: 0.9; }
+    .chapter-card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      border-left: 4px solid var(--primary);
+    }
+    .chapter-title {
+      font-size: 18px;
       font-weight: bold;
-      border-radius: var(--radius);
-      display: none;
+      color: var(--primary);
+      margin-bottom: 8px;
     }
-
-    /* Option Result Colors */
-    .correct-option { background-color: #dcfce7 !important; border-color: var(--correct) !important; color: var(--correct); }
-    .incorrect-option { background-color: #fee2e2 !important; border-color: var(--incorrect) !important; color: var(--incorrect); }
+    .topic-list {
+      padding-left: 20px;
+      margin: 8px 0;
+    }
+    .mcq-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 12px;
+      margin-top: 12px;
+    }
+    .mcq-title {
+      font-weight: bold;
+      font-size: 14px;
+      color: #1e40af;
+      margin-bottom: 6px;
+    }
+    details summary {
+      cursor: pointer;
+      font-weight: bold;
+      color: var(--accent);
+      margin-top: 8px;
+    }
+    details p {
+      background: #f0fdf4;
+      padding: 8px;
+      border-radius: 6px;
+      margin-top: 6px;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <nav class="breadcrumb">
-      <a href="#">Home</a> &gt; <a href="#">Class 9 Science</a> &gt; Motion
-    </nav>
+  <header>
+    <h1>Phogat Study Hub</h1>
+    <p>NCERT Class 10 Science Complete Chapter Index & Practice MCQs</p>
+  </header>
 
-    <header>
-      <h1>Chapter: Motion</h1>
-      <p style="color: var(--text-muted);">Key concepts, formula cheat sheet, and practice quiz.</p>
-    </header>
-
-    <div class="formula-card">
-      <h2>⚡ Quick Formula Cheat Sheet</h2>
-      <ul>
-        <li><strong>Speed:</strong> $s = \frac{d}{t}$</li>
-        <li><strong>Velocity:</strong> $v = \frac{\Delta x}{t}$</li>
-        <li><strong>Acceleration:</strong> $a = \frac{v - u}{t}$</li>
-        <li><strong>First Equation of Motion:</strong> $v = u + at$</li>
-      </ul>
-    </div>
-
-    <h2 class="section-title">📖 Chapter Notes</h2>
-
-    <details open>
-      <summary>1. Distance vs. Displacement</summary>
-      <div class="accordion-content">
-        <p><strong>Distance:</strong> The total path length covered by an object during motion. It is a scalar quantity (has magnitude only).</p>
-        <p style="margin-top: 8px;"><strong>Displacement:</strong> The shortest straight-line distance from the initial position to the final position. It is a vector quantity (has magnitude and direction).</p>
-      </div>
-    </details>
-
-    <details>
-      <summary>2. Uniform and Non-Uniform Motion</summary>
-      <div class="accordion-content">
-        <p><strong>Uniform Motion:</strong> When an object covers equal distances in equal intervals of time.</p>
-        <p style="margin-top: 8px;"><strong>Non-Uniform Motion:</strong> When an object covers unequal distances in equal intervals of time.</p>
-      </div>
-    </details>
-
-    <h2 class="section-title">📝 Practice Quiz</h2>
-    <div class="quiz-card">
-      <form id="quizForm">
-        
-        <div class="question" id="q1-container">
-          <p>1. What is the SI unit of acceleration?</p>
-          <div class="options">
-            <label><input type="radio" name="q1" value="m/s"> m/s</label>
-            <label><input type="radio" name="q1" value="m/s2"> m/s²</label>
-            <label><input type="radio" name="q1" value="km/h"> km/h</label>
-          </div>
-        </div>
-
-        <div class="question" id="q2-container">
-          <p>2. Displacement can be zero even if distance traveled is not zero.</p>
-          <div class="options">
-            <label><input type="radio" name="q2" value="True"> True</label>
-            <label><input type="radio" name="q2" value="False"> False</label>
-          </div>
-        </div>
-
-        <button type="button" class="btn" onclick="checkQuiz()">Submit Answers</button>
-      </form>
-
-      <div id="quiz-result"></div>
+  <!-- CHAPTER 1 -->
+  <div class="chapter-card">
+    <div class="chapter-title">Chapter 1: Chemical Reactions and Equations</div>
+    <ul class="topic-list">
+      <li>Balanced chemical equations and law of conservation of mass.</li>
+      <li>Types of reactions: Combination, Decomposition, Displacement, and Double Displacement.</li>
+      <li>Oxidation, Reduction, Endothermic & Exothermic reactions.</li>
+    </ul>
+    <div class="mcq-box">
+      <div class="mcq-title">Practice MCQ:</div>
+      <div>1. $Fe_2O_3 + 2Al \rightarrow Al_2O_3 + 2Fe$ is an example of a:</div>
+      <div>(a) Combination reaction<br>(b) Double displacement reaction<br>(c) Decomposition reaction<br>(d) Displacement reaction</div>
+      <details>
+        <summary>View Correct Answer</summary>
+        <p><strong>Answer: (d) Displacement reaction.</strong> Aluminum displaces iron from iron oxide because it is more reactive.</p>
+      </details>
     </div>
   </div>
 
-  <script>
-    function checkQuiz() {
-      const answers = { q1: 'm/s2', q2: 'True' };
-      let score = 0;
-      let total = Object.keys(answers).length;
+  <!-- CHAPTER 2 -->
+  <div class="chapter-card">
+    <div class="chapter-title">Chapter 2: Acids, Bases and Salts</div>
+    <ul class="topic-list">
+      <li>Chemical properties of acids and bases.</li>
+      <li>Importance of pH in everyday life.</li>
+      <li>Preparation and uses of NaOH, Bleaching Powder, Baking Soda, Washing Soda, and Plaster of Paris.</li>
+    </ul>
+    <div class="mcq-box">
+      <div class="mcq-title">Practice MCQ:</div>
+      <div>2. Which chemical compound is used for softening hard water?</div>
+      <div>(a) Baking Soda<br>(b) Washing Soda ($Na_2CO_3 \cdot 10H_2O$)<br>(c) Bleaching Powder<br>(d) Plaster of Paris</div>
+      <details>
+        <summary>View Correct Answer</summary>
+        <p><strong>Answer: (b) Washing Soda.</strong> It is used to remove permanent hardness of water.</p>
+      </details>
+    </div>
+  </div>
 
-      for (let key in answers) {
-        const selected = document.querySelector(`input[name="${key}"]:checked`);
-        const questionContainer = document.getElementById(`${key}-container`);
-        const labels = questionContainer.querySelectorAll('label');
+  <!-- CHAPTER 3 -->
+  <div class="chapter-card">
+    <div class="chapter-title">Chapter 3: Metals and Non-Metals</div>
+    <ul class="topic-list">
+      <li>Properties of metals vs non-metals and the reactivity series.</li>
+      <li>Formation and properties of ionic compounds.</li>
+      <li>Basic metallurgy processes, corrosion, and prevention methods.</li>
+    </ul>
+    <div class="mcq-box">
+      <div class="mcq-title">Practice MCQ:</div>
+      <div>3. Which non-metal is liquid at room temperature?</div>
+      <div>(a) Iodine<br>(b) Carbon<br>(c) Bromine<br>(d) Sulfur</div>
+      <details>
+        <summary>View Correct Answer</summary>
+        <p><strong>Answer: (c) Bromine.</strong> Bromine is the only non-metal existing as a liquid at room temperature.</p>
+      </details>
+    </div>
+  </div>
 
-        // Reset previous feedback styles
-        labels.forEach(label => {
-          label.classList.remove('correct-option', 'incorrect-option');
-        });
+  <!-- CHAPTER 4 -->
+  <div class="chapter-card">
+    <div class="chapter-title">Chapter 4: Carbon and Its Compounds</div>
+    <ul class="topic-list">
+      <li>Covalent bonding, catenation, and tetravalency of carbon.</li>
+      <li>Saturated & unsaturated hydrocarbons and homologous series.</li>
+      <li>Properties of Ethanol and Ethanoic Acid; Soaps & Detergents.</li>
+    </ul>
+    <div class="mcq-box">
+      <div class="mcq-title">Practice MCQ:</div>
+      <div>4. What is the general formula for Alkanes?</div>
+      <div>(a) $C_nH_{2n}$<br>(b) $C_nH_{2n+2}$<br>(c) $C_nH_{2n-2}$<br>(d) $C_nH_n$</div>
+      <details>
+        <summary>View Correct Answer</summary>
+        <p><strong>Answer: (b) $C_nH_{2n+2}$.</strong> This represents saturated single-bonded hydrocarbons.</p>
+      </details>
+    </div>
+  </div>
 
-        if (selected) {
-          if (selected.value === answers[key]) {
-            score++;
-            selected.parentElement.classList.add('correct-option');
-          } else {
-            selected.parentElement.classList.add('incorrect-option');
-          }
-        }
-      }
+  <!-- CHAPTER 5 -->
+  <div class="chapter-card">
+    <div class="chapter-title">Chapter 5: Life Processes</div>
+    <ul class="topic-list">
+      <li>Autotrophic and Heterotrophic nutrition in plants and animals.</li>
+      <li>Respiration (Aerobic vs Anaerobic).</li>
+      <li>Human transportation (heart, blood) and excretion (nephrons).</li>
+    </ul>
+    <div class="mcq-box">
+      <div class="mcq-title">Practice MCQ:</div>
+      <div>5. The breakdown of pyruvate to give carbon dioxide, water, and energy takes place in:</div>
+      <div>(a) Cytoplasm<br>(b) Mitochondria<br>(c) Chloroplast<br>(d) Nucleus</div>
+      <details>
+        <summary>View Correct Answer</summary>
+        <p><strong>Answer: (b) Mitochondria.</strong> Aerobic respiration takes place inside mitochondria.</p>
+      </details>
+    </div>
+  </div>
 
-      // Display Result
-      const resultDiv = document.getElementById('quiz-result');
-      resultDiv.style.display = 'block';
-      resultDiv.textContent = `You scored ${score} out of ${total}!`;
-      resultDiv.style.background = score === total ? '#dcfce7' : '#fef3c7';
-      resultDiv.style.color = score === total ? '#16a34a' : '#d97706';
-    }
-  </script>
+  <!-- CHAPTER 6 -->
+  <div class="chapter-card">
+    <div class="chapter-title">Chapter 6: Control and Coordination</div>
+    <ul class="topic-list">
+      <li>Nervous system, neuron structure, and reflex arcs.</li>
+      <li>Plant hormones (Auxin, Gibberellin, Cytokinin, Abscisic acid) and tropic movements.</li>
+      <li>Endocrine system and animal hormones.</li>
+    </ul>
+    <div class="mcq-box">
+      <div class="mcq-title">Practice MCQ:</div>
+      <div>6. Which plant hormone inhibits growth and causes wilting of leaves?</div>
+      <div>(a) Auxin<br>(b) Cytokinin<br>(c) Abscisic Acid<br>(d) Gibberellin</div>
+      <details>
+        <summary>View Correct Answer</summary>
+        <p><strong>Answer: (c) Abscisic Acid.</strong> Abscisic acid acts as a growth inhibitor.</p>
+      </details>
+    </div>
+  </div>
+
+  <!-- CHAPTER 7 -->
+  <div class="chapter-card">
+    <div class="chapter-title">Chapter 7: How Do Organisms Reproduce?</div>
+    <ul class="topic-list">
+      <li>Asexual modes (Fission, Fragmentation, Budding, Vegetative propagation).</li>
+      <li>Sexual reproduction in flowering plants.</li>
+      <li>Human reproductive systems and reproductive health.</li>
+    </ul>
+    <div class="mcq-box">
+      <div class="mcq-title">Practice MCQ:</div>
+      <div>7. The anther contains:</div>
+      <div>(a) Sepals<br>(b) Ovules<br>(c) Carpel<br>(d) Pollen grains</div>
+      <details>
+        <summary>View Correct Answer</summary>
+        <p><strong>Answer: (d) Pollen grains.</strong> Anthers produce pollen grains in flowers.</p>
+      </details>
+    </div>
+  </div>
+
+  <!-- CHAPTER 8 -->
+  <div class="chapter-card">
+    <div class="chapter-title">Chapter 8: Heredity</div>
+    <ul class="topic-list">
+      <li>Mendel's experiments and inheritance patterns (Monohybrid & Dihybrid cross).</li>
+      <li>Sex determination mechanisms in human beings.</li>
+    </ul>
+    <div class="mcq-box">
+      <div class="mcq-title">Practice MCQ:</div>
+      <div>8. What is the phenotypic ratio of a Monohybrid cross in F2 generation?</div>
+      <div>(a) 1:2:1<br>(b) 3:1<br>(c) 9:3:3:1<br>(d) 2:1</div>
+      <details>
+        <summary>View Correct Answer</summary>
+        <p><strong>Answer: (b) 3:1.</strong> The visible physical ratio is 3 dominant to 1 recessive trait.</p>
+      </details>
+    </div>
+  </div>
+
+  <!-- CHAPTER 9 -->
+  <div class="chapter-card">
+    <div class="chapter-title">Chapter 9: Light - Reflection and Refraction</div>
+    <ul class="topic-list">
+      <li>Spherical mirrors, ray diagrams, and mirror formula: $\frac{1}{f} = \frac{1}{v} + \frac{1}{u}$.</li>
+      <li>Refraction laws, Snell's law, and refractive index.</li>
+      <li>Spherical lenses, lens formula ($\frac{1}{f} = \frac{1}{v} - \frac{1}{u}$), and power of lens ($P = \frac{1}{f}$).</li>
+    </ul>
+    <div class="mcq-box">
+      <div class="mcq-title">Practice MCQ:</div>
+      <div>9. The SI unit of power of a lens is:</div>
+      <div>(a) Meter<br>(b) Watt<br>(c) Dioptre<br>(d) Joule</div>
+      <details>
+        <summary>View Correct Answer</summary>
+        <p><strong>Answer: (c) Dioptre.</strong> Power ($P$) measured in dioptres ($D$) when focal length is in meters.</p>
+      </details>
+    </div>
+  </div>
+
+  <!-- CHAPTER 10 -->
+  <div class="chapter-card">
+    <div class="chapter-title">Chapter 10: Human Eye and Colourful World</div>
+    <ul class="topic-list">
+      <li>Human eye structure, power of accommodation, and vision defects (Myopia, Hypermetropia).</li>
+      <li>Refraction through a glass prism and dispersion of white light.</li>
+      <li>Atmospheric refraction and scattering phenomena (Tyndall effect).</li>
+    </ul>
+    <div class="mcq-box">
+      <div class="mcq-title">Practice MCQ:</div>
+      <div>10. Myopia (near-sightedness) can be corrected by using a:</div>
+      <div>(a) Convex lens<br>(b) Concave lens<br>(c) Bifocal lens<br>(d) Cylindrical lens</div>
+      <details>
+        <summary>View Correct Answer</summary>
+        <p><strong>Answer: (b) Concave lens.</strong> A diverging concave lens corrects myopic focus back onto the retina.</p>
+      </details>
+    </div>
+  </div>
+
+  <!-- CHAPTER 11 -->
+  <div class="chapter-card">
+    <div class="chapter-title">Chapter 11: Electricity</div>
+    <ul class="topic-list">
+      <li>Electric current ($I = \frac{Q}{t}$), potential difference ($V$), and Ohm's law ($V = IR$).</li>
+      <li>Factors affecting resistance & resistivity ($\rho$).</li>
+      <li>Combination of resistors (Series $R_s = R_1 + R_2$, Parallel $\frac{1}{R_p} = \frac{1}{R_1} + \frac{1}{R_2}$) and Electric Power ($P = VI$).</li>
+    </ul>
+    <div class="mcq-box">
+      <div class="mcq-title">Practice MCQ:</div>
+      <div>11. If two resistors of $6\,\Omega$ each are connected in parallel, the equivalent resistance is:</div>
+      <div>(a) $12\,\Omega$<br>(b) $6\,\Omega$<br>(c) $3\,\Omega$<br>(d) $1.5\,\Omega$</div>
+      <details>
+        <summary>View Correct Answer</summary>
+        <p><strong>Answer: (c) $3\,\Omega$.</strong> $\frac{1}{R_p} = \frac{1}{6} + \frac{1}{6} = \frac{2}{6} = \frac{1}{3} \implies R_p = 3\,\Omega$.</p>
+      </details>
+    </div>
+  </div>
+
+  <!-- CHAPTER 12 -->
+  <div class="chapter-card">
+    <div class="chapter-title">Chapter 12: Magnetic Effects of Electric Current</div>
+    <ul class="topic-list">
+      <li>Magnetic field patterns around straight wire, circular loop, and solenoid.</li>
+      <li>Force on a current-carrying conductor and Fleming's Left-Hand Rule.</li>
+      <li>Direct and Alternating Current (AC vs DC) and domestic circuit safety.</li>
+    </ul>
+    <div class="mcq-box">
+      <div class="mcq-title">Practice MCQ:</div>
+      <div>12. Which device converts electrical energy into mechanical energy?</div>
+      <div>(a) Electric Generator<br>(b) Galvanometer<br>(c) Electric Motor<br>(d) Ammeter</div>
+      <details>
+        <summary>View Correct Answer</summary>
+        <p><strong>Answer: (c) Electric Motor.</strong> An electric motor turns electrical power into rotational kinetic energy.</p>
+      </details>
+    </div>
+  </div>
+
+  <!-- CHAPTER 13 -->
+  <div class="chapter-card">
+    <div class="chapter-title">Chapter 13: Our Environment</div>
+    <ul class="topic-list">
+      <li>Ecosystems, food chains, food webs, and 10% law of energy transfer.</li>
+      <li>Ozone layer depletion and its causes (CFCs).</li>
+      <li>Waste management: Biodegradable and non-biodegradable materials.</li>
+    </ul>
+    <div class="mcq-box">
+      <div class="mcq-title">Practice MCQ:</div>
+      <div>13. In a food chain, what percentage of solar energy trapped by green plants is converted into food energy?</div>
+      <div>(a) 10%<br>(b) 1%<br>(c) 50%<br>(d) 100%</div>
+      <details>
+        <summary>View Correct Answer</summary>
+        <p><strong>Answer: (b) 1%.</strong> Plants capture about 1% of solar energy falling on leaves and convert it to food energy.</p>
+      </details>
+    </div>
+  </div>
+
 </body>
 </html>
