@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phogat Study Hub - Class 10 Science</title>
+  <title>Phogat Study Hub - Class 10 NCERT Science</title>
   
   <!-- Math Processing (KaTeX) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -12,11 +12,12 @@
 
   <style>
     :root {
-      --primary: #2563eb;
+      --primary: #1e40af;
       --bg: #f8fafc;
       --card-bg: #ffffff;
       --text: #0f172a;
-      --accent: #16a34a;
+      --accent: #15803d;
+      --mcq-bg: #f0f9ff;
     }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -24,25 +25,31 @@
       color: var(--text);
       margin: 0;
       padding: 16px;
-      line-height: 1.5;
+      line-height: 1.6;
     }
     header {
       text-align: center;
       background: var(--primary);
       color: white;
-      padding: 20px;
+      padding: 24px 16px;
       border-radius: 12px;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
-    h1 { margin: 0 0 8px 0; font-size: 22px; }
+    h1 { margin: 0 0 8px 0; font-size: 24px; }
     p { margin: 0; opacity: 0.9; }
+    h2 {
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 6px;
+      margin-top: 32px;
+    }
     .chapter-card {
       background: var(--card-bg);
       border-radius: 10px;
-      padding: 16px;
+      padding: 18px;
       margin-bottom: 16px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      border-left: 4px solid var(--primary);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      border-left: 5px solid var(--primary);
     }
     .chapter-title {
       font-size: 18px;
@@ -54,30 +61,37 @@
       padding-left: 20px;
       margin: 8px 0;
     }
-    .mcq-box {
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      border-radius: 8px;
-      padding: 12px;
-      margin-top: 12px;
+    .mcq-card {
+      background: var(--card-bg);
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
     }
-    .mcq-title {
+    .mcq-q {
       font-weight: bold;
-      font-size: 14px;
-      color: #1e40af;
-      margin-bottom: 6px;
+      color: #1e3a8a;
+      margin-bottom: 8px;
+    }
+    .options {
+      margin-bottom: 10px;
+      padding-left: 10px;
     }
     details summary {
       cursor: pointer;
       font-weight: bold;
       color: var(--accent);
-      margin-top: 8px;
+      background: #f0fdf4;
+      padding: 6px 12px;
+      border-radius: 6px;
+      display: inline-block;
     }
     details p {
       background: #f0fdf4;
-      padding: 8px;
+      padding: 10px;
       border-radius: 6px;
-      margin-top: 6px;
+      margin-top: 8px;
       font-size: 14px;
     }
   </style>
@@ -86,253 +100,218 @@
 
   <header>
     <h1>Phogat Study Hub</h1>
-    <p>NCERT Class 10 Science Complete Chapter Index & Practice MCQs</p>
+    <p>NCERT Class 10 Science - All Chapter Notes & 15 Practice MCQs</p>
   </header>
 
-  <!-- CHAPTER 1 -->
+  <h2>📚 Class 10 Science Chapter Notes</h2>
+
   <div class="chapter-card">
     <div class="chapter-title">Chapter 1: Chemical Reactions and Equations</div>
     <ul class="topic-list">
-      <li>Balanced chemical equations and law of conservation of mass.</li>
-      <li>Types of reactions: Combination, Decomposition, Displacement, and Double Displacement.</li>
-      <li>Oxidation, Reduction, Endothermic & Exothermic reactions.</li>
+      <li><strong>Chemical Reaction:</strong> Process where reactants transform into new products with different properties.</li>
+      <li><strong>Balanced Equation:</strong> Follows the Law of Conservation of Mass (equal number of atoms on both sides).</li>
+      <li><strong>Reaction Types:</strong> Combination, Decomposition, Displacement, Double Displacement, Exothermic, Endothermic, and Redox (Oxidation & Reduction).</li>
     </ul>
-    <div class="mcq-box">
-      <div class="mcq-title">Practice MCQ:</div>
-      <div>1. $Fe_2O_3 + 2Al \rightarrow Al_2O_3 + 2Fe$ is an example of a:</div>
-      <div>(a) Combination reaction<br>(b) Double displacement reaction<br>(c) Decomposition reaction<br>(d) Displacement reaction</div>
-      <details>
-        <summary>View Correct Answer</summary>
-        <p><strong>Answer: (d) Displacement reaction.</strong> Aluminum displaces iron from iron oxide because it is more reactive.</p>
-      </details>
-    </div>
   </div>
 
-  <!-- CHAPTER 2 -->
   <div class="chapter-card">
     <div class="chapter-title">Chapter 2: Acids, Bases and Salts</div>
     <ul class="topic-list">
-      <li>Chemical properties of acids and bases.</li>
-      <li>Importance of pH in everyday life.</li>
-      <li>Preparation and uses of NaOH, Bleaching Powder, Baking Soda, Washing Soda, and Plaster of Paris.</li>
+      <li><strong>Acids & Bases:</strong> Acids release $H^+$ ions (pH < 7); Bases release $OH^-$ ions (pH > 7).</li>
+      <li><strong>Neutralization:</strong> $Acid + Base \rightarrow Salt + Water$.</li>
+      <li><strong>Important Compounds:</strong> Bleaching Powder ($CaOCl_2$), Baking Soda ($NaHCO_3$), Washing Soda ($Na_2CO_3 \cdot 10H_2O$), Plaster of Paris ($CaSO_4 \cdot \frac{1}{2}H_2O$).</li>
     </ul>
-    <div class="mcq-box">
-      <div class="mcq-title">Practice MCQ:</div>
-      <div>2. Which chemical compound is used for softening hard water?</div>
-      <div>(a) Baking Soda<br>(b) Washing Soda ($Na_2CO_3 \cdot 10H_2O$)<br>(c) Bleaching Powder<br>(d) Plaster of Paris</div>
-      <details>
-        <summary>View Correct Answer</summary>
-        <p><strong>Answer: (b) Washing Soda.</strong> It is used to remove permanent hardness of water.</p>
-      </details>
-    </div>
   </div>
 
-  <!-- CHAPTER 3 -->
   <div class="chapter-card">
     <div class="chapter-title">Chapter 3: Metals and Non-Metals</div>
     <ul class="topic-list">
-      <li>Properties of metals vs non-metals and the reactivity series.</li>
-      <li>Formation and properties of ionic compounds.</li>
-      <li>Basic metallurgy processes, corrosion, and prevention methods.</li>
+      <li><strong>Properties:</strong> Metals are malleable, ductile, good conductors; Non-metals are non-ductile and dull.</li>
+      <li><strong>Reactivity Series:</strong> Arrangement of metals in decreasing reactivity order.</li>
+      <li><strong>Ionic Compounds:</strong> Formed by electron transfer between metals and non-metals; high melting/boiling points.</li>
     </ul>
-    <div class="mcq-box">
-      <div class="mcq-title">Practice MCQ:</div>
-      <div>3. Which non-metal is liquid at room temperature?</div>
-      <div>(a) Iodine<br>(b) Carbon<br>(c) Bromine<br>(d) Sulfur</div>
-      <details>
-        <summary>View Correct Answer</summary>
-        <p><strong>Answer: (c) Bromine.</strong> Bromine is the only non-metal existing as a liquid at room temperature.</p>
-      </details>
-    </div>
   </div>
 
-  <!-- CHAPTER 4 -->
   <div class="chapter-card">
     <div class="chapter-title">Chapter 4: Carbon and Its Compounds</div>
     <ul class="topic-list">
-      <li>Covalent bonding, catenation, and tetravalency of carbon.</li>
-      <li>Saturated & unsaturated hydrocarbons and homologous series.</li>
-      <li>Properties of Ethanol and Ethanoic Acid; Soaps & Detergents.</li>
+      <li><strong>Covalent Bonding:</strong> Sharing of electron pairs between atoms; tetravalency and catenation properties.</li>
+      <li><strong>Hydrocarbons:</strong> Alkanes ($C_nH_{2n+2}$), Alkenes ($C_nH_{2n}$), Alkynes ($C_nH_{2n-2}$).</li>
+      <li><strong>Soaps & Detergents:</strong> Soap molecules form micelles to trap dirt and grease.</li>
     </ul>
-    <div class="mcq-box">
-      <div class="mcq-title">Practice MCQ:</div>
-      <div>4. What is the general formula for Alkanes?</div>
-      <div>(a) $C_nH_{2n}$<br>(b) $C_nH_{2n+2}$<br>(c) $C_nH_{2n-2}$<br>(d) $C_nH_n$</div>
-      <details>
-        <summary>View Correct Answer</summary>
-        <p><strong>Answer: (b) $C_nH_{2n+2}$.</strong> This represents saturated single-bonded hydrocarbons.</p>
-      </details>
-    </div>
   </div>
 
-  <!-- CHAPTER 5 -->
   <div class="chapter-card">
     <div class="chapter-title">Chapter 5: Life Processes</div>
     <ul class="topic-list">
-      <li>Autotrophic and Heterotrophic nutrition in plants and animals.</li>
-      <li>Respiration (Aerobic vs Anaerobic).</li>
-      <li>Human transportation (heart, blood) and excretion (nephrons).</li>
+      <li><strong>Nutrition:</strong> Autotrophic (photosynthesis in plants) and Heterotrophic (holozoic, saprophytic, parasitic).</li>
+      <li><strong>Respiration:</strong> Aerobic (in mitochondria, yields 38 ATP) and Anaerobic (in cytoplasm/yeast/muscles).</li>
+      <li><strong>Transport & Excretion:</strong> Double circulation in human heart; urine filtration by nephrons in kidneys.</li>
     </ul>
-    <div class="mcq-box">
-      <div class="mcq-title">Practice MCQ:</div>
-      <div>5. The breakdown of pyruvate to give carbon dioxide, water, and energy takes place in:</div>
-      <div>(a) Cytoplasm<br>(b) Mitochondria<br>(c) Chloroplast<br>(d) Nucleus</div>
-      <details>
-        <summary>View Correct Answer</summary>
-        <p><strong>Answer: (b) Mitochondria.</strong> Aerobic respiration takes place inside mitochondria.</p>
-      </details>
-    </div>
   </div>
 
-  <!-- CHAPTER 6 -->
   <div class="chapter-card">
     <div class="chapter-title">Chapter 6: Control and Coordination</div>
     <ul class="topic-list">
-      <li>Nervous system, neuron structure, and reflex arcs.</li>
-      <li>Plant hormones (Auxin, Gibberellin, Cytokinin, Abscisic acid) and tropic movements.</li>
-      <li>Endocrine system and animal hormones.</li>
+      <li><strong>Nervous System:</strong> Neurons transmit impulses via electrical and chemical signals (synapse).</li>
+      <li><strong>Plant Hormones:</strong> Auxins, Gibberellins, Cytokinins (growth promoters); Abscisic acid (growth inhibitor).</li>
+      <li><strong>Endocrine System:</strong> Glands secrete hormones (e.g., Insulin from pancreas, Thyroxine from thyroid).</li>
     </ul>
-    <div class="mcq-box">
-      <div class="mcq-title">Practice MCQ:</div>
-      <div>6. Which plant hormone inhibits growth and causes wilting of leaves?</div>
-      <div>(a) Auxin<br>(b) Cytokinin<br>(c) Abscisic Acid<br>(d) Gibberellin</div>
-      <details>
-        <summary>View Correct Answer</summary>
-        <p><strong>Answer: (c) Abscisic Acid.</strong> Abscisic acid acts as a growth inhibitor.</p>
-      </details>
-    </div>
   </div>
 
-  <!-- CHAPTER 7 -->
   <div class="chapter-card">
     <div class="chapter-title">Chapter 7: How Do Organisms Reproduce?</div>
     <ul class="topic-list">
-      <li>Asexual modes (Fission, Fragmentation, Budding, Vegetative propagation).</li>
-      <li>Sexual reproduction in flowering plants.</li>
-      <li>Human reproductive systems and reproductive health.</li>
+      <li><strong>Asexual Reproduction:</strong> Binary fission, fragmentation, regeneration, budding, spore formation, vegetative propagation.</li>
+      <li><strong>Sexual Reproduction:</strong> Male and female gametes fuse (fertilization) to form a zygote.</li>
+      <li><strong>Reproductive Health:</strong> Contraceptive methods (barrier, chemical, surgical) and prevention of STDs.</li>
     </ul>
-    <div class="mcq-box">
-      <div class="mcq-title">Practice MCQ:</div>
-      <div>7. The anther contains:</div>
-      <div>(a) Sepals<br>(b) Ovules<br>(c) Carpel<br>(d) Pollen grains</div>
-      <details>
-        <summary>View Correct Answer</summary>
-        <p><strong>Answer: (d) Pollen grains.</strong> Anthers produce pollen grains in flowers.</p>
-      </details>
-    </div>
   </div>
 
-  <!-- CHAPTER 8 -->
   <div class="chapter-card">
     <div class="chapter-title">Chapter 8: Heredity</div>
     <ul class="topic-list">
-      <li>Mendel's experiments and inheritance patterns (Monohybrid & Dihybrid cross).</li>
-      <li>Sex determination mechanisms in human beings.</li>
+      <li><strong>Mendel's Laws:</strong> Monohybrid cross (Phenotypic ratio 3:1) and Dihybrid cross (9:3:3:1 ratio).</li>
+      <li><strong>Inheritance:</strong> Dominant vs Recessive traits.</li>
+      <li><strong>Sex Determination:</strong> Human females have $XX$ chromosomes; males have $XY$ chromosomes.</li>
     </ul>
-    <div class="mcq-box">
-      <div class="mcq-title">Practice MCQ:</div>
-      <div>8. What is the phenotypic ratio of a Monohybrid cross in F2 generation?</div>
-      <div>(a) 1:2:1<br>(b) 3:1<br>(c) 9:3:3:1<br>(d) 2:1</div>
-      <details>
-        <summary>View Correct Answer</summary>
-        <p><strong>Answer: (b) 3:1.</strong> The visible physical ratio is 3 dominant to 1 recessive trait.</p>
-      </details>
-    </div>
   </div>
 
-  <!-- CHAPTER 9 -->
   <div class="chapter-card">
     <div class="chapter-title">Chapter 9: Light - Reflection and Refraction</div>
     <ul class="topic-list">
-      <li>Spherical mirrors, ray diagrams, and mirror formula: $\frac{1}{f} = \frac{1}{v} + \frac{1}{u}$.</li>
-      <li>Refraction laws, Snell's law, and refractive index.</li>
-      <li>Spherical lenses, lens formula ($\frac{1}{f} = \frac{1}{v} - \frac{1}{u}$), and power of lens ($P = \frac{1}{f}$).</li>
+      <li><strong>Mirror Formula:</strong> $\frac{1}{f} = \frac{1}{v} + \frac{1}{u}$ (Concave mirror forms real/virtual images).</li>
+      <li><strong>Lens Formula:</strong> $\frac{1}{f} = \frac{1}{v} - \frac{1}{u}$.</li>
+      <li><strong>Power of Lens:</strong> $P = \frac{1}{f \text{ (in meters)}}$, measured in Dioptres ($D$).</li>
     </ul>
-    <div class="mcq-box">
-      <div class="mcq-title">Practice MCQ:</div>
-      <div>9. The SI unit of power of a lens is:</div>
-      <div>(a) Meter<br>(b) Watt<br>(c) Dioptre<br>(d) Joule</div>
-      <details>
-        <summary>View Correct Answer</summary>
-        <p><strong>Answer: (c) Dioptre.</strong> Power ($P$) measured in dioptres ($D$) when focal length is in meters.</p>
-      </details>
-    </div>
   </div>
 
-  <!-- CHAPTER 10 -->
   <div class="chapter-card">
     <div class="chapter-title">Chapter 10: Human Eye and Colourful World</div>
     <ul class="topic-list">
-      <li>Human eye structure, power of accommodation, and vision defects (Myopia, Hypermetropia).</li>
-      <li>Refraction through a glass prism and dispersion of white light.</li>
-      <li>Atmospheric refraction and scattering phenomena (Tyndall effect).</li>
+      <li><strong>Defects of Vision:</strong> Myopia (corrected by Concave lens), Hypermetropia (corrected by Convex lens).</li>
+      <li><strong>Prism Dispersion:</strong> Splitting of white light into VIBGYOR spectrum.</li>
+      <li><strong>Atmospheric Phenomena:</strong> Twinkling of stars (refraction), Red sunset & Blue sky (Rayleigh scattering).</li>
     </ul>
-    <div class="mcq-box">
-      <div class="mcq-title">Practice MCQ:</div>
-      <div>10. Myopia (near-sightedness) can be corrected by using a:</div>
-      <div>(a) Convex lens<br>(b) Concave lens<br>(c) Bifocal lens<br>(d) Cylindrical lens</div>
-      <details>
-        <summary>View Correct Answer</summary>
-        <p><strong>Answer: (b) Concave lens.</strong> A diverging concave lens corrects myopic focus back onto the retina.</p>
-      </details>
-    </div>
   </div>
 
-  <!-- CHAPTER 11 -->
   <div class="chapter-card">
     <div class="chapter-title">Chapter 11: Electricity</div>
     <ul class="topic-list">
-      <li>Electric current ($I = \frac{Q}{t}$), potential difference ($V$), and Ohm's law ($V = IR$).</li>
-      <li>Factors affecting resistance & resistivity ($\rho$).</li>
-      <li>Combination of resistors (Series $R_s = R_1 + R_2$, Parallel $\frac{1}{R_p} = \frac{1}{R_1} + \frac{1}{R_2}$) and Electric Power ($P = VI$).</li>
+      <li><strong>Ohm's Law:</strong> $V = IR$ at constant temperature.</li>
+      <li><strong>Resistors:</strong> Series combination ($R_s = R_1 + R_2 + R_3$); Parallel combination ($\frac{1}{R_p} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3}$).</li>
+      <li><strong>Heating Effect:</strong> Joule's law of heating ($H = I^2 Rt$).</li>
     </ul>
-    <div class="mcq-box">
-      <div class="mcq-title">Practice MCQ:</div>
-      <div>11. If two resistors of $6\,\Omega$ each are connected in parallel, the equivalent resistance is:</div>
-      <div>(a) $12\,\Omega$<br>(b) $6\,\Omega$<br>(c) $3\,\Omega$<br>(d) $1.5\,\Omega$</div>
-      <details>
-        <summary>View Correct Answer</summary>
-        <p><strong>Answer: (c) $3\,\Omega$.</strong> $\frac{1}{R_p} = \frac{1}{6} + \frac{1}{6} = \frac{2}{6} = \frac{1}{3} \implies R_p = 3\,\Omega$.</p>
-      </details>
-    </div>
   </div>
 
-  <!-- CHAPTER 12 -->
   <div class="chapter-card">
     <div class="chapter-title">Chapter 12: Magnetic Effects of Electric Current</div>
     <ul class="topic-list">
-      <li>Magnetic field patterns around straight wire, circular loop, and solenoid.</li>
-      <li>Force on a current-carrying conductor and Fleming's Left-Hand Rule.</li>
-      <li>Direct and Alternating Current (AC vs DC) and domestic circuit safety.</li>
+      <li><strong>Magnetic Field:</strong> Field lines form closed loops; strongest near magnetic poles.</li>
+      <li><strong>Right-Hand Thumb Rule:</strong> Gives direction of magnetic field around a current-carrying wire.</li>
+      <li><strong>Fleming's Left-Hand Rule:</strong> Determines force direction on a conductor in a magnetic field.</li>
     </ul>
-    <div class="mcq-box">
-      <div class="mcq-title">Practice MCQ:</div>
-      <div>12. Which device converts electrical energy into mechanical energy?</div>
-      <div>(a) Electric Generator<br>(b) Galvanometer<br>(c) Electric Motor<br>(d) Ammeter</div>
-      <details>
-        <summary>View Correct Answer</summary>
-        <p><strong>Answer: (c) Electric Motor.</strong> An electric motor turns electrical power into rotational kinetic energy.</p>
-      </details>
-    </div>
   </div>
 
-  <!-- CHAPTER 13 -->
   <div class="chapter-card">
     <div class="chapter-title">Chapter 13: Our Environment</div>
     <ul class="topic-list">
-      <li>Ecosystems, food chains, food webs, and 10% law of energy transfer.</li>
-      <li>Ozone layer depletion and its causes (CFCs).</li>
-      <li>Waste management: Biodegradable and non-biodegradable materials.</li>
+      <li><strong>Food Chain & Web:</strong> Energy flow is unidirectional.</li>
+      <li><strong>10% Law:</strong> Only 10% energy transfers to the next trophic level.</li>
+      <li><strong>Environmental Issues:</strong> Ozone layer depletion ($CFCs$) and biological magnification.</li>
     </ul>
-    <div class="mcq-box">
-      <div class="mcq-title">Practice MCQ:</div>
-      <div>13. In a food chain, what percentage of solar energy trapped by green plants is converted into food energy?</div>
-      <div>(a) 10%<br>(b) 1%<br>(c) 50%<br>(d) 100%</div>
-      <details>
-        <summary>View Correct Answer</summary>
-        <p><strong>Answer: (b) 1%.</strong> Plants capture about 1% of solar energy falling on leaves and convert it to food energy.</p>
-      </details>
-    </div>
+  </div>
+
+  <h2>📝 15 Important Practice MCQs</h2>
+
+  <div class="mcq-card">
+    <div class="mcq-q">Q1. $Fe_2O_3 + 2Al \rightarrow Al_2O_3 + 2Fe$ is an example of a:</div>
+    <div class="options">(a) Combination reaction<br>(b) Double displacement reaction<br>(c) Decomposition reaction<br>(d) Displacement reaction</div>
+    <details><summary>Show Answer</summary><p><strong>Answer: (d) Displacement reaction.</strong> Highly reactive Aluminum displaces Iron.</p></details>
+  </div>
+
+  <div class="mcq-card">
+    <div class="mcq-q">Q2. Which chemical compound is used for softening hard water?</div>
+    <div class="options">(a) Baking Soda<br>(b) Washing Soda ($Na_2CO_3 \cdot 10H_2O$)<br>(c) Bleaching Powder<br>(d) Plaster of Paris</div>
+    <details><summary>Show Answer</summary><p><strong>Answer: (b) Washing Soda.</strong> It removes permanent hardness of water.</p></details>
+  </div>
+
+  <div class="mcq-card">
+    <div class="mcq-q">Q3. Which non-metal is liquid at room temperature?</div>
+    <div class="options">(a) Iodine<br>(b) Carbon<br>(c) Bromine<br>(d) Sulfur</div>
+    <details><summary>Show Answer</summary><p><strong>Answer: (c) Bromine.</strong> It is the only liquid non-metal.</p></details>
+  </div>
+
+  <div class="mcq-card">
+    <div class="mcq-q">Q4. What is the general formula for Alkanes?</div>
+    <div class="options">(a) $C_nH_{2n}$<br>(b) $C_nH_{2n+2}$<br>(c) $C_nH_{2n-2}$<br>(d) $C_nH_n$</div>
+    <details><summary>Show Answer</summary><p><strong>Answer: (b) $C_nH_{2n+2}$.</strong> Represents saturated hydrocarbons.</p></details>
+  </div>
+
+  <div class="mcq-card">
+    <div class="mcq-q">Q5. The breakdown of pyruvate into carbon dioxide, water, and energy takes place in:</div>
+    <div class="options">(a) Cytoplasm<br>(b) Mitochondria<br>(c) Chloroplast<br>(d) Nucleus</div>
+    <details><summary>Show Answer</summary><p><strong>Answer: (b) Mitochondria.</strong> This is the site for aerobic respiration.</p></details>
+  </div>
+
+  <div class="mcq-card">
+    <div class="mcq-q">Q6. Which plant hormone inhibits growth and causes wilting of leaves?</div>
+    <div class="options">(a) Auxin<br>(b) Cytokinin<br>(c) Abscisic Acid<br>(d) Gibberellin</div>
+    <details><summary>Show Answer</summary><p><strong>Answer: (c) Abscisic Acid.</strong> It promotes leaf detachment and wilting.</p></details>
+  </div>
+
+  <div class="mcq-card">
+    <div class="mcq-q">Q7. The male reproductive part of a flower (Stamen) consists of:</div>
+    <div class="options">(a) Style and Stigma<br>(b) Anther and Filament<br>(c) Ovary and Ovule<br>(d) Sepals and Petals</div>
+    <details><summary>Show Answer</summary><p><strong>Answer: (b) Anther and Filament.</strong> They make up the stamen.</p></details>
+  </div>
+
+  <div class="mcq-card">
+    <div class="mcq-q">Q8. What is the phenotypic ratio of a Monohybrid cross in F2 generation?</div>
+    <div class="options">(a) 1:2:1<br>(b) 3:1<br>(c) 9:3:3:1<br>(d) 2:1</div>
+    <details><summary>Show Answer</summary><p><strong>Answer: (b) 3:1.</strong> 3 dominant to 1 recessive phenotype.</p></details>
+  </div>
+
+  <div class="mcq-card">
+    <div class="mcq-q">Q9. Focal length of a convex lens is $+50\text{ cm}$. Its power is:</div>
+    <div class="options">(a) $+2\text{ D}$<br>(b) $-2\text{ D}$<br>(c) $+0.02\text{ D}$<br>(d) $+5\text{ D}$</div>
+    <details><summary>Show Answer</summary><p><strong>Answer: (a) $+2\text{ D}$.</strong> $P = \frac{1}{f} = \frac{1}{0.5\text{ m}} = +2\text{ D}$.</p></details>
+  </div>
+
+  <div class="mcq-card">
+    <div class="mcq-q">Q10. Myopia (near-sightedness) is corrected using a:</div>
+    <div class="options">(a) Convex lens<br>(b) Concave lens<br>(c) Bifocal lens<br>(d) Cylindrical lens</div>
+    <details><summary>Show Answer</summary><p><strong>Answer: (b) Concave lens.</strong> Diverges light to focus on the retina.</p></details>
+  </div>
+
+  <div class="mcq-card">
+    <div class="mcq-q">Q11. The SI unit of electric current is:</div>
+    <div class="options">(a) Ohm<br>(b) Volt<br>(c) Ampere<br>(d) Joule</div>
+    <details><summary>Show Answer</summary><p><strong>Answer: (c) Ampere.</strong> Unit of rate of flow of electric charge.</p></details>
+  </div>
+
+  <div class="mcq-card">
+    <div class="mcq-q">Q12. What happens to resistance if the length of a conductor is doubled?</div>
+    <div class="options">(a) Halved<br>(b) Doubled<br>(c) Remains same<br>(d) Four times</div>
+    <details><summary>Show Answer</summary><p><strong>Answer: (b) Doubled.</strong> Resistance is directly proportional to length ($R \propto L$).</p></details>
+  </div>
+
+  <div class="mcq-card">
+    <div class="mcq-q">Q13. Which rule is used to find the direction of force on a current-carrying conductor?</div>
+    <div class="options">(a) Right-Hand Thumb Rule<br>(b) Fleming's Left-Hand Rule<br>(c) Fleming's Right-Hand Rule<br>(d) Ohm's Law</div>
+    <details><summary>Show Answer</summary><p><strong>Answer: (b) Fleming's Left-Hand Rule.</strong> Used for motors and conductors in magnetic fields.</p></details>
+  </div>
+
+  <div class="mcq-card">
+    <div class="mcq-q">Q14. How much energy is transferred from one trophic level to the next?</div>
+    <div class="options">(a) 10%<br>(b) 1%<br>(c) 50%<br>(d) 100%</div>
+    <details><summary>Show Answer</summary><p><strong>Answer: (a) 10%.</strong> Based on Lindeman's 10% law of energy transfer.</p></details>
+  </div>
+
+  <div class="mcq-card">
+    <div class="mcq-q">Q15. Depletion of the ozone layer is mainly caused by:</div>
+    <div class="options">(a) Methane<br>(b) Carbon Dioxide<br>(c) Chlorofluorocarbons (CFCs)<br>(d) Nitrogen Oxide</div>
+    <details><summary>Show Answer</summary><p><strong>Answer: (c) Chlorofluorocarbons (CFCs).</strong> They release chlorine radicals that destroy ozone.</p></details>
   </div>
 
 </body>
