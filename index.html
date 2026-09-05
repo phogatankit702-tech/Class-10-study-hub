@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phogat Study Hub - Class 10 NCERT Science</title>
+  <title>Phogat Study Hub - Class 10 NCERT Master Notes</title>
   
   <!-- Math Processing (KaTeX) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -13,11 +13,11 @@
   <style>
     :root {
       --primary: #1e40af;
+      --secondary: #0d9488;
+      --accent: #dc2626;
       --bg: #f8fafc;
       --card-bg: #ffffff;
       --text: #0f172a;
-      --accent: #15803d;
-      --mcq-bg: #f0f9ff;
     }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -33,66 +33,103 @@
       color: white;
       padding: 24px 16px;
       border-radius: 12px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
     h1 { margin: 0 0 8px 0; font-size: 24px; }
     p { margin: 0; opacity: 0.9; }
-    h2 {
+
+    /* Payment Section */
+    .buy-banner {
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      border: 2px solid #f59e0b;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+    .buy-banner h2 {
+      margin: 0 0 8px 0;
+      color: #92400e;
+      font-size: 20px;
+    }
+    .buy-banner p {
+      color: #78350f;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+    .price-tag {
+      font-size: 22px;
+      font-weight: bold;
+      color: var(--accent);
+    }
+    .payment-box {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 16px;
+      margin-top: 15px;
+      border: 1px solid #fcd34d;
+    }
+    .qr-container img {
+      width: 180px;
+      height: 180px;
+      border: 2px solid #1e40af;
+      border-radius: 8px;
+      margin: 10px 0;
+    }
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .buy-btn {
+      display: block;
+      background-color: #16a34a;
+      color: white;
+      font-weight: bold;
+      padding: 12px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 15px;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+    }
+    .copy-btn {
+      background-color: #1e40af;
+    }
+    .whatsapp-note {
+      font-size: 13px;
+      color: #78350f;
+      margin-top: 12px;
+      background: #fffbeb;
+      padding: 8px;
+      border-radius: 6px;
+    }
+
+    /* Content Styling */
+    .subject-title {
       color: var(--primary);
-      border-bottom: 2px solid var(--primary);
+      border-bottom: 3px solid var(--primary);
       padding-bottom: 6px;
       margin-top: 32px;
+      font-size: 20px;
     }
-    .chapter-card {
+    .notes-card {
       background: var(--card-bg);
       border-radius: 10px;
-      padding: 18px;
+      padding: 16px;
       margin-bottom: 16px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-      border-left: 5px solid var(--primary);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      border-left: 5px solid var(--secondary);
     }
-    .chapter-title {
-      font-size: 18px;
-      font-weight: bold;
-      color: var(--primary);
-      margin-bottom: 8px;
-    }
-    .topic-list {
+    .key-points {
       padding-left: 20px;
       margin: 8px 0;
     }
-    .mcq-card {
-      background: var(--card-bg);
-      border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      padding: 16px;
-      margin-bottom: 14px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
-    }
-    .mcq-q {
-      font-weight: bold;
-      color: #1e3a8a;
+    .key-points li {
       margin-bottom: 8px;
-    }
-    .options {
-      margin-bottom: 10px;
-      padding-left: 10px;
-    }
-    details summary {
-      cursor: pointer;
-      font-weight: bold;
-      color: var(--accent);
-      background: #f0fdf4;
-      padding: 6px 12px;
-      border-radius: 6px;
-      display: inline-block;
-    }
-    details p {
-      background: #f0fdf4;
-      padding: 10px;
-      border-radius: 6px;
-      margin-top: 8px;
-      font-size: 14px;
     }
   </style>
 </head>
@@ -100,219 +137,130 @@
 
   <header>
     <h1>Phogat Study Hub</h1>
-    <p>NCERT Class 10 Science - All Chapter Notes & 15 Practice MCQs</p>
+    <p>Class 10 NCERT All Subjects Key Revision Points & Board Exam Prep</p>
   </header>
 
-  <h2>📚 Class 10 Science Chapter Notes</h2>
+  <!-- PAYMENT SECTION -->
+  <div class="buy-banner">
+    <h2>🔥 Get Complete Class 10 Board Notes PDF</h2>
+    <p>Download complete chapter handwritten notes, formula cheat sheets, PYQs, and sample papers for Science, Maths, SST & English!</p>
+    <p><span class="price-tag">Special Offer: ₹29 Only</span></p>
 
-  <div class="chapter-card">
-    <div class="chapter-title">Chapter 1: Chemical Reactions and Equations</div>
-    <ul class="topic-list">
-      <li><strong>Chemical Reaction:</strong> Process where reactants transform into new products with different properties.</li>
-      <li><strong>Balanced Equation:</strong> Follows the Law of Conservation of Mass (equal number of atoms on both sides).</li>
-      <li><strong>Reaction Types:</strong> Combination, Decomposition, Displacement, Double Displacement, Exothermic, Endothermic, and Redox (Oxidation & Reduction).</li>
-    </ul>
+    <div class="payment-box">
+      <div class="qr-container">
+        <!-- Pre-configured QR Code pointing to himanshu733@fam for ₹29 -->
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi%3A%2F%2Fpay%3Fpa%3Dhimanshu733%40fam%26pn%3DPhogat%2520Study%2520Hub%26am%3D29%26cu%3DINR%26tn%3DClass10NotesPDF" alt="UPI QR Code">
+        <p style="font-size: 13px; margin: 4px 0;"><strong>Scan to Pay ₹29 via any UPI App</strong></p>
+      </div>
+
+      <div class="btn-group">
+        <!-- Direct Mobile Payment Link -->
+        <a href="upi://pay?pa=himanshu733@fam&pn=PhogatStudyHub&am=29&cu=INR&tn=Class10NotesPDF" class="buy-btn">
+          ⚡ TAP TO PAY ₹29 (GPay / PhonePe / Paytm)
+        </a>
+
+        <!-- Copy UPI ID Button -->
+        <button class="buy-btn copy-btn" onclick="copyUPI()">
+          📋 Copy UPI ID: himanshu733@fam
+        </button>
+      </div>
+
+      <div class="whatsapp-note">
+        📌 <strong>After Payment:</strong> Send payment screenshot via WhatsApp to get your PDF link delivered instantly!
+      </div>
+    </div>
   </div>
 
-  <div class="chapter-card">
-    <div class="chapter-title">Chapter 2: Acids, Bases and Salts</div>
-    <ul class="topic-list">
-      <li><strong>Acids & Bases:</strong> Acids release $H^+$ ions (pH < 7); Bases release $OH^-$ ions (pH > 7).</li>
-      <li><strong>Neutralization:</strong> $Acid + Base \rightarrow Salt + Water$.</li>
-      <li><strong>Important Compounds:</strong> Bleaching Powder ($CaOCl_2$), Baking Soda ($NaHCO_3$), Washing Soda ($Na_2CO_3 \cdot 10H_2O$), Plaster of Paris ($CaSO_4 \cdot \frac{1}{2}H_2O$).</li>
-    </ul>
+  <!-- SCIENCE NOTES -->
+  <h2 class="subject-title">🧪 Science (Key Concepts)</h2>
+  <div class="notes-card">
+    <ol class="key-points">
+      <li><strong>Law of Conservation of Mass:</strong> Total mass of reactants equals total mass of products in a chemical reaction.</li>
+      <li><strong>Exothermic vs Endothermic:</strong> Exothermic releases heat ($\text{C} + \text{O}_2 \rightarrow \text{CO}_2 + \text{heat}$); Endothermic absorbs heat.</li>
+      <li><strong>Redox Reaction:</strong> Simultaneous oxidation (gain of $\text{O}_2$/loss of $\text{H}_2$) and reduction (loss of $\text{O}_2$/gain of $\text{H}_2$).</li>
+      <li><strong>pH Scale:</strong> $< 7$ is acidic, $= 7$ is neutral, $> 7$ is basic. Human blood pH range is $7.0 - 7.8$.</li>
+      <li><strong>Plaster of Paris:</strong> $\text{CaSO}_4 \cdot \frac{1}{2}\text{H}_2\text{O}$ hardens into Gypsum ($\text{CaSO}_4 \cdot 2\text{H}_2\text{O}$) when mixed with water.</li>
+      <li><strong>Reactivity Series:</strong> Potassium ($\text{K}$) is most reactive, while Gold ($\text{Au}$) is least reactive.</li>
+      <li><strong>Ionic Compounds:</strong> High melting points due to strong electrostatic forces between oppositely charged ions.</li>
+      <li><strong>Catenation:</strong> Unique property of carbon to form long chains with other carbon atoms.</li>
+      <li><strong>Isomers:</strong> Compounds with same molecular formula but different structural arrangements.</li>
+      <li><strong>Photosynthesis Equation:</strong> $6\text{CO}_2 + 12\text{H}_2\text{O} \xrightarrow{\text{Sunlight/Chlorophyll}} \text{C}_6\text{H}_{12}\text{O}_6 + 6\text{O}_2 + 6\text{H}_2\text{O}$.</li>
+      <li><strong>Aerobic vs Anaerobic:</strong> Aerobic occurs in mitochondria (38 ATP); Anaerobic occurs in cytoplasm (2 ATP).</li>
+      <li><strong>Double Circulation:</strong> Blood travels through the human heart twice during one complete cycle.</li>
+      <li><strong>Synapse:</strong> Microscopic gap between two adjacent neurons where signals cross via chemicals.</li>
+      <li><strong>Plant Hormones:</strong> Auxin (cell elongation), Cytokinin (cell division), Abscisic acid (growth inhibitor).</li>
+      <li><strong>Reflex Arc:</strong> Pathway taken by nerve impulses in a reflex action (Receptor $\rightarrow$ Sensory Neuron $\rightarrow$ Spinal Cord $\rightarrow$ Motor Neuron $\rightarrow$ Effector).</li>
+    </ol>
   </div>
 
-  <div class="chapter-card">
-    <div class="chapter-title">Chapter 3: Metals and Non-Metals</div>
-    <ul class="topic-list">
-      <li><strong>Properties:</strong> Metals are malleable, ductile, good conductors; Non-metals are non-ductile and dull.</li>
-      <li><strong>Reactivity Series:</strong> Arrangement of metals in decreasing reactivity order.</li>
-      <li><strong>Ionic Compounds:</strong> Formed by electron transfer between metals and non-metals; high melting/boiling points.</li>
-    </ul>
+  <!-- MATHEMATICS NOTES -->
+  <h2 class="subject-title">📐 Mathematics (Important Formulas & Theorems)</h2>
+  <div class="notes-card">
+    <ol class="key-points" start="16">
+      <li><strong>Fundamental Theorem of Arithmetic:</strong> Every composite number can be uniquely factorized into prime factors.</li>
+      <li><strong>HCF and LCM Relation:</strong> $\text{HCF}(a, b) \times \text{LCM}(a, b) = a \times b$.</li>
+      <li><strong>Quadratic Formula:</strong> $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$. Discriminant $D = b^2 - 4ac$.</li>
+      <li><strong>Nature of Roots:</strong> If $D > 0$ (two real distinct roots), $D = 0$ (two equal real roots), $D < 0$ (no real roots).</li>
+      <li><strong>Arithmetic Progression (AP):</strong> $n^{\text{th}}$ term $a_n = a + (n-1)d$; Sum $S_n = \frac{n}{2}[2a + (n-1)d]$.</li>
+      <li><strong>Distance Formula:</strong> $d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$.</li>
+      <li><strong>Section Formula:</strong> $P(x,y) = \left(\frac{m_1x_2 + m_2x_1}{m_1 + m_2}, \frac{m_1y_2 + m_2y_1}{m_1 + m_2}\right)$.</li>
+      <li><strong>Basic Proportionality Theorem (BPT):</strong> A line drawn parallel to one side of a triangle divides the other two sides in the same ratio.</li>
+      <li><strong>Trigonometric Identity 1:</strong> $\sin^2\theta + \cos^2\theta = 1$.</li>
+      <li><strong>Trigonometric Identity 2:</strong> $1 + \tan^2\theta = \sec^2\theta$.</li>
+      <li><strong>Trigonometric Identity 3:</strong> $1 + \cot^2\theta = \csc^2\theta$.</li>
+      <li><strong>Tangent to a Circle:</strong> Perpendicular to the radius at the point of contact.</li>
+      <li><strong>Length of Tangents:</strong> Tangents drawn from an external point to a circle are equal in length.</li>
+      <li><strong>Area of Sector:</strong> $\text{Area} = \frac{\theta}{360^\circ} \times \pi r^2$.</li>
+      <li><strong>Empirical Formula (Statistics):</strong> $\text{Mode} = 3(\text{Median}) - 2(\text{Mean})$.</li>
+    </ol>
   </div>
 
-  <div class="chapter-card">
-    <div class="chapter-title">Chapter 4: Carbon and Its Compounds</div>
-    <ul class="topic-list">
-      <li><strong>Covalent Bonding:</strong> Sharing of electron pairs between atoms; tetravalency and catenation properties.</li>
-      <li><strong>Hydrocarbons:</strong> Alkanes ($C_nH_{2n+2}$), Alkenes ($C_nH_{2n}$), Alkynes ($C_nH_{2n-2}$).</li>
-      <li><strong>Soaps & Detergents:</strong> Soap molecules form micelles to trap dirt and grease.</li>
-    </ul>
+  <!-- SOCIAL SCIENCE NOTES -->
+  <h2 class="subject-title">🌍 Social Science (History, Geography, Civics & Economics)</h2>
+  <div class="notes-card">
+    <ol class="key-points" start="31">
+      <li><strong>Nationalism in Europe:</strong> Giuseppe Mazzini founded 'Young Italy' in 1831; Otto von Bismarck unified Germany.</li>
+      <li><strong>Satyagraha Movements:</strong> Champaran (1917 - Indigo farmers), Kheda (1917 - Peasant crop failure), Ahmedabad (1918 - Cotton mill workers).</li>
+      <li><strong>Jallianwala Bagh Massacre:</strong> Happened on 13th April 1919 in Amritsar under General Dyer's command.</li>
+      <li><strong>Non-Cooperation Movement:</strong> Launched in 1920, called off in February 1922 due to the Chauri Chaura violence.</li>
+      <li><strong>Civil Disobedience Movement:</strong> Started with Dandi Salt March (12 March – 6 April 1930) covering 240 miles.</li>
+      <li><strong>Resource Classification:</strong> Biotic/Abiotic, Renewable/Non-renewable, National/International.</li>
+      <li><strong>Soil Types:</strong> Alluvial (most fertile/Northern plains), Black soil (Cotton cultivation/Regur soil), Red & Yellow, Laterite.</li>
+      <li><strong>Major Crops:</strong> Rice (Kharif, staple crop), Wheat (Rabi, cool growing season), Sugarcane (Tropical/Subtropical).</li>
+      <li><strong>Power Sharing:</strong> Essential to prevent conflict; Majoritarianism in Sri Lanka led to civil war, whereas Belgium's power-sharing brought stability.</li>
+      <li><strong>Federalism:</strong> Division of power between Union, State, and Local governments (3-tier system in India since 1992).</li>
+      <li><strong>Development Index:</strong> Per Capita Income = $\frac{\text{Total Income of Country}}{\text{Total Population}}$. Published in UNDP's Human Development Report.</li>
+      <li><strong>Sectors of Economy:</strong> Primary (Agriculture/Mining), Secondary (Manufacturing/Industry), Tertiary (Services/Transportation).</li>
+      <li><strong>Credit Sources:</strong> Formal (Banks/SHGs - low interest) vs Informal (Moneylenders/Landlords - high interest).</li>
+      <li><strong>Globalization:</strong> Integration of national markets enabled by MNCs, technology, and trade liberalization.</li>
+      <li><strong>Self-Help Groups (SHGs):</strong> Typically consist of 15–20 members pooling savings to offer low-interest microloans.</li>
+    </ol>
   </div>
 
-  <div class="chapter-card">
-    <div class="chapter-title">Chapter 5: Life Processes</div>
-    <ul class="topic-list">
-      <li><strong>Nutrition:</strong> Autotrophic (photosynthesis in plants) and Heterotrophic (holozoic, saprophytic, parasitic).</li>
-      <li><strong>Respiration:</strong> Aerobic (in mitochondria, yields 38 ATP) and Anaerobic (in cytoplasm/yeast/muscles).</li>
-      <li><strong>Transport & Excretion:</strong> Double circulation in human heart; urine filtration by nephrons in kidneys.</li>
-    </ul>
+  <!-- ENGLISH NOTES -->
+  <h2 class="subject-title">📖 English (Grammar Rules & Summaries)</h2>
+  <div class="notes-card">
+    <ol class="key-points" start="46">
+      <li><strong>A Letter to God:</strong> Lencho, a faithful farmer, writes to God for 100 pesos after hailstorms destroy his crops; receives 70 pesos collected by post office staff.</li>
+      <li><strong>Nelson Mandela: Long Walk to Freedom:</strong> Highlights the struggle against Apartheid and inauguration of South Africa's first democratic non-racial government in 1994.</li>
+      <li><strong>Two Stories About Flying:</strong> Part I (Young seagull overcomes fear of first flight); Part II (Black Aeroplane guides pilot safely through storm).</li>
+      <li><strong>From the Diary of Anne Frank:</strong> Anne names her diary 'Kitty' to share thoughts while hiding in Amsterdam during WWII.</li>
+      <li><strong>Dust of Snow (Poem):</strong> A crow shaking hemlock tree snow onto Frost transforms his gloomy mood into a positive state.</li>
+      <li><strong>Fire and Ice (Poem):</strong> Fire symbolizes desire/lust; Ice symbolizes hatred/indifference; both can destroy the world.</li>
+      <li><strong>A Triumph of Surgery:</strong> Dr. Herriot cures Tricki (overfed dog) purely through strict diet and physical exercise without medical surgery.</li>
+      <li><strong>The Thief's Story:</strong> Hari Singh (15-year-old thief) decides not to rob Anil because of Anil's trust, honesty, and effort to teach him to read.</li>
+      <li><strong>Subject-Verb Agreement:</strong> Singular subjects require singular verbs; plural subjects require plural verbs.</li>
+      <li><strong>Direct to Indirect Speech:</strong> Present tense changes to corresponding past tense if the reporting verb is in the past tense.</li>
+      <li><strong>Modals Usage:</strong> 'Must' indicates compulsion; 'Should' indicates advice; 'May' indicates formal permission or possibility.</li>
+    </ol>
   </div>
 
-  <div class="chapter-card">
-    <div class="chapter-title">Chapter 6: Control and Coordination</div>
-    <ul class="topic-list">
-      <li><strong>Nervous System:</strong> Neurons transmit impulses via electrical and chemical signals (synapse).</li>
-      <li><strong>Plant Hormones:</strong> Auxins, Gibberellins, Cytokinins (growth promoters); Abscisic acid (growth inhibitor).</li>
-      <li><strong>Endocrine System:</strong> Glands secrete hormones (e.g., Insulin from pancreas, Thyroxine from thyroid).</li>
-    </ul>
-  </div>
-
-  <div class="chapter-card">
-    <div class="chapter-title">Chapter 7: How Do Organisms Reproduce?</div>
-    <ul class="topic-list">
-      <li><strong>Asexual Reproduction:</strong> Binary fission, fragmentation, regeneration, budding, spore formation, vegetative propagation.</li>
-      <li><strong>Sexual Reproduction:</strong> Male and female gametes fuse (fertilization) to form a zygote.</li>
-      <li><strong>Reproductive Health:</strong> Contraceptive methods (barrier, chemical, surgical) and prevention of STDs.</li>
-    </ul>
-  </div>
-
-  <div class="chapter-card">
-    <div class="chapter-title">Chapter 8: Heredity</div>
-    <ul class="topic-list">
-      <li><strong>Mendel's Laws:</strong> Monohybrid cross (Phenotypic ratio 3:1) and Dihybrid cross (9:3:3:1 ratio).</li>
-      <li><strong>Inheritance:</strong> Dominant vs Recessive traits.</li>
-      <li><strong>Sex Determination:</strong> Human females have $XX$ chromosomes; males have $XY$ chromosomes.</li>
-    </ul>
-  </div>
-
-  <div class="chapter-card">
-    <div class="chapter-title">Chapter 9: Light - Reflection and Refraction</div>
-    <ul class="topic-list">
-      <li><strong>Mirror Formula:</strong> $\frac{1}{f} = \frac{1}{v} + \frac{1}{u}$ (Concave mirror forms real/virtual images).</li>
-      <li><strong>Lens Formula:</strong> $\frac{1}{f} = \frac{1}{v} - \frac{1}{u}$.</li>
-      <li><strong>Power of Lens:</strong> $P = \frac{1}{f \text{ (in meters)}}$, measured in Dioptres ($D$).</li>
-    </ul>
-  </div>
-
-  <div class="chapter-card">
-    <div class="chapter-title">Chapter 10: Human Eye and Colourful World</div>
-    <ul class="topic-list">
-      <li><strong>Defects of Vision:</strong> Myopia (corrected by Concave lens), Hypermetropia (corrected by Convex lens).</li>
-      <li><strong>Prism Dispersion:</strong> Splitting of white light into VIBGYOR spectrum.</li>
-      <li><strong>Atmospheric Phenomena:</strong> Twinkling of stars (refraction), Red sunset & Blue sky (Rayleigh scattering).</li>
-    </ul>
-  </div>
-
-  <div class="chapter-card">
-    <div class="chapter-title">Chapter 11: Electricity</div>
-    <ul class="topic-list">
-      <li><strong>Ohm's Law:</strong> $V = IR$ at constant temperature.</li>
-      <li><strong>Resistors:</strong> Series combination ($R_s = R_1 + R_2 + R_3$); Parallel combination ($\frac{1}{R_p} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3}$).</li>
-      <li><strong>Heating Effect:</strong> Joule's law of heating ($H = I^2 Rt$).</li>
-    </ul>
-  </div>
-
-  <div class="chapter-card">
-    <div class="chapter-title">Chapter 12: Magnetic Effects of Electric Current</div>
-    <ul class="topic-list">
-      <li><strong>Magnetic Field:</strong> Field lines form closed loops; strongest near magnetic poles.</li>
-      <li><strong>Right-Hand Thumb Rule:</strong> Gives direction of magnetic field around a current-carrying wire.</li>
-      <li><strong>Fleming's Left-Hand Rule:</strong> Determines force direction on a conductor in a magnetic field.</li>
-    </ul>
-  </div>
-
-  <div class="chapter-card">
-    <div class="chapter-title">Chapter 13: Our Environment</div>
-    <ul class="topic-list">
-      <li><strong>Food Chain & Web:</strong> Energy flow is unidirectional.</li>
-      <li><strong>10% Law:</strong> Only 10% energy transfers to the next trophic level.</li>
-      <li><strong>Environmental Issues:</strong> Ozone layer depletion ($CFCs$) and biological magnification.</li>
-    </ul>
-  </div>
-
-  <h2>📝 15 Important Practice MCQs</h2>
-
-  <div class="mcq-card">
-    <div class="mcq-q">Q1. $Fe_2O_3 + 2Al \rightarrow Al_2O_3 + 2Fe$ is an example of a:</div>
-    <div class="options">(a) Combination reaction<br>(b) Double displacement reaction<br>(c) Decomposition reaction<br>(d) Displacement reaction</div>
-    <details><summary>Show Answer</summary><p><strong>Answer: (d) Displacement reaction.</strong> Highly reactive Aluminum displaces Iron.</p></details>
-  </div>
-
-  <div class="mcq-card">
-    <div class="mcq-q">Q2. Which chemical compound is used for softening hard water?</div>
-    <div class="options">(a) Baking Soda<br>(b) Washing Soda ($Na_2CO_3 \cdot 10H_2O$)<br>(c) Bleaching Powder<br>(d) Plaster of Paris</div>
-    <details><summary>Show Answer</summary><p><strong>Answer: (b) Washing Soda.</strong> It removes permanent hardness of water.</p></details>
-  </div>
-
-  <div class="mcq-card">
-    <div class="mcq-q">Q3. Which non-metal is liquid at room temperature?</div>
-    <div class="options">(a) Iodine<br>(b) Carbon<br>(c) Bromine<br>(d) Sulfur</div>
-    <details><summary>Show Answer</summary><p><strong>Answer: (c) Bromine.</strong> It is the only liquid non-metal.</p></details>
-  </div>
-
-  <div class="mcq-card">
-    <div class="mcq-q">Q4. What is the general formula for Alkanes?</div>
-    <div class="options">(a) $C_nH_{2n}$<br>(b) $C_nH_{2n+2}$<br>(c) $C_nH_{2n-2}$<br>(d) $C_nH_n$</div>
-    <details><summary>Show Answer</summary><p><strong>Answer: (b) $C_nH_{2n+2}$.</strong> Represents saturated hydrocarbons.</p></details>
-  </div>
-
-  <div class="mcq-card">
-    <div class="mcq-q">Q5. The breakdown of pyruvate into carbon dioxide, water, and energy takes place in:</div>
-    <div class="options">(a) Cytoplasm<br>(b) Mitochondria<br>(c) Chloroplast<br>(d) Nucleus</div>
-    <details><summary>Show Answer</summary><p><strong>Answer: (b) Mitochondria.</strong> This is the site for aerobic respiration.</p></details>
-  </div>
-
-  <div class="mcq-card">
-    <div class="mcq-q">Q6. Which plant hormone inhibits growth and causes wilting of leaves?</div>
-    <div class="options">(a) Auxin<br>(b) Cytokinin<br>(c) Abscisic Acid<br>(d) Gibberellin</div>
-    <details><summary>Show Answer</summary><p><strong>Answer: (c) Abscisic Acid.</strong> It promotes leaf detachment and wilting.</p></details>
-  </div>
-
-  <div class="mcq-card">
-    <div class="mcq-q">Q7. The male reproductive part of a flower (Stamen) consists of:</div>
-    <div class="options">(a) Style and Stigma<br>(b) Anther and Filament<br>(c) Ovary and Ovule<br>(d) Sepals and Petals</div>
-    <details><summary>Show Answer</summary><p><strong>Answer: (b) Anther and Filament.</strong> They make up the stamen.</p></details>
-  </div>
-
-  <div class="mcq-card">
-    <div class="mcq-q">Q8. What is the phenotypic ratio of a Monohybrid cross in F2 generation?</div>
-    <div class="options">(a) 1:2:1<br>(b) 3:1<br>(c) 9:3:3:1<br>(d) 2:1</div>
-    <details><summary>Show Answer</summary><p><strong>Answer: (b) 3:1.</strong> 3 dominant to 1 recessive phenotype.</p></details>
-  </div>
-
-  <div class="mcq-card">
-    <div class="mcq-q">Q9. Focal length of a convex lens is $+50\text{ cm}$. Its power is:</div>
-    <div class="options">(a) $+2\text{ D}$<br>(b) $-2\text{ D}$<br>(c) $+0.02\text{ D}$<br>(d) $+5\text{ D}$</div>
-    <details><summary>Show Answer</summary><p><strong>Answer: (a) $+2\text{ D}$.</strong> $P = \frac{1}{f} = \frac{1}{0.5\text{ m}} = +2\text{ D}$.</p></details>
-  </div>
-
-  <div class="mcq-card">
-    <div class="mcq-q">Q10. Myopia (near-sightedness) is corrected using a:</div>
-    <div class="options">(a) Convex lens<br>(b) Concave lens<br>(c) Bifocal lens<br>(d) Cylindrical lens</div>
-    <details><summary>Show Answer</summary><p><strong>Answer: (b) Concave lens.</strong> Diverges light to focus on the retina.</p></details>
-  </div>
-
-  <div class="mcq-card">
-    <div class="mcq-q">Q11. The SI unit of electric current is:</div>
-    <div class="options">(a) Ohm<br>(b) Volt<br>(c) Ampere<br>(d) Joule</div>
-    <details><summary>Show Answer</summary><p><strong>Answer: (c) Ampere.</strong> Unit of rate of flow of electric charge.</p></details>
-  </div>
-
-  <div class="mcq-card">
-    <div class="mcq-q">Q12. What happens to resistance if the length of a conductor is doubled?</div>
-    <div class="options">(a) Halved<br>(b) Doubled<br>(c) Remains same<br>(d) Four times</div>
-    <details><summary>Show Answer</summary><p><strong>Answer: (b) Doubled.</strong> Resistance is directly proportional to length ($R \propto L$).</p></details>
-  </div>
-
-  <div class="mcq-card">
-    <div class="mcq-q">Q13. Which rule is used to find the direction of force on a current-carrying conductor?</div>
-    <div class="options">(a) Right-Hand Thumb Rule<br>(b) Fleming's Left-Hand Rule<br>(c) Fleming's Right-Hand Rule<br>(d) Ohm's Law</div>
-    <details><summary>Show Answer</summary><p><strong>Answer: (b) Fleming's Left-Hand Rule.</strong> Used for motors and conductors in magnetic fields.</p></details>
-  </div>
-
-  <div class="mcq-card">
-    <div class="mcq-q">Q14. How much energy is transferred from one trophic level to the next?</div>
-    <div class="options">(a) 10%<br>(b) 1%<br>(c) 50%<br>(d) 100%</div>
-    <details><summary>Show Answer</summary><p><strong>Answer: (a) 10%.</strong> Based on Lindeman's 10% law of energy transfer.</p></details>
-  </div>
-
-  <div class="mcq-card">
-    <div class="mcq-q">Q15. Depletion of the ozone layer is mainly caused by:</div>
-    <div class="options">(a) Methane<br>(b) Carbon Dioxide<br>(c) Chlorofluorocarbons (CFCs)<br>(d) Nitrogen Oxide</div>
-    <details><summary>Show Answer</summary><p><strong>Answer: (c) Chlorofluorocarbons (CFCs).</strong> They release chlorine radicals that destroy ozone.</p></details>
-  </div>
+  <script>
+    function copyUPI() {
+      navigator.clipboard.writeText("himanshu733@fam");
+      alert("UPI ID (himanshu733@fam) copied to clipboard!");
+    }
+  </script>
 
 </body>
 </html>
