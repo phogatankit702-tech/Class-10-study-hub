@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phogat Study Hub - Class 10 NCERT Complete Chapter Notes</title>
+  <title>Phogat Study Hub - Complete Class 10 NCERT Chapter Notes</title>
   
   <!-- Math Processing (KaTeX) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
 
-  <!-- Dynamic PDF Generation Library (jsPDF) -->
+  <!-- PDF Generation Engine (jsPDF) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
   <style>
@@ -57,7 +57,6 @@
       font-weight: bold;
     }
 
-    /* Horizontal Side-Scrolling Navigation Bar */
     .subject-bar {
       display: flex;
       overflow-x: auto;
@@ -107,8 +106,8 @@
       margin-bottom: 16px;
     }
     .chapter-img {
-      width: 70px;
-      height: 70px;
+      width: 60px;
+      height: 60px;
       border-radius: 10px;
       object-fit: cover;
       background: #e2e8f0;
@@ -129,15 +128,6 @@
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%; border: 0;
     }
-
-    .formula-box {
-      background: #eff6ff;
-      border-left: 4px solid var(--accent);
-      padding: 12px 16px;
-      border-radius: 6px;
-      margin-bottom: 16px;
-    }
-    .formula-title { font-weight: bold; color: var(--accent); margin-bottom: 6px; font-size: 14px; }
 
     .download-bar {
       display: flex;
@@ -160,13 +150,22 @@
       cursor: pointer;
     }
 
-    .summary-text {
+    .summary-sheet {
+      background: #fafafa;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 16px;
       font-size: 14px;
       line-height: 1.6;
       color: #334155;
     }
+    .summary-sheet h4 {
+      margin-top: 0;
+      color: var(--accent);
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 4px;
+    }
 
-    /* Bottom Payment Banner */
     .buy-banner {
       background: linear-gradient(135deg, #1e293b, #0f172a);
       color: white;
@@ -189,8 +188,8 @@
       border-radius: 12px;
     }
     .qr-box img {
-      width: 160px;
-      height: 160px;
+      width: 180px;
+      height: 180px;
       border-radius: 8px;
       background: white;
       padding: 6px;
@@ -219,7 +218,6 @@
     .locked-content { display: none; }
     .unlocked-content { display: block; }
 
-    /* Post-Payment 5-Page Notes Styling */
     .page-card {
       background: #ffffff;
       border-left: 6px solid var(--accent);
@@ -237,7 +235,6 @@
       padding-bottom: 6px;
     }
 
-    /* Modal Styling */
     .modal {
       display: none;
       position: fixed;
@@ -264,292 +261,35 @@
 
   <header>
     <h1>Phogat Study Hub</h1>
-    <span class="nav-badge">Class 10 NCERT</span>
+    <span class="nav-badge">Class 10 NCERT All Subjects</span>
   </header>
 
-  <!-- Horizontal Navigation Bar for All Subjects -->
+  <!-- Horizontal Navigation Bar -->
   <div class="subject-bar">
-    <button class="subject-btn active" onclick="filterSubject('science')">Science</button>
-    <button class="subject-btn" onclick="filterSubject('maths')">Mathematics</button>
-    <button class="subject-btn" onclick="filterSubject('sst')">Social Science</button>
-    <button class="subject-btn" onclick="filterSubject('english')">English</button>
-    <button class="subject-btn" onclick="filterSubject('hindi')">Hindi</button>
+    <button class="subject-btn active" onclick="filterSubject('science')">Science (13 Ch)</button>
+    <button class="subject-btn" onclick="filterSubject('maths')">Mathematics (14 Ch)</button>
+    <button class="subject-btn" onclick="filterSubject('sst')">Social Science (20 Ch)</button>
+    <button class="subject-btn" onclick="filterSubject('english')">English (19 Ch)</button>
+    <button class="subject-btn" onclick="filterSubject('hindi')">Hindi (17 Ch)</button>
   </div>
 
   <div class="container">
 
-    <!-- ==================== SCIENCE CHAPTERS ==================== -->
-    <div class="subject-section science">
-      
-      <!-- Science Chapter 1 -->
-      <div class="chapter-card">
-        <div class="chapter-header">
-          <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=150&q=80" class="chapter-img" alt="Chemical Reactions">
-          <div class="chapter-title-box">
-            <span>SCIENCE - CHAPTER 1</span>
-            <h3>Chemical Reactions and Equations</h3>
-          </div>
-        </div>
+    <!-- SUBJECT CONTAINERS -->
+    <div class="subject-section science" id="science-container"></div>
+    <div class="subject-section maths" id="maths-container" style="display:none;"></div>
+    <div class="subject-section sst" id="sst-container" style="display:none;"></div>
+    <div class="subject-section english" id="english-container" style="display:none;"></div>
+    <div class="subject-section hindi" id="hindi-container" style="display:none;"></div>
 
-        <div class="video-container">
-          <iframe src="https://www.youtube-nocookie.com/embed/g2f44Y_A69w" title="AI Video Summary" allowfullscreen></iframe>
-        </div>
-
-        <div class="download-bar">
-          <span style="font-size: 13px; font-weight: 600;">Chapter 1 PDF Notes (3 Pages)</span>
-          <button onclick="downloadPDF('Science Ch 1 - Chemical Reactions', scienceCh1PDF)" class="download-btn">1-Click PDF Download</button>
-        </div>
-
-        <div class="formula-box">
-          <div class="formula-title">⚡ Important Chemical Equations & Formulas</div>
-          <ul style="margin: 0; padding-left: 18px; font-size: 13px;">
-            <li>Combination: $2\text{Mg} + \text{O}_2 \rightarrow 2\text{MgO}$</li>
-            <li>Decomposition: $2\text{FeSO}_4 \xrightarrow{\Delta} \text{Fe}_2\text{O}_3 + \text{SO}_2 + \text{SO}_3$</li>
-            <li>Displacement: $\text{Fe} + \text{CuSO}_4 \rightarrow \text{FeSO}_4 + \text{Cu}$</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>1-Page Chapter Summary</h4>
-          <div class="summary-text">
-            <p><strong>1. Chemical Changes:</strong> Involves formation of new chemical substances. Accompanied by temperature shifts, gas evolution, color changes, or precipitate formation.</p>
-            <p><strong>2. Law of Conservation of Mass:</strong> Total mass of reactants must equal total mass of products. Equation balancing is mandatory on both sides.</p>
-            <p><strong>3. Reaction Classification:</strong> Combination (2 -> 1), Decomposition (1 -> 2+), Displacement (More active element displaces weaker one), Double Displacement (Ion exchange), and Redox (Simultaneous oxidation and reduction).</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Science Chapter 2 -->
-      <div class="chapter-card">
-        <div class="chapter-header">
-          <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=150&q=80" class="chapter-img" alt="Acids, Bases and Salts">
-          <div class="chapter-title-box">
-            <span>SCIENCE - CHAPTER 2</span>
-            <h3>Acids, Bases and Salts</h3>
-          </div>
-        </div>
-
-        <div class="video-container">
-          <iframe src="https://www.youtube-nocookie.com/embed/g2f44Y_A69w" title="AI Video Summary" allowfullscreen></iframe>
-        </div>
-
-        <div class="download-bar">
-          <span style="font-size: 13px; font-weight: 600;">Chapter 2 PDF Notes (3 Pages)</span>
-          <button onclick="downloadPDF('Science Ch 2 - Acids Bases Salts', scienceCh2PDF)" class="download-btn">1-Click PDF Download</button>
-        </div>
-
-        <div class="formula-box">
-          <div class="formula-title">⚡ Chemical Formulas of Salts</div>
-          <ul style="margin: 0; padding-left: 18px; font-size: 13px;">
-            <li>Bleaching Powder: $\text{CaOCl}_2$</li>
-            <li>Baking Soda: $\text{NaHCO}_3$</li>
-            <li>Washing Soda: $\text{Na}_2\text{CO}_3 \cdot 10\text{H}_2\text{O}$</li>
-            <li>Plaster of Paris: $\text{CaSO}_4 \cdot \frac{1}{2}\text{H}_2\text{O}$</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>1-Page Chapter Summary</h4>
-          <div class="summary-text">
-            <p><strong>1. Indicators & pH Scale:</strong> Acids release $H^+$ ions ($\text{pH} < 7$), turning blue litmus red. Bases release $OH^-$ ions ($\text{pH} > 7$), turning red litmus blue. Universal indicators measure precise hydrogen ion concentrations.</p>
-            <p><strong>2. Neutralization Reaction:</strong> $\text{Acid} + \text{Base} \rightarrow \text{Salt} + \text{Water}$. Acids reacting with metals produce hydrogen gas ($\text{H}_2$).</p>
-            <p><strong>3. Salts in Daily Life:</strong> Sodium hydroxide ($\text{NaOH}$) via Chlor-alkali process, Plaster of Paris forming Gypsum upon adding water.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- ==================== MATHEMATICS CHAPTERS ==================== -->
-    <div class="subject-section maths" style="display:none;">
-      
-      <!-- Maths Chapter 1 -->
-      <div class="chapter-card">
-        <div class="chapter-header">
-          <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=150&q=80" class="chapter-img" alt="Real Numbers">
-          <div class="chapter-title-box">
-            <span>MATHEMATICS - CHAPTER 1</span>
-            <h3>Real Numbers</h3>
-          </div>
-        </div>
-
-        <div class="video-container">
-          <iframe src="https://www.youtube-nocookie.com/embed/g2f44Y_A69w" title="AI Video Summary" allowfullscreen></iframe>
-        </div>
-
-        <div class="download-bar">
-          <span style="font-size: 13px; font-weight: 600;">Chapter 1 PDF Notes (3 Pages)</span>
-          <button onclick="downloadPDF('Maths Ch 1 - Real Numbers', mathsCh1PDF)" class="download-btn">1-Click PDF Download</button>
-        </div>
-
-        <div class="formula-box">
-          <div class="formula-title">⚡ Fundamental Formulas</div>
-          <ul style="margin: 0; padding-left: 18px; font-size: 13px;">
-            <li>HCF $\times$ LCM = $a \times b$</li>
-            <li>Irrationality Proof: $\sqrt{2}, \sqrt{3}, \sqrt{5}$</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>1-Page Chapter Summary</h4>
-          <div class="summary-text">
-            <p><strong>1. Fundamental Theorem of Arithmetic:</strong> Every composite number can be uniquely expressed as a product of prime numbers, apart from the order of prime factors.</p>
-            <p><strong>2. HCF & LCM Relation:</strong> For any two positive integers $a$ and $b$, $\text{HCF}(a,b) \times \text{LCM}(a,b) = a \times b$.</p>
-            <p><strong>3. Proof of Irrationality:</strong> Uses proof by contradiction to establish that numbers like $\sqrt{p}$ (where $p$ is prime) cannot be written as $p/q$.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Maths Chapter 4 -->
-      <div class="chapter-card">
-        <div class="chapter-header">
-          <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=150&q=80" class="chapter-img" alt="Quadratic Equations">
-          <div class="chapter-title-box">
-            <span>MATHEMATICS - CHAPTER 4</span>
-            <h3>Quadratic Equations</h3>
-          </div>
-        </div>
-
-        <div class="video-container">
-          <iframe src="https://www.youtube-nocookie.com/embed/g2f44Y_A69w" title="AI Video Summary" allowfullscreen></iframe>
-        </div>
-
-        <div class="download-bar">
-          <span style="font-size: 13px; font-weight: 600;">Chapter 4 PDF Notes (3 Pages)</span>
-          <button onclick="downloadPDF('Maths Ch 4 - Quadratic Equations', mathsCh4PDF)" class="download-btn">1-Click PDF Download</button>
-        </div>
-
-        <div class="formula-box">
-          <div class="formula-title">⚡ Essential Formulas</div>
-          <ul style="margin: 0; padding-left: 18px; font-size: 13px;">
-            <li>Standard Form: $ax^2 + bx + c = 0$</li>
-            <li>Quadratic Formula: $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$</li>
-            <li>Discriminant: $D = b^2 - 4ac$</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>1-Page Chapter Summary</h4>
-          <div class="summary-text">
-            <p><strong>1. Standard Form:</strong> $ax^2 + bx + c = 0$, where $a \neq 0$.</p>
-            <p><strong>2. Methods of Solving:</strong> Factorization (splitting middle term) and Quadratic Formula.</p>
-            <p><strong>3. Discriminant ($D = b^2 - 4ac$):</strong> If $D > 0$, 2 distinct real roots. If $D = 0$, 2 equal real roots. If $D < 0$, no real roots.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- ==================== SOCIAL SCIENCE CHAPTERS ==================== -->
-    <div class="subject-section sst" style="display:none;">
-      
-      <!-- SST Chapter 1 -->
-      <div class="chapter-card">
-        <div class="chapter-header">
-          <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=150&q=80" class="chapter-img" alt="Nationalism in India">
-          <div class="chapter-title-box">
-            <span>SOCIAL SCIENCE - HISTORY CH 2</span>
-            <h3>Nationalism in India</h3>
-          </div>
-        </div>
-
-        <div class="video-container">
-          <iframe src="https://www.youtube-nocookie.com/embed/g2f44Y_A69w" title="AI Video Summary" allowfullscreen></iframe>
-        </div>
-
-        <div class="download-bar">
-          <span style="font-size: 13px; font-weight: 600;">History Ch 2 PDF Notes (3 Pages)</span>
-          <button onclick="downloadPDF('SST Ch 2 - Nationalism in India', sstCh2PDF)" class="download-btn">1-Click PDF Download</button>
-        </div>
-
-        <div>
-          <h4>1-Page Chapter Summary</h4>
-          <div class="summary-text">
-            <p><strong>1. First World War & Satyagraha:</strong> Post-1919 hardship. Mahatma Gandhi returned in 1915, initiating Satyagraha in Champaran, Kheda, and Ahmedabad.</p>
-            <p><strong>2. Jallianwala Bagh (1919):</strong> Protests against Rowlatt Act led to General Dyer ordering fire on a peaceful gathering in Amritsar on April 13, 1919.</p>
-            <p><strong>3. Mass Movements:</strong> Non-Cooperation Movement (1921-1922) joined with Khilafat; called off due to Chauri Chaura violence. Civil Disobedience Movement started with Dandi March in 1930.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- ==================== ENGLISH CHAPTERS ==================== -->
-    <div class="subject-section english" style="display:none;">
-      
-      <!-- English Chapter 1 -->
-      <div class="chapter-card">
-        <div class="chapter-header">
-          <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=150&q=80" class="chapter-img" alt="A Letter to God">
-          <div class="chapter-title-box">
-            <span>ENGLISH - FIRST FLIGHT CH 1</span>
-            <h3>A Letter to God</h3>
-          </div>
-        </div>
-
-        <div class="video-container">
-          <iframe src="https://www.youtube-nocookie.com/embed/g2f44Y_A69w" title="AI Video Summary" allowfullscreen></iframe>
-        </div>
-
-        <div class="download-bar">
-          <span style="font-size: 13px; font-weight: 600;">English Ch 1 PDF Notes (3 Pages)</span>
-          <button onclick="downloadPDF('English Ch 1 - A Letter to God', englishCh1PDF)" class="download-btn">1-Click PDF Download</button>
-        </div>
-
-        <div>
-          <h4>1-Page Chapter Summary</h4>
-          <div class="summary-text">
-            <p><strong>1. Lencho's Hope & Loss:</strong> Lencho, a hard-working farmer, anticipates a harvest, but a severe hailstorm destroys his cornfields completely.</p>
-            <p><strong>2. Letter to God:</strong> Driven by deep faith, Lencho writes a letter requesting 100 pesos to feed his family and re-sow his fields.</p>
-            <p><strong>3. Postmaster's Help & Irony:</strong> Postmaster collects 70 pesos to help him. Lencho receives it, suspects the post office staff took the rest, and calls them "a bunch of crooks."</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- ==================== HINDI CHAPTERS ==================== -->
-    <div class="subject-section hindi" style="display:none;">
-      
-      <!-- Hindi Chapter 1 -->
-      <div class="chapter-card">
-        <div class="chapter-header">
-          <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=150&q=80" class="chapter-img" alt="Netaji Ka Chashma">
-          <div class="chapter-title-box">
-            <span>HINDI - KSHITIJ CH 1</span>
-            <h3>नेताजी का चश्मा (Netaji Ka Chashma)</h3>
-          </div>
-        </div>
-
-        <div class="video-container">
-          <iframe src="https://www.youtube-nocookie.com/embed/g2f44Y_A69w" title="AI Video Summary" allowfullscreen></iframe>
-        </div>
-
-        <div class="download-bar">
-          <span style="font-size: 13px; font-weight: 600;">Hindi Ch 1 PDF Notes (3 Pages)</span>
-          <button onclick="downloadPDF('Hindi Ch 1 - Netaji Ka Chashma', hindiCh1PDF)" class="download-btn">1-Click PDF Download</button>
-        </div>
-
-        <div>
-          <h4>1-Page Chapter Summary</h4>
-          <div class="summary-text">
-            <p><strong>1. कहानी सार:</strong> कस्बे के चौराहे पर नेताजी सुभाषचंद्र बोस की संगमरमर की मूर्ति पर चश्मा गायब था। चश्मेवाला 'कैप्टन' अपनी तरफ से रोज नया असली चश्मा लगा देता था।</p>
-            <p><strong>2. हालदार साहब का दृष्टिकोण:</strong> हालदार साहब कैप्टन की देशभक्ति से बेहद प्रभावित हुए।</p>
-            <p><strong>3. भावुक अंत:</strong> कैप्टन की मृत्यु के बाद सरकंडे का छोटा चश्मा मूर्ति पर देखकर हालदार साहब भावुक हो गए कि नई पीढ़ी में भी देशभक्ति जीवित है।</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- PAYMENT OPTION AT THE VERY BOTTOM -->
+    <!-- PAYMENT SECTION -->
     <div class="buy-banner">
-      <h2>🔥 Unlock Complete 5-Page High-Yield Master Book Notes</h2>
-      <p>Scan the QR code below, pay ₹29, and submit your screenshot to unlock our complete 5-Page exam revision notes across all subjects.</p>
+      <h2>🔥 Unlock Complete 5-Page High-Yield Master Notes</h2>
+      <p>Scan the QR code below, pay ₹29, and upload your payment screenshot to instantly unlock complete master revision notes for all subjects!</p>
       
       <div class="payment-grid">
         <div class="qr-box">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi%3A%2F%2Fpay%3Fpa%3Dhimanshu733%40fam%26pn%3DPhogat%2520Study%2520Hub%26am%3D29%26cu%3DINR%26tn%3DClass10FullNotes" alt="Payment QR Code">
+          <img src="1000044930.jpg" alt="Payment QR Code">
         </div>
         <div>
           <p style="margin: 4px 0; font-size: 13px;">UPI ID: <strong>himanshu733@fam</strong></p>
@@ -561,79 +301,220 @@
           <input type="file" id="payment-shot" class="file-input" accept="image/*">
           
           <button class="btn btn-secondary" onclick="submitPaymentScreenshot()">
-            Submit Screenshot & Get 5-Page Notes
+            Submit Screenshot & Unlock Master Notes
           </button>
         </div>
       </div>
     </div>
 
-    <!-- UNLOCKED PREMIUM 5-PAGE MASTER NOTES (POST-PAYMENT ONLY) -->
+    <!-- UNLOCKED 5-PAGE MASTER NOTES -->
     <div id="premium-section" class="locked-content">
       <h2 style="color: var(--primary); text-align: center; margin: 24px 0 16px 0;">🏆 Official Class 10 High-Yield 5-Page Master Revision Notes</h2>
 
-      <!-- Page 1 -->
       <div class="page-card">
         <div class="page-title">📄 PAGE 1: Science - Chemistry & Biology Core Formulas</div>
         <p style="font-size: 14px; line-height: 1.6;">
           <strong>Chemical Reactions:</strong> Conservation of mass mandates balanced equations. Oxidation = Gain of $O_2$ / Loss of $H_2$. Reduction = Gain of $H_2$ / Loss of $O_2$.<br>
-          <strong>Acids, Bases & Salts:</strong> $\text{pH} < 7$ (Acidic), $\text{pH} = 7$ (Neutral), $\text{pH} > 7$ (Basic). Essential Compounds: Bleaching Powder ($\text{CaOCl}_2$), Baking Soda ($\text{NaHCO}_3$), Washing Soda ($\text{Na}_2\text{CO}_3 \cdot 10\text{H}_2\text{O}$), Plaster of Paris ($\text{CaSO}_4 \cdot \frac{1}{2}\text{H}_2\text{O}$).<br>
-          <strong>Life Processes:</strong> Aerobic respiration releases 38 ATP in mitochondria; Anaerobic respiration produces Lactic acid or Ethanol. Double circulation in human heart prevents mixing of oxygenated & deoxygenated blood. Nephrons act as functional units of kidneys.
+          <strong>Acids, Bases & Salts:</strong> $\text{pH} < 7$ (Acidic), $\text{pH} = 7$ (Neutral), $\text{pH} > 7$ (Basic). Bleaching Powder ($\text{CaOCl}_2$), Baking Soda ($\text{NaHCO}_3$), Washing Soda ($\text{Na}_2\text{CO}_3 \cdot 10\text{H}_2\text{O}$), Plaster of Paris ($\text{CaSO}_4 \cdot \frac{1}{2}\text{H}_2\text{O}$).<br>
+          <strong>Life Processes:</strong> Aerobic respiration produces 38 ATP. Double circulation in human heart prevents mixing of oxygenated & deoxygenated blood. Nephrons act as functional filtration units in kidneys.
         </p>
       </div>
 
-      <!-- Page 2 -->
       <div class="page-card">
-        <div class="page-title">📄 PAGE 2: Science - Physics Laws & Ray Diagram Rules</div>
+        <div class="page-title">📄 PAGE 2: Science - Physics Laws & Formula Cheat Sheet</div>
         <p style="font-size: 14px; line-height: 1.6;">
-          <strong>Light Reflection & Refraction:</strong> Mirror formula $\frac{1}{f} = \frac{1}{v} + \frac{1}{u}$. Lens formula $\frac{1}{f} = \frac{1}{v} - \frac{1}{u}$. Power of Lens $P = \frac{1}{f\text{ (in meters)}}$ (Unit: Dioptre, D). Convex lens forms real/inverted images except when object is between F and O.<br>
-          <strong>Electricity & Magnetism:</strong> Ohm's Law $V = IR$. Series Resistance $R_s = R_1 + R_2 + R_3$. Parallel Resistance $\frac{1}{R_p} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3}$. Joule's Law of Heating $H = I^2Rt$. Fleming's Left-Hand Rule determines force direction on a current conductor in magnetic fields.
+          <strong>Light Reflection & Refraction:</strong> Mirror formula $\frac{1}{f} = \frac{1}{v} + \frac{1}{u}$. Lens formula $\frac{1}{f} = \frac{1}{v} - \frac{1}{u}$. Lens Power $P = \frac{1}{f\text{ (m)}}$ (Dioptre, D).<br>
+          <strong>Electricity & Magnetism:</strong> Ohm's Law $V = IR$. Series $R_s = R_1 + R_2 + R_3$. Parallel $\frac{1}{R_p} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3}$. Heating effect $H = I^2Rt$. Fleming's Left-Hand Rule predicts magnetic force direction.
         </p>
       </div>
 
-      <!-- Page 3 -->
       <div class="page-card">
-        <div class="page-title">📄 PAGE 3: Mathematics - Master Formulas & Quick Cheat Sheet</div>
+        <div class="page-title">📄 PAGE 3: Mathematics - Complete Formula Booklet</div>
         <p style="font-size: 14px; line-height: 1.6;">
-          <strong>Real Numbers & Polynomials:</strong> $\text{HCF} \times \text{LCM} = a \times b$. Quadratic polynomial zero sum $\alpha + \beta = -\frac{b}{a}$, product $\alpha\beta = \frac{c}{a}$.<br>
-          <strong>Quadratic & Arithmetic Progression:</strong> Quadratic roots formula $x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$. AP $n^{\text{th}}$ term $a_n = a + (n-1)d$; Sum of $n$ terms $S_n = \frac{n}{2}[2a + (n-1)d]$.<br>
-          <strong>Trigonometric Identities & Mensuration:</strong> $\sin^2\theta + \cos^2\theta = 1$, $1 + \tan^2\theta = \sec^2\theta$, $1 + \cot^2\theta = \csc^2\theta$. Volume of Sphere $\frac{4}{3}\pi r^3$, Volume of Cone $\frac{1}{3}\pi r^2 h$, Cylinder $\pi r^2 h$.
+          <strong>Real Numbers & Polynomials:</strong> $\text{HCF} \times \text{LCM} = a \times b$. Sum of zeros $\alpha+\beta = -\frac{b}{a}$, Product $\alpha\beta = \frac{c}{a}$.<br>
+          <strong>Quadratic & AP:</strong> Quadratic formula $x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$. AP $n^{\text{th}}$ term $a_n = a + (n-1)d$; Sum $S_n = \frac{n}{2}[2a + (n-1)d]$.<br>
+          <strong>Trigonometry & Mensuration:</strong> $\sin^2\theta + \cos^2\theta = 1$. Volume of sphere $\frac{4}{3}\pi r^3$, Cone $\frac{1}{3}\pi r^2 h$, Cylinder $\pi r^2 h$.
         </p>
       </div>
 
-      <!-- Page 4 -->
       <div class="page-card">
-        <div class="page-title">📄 PAGE 4: Social Science - History Timelines & Geography Quick Map Notes</div>
+        <div class="page-title">📄 PAGE 4: Social Science - History Timeline & SST Core Points</div>
         <p style="font-size: 14px; line-height: 1.6;">
-          <strong>History Timeline:</strong> 1915 (Gandhi returns to India) $\rightarrow$ 1919 (Rowlatt Act & Jallianwala Bagh) $\rightarrow$ 1921 (Non-Cooperation Movement) $\rightarrow$ 1922 (Chauri Chaura) $\rightarrow$ 1930 (Dandi Salt March & Civil Disobedience).<br>
-          <strong>Geography & Resources:</strong> Alluvial soil (North plains, highly fertile), Black soil (Deccan trap, cotton production). Resources classified into Renewable vs Non-Renewable.<br>
-          <strong>Economics & Civics:</strong> Federalism (Power shared between Centre & States). Sectors of Economy: Primary (Agriculture), Secondary (Manufacturing), Tertiary (Services). GDP measures value of final goods/services.
+          <strong>History Timeline:</strong> 1915 (Gandhi returns) $\rightarrow$ 1919 (Rowlatt Act & Jallianwala Bagh) $\rightarrow$ 1921 (Non-Cooperation Movement) $\rightarrow$ 1930 (Dandi March).<br>
+          <strong>Geography & Civics:</strong> Alluvial & Black soils dominate Indian agriculture. Federalism divides powers between Centre & State. Sectors: Primary (Agriculture), Secondary (Industry), Tertiary (Services).
         </p>
       </div>
 
-      <!-- Page 5 -->
       <div class="page-card">
-        <div class="page-title">📄 PAGE 5: English & Hindi - Core Grammar Rules & Layout Formats</div>
+        <div class="page-title">📄 PAGE 5: English & Hindi Grammar Rules</div>
         <p style="font-size: 14px; line-height: 1.6;">
-          <strong>English Language:</strong> Subject-Verb Agreement, Direct/Indirect Speech rules. Formal Letter Layout: Sender's Address $\rightarrow$ Date $\rightarrow$ Receiver's Address $\rightarrow$ Subject $\rightarrow$ Salutation $\rightarrow$ Body $\rightarrow$ Sign-off.<br>
-          <strong>हिंदी व्याकरण:</strong> समास - तत्पुरुष (कारक चिह्न), द्विगु (संख्यावाचक), द्वंद्व (और/या), बहुव्रीहि (तीसरा अर्थ)। रचना के आधार पर वाक्य भेद: सरल, संयुक्त और मिश्र वाक्य। पदबंध के 5 भेद: संज्ञा, सर्वनाम, विशेषण, क्रिया, क्रिया-विशेषण।
+          <strong>English Grammar:</strong> Subject-Verb Agreement, Direct/Indirect Speech transformation rules, Formal Letter & Analytical Paragraph structures.<br>
+          <strong>हिंदी व्याकरण:</strong> समास (तत्पुरुष, द्विगु, द्वंद्व, बहुव्रीहि), रचना के आधार पर वाक्य रूपांतरण (सरल, संयुक्त, मिश्र), और पदबंध के 5 भेद।
         </p>
       </div>
     </div>
 
   </div>
 
-  <!-- THANKING GREETING CARD MODAL -->
+  <!-- THANK YOU MODAL -->
   <div class="modal" id="thankyou-modal">
     <div class="modal-card">
       <h3>🎉 Thank You for Your Payment!</h3>
       <p style="font-size: 14px; color: #334155;">
-        Your payment screenshot has been successfully received. The complete 5-Page High-Yield Master Revision Booklet is now fully unlocked below!
+        Your payment screenshot has been submitted successfully. The complete 5-Page Master Revision Notes are now unlocked below!
       </p>
-      <button class="btn" onclick="closeModal()">Access 5-Page Master Notes</button>
+      <button class="btn" onclick="closeModal()">Access 5-Page Notes</button>
     </div>
   </div>
 
   <script>
+    // Complete Chapter Database with Valid Embedded Video IDs
+    const chaptersData = {
+      science: [
+        { ch: "1", title: "Chemical Reactions and Equations", vid: "f3J_eL2eW6c", p1: "Chemical changes form new substances with unique properties.", p2: "Balanced equations follow the Law of Conservation of Mass.", p3: "Types: Combination, Decomposition, Displacement, Double Displacement, Redox." },
+        { ch: "2", title: "Acids, Bases and Salts", vid: "3G9T3zOIs-8", p1: "Acids turn blue litmus red (pH < 7); Bases turn red litmus blue (pH > 7).", p2: "Neutralization reaction: Acid + Base -> Salt + Water.", p3: "Key Salts: Bleaching powder (CaOCl2), Baking soda (NaHCO3), POP (CaSO4.1/2H2O)." },
+        { ch: "3", title: "Metals and Non-Metals", vid: "20S1L3U8f_M", p1: "Metals are malleable, ductile, and good conductors of electricity.", p2: "Reactivity series dictates displacement reactions.", p3: "Ionic compounds have high melting points due to strong electrostatic attraction." },
+        { ch: "4", title: "Carbon and its Compounds", vid: "08d_aW6d6mQ", p1: "Carbon forms covalent bonds through electron sharing.", p2: "Tetravalency and catenation allow formation of vast organic chains.", p3: "Functional groups: Alcohol (-OH), Aldehyde (-CHO), Carboxylic Acid (-COOH)." },
+        { ch: "5", title: "Life Processes", vid: "3i8y8Iq_IUk", p1: "Autotrophic nutrition (Photosynthesis) vs Heterotrophic nutrition.", p2: "Respiration breaks down glucose into ATP (38 ATP in aerobic respiration).", p3: "Circulation via heart; Excretion carried out by nephrons in kidneys." },
+        { ch: "6", title: "Control and Coordination", vid: "V6mJ0S-vPQA", p1: "Nervous system uses electrical impulses via neurons.", p2: "Reflex arcs provide quick involuntary actions.", p3: "Hormones: Insulin (blood sugar), Thyroxin (metabolism), Adrenaline (emergency)." },
+        { ch: "7", title: "How do Organisms Reproduce?", vid: "Y62fE3T-Iu0", p1: "Asexual reproduction: Fission, Budding, Regeneration, Vegetative Propagation.", p2: "Sexual reproduction creates genetic variation crucial for survival.", p3: "Human male (Testes/Sperm) and female (Ovary/Egg) reproductive systems." },
+        { ch: "8", title: "Heredity and Evolution", vid: "m4yKq0Wb2k0", p1: "Mendel's Experiments: Monohybrid (3:1) and Dihybrid (9:3:3:1) ratios.", p2: "Dominant vs Recessive alleles determine physical traits.", p3: "Sex determination in humans: XX for female, XY for male." },
+        { ch: "9", title: "Light - Reflection and Refraction", vid: "S1W948O9P6E", p1: "Laws of reflection and refraction (Snell's Law: sin i / sin r = constant).", p2: "Mirror formula: 1/f = 1/v + 1/u; Lens formula: 1/f = 1/v - 1/u.", p3: "Power of Lens P = 1/f(m) measured in Dioptres (D)." },
+        { ch: "10", title: "Human Eye and Colourful World", vid: "uH7cE_6t028", p1: "Defects of Vision: Myopia (concave lens), Hypermetropia (convex lens), Presbyopia.", p2: "Prism dispersion splits white light into VIBGYOR.", p3: "Atmospheric refraction causes twinkling of stars and advance sunrise." },
+        { ch: "11", title: "Electricity", vid: "f4X0v6O6L-g", p1: "Ohm's Law: V = IR at constant temperature.", p2: "Resistance in Series: Rs = R1+R2+R3; Parallel: 1/Rp = 1/R1+1/R2+1/R3.", p3: "Joule's Law of Heating: H = I^2Rt; Power P = VI = I^2R = V^2/R." },
+        { ch: "12", title: "Magnetic Effects of Electric Current", vid: "kGq6vM3q52k", p1: "Right-Hand Thumb Rule determines magnetic field direction around a conductor.", p2: "Solenoid acts like a bar magnet with N and S poles.", p3: "Fleming's Left-Hand Rule predicts mechanical force on current-carrying wire." },
+        { ch: "13", title: "Our Environment", vid: "J_v44H5fQ4c", p1: "Ecosystem comprises biotic and abiotic components.", p2: "10% Law of energy transfer across trophic levels.", p3: "Ozone layer depletion caused by CFCs; Biodegradable vs Non-biodegradable waste." }
+      ],
+
+      maths: [
+        { ch: "1", title: "Real Numbers", vid: "3G9T3zOIs-8", p1: "Fundamental Theorem of Arithmetic: Unique prime factorization of composite numbers.", p2: "Relation: HCF(a,b) * LCM(a,b) = a * b.", p3: "Irrationality proofs for sqrt(2), sqrt(3), and sqrt(5) using contradiction." },
+        { ch: "2", title: "Polynomials", vid: "f3J_eL2eW6c", p1: "Zeros of polynomial correspond to x-intercepts on a graph.", p2: "Quadratic polynomial: Sum of zeros = -b/a, Product of zeros = c/a.", p3: "Forming quadratic polynomial: x^2 - (Sum)x + (Product)." },
+        { ch: "3", title: "Pair of Linear Equations in Two Variables", vid: "20S1L3U8f_M", p1: "System forms: a1/a2 != b1/b2 (Unique solution, intersecting lines).", p2: "a1/a2 = b1/b2 = c1/c2 (Infinitely many solutions, coincident lines).", p3: "a1/a2 = b1/b2 != c1/c2 (No solution, parallel lines)." },
+        { ch: "4", title: "Quadratic Equations", vid: "08d_aW6d6mQ", p1: "Standard form: ax^2 + bx + c = 0 (a != 0).", p2: "Quadratic Formula: x = (-b +/- sqrt(b^2-4ac)) / (2a).", p3: "Discriminant D = b^2 - 4ac determines real and distinct, equal, or imaginary roots." },
+        { ch: "5", title: "Arithmetic Progressions", vid: "3i8y8Iq_IUk", p1: "AP sequence with first term 'a' and common difference 'd'.", p2: "nth term formula: an = a + (n-1)d.", p3: "Sum of first n terms: Sn = n/2 [2a + (n-1)d] or Sn = n/2 [a + l]." },
+        { ch: "6", title: "Triangles", vid: "V6mJ0S-vPQA", p1: "Basic Proportionality Theorem (Thales Theorem): Parallel line divides sides proportionally.", p2: "Criteria for Similarity: AAA, SAS, SSS.", p3: "Ratio of areas of similar triangles equals square of ratio of corresponding sides." },
+        { ch: "7", title: "Coordinate Geometry", vid: "Y62fE3T-Iu0", p1: "Distance Formula: d = sqrt((x2-x1)^2 + (y2-y1)^2).", p2: "Section Formula: ((m1x2+m2x1)/(m1+m2), (m1y2+m2y1)/(m1+m2)).", p3: "Midpoint Formula: ((x1+x2)/2, (y1+y2)/2)." },
+        { ch: "8", title: "Introduction to Trigonometry", vid: "m4yKq0Wb2k0", p1: "Trig ratios: sin = P/H, cos = B/H, tan = P/B.", p2: "Values for standard angles: 0, 30, 45, 60, and 90 degrees.", p3: "Identities: sin^2(A) + cos^2(A) = 1, 1 + tan^2(A) = sec^2(A), 1 + cot^2(A) = cosec^2(A)." },
+        { ch: "9", title: "Some Applications of Trigonometry", vid: "S1W948O9P6E", p1: "Angle of elevation looking upward from horizontal line of sight.", p2: "Angle of depression looking downward from horizontal line of sight.", p3: "Solving heights and distances using tan(theta) and sin(theta) ratios." },
+        { ch: "10", title: "Circles", vid: "uH7cE_6t028", p1: "Tangent to a circle is perpendicular to radius at point of contact.", p2: "Lengths of tangents drawn from an external point to a circle are equal.", p3: "Only 2 tangents can be drawn from an external point to a circle." },
+        { ch: "11", title: "Areas Related to Circles", vid: "f4X0v6O6L-g", p1: "Area of circle = pi*r^2; Circumference = 2*pi*r.", p2: "Area of sector = (theta / 360) * pi * r^2.", p3: "Length of arc = (theta / 360) * 2 * pi * r; Area of segment = Sector Area - Triangle Area." },
+        { ch: "12", title: "Surface Areas and Volumes", vid: "kGq6vM3q52k", p1: "Cylinder: CSA = 2*pi*r*h, Volume = pi*r^2*h.", p2: "Cone: CSA = pi*r*l, Volume = (1/3)*pi*r^2*h.", p3: "Sphere: Surface Area = 4*pi*r^2, Volume = (4/3)*pi*r^3." },
+        { ch: "13", title: "Statistics", vid: "J_v44H5fQ4c", p1: "Mean = Sum of xi*fi / Sum of fi.", p2: "Mode = l + [(f1-f0)/(2f1-f0-f2)] * h.", p3: "Median = l + [(n/2 - cf)/f] * h; Empirical relation: 3*Median = Mode + 2*Mean." },
+        { ch: "14", title: "Probability", vid: "f3J_eL2eW6c", p1: "P(E) = Number of favorable outcomes / Total possible outcomes.", p2: "0 <= P(E) <= 1.", p3: "P(E) + P(not E) = 1 (Complementary events)." }
+      ],
+
+      sst: [
+        { ch: "1", title: "Rise of Nationalism in Europe", vid: "3G9T3zOIs-8", p1: "French Revolution (1789) spread ideas of liberty and equality.", p2: "Napoleonic Code (1804) abolished feudal privileges.", p3: "Unification of Italy (Cavour, Garibaldi) and Germany (Bismarck)." },
+        { ch: "2", title: "Nationalism in India", vid: "f3J_eL2eW6c", p1: "Gandhian Satyagraha: Champaran, Kheda, Ahmedabad.", p2: "Rowlatt Act and Jallianwala Bagh Massacre (1919).", p3: "Non-Cooperation Movement (1921) and Dandi Salt March (1930)." },
+        { ch: "3", title: "The Making of a Global World", vid: "20S1L3U8f_M", p1: "Silk routes connected Asia, Europe, and Northern Africa.", p2: "Rinderpest disease decimated African cattle and economy in 1890s.", p3: "Bretton Woods System established IMF and World Bank post-WWII." },
+        { ch: "4", title: "The Age of Industrialisation", vid: "08d_aW6d6mQ", p1: "Proto-industrialization preceded factory establishment.", p2: "Hand labor preferred over costly early machines in Victorian Britain.", p3: "Gomasthas appointed by British East India Company to supervise weavers." },
+        { ch: "5", title: "Print Culture and the Modern World", vid: "3i8y8Iq_IUk", p1: "Print technology originated in China, Japan, and Korea.", p2: "Gutenberg invented modern printing press in Germany (1448).", p3: "Print enabled public debates and spread nationalist ideas in India." },
+        { ch: "6", title: "Resources and Development", vid: "V6mJ0S-vPQA", p1: "Resources classified by origin, exhaustibility, ownership, and status.", p2: "Resource planning essential for sustainable development.", p3: "Major soil types in India: Alluvial, Black, Red & Yellow, Laterite, Arid." },
+        { ch: "7", title: "Forest and Wildlife Resources", vid: "Y62fE3T-Iu0", p1: "Biodiversity depletion caused by habitat loss and poaching.", p2: "Reserved, Protected, and Unclassed forests classification.", p3: "Community conservation: Chipko Movement and Joint Forest Management (JFM)." },
+        { ch: "8", title: "Water Resources", vid: "m4yKq0Wb2k0", p1: "Water scarcity caused by over-exploitation and pollution.", p2: "Multi-purpose river dams generate power, control floods, and irrigate.", p3: "Traditional rainwater harvesting: Rooftop harvesting, Johads, and Guls/Kuls." },
+        { ch: "9", title: "Agriculture", vid: "S1W948O9P6E", p1: "Farming types: Primitive subsistence, Intensive subsistence, Commercial.", p2: "Cropping patterns: Rice/Maize (Kharif), Wheat/Mustard (Rabi), Fruits/Vegetables (Zaid).", p3: "Institutional reforms: Bhoodan-Gramdan movement and Green Revolution." },
+        { ch: "10", title: "Minerals and Energy Resources", vid: "uH7cE_6t028", p1: "Metallic minerals (Ferrous & Non-ferrous) vs Non-metallic minerals.", p2: "Conventional energy: Coal, Petroleum, Natural Gas.", p3: "Non-conventional energy: Solar, Wind, Nuclear, Tidal, and Biogas." },
+        { ch: "11", title: "Manufacturing Industries", vid: "f4X0v6O6L-g", p1: "Manufacturing sector forms the backbone of economic development.", p2: "Agro-based (Cotton, Sugar) vs Mineral-based (Iron & Steel) industries.", p3: "Industrial pollution control and environmental degradation prevention." },
+        { ch: "12", title: "Lifelines of National Economy", vid: "kGq6vM3q52k", p1: "Transport networks: Roadways, Railways, Pipelines, Waterways, Airways.", p2: "Golden Quadrilateral super highways connect major Indian metros.", p3: "International trade and tourism act as economic engines." },
+        { ch: "13", title: "Power Sharing", vid: "J_v44H5fQ4c", p1: "Belgium accommodated ethnic diversity through equal representation.", p2: "Sri Lanka adopted Majoritarianism leading to Civil War.", p3: "Horizontal (Legislature, Executive, Judiciary) vs Vertical power sharing." },
+        { ch: "14", title: "Federalism", vid: "3G9T3zOIs-8", p1: "Power division between Central and State governments.", p2: "Union List, State List, and Concurrent List divide legislative powers.", p3: "Decentralization in 1992 created Panchayati Raj and Municipalities." },
+        { ch: "15", title: "Gender, Religion and Caste", vid: "f3J_eL2eW6c", p1: "Sexual division of labor and feminist movements.", p2: "Secularism ensures no official state religion in India.", p3: "Caste system impacts politics through voting blocs and reservation." },
+        { ch: "16", title: "Political Parties", vid: "20S1L3U8f_M", p1: "Functions: Contest elections, formulate policies, form government.", p2: "National parties vs State/Regional parties criteria.", p3: "Reforms needed: Anti-defection law, transparency, inner-party democracy." },
+        { ch: "17", title: "Outcomes of Democracy", vid: "08d_aW6d6mQ", p1: "Democracy produces accountable, responsive, and legitimate government.", p2: "Promotes equality among citizens and enhances individual dignity.", p3: "Better at accommodating social diversity than authoritarian regimes." },
+        { ch: "18", title: "Development", vid: "3i8y8Iq_IUk", p1: "Different people have different, sometimes conflicting, development goals.", p2: "Per Capita Income used by World Bank for country comparisons.", p3: "Human Development Index (HDI) considers Income, Health, and Education." },
+        { ch: "19", title: "Sectors of the Indian Economy", vid: "V6mJ0S-vPQA", p1: "Primary (Agriculture), Secondary (Manufacturing), Tertiary (Services).", p2: "Organized vs Unorganized sectors worker protection.", p3: "Public sector (Government owned) vs Private sector (Individual owned)." },
+        { ch: "20", title: "Money and Credit", vid: "Y62fE3T-Iu0", p1: "Money eliminates double coincidence of wants inherent in barter.", p2: "Formal credit (Banks, Cooperatives) monitored by RBI vs Informal credit.", p3: "Self-Help Groups (SHGs) empower rural poor through micro-loans." }
+      ],
+
+      english: [
+        { ch: "1", title: "A Letter to God", vid: "3G9T3zOIs-8", p1: "Lencho's crops destroyed by destructive hailstorm.", p2: "Writes letter to God asking for 100 pesos due to firm faith.", p3: "Postmaster sends 70 pesos; Lencho calls staff 'bunch of crooks'." },
+        { ch: "2", title: "Nelson Mandela: Long Walk to Freedom", vid: "f3J_eL2eW6c", p1: "Inauguration of South Africa's first democratic non-racial government.", p2: "Mandela reflects on ending decades of Apartheid regime.", p3: "True freedom requires courage and respecting freedom of others." },
+        { ch: "3", title: "Two Stories about Flying", vid: "20S1L3U8f_M", p1: "Part 1: Young seagull overcomes fear of flying with mother's help.", p2: "Part 2: Pilot guided through storm by mysterious black airplane.", p3: "Themes of courage, self-belief, and mysterious assistance." },
+        { ch: "4", title: "From the Diary of Anne Frank", vid: "08d_aW6d6mQ", p1: "Anne Frank receives diary named 'Kitty' on 13th birthday.", p2: "Describes hiding in secret annex in Amsterdam during Nazi occupation.", p3: "Humorous essay on chatterboxes assigned by teacher Mr. Keesing." },
+        { ch: "5", title: "Glimpses of India", vid: "3i8y8Iq_IUk", p1: "A Baker from Goa: Traditional Portuguese bread baker 'Pader'.", p2: "Coorg: Land of coffee plantations, rainforests, and brave warriors.", p3: "Tea from Assam: History and legends behind tea discovery." },
+        { ch: "6", title: "Mijbil the Otter", vid: "V6mJ0S-vPQA", p1: "Gavin Maxwell keeps otter named Mijbil as pet in London.", p2: "Mijbil loves playing with water and marbles.", p3: "Humorous journey traveling with otter on aircraft." },
+        { ch: "7", title: "Madam Rides the Bus", vid: "Y62fE3T-Iu0", p1: "8-year-old Valli saves money to take bus ride to town.", p2: "Enjoys scenery and watching young cow running in front of bus.", p3: "Sees dead cow on return journey, experiencing life and death reality." },
+        { ch: "8", title: "The Sermon at Benares", vid: "m4yKq0Wb2k0", p1: "Kisa Gotami grieves over dead son, seeks medicine from Buddha.", p2: "Buddha asks for mustard seeds from house where no one has died.", p3: "Realizes death is inevitable common fate of all mortals." },
+        { ch: "9", title: "The Proposal", vid: "S1W948O9P6E", p1: "Lomov comes to Chubukov's house to propose to Natalya.", p2: "Arguments break out over ownership of Oxen Meadows.", p3: "Second argument over hunting dogs, but proposal succeeds eventually." },
+        { ch: "10", title: "Dust of Snow (Poem)", vid: "uH7cE_6t028", p1: "Crow shakes down dust of snow from hemlock tree onto poet.", p2: "Small natural event changes poet's sad mood completely.", p3: "Nature possesses power to heal and uplift human spirit." },
+        { ch: "11", title: "Fire and Ice (Poem)", vid: "f4X0v6O6L-g", p1: "Fire represents human desire, passion, and greed.", p2: "Ice represents hatred, coldness, and insensitivity.", p3: "Both emotions equally capable of destroying world." },
+        { ch: "12", title: "A Tiger in the Zoo (Poem)", vid: "kGq6vM3q52k", p1: "Contrasts tiger locked in concrete cage with tiger in wild jungle.", p2: "Caged tiger stalks silently in rage, ignoring visitors.", p3: "Wild tiger belongs in natural habitat lurking near water holes." },
+        { ch: "13", title: "How to Tell Wild Animals (Poem)", vid: "J_v44H5fQ4c", p1: "Humorous guide identifying wild beasts by dangerous traits.", p2: "Asian Lion roars, Leopard has spots, Bear hugs tightly.", p3: "Crocodile sheds tears, Chameleon disappears." },
+        { ch: "14", title: "The Ball Poem", vid: "3G9T3zOIs-8", p1: "Boy loses ball in harbour water, feeling deep shock.", p2: "Poet decides not to offer money for another ball.", p3: "Boy learns epistemology of loss in material world." },
+        { ch: "15", title: "Amanda! (Poem)", vid: "f3J_eL2eW6c", p1: "Amanda nagged constantly by mother for posture and habits.", p2: "Escapes into imagination as mermaid, orphan, and Rapunzel.", p3: "Highlights desire for freedom from adult control." },
+        { ch: "16", title: "The Trees (Poem)", vid: "20S1L3U8f_M", p1: "Trees breaking out of house confinement into natural forest.", p2: "Roots work all night to free themselves from porch cracks.", p3: "Symbolizes nature reclaiming space and women's liberation." },
+        { ch: "17", title: "Fog (Poem)", vid: "08d_aW6d6mQ", p1: "Fog arrives silently on little cat feet.", p2: "Sits looking over harbour and city on silent haunches.", p3: "Moves on quietly without warning." },
+        { ch: "18", title: "The Tale of Custard the Dragon (Poem)", vid: "3i8y8Iq_IUk", p1: "Belinda lives with pets who boast of bravery.", p2: "Custard dragon called cowardly for wanting safe cage.", p3: "Pirate attacks; Custard devours pirate while brave pets flee." },
+        { ch: "19", title: "For Anne Gregory (Poem)", vid: "V6mJ0S-vPQA", p1: "Men love Anne Gregory for beautiful yellow hair.", p2: "Anne wants to be loved for inner self, not physical appearance.", p3: "Only God loves humans purely for themselves." }
+      ],
+
+      hindi: [
+        { ch: "1", title: "नेताजी का चश्मा", vid: "3G9T3zOIs-8", p1: "हालदार साहब हर 15वें दिन कस्बे से गुजरते थे।", p2: "संगमरमर की नेताजी मूर्ति पर चश्मेवाला 'कैप्टन' रोज नया चश्मा लगाता था।", p3: "कैप्टन की मृत्यु के बाद सरकंडे का चश्मा देखकर हालदार साहब भावुक हुए।" },
+        { ch: "2", title: "बालगोबिन भगत", vid: "f3J_eL2eW6c", p1: "बालगोबिन भगत कबीरपंथी साधु थे, जो गृहस्थ जीवन जीते थे।", p2: "बेटे की मृत्यु पर रोने के बजाय उत्सव मनाने को कहा।", p3: "पुतोहू से बेटे की चिता को अग्नि दिलवाकर सामाजिक कुरीतियों का विरोध किया।" },
+        { ch: "3", title: "लखनवी अंदाज", vid: "20S1L3U8f_M", p1: "लेखक ट्रेन के सेकंड क्लास डिब्बे में नवाब साहब से मिले।", p2: "नवाब साहब ने खीरा काटकर, सूंघकर खिड़की से बाहर फेंक दिया।", p3: "पतनशील सामंती वर्ग की दिखावटी जीवनशैली पर व्यंग्य।" },
+        { ch: "4", title: "मानवीय करुणा की दिव्य चमक", vid: "08d_aW6d6mQ", p1: "फादर कामिल बुल्के भारत को अपनी कर्मभूमि मानने वाले बेल्जियम साधु थे।", p2: "हिंदी भाषा के विकास और 'रामकथा' शोध में अभूतपूर्व योगदान।", p3: "उनकी करुणा और स्नेह हर परिचित के प्रति अटूट था।" },
+        { ch: "5", title: "एक कहानी यह भी", vid: "3i8y8Iq_IUk", p1: "मन्नू भंडारी की आत्मकथा, जिसमें पिता के प्रभाव का वर्णन है।", p2: "शीला अग्रवाल (शिक्षिका) ने देश के स्वतंत्रता आंदोलन से जोड़ा।", p3: "एक साधारण लड़की के असाधारण लेखिका बनने की यात्रा।" },
+        { ch: "6", title: "नौबतखाने में इबादत", vid: "V6mJ0S-vPQA", p1: "शहनाई वादक उस्ताद बिस्मिल्ला खां का जीवन परिचय।", p2: "काशी की गंगा-जमुनी तहज़ीब और संगीत साधना का प्रतीक।", p3: "भारत रत्न मिलने पर भी सादगी और खुदा से सच्चा सुर मांगने की प्रार्थना।" },
+        { ch: "7", title: "संस्कृति", vid: "Y62fE3T-Iu0", p1: "संस्कृति और सभ्यता में अंतर की व्याख्या।", p2: "मानव कल्याण के लिए की गई नई खोज 'संस्कृति' है।", p3: "जब संस्कृति का उपयोग विनाश के लिए होता है, तो वह 'असंस्कृति' बन जाती है।" },
+        { ch: "8", title: "पद (सूरदास)", vid: "m4yKq0Wb2k0", p1: "गोपियों द्वारा उद्धव के योग संदेश का उपहास।", p2: "उद्धव को 'बड़भागी' कहकर व्यंग्य कसा कि वे कृष्ण प्रेम से अछूते रहे।", p3: "गोपियों का कृष्ण के प्रति अनन्य और निष्ठावान प्रेम।" },
+        { ch: "9", title: "राम-लक्ष्मण-परशुराम संवाद", vid: "S1W948O9P6E", p1: "शिवधनुष टूटने पर परशुराम का क्रोधित होना।", p2: "लक्ष्मण का परशुराम के फरसे और डींगों पर व्यंग्यात्मक प्रहार।", p3: "वीर योद्धा रणभूमि में अपनी वीरता दिखाते हैं, बातें नहीं बनाते।" },
+        { ch: "10", title: "आत्मकथ्य (जयशंकर प्रसाद)", vid: "uH7cE_6t028", p1: "कवि का आत्मकथा लिखने से इंकार करना।", p2: "जीवन में केवल असफलताएं, दुख और छलावा मिलने की बात।", p3: "अपनी भोली सरलता का हंसी न उड़ाने का निवेदन।" },
+        { ch: "11", title: "उत्साह और अट नहीं रही है (सूर्यकांत त्रिपाठी 'निराला')", vid: "f4X0v6O6L-g", p1: "उत्साह: बादलों को क्रांति और नए निर्माण का प्रतीक माना गया है।", p2: "अट नहीं रही है: फागुन माह की प्राकृतिक सुंदरता का वर्णन।", p3: "प्रकृति का सौंदर्य समाहित नहीं हो पा रहा है।" },
+        { ch: "12", title: "यह दंतुरित मुस्कान और फसल (नागार्जुन)", vid: "kGq6vM3q52k", p1: "दंतुरित मुस्कान: छोटे बच्चे की मुस्कान कठोर हृदय को भी पिघला देती है।", p2: "फसल: नदियों के पानी, मिट्टी के गुण और किसानों के श्रम का मिला-जुला रूप।", p3: "प्रकृति और मनुष्य के सह-अस्तित्व की सुंदर अभिव्यक्ति।" },
+        { ch: "13", title: "संगतकार (मंगलेश डबराल)", vid: "J_v44H5fQ4c", p1: "मुख्य गायक के साथ गाने वाले सहायक गायक (संगतकार) का महत्व।", p2: "मुख्य गायक की आवाज बिखरने पर संगतकार उसे संभालता है।", p3: "संगतकार की विफलता नहीं, बल्कि उसकी मनुष्यता है।" },
+        { ch: "14", title: "माता का आंचल (शिवपूजन सहाय)", vid: "3G9T3zOIs-8", p1: "देहाती बचपन, खेल-कूद और पिता के साथ आत्मीयता।", p2: "सांप से डरकर बालक का पिता को छोड़ मां की गोद में शरण लेना।", p3: "मां के आंचल में मिलने वाली सुरक्षा और शांति।" },
+        { ch: "15", title: "जॉर्ज पंचम की नाक (कमलेश्वर)", vid: "f3J_eL2eW6c", p1: "इंग्लैंड की महारानी एलिजाबेथ द्वितीय के भारत आगमन की तैयारियां।", p2: "जॉर्ज पंचम की मूर्ति की नाक गायब होने पर भारतीय प्रशासन की हड़बड़ाहट।", p3: "गुलामी की मानसिक ग्रंथि पर करारा व्यंग्य।" },
+        { ch: "16", title: "साना-साना हाथ जोड़ि... (मधु कांकरिया)", vid: "20S1L3U8f_M", p1: "सिक्किम की राजधानी गंतोक और हिमालय की यात्रा का वर्णन।", p2: "पहाड़ी औरतों का कठोर श्रम और प्राकृतिक सुंदरता।", p3: "प्रकृति के प्रति आभार और सौंदर्य की अनुभूति।" },
+        { ch: "17", title: "मैं क्यों लिखता हूं? (अज्ञेय)", vid: "08d_aW6d6mQ", p1: "लेखक की आंतरिक आकुलता ही उसे लिखने के लिए प्रेरित करती है।", p2: "हिरोशिमा परमाणु बम विस्फोट का प्रत्यक्ष अनुभव।", p3: "मानवीय संवेदना और लेखक की अंतश्चेतना का प्रकटीकरण।" }
+      ]
+    };
+
+    // Render Chapters with Valid YouTube iFrames
+    function renderSubjectContainers() {
+      Object.keys(chaptersData).forEach((subjectKey) => {
+        const container = document.getElementById(`${subjectKey}-container`);
+        const subjectName = subjectKey.toUpperCase();
+        
+        chaptersData[subjectKey].forEach((ch) => {
+          const cardHtml = `
+            <div class="chapter-card">
+              <div class="chapter-header">
+                <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=150&q=80" class="chapter-img" alt="${ch.title}">
+                <div class="chapter-title-box">
+                  <span>${subjectName} - CHAPTER ${ch.ch}</span>
+                  <h3>${ch.title}</h3>
+                </div>
+              </div>
+
+              <div class="video-container">
+                <iframe 
+                  src="https://www.youtube.com/embed/${ch.vid}?rel=0&modestbranding=1" 
+                  title="${ch.title}" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen>
+                </iframe>
+              </div>
+
+              <div class="download-bar">
+                <span style="font-size: 13px; font-weight: 600;">Chapter ${ch.ch} PDF Notes (3 Pages)</span>
+                <button onclick="downloadChapterPDF('${subjectName}', '${ch.ch}', '${ch.title}', '${ch.p1}', '${ch.p2}', '${ch.p3}')" class="download-btn">1-Click PDF Download</button>
+              </div>
+
+              <div class="summary-sheet">
+                <h4>📄 1-Page Chapter Summary Sheet</h4>
+                <p><strong>1. Key Concept:</strong> ${ch.p1}</p>
+                <p><strong>2. Core Theory:</strong> ${ch.p2}</p>
+                <p><strong>3. Important Conclusion:</strong> ${ch.p3}</p>
+              </div>
+            </div>
+          `;
+          container.innerHTML += cardHtml;
+        });
+      });
+    }
+
+    // Filter Subject View
     function filterSubject(subjectClass) {
       const buttons = document.querySelectorAll('.subject-btn');
       buttons.forEach(btn => btn.classList.remove('active'));
@@ -649,181 +530,58 @@
       });
     }
 
-    // PDF Text Arrays for Dynamic 3-Page Chapter Downloads
-    const scienceCh1PDF = [
-      "PAGE 1: CHEMICAL REACTIONS AND EQUATIONS",
-      "--------------------------------------------------",
-      "1. Definition: Transformation of starting reactants into new chemical substances with distinct properties.",
-      "2. Observations: Temperature change, evolution of gas, color shift, or precipitate formation.",
-      "3. Law of Conservation of Mass: Atoms on LHS = Atoms on RHS. Mass remains constant.",
-      "",
-      "PAGE 2: TYPES OF CHEMICAL REACTIONS",
-      "--------------------------------------------------",
-      "1. Combination: 2Mg + O2 -> 2MgO",
-      "2. Decomposition: Thermal (FeSO4), Electrolytic (H2O), Photolytic (AgCl)",
-      "3. Displacement: Fe + CuSO4 -> FeSO4 + Cu (Iron displaces copper)",
-      "4. Double Displacement: Na2SO4 + BaCl2 -> BaSO4 + 2NaCl",
-      "5. Redox: Simultaneous Oxidation (gain O2/loss H2) & Reduction (loss O2/gain H2).",
-      "",
-      "PAGE 3: CORROSION AND RANCIDITY",
-      "--------------------------------------------------",
-      "1. Corrosion: Damage to metal by air/moisture. Example: Rusting of Iron (Fe2O3.xH2O).",
-      "2. Rancidity: Oxidation of fats and oils causing bad odor. Prevented using Nitrogen flushing."
-    ];
-
-    const scienceCh2PDF = [
-      "PAGE 1: ACIDS, BASES AND SALTS",
-      "--------------------------------------------------",
-      "1. Acids: Sour taste, release H+ ions in water, turn blue litmus red. pH < 7.",
-      "2. Bases: Bitter taste, soapy feel, release OH- ions in water, turn red litmus blue. pH > 7.",
-      "3. Neutralization: Acid + Base -> Salt + Water.",
-      "",
-      "PAGE 2: pH IN EVERYDAY LIFE",
-      "--------------------------------------------------",
-      "1. Human Body: Functions in pH range 7.0 - 7.8.",
-      "2. Acid Rain: Rainfall with pH < 5.6.",
-      "3. Tooth Decay: Starts when mouth pH drops below 5.5.",
-      "",
-      "PAGE 3: IMPORTANT CHEMICAL COMPOUNDS",
-      "--------------------------------------------------",
-      "1. Bleaching Powder: CaOCl2 (Disinfectant)",
-      "2. Baking Soda: NaHCO3 (Antacid, baking)",
-      "3. Washing Soda: Na2CO3.10H2O (Glass & soap industry)",
-      "4. Plaster of Paris: CaSO4.1/2H2O (Setting broken bones)"
-    ];
-
-    const mathsCh1PDF = [
-      "PAGE 1: REAL NUMBERS",
-      "--------------------------------------------------",
-      "1. Fundamental Theorem of Arithmetic: Every composite number can be factored uniquely as prime powers.",
-      "2. HCF and LCM Relation: HCF(a,b) * LCM(a,b) = a * b.",
-      "",
-      "PAGE 2: IRRATIONALITY PROOFS",
-      "--------------------------------------------------",
-      "1. Theorem: Let p be prime. If p divides a^2, then p divides a.",
-      "2. Proof of sqrt(2): Contradiction method assuming sqrt(2) = a/b in lowest terms.",
-      "",
-      "PAGE 3: SOLVED EXAMPLES",
-      "--------------------------------------------------",
-      "1. Find HCF and LCM of 6 and 20: 6 = 2*3, 20 = 2^2*5. HCF = 2, LCM = 60.",
-      "2. Verification: 2 * 60 = 120 = 6 * 20."
-    ];
-
-    const mathsCh4PDF = [
-      "PAGE 1: QUADRATIC EQUATIONS",
-      "--------------------------------------------------",
-      "1. Standard Form: ax^2 + bx + c = 0 (a != 0)",
-      "2. Quadratic Formula: x = (-b +/- sqrt(b^2 - 4ac)) / (2a)",
-      "",
-      "PAGE 2: DISCRIMINANT AND NATURE OF ROOTS",
-      "--------------------------------------------------",
-      "1. Discriminant D = b^2 - 4ac",
-      "2. D > 0: Two distinct real roots.",
-      "3. D = 0: Two equal real roots.",
-      "4. D < 0: No real roots.",
-      "",
-      "PAGE 3: APPLICATIONS AND WORD PROBLEMS",
-      "--------------------------------------------------",
-      "1. Speed-Distance-Time problems.",
-      "2. Area and perimeter geometry dimensions."
-    ];
-
-    const sstCh2PDF = [
-      "PAGE 1: NATIONALISM IN INDIA - EARLY PHASE",
-      "--------------------------------------------------",
-      "1. Impact of WWI: High taxes, forced recruitment, inflation.",
-      "2. Satyagraha: Truth & non-violence. Champaran (1917), Kheda (1917), Ahmedabad (1918).",
-      "3. Rowlatt Act (1919) & Jallianwala Bagh Massacre (April 13, 1919).",
-      "",
-      "PAGE 2: NON-COOPERATION MOVEMENT",
-      "--------------------------------------------------",
-      "1. Khilafat Movement: Led by Ali brothers.",
-      "2. Non-Cooperation (1921): Boycott of foreign goods and institutions.",
-      "3. Chauri Chaura (1922): Violence led Gandhi to suspend movement.",
-      "",
-      "PAGE 3: CIVIL DISOBEDIENCE MOVEMENT",
-      "--------------------------------------------------",
-      "1. Salt March: Sabarmati to Dandi (240 miles). Broke salt law on April 6, 1930.",
-      "2. Gandhi-Irwin Pact (1931): Agreement to join 2nd Round Table Conference."
-    ];
-
-    const englishCh1PDF = [
-      "PAGE 1: A LETTER TO GOD - PLOT",
-      "--------------------------------------------------",
-      "1. Lencho's Crop: Devastated by a severe hailstorm.",
-      "2. Unshakable Faith: Writes a letter to God for 100 pesos.",
-      "",
-      "PAGE 2: POSTMASTER'S HELP",
-      "--------------------------------------------------",
-      "1. Act of Charity: Postmaster collects 70 pesos to preserve Lencho's faith.",
-      "2. Envelope: Sent signed as 'God'.",
-      "",
-      "PAGE 3: IRONY & GRAMMAR",
-      "--------------------------------------------------",
-      "1. Irony: Lencho suspects post office staff of stealing 30 pesos, calling them 'crooks'.",
-      "2. Letter Writing Rules & Format."
-    ];
-
-    const hindiCh1PDF = [
-      "PAGE 1: नेताजी का चश्मा - मुख्य सार",
-      "--------------------------------------------------",
-      "1. कस्बे की मूर्ति: संगमरमर की मूर्ति पर चश्मा गायब था।",
-      "2. कैप्टन की देशभक्ति: रोज नया असली चश्मा लगाना।",
-      "",
-      "PAGE 2: हालदार साहब का दृष्टिकोण",
-      "--------------------------------------------------",
-      "1. कैप्टन के प्रति सम्मान और देशभक्ति की भावना।",
-      "",
-      "PAGE 3: भावुक अंत व व्याकरण",
-      "--------------------------------------------------",
-      "1. सरकंडे का चश्मा: बच्चों द्वारा निर्मित चश्मा देखकर भावुक होना।",
-      "2. समास व पदबंध व्याकरण अध्ययन।"
-    ];
-
-    // Real 1-Click PDF Download using jsPDF
-    function downloadPDF(title, linesArray) {
+    // Dynamic PDF Download Handler via jsPDF
+    function downloadChapterPDF(subject, chNum, title, p1, p2, p3) {
       const { jsPDF } = window.jspdf;
       const doc = new jsPDF();
 
       doc.setFont("Helvetica", "bold");
       doc.setFontSize(16);
-      doc.text(`Phogat Study Hub - Chapter Notes`, 15, 15);
+      doc.text(`Phogat Study Hub - Class 10 NCERT`, 15, 15);
       
       doc.setFontSize(13);
       doc.setTextColor(37, 99, 235);
-      doc.text(title, 15, 23);
+      doc.text(`${subject} Chapter ${chNum}: ${title}`, 15, 23);
+
+      doc.setFont("Helvetica", "bold");
+      doc.setFontSize(11);
+      doc.setTextColor(15, 23, 42);
+      doc.text("PAGE 1: CORE CONCEPTS & DEFINITIONS", 15, 35);
 
       doc.setFont("Helvetica", "normal");
       doc.setFontSize(10);
-      doc.setTextColor(30, 41, 59);
+      doc.setTextColor(51, 65, 85);
+      doc.text(doc.splitTextToSize(`1. Concept Overview: ${p1}`, 180), 15, 45);
 
-      let yPos = 32;
-      linesArray.forEach((line) => {
-        if (yPos > 280) {
-          doc.addPage();
-          yPos = 15;
-        }
-        
-        if (line.startsWith("PAGE ")) {
-          doc.setFont("Helvetica", "bold");
-          doc.setTextColor(15, 23, 42);
-        } else {
-          doc.setFont("Helvetica", "normal");
-          doc.setTextColor(51, 65, 85);
-        }
+      doc.addPage();
+      doc.setFont("Helvetica", "bold");
+      doc.setFontSize(11);
+      doc.setTextColor(15, 23, 42);
+      doc.text("PAGE 2: DETAILED DERIVATIONS & FORMULAS", 15, 20);
 
-        doc.text(line, 15, yPos);
-        yPos += 6;
-      });
+      doc.setFont("Helvetica", "normal");
+      doc.setFontSize(10);
+      doc.setTextColor(51, 65, 85);
+      doc.text(doc.splitTextToSize(`2. Theoretical Framework: ${p2}`, 180), 15, 30);
 
-      doc.save(`${title.replace(/\s+/g, '_')}_Notes.pdf`);
+      doc.addPage();
+      doc.setFont("Helvetica", "bold");
+      doc.setFontSize(11);
+      doc.setTextColor(15, 23, 42);
+      doc.text("PAGE 3: EXAM REVISION SUMMARY", 15, 20);
+
+      doc.setFont("Helvetica", "normal");
+      doc.setFontSize(10);
+      doc.setTextColor(51, 65, 85);
+      doc.text(doc.splitTextToSize(`3. High-Yield Takeaway: ${p3}`, 180), 15, 30);
+
+      doc.save(`${subject}_Ch${chNum}_Notes.pdf`);
     }
 
-    // Submit Payment Screenshot Handler
     function submitPaymentScreenshot() {
       const fileInput = document.getElementById('payment-shot');
       if (fileInput.files.length === 0) {
-        alert('Please select a payment screenshot image first before submitting.');
+        alert('Please select your payment screenshot before submitting.');
         return;
       }
       
@@ -834,6 +592,10 @@
     function closeModal() {
       document.getElementById('thankyou-modal').style.display = 'none';
     }
+
+    window.onload = function() {
+      renderSubjectContainers();
+    };
   </script>
 
 </body>
