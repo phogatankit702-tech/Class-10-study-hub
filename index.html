@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Class 10 NCERT Master Study Hub - 15 Point Summaries</title>
+  <title>Class 10 NCERT Master Revision Hub</title>
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
@@ -16,9 +16,10 @@
       --primary: #0f172a;
       --accent: #2563eb;
       --success: #16a34a;
-      --bg: #f1f5f9;
+      --bg: #f8fafc;
       --card-bg: #ffffff;
       --text: #1e293b;
+      --border: #cbd5e1;
     }
 
     * { box-sizing: border-box; }
@@ -36,86 +37,87 @@
     header {
       background: var(--primary);
       color: white;
-      padding: 16px;
+      padding: 18px 24px;
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    header h1 { margin: 0; font-size: 20px; font-weight: 700; }
+    header h1 { margin: 0; font-size: 22px; font-weight: 800; letter-spacing: -0.5px; }
     .nav-badge {
       background: var(--accent);
       color: white;
-      padding: 4px 10px;
+      padding: 6px 14px;
       border-radius: 20px;
-      font-size: 12px;
-      font-weight: bold;
+      font-size: 13px;
+      font-weight: 700;
     }
 
     .subject-bar {
       display: flex;
       overflow-x: auto;
-      background: white;
-      padding: 10px 16px;
-      gap: 10px;
-      border-bottom: 1px solid #e2e8f0;
-      scroll-behavior: smooth;
+      background: #ffffff;
+      padding: 12px 20px;
+      gap: 12px;
+      border-bottom: 1px solid var(--border);
+      box-shadow: inset 0 -2px 4px rgba(0,0,0,0.02);
     }
-    .subject-bar::-webkit-scrollbar { display: none; }
     .subject-btn {
       flex: 0 0 auto;
-      padding: 8px 16px;
-      border: 1px solid #cbd5e1;
-      border-radius: 20px;
+      padding: 10px 20px;
+      border: 1.5px solid var(--border);
+      border-radius: 24px;
       background: white;
       color: var(--text);
-      font-weight: 600;
+      font-weight: 700;
       font-size: 14px;
       cursor: pointer;
+      transition: all 0.2s ease;
     }
     .subject-btn.active {
       background: var(--accent);
       color: white;
       border-color: var(--accent);
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
     }
 
     .container {
-      padding: 16px;
-      max-width: 900px;
+      padding: 20px;
+      max-width: 1000px;
       margin: 0 auto;
       width: 100%;
     }
 
     .chapter-card {
       background: var(--card-bg);
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 24px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+      border: 1px solid var(--border);
     }
     .chapter-header {
       display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 16px;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 18px;
     }
-    .chapter-title-box h3 { margin: 0; font-size: 18px; color: var(--primary); }
-    .chapter-title-box span { font-size: 12px; color: #64748b; font-weight: 600; }
+    .chapter-title-box h3 { margin: 4px 0 0 0; font-size: 20px; color: var(--primary); font-weight: 700; }
+    .chapter-title-box span { font-size: 12px; color: #64748b; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
 
     .educator-tag {
       background: #fef3c7;
-      color: #92400e;
+      color: #b45309;
       font-size: 12px;
-      font-weight: bold;
-      padding: 3px 10px;
-      border-radius: 4px;
-      display: inline-block;
-      margin-top: 4px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
       border: 1px solid #fde68a;
+      display: inline-block;
+      margin-top: 6px;
     }
 
     .video-container {
@@ -123,9 +125,10 @@
       padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
-      border-radius: 10px;
+      border-radius: 12px;
       background: #000;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     .video-container iframe {
       position: absolute;
@@ -138,89 +141,101 @@
       align-items: center;
       background: #eff6ff;
       border: 1px solid #bfdbfe;
-      padding: 8px 12px;
-      border-radius: 6px;
-      margin-bottom: 16px;
-      font-size: 12px;
+      padding: 10px 16px;
+      border-radius: 8px;
+      margin-bottom: 18px;
+      font-size: 13px;
       color: #1e40af;
+      font-weight: 600;
     }
     .video-link-btn {
       background: #ef4444;
       color: white;
       text-decoration: none;
-      padding: 6px 12px;
-      border-radius: 4px;
-      font-weight: bold;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-weight: 700;
       font-size: 12px;
+      transition: background 0.2s;
     }
+    .video-link-btn:hover { background: #dc2626; }
 
     .download-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #f8fafc;
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px dashed #cbd5e1;
-      margin-bottom: 16px;
+      background: #f1f5f9;
+      padding: 14px 18px;
+      border-radius: 10px;
+      border: 1px dashed var(--border);
+      margin-bottom: 18px;
     }
     .download-btn {
       background: var(--primary);
       color: white;
-      padding: 8px 14px;
-      border-radius: 6px;
+      padding: 10px 18px;
+      border-radius: 8px;
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
       border: none;
       cursor: pointer;
+      transition: background 0.2s;
     }
+    .download-btn:hover { background: #1e293b; }
 
     .summary-sheet {
-      background: #fafafa;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 16px;
-      font-size: 13px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      font-size: 14px;
       line-height: 1.7;
       color: #334155;
     }
     .summary-sheet h4 {
-      margin: 0 0 12px 0;
+      margin: 0 0 14px 0;
       color: var(--accent);
-      font-size: 15px;
+      font-size: 16px;
       border-bottom: 2px solid #e2e8f0;
-      padding-bottom: 4px;
+      padding-bottom: 6px;
+      font-weight: 700;
     }
-    .line-item {
-      margin-bottom: 6px;
-      padding-left: 4px;
+    .summary-list {
+      padding-left: 20px;
+      margin: 0;
+    }
+    .summary-list li {
+      margin-bottom: 10px;
+      font-weight: 500;
     }
 
     .buy-banner {
-      background: linear-gradient(135deg, #1e293b, #0f172a);
+      background: linear-gradient(135deg, #0f172a, #1e293b);
       color: white;
       border-radius: 16px;
-      padding: 20px;
+      padding: 28px;
       text-align: center;
-      margin-top: 32px;
-      margin-bottom: 24px;
+      margin-top: 36px;
+      margin-bottom: 28px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
     .payment-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 12px;
-      background: rgba(255,255,255,0.05);
-      padding: 16px;
-      border-radius: 12px;
+      gap: 16px;
+      background: rgba(255,255,255,0.06);
+      padding: 20px;
+      border-radius: 14px;
+      margin-top: 16px;
     }
-    .qr-box img { width: 180px; height: 180px; border-radius: 8px; background: white; padding: 6px; }
+    .qr-box img { width: 190px; height: 190px; border-radius: 10px; background: white; padding: 8px; }
     .btn {
       background: var(--success);
       color: white;
       border: none;
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-weight: bold;
+      padding: 14px 22px;
+      border-radius: 10px;
+      font-weight: 700;
       font-size: 15px;
       cursor: pointer;
       text-decoration: none;
@@ -228,14 +243,14 @@
       width: 100%;
     }
     .btn-secondary { background: var(--accent); }
-    .file-input { margin: 10px 0; color: white; font-size: 12px; }
+    .file-input { margin: 12px 0; color: white; font-size: 13px; }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Class 10 NCERT Master Study Hub</h1>
-    <span class="nav-badge">15 Important Lines / Chapter</span>
+    <h1>Phogat Study Hub</h1>
+    <span class="nav-badge">Class 10 NCERT All Subjects</span>
   </header>
 
   <div class="subject-bar">
@@ -243,7 +258,7 @@
     <button class="subject-btn" onclick="filterSubject('maths')">Mathematics (14 Ch)</button>
     <button class="subject-btn" onclick="filterSubject('sst')">Social Science (20 Ch)</button>
     <button class="subject-btn" onclick="filterSubject('english')">English (19 Ch)</button>
-    <button class="subject-btn" onclick="filterSubject('hindi')">Hindi - हिंदी (17 Ch)</button>
+    <button class="subject-btn" onclick="filterSubject('hindi')">Hindi (17 Ch)</button>
   </div>
 
   <div class="container">
@@ -254,21 +269,21 @@
     <div class="subject-section hindi" id="hindi-container" style="display:none;"></div>
 
     <div class="buy-banner">
-      <h2 style="color: #f59e0b; margin-top:0;">🔥 Unlock Complete High-Yield Master Question Bank</h2>
-      <p>Scan QR code below, pay ₹29, and upload payment screenshot to instantly unlock complete premium board notes!</p>
+      <h2 style="color: #f59e0b; margin-top:0; font-size: 24px;">🔥 Unlock Complete High-Yield Printable PDFs</h2>
+      <p style="font-size: 15px; opacity: 0.9;">Scan the QR code below, pay ₹29, and upload your screenshot to unlock offline PDF copies of all subjects!</p>
       
       <div class="payment-grid">
         <div class="qr-box">
           <img src="1000044930.jpg" alt="Payment QR Code">
         </div>
         <div>
-          <p style="margin: 4px 0; font-size: 13px;">UPI ID: <strong>himanshu733@fam</strong></p>
-          <a href="upi://pay?pa=himanshu733@fam&pn=PhogatStudyHub&am=29&cu=INR&tn=Class10FullNotes" class="btn" style="margin-bottom: 8px;">
+          <p style="margin: 4px 0; font-size: 14px;">UPI ID: <strong>himanshu733@fam</strong></p>
+          <a href="upi://pay?pa=himanshu733@fam&pn=PhogatStudyHub&am=29&cu=INR&tn=Class10FullNotes" class="btn" style="margin-bottom: 10px;">
             Pay ₹29 via UPI / GPay
           </a>
           <input type="file" id="payment-shot" class="file-input" accept="image/*">
           <button class="btn btn-secondary" onclick="submitPaymentScreenshot()">
-            Submit Screenshot & Unlock
+            Submit Screenshot & Access Notes
           </button>
         </div>
       </div>
@@ -276,604 +291,1857 @@
   </div>
 
   <script>
-    // Comprehensive Data with 15 Detailed Lines per Chapter in exact native languages
+    // Chapter Data with 15 Detailed Important Lines Each
     const chaptersData = {
       science: {
         educator: "Prashant Kirad",
-        searchQuery: "Prashant Kirad Class 10 Science",
         items: [
           {
             title: "Chemical Reactions and Equations",
-            vId: "L_A2YxZ2L08",
+            videoId: "L_A2YxZ2L08",
             lines: [
-              "1. A chemical reaction involves the breaking and making of chemical bonds to produce new substances with entirely different properties.",
-              "2. Key indicators of a chemical reaction include color change, temperature variation, gas evolution, or precipitate formation.",
-              "3. Word equations are simplified using chemical formulas to represent reactants on the left and products on the right.",
-              "4. Law of Conservation of Mass dictates that mass cannot be created or destroyed, requiring balanced chemical equations.",
-              "5. Balancing equations requires equalizing the number of atoms of each element on both sides of the arrow.",
-              "6. Combination reactions occur when two or more reactants combine to form a single compound (e.g., CaO + H2O -> Ca(OH)2).",
-              "7. Decomposition reactions involve breaking down a single reactant into multiple products using thermal, electrical, or light energy.",
-              "8. Thermal decomposition uses heat, such as splitting Calcium Carbonate into Calcium Oxide and Carbon Dioxide.",
-              "9. Electrolytic decomposition uses electricity, such as breaking water into Hydrogen and Oxygen gases in a 2:1 ratio.",
-              "10. Photolytic decomposition relies on light, such as Silver Chloride breaking into Silver and Chlorine gas.",
-              "11. Displacement reactions involve a more reactive element displacing a less reactive element from its solution.",
-              "12. Double displacement reactions involve a mutual exchange of ions between two ionic compounds, often forming a precipitate.",
-              "13. Oxidation is defined as the gain of oxygen or loss of hydrogen, whereas Reduction is the loss of oxygen or gain of hydrogen.",
-              "14. Corrosion occurs when metals degrade due to air, moisture, or acids (e.g., rusting of iron into hydrated ferric oxide).",
-              "15. Rancidity is the atmospheric oxidation of fats and oils causing foul taste and odor, prevented using Nitrogen gas or antioxidants."
+              "A chemical reaction involves the breaking and making of bonds between atoms to form new substances.",
+              "Indicators of chemical reactions include change in state, color, temperature, or evolution of gas.",
+              "The Law of Conservation of Mass states that mass cannot be created or destroyed in a chemical reaction.",
+              "A balanced chemical equation has an equal number of atoms of each element on reactant and product sides.",
+              "Combination reaction: Two or more reactants combine to form a single product (e.g., CaO + H2O -> Ca(OH)2).",
+              "Decomposition reaction: A single reactant breaks down into simpler products using heat, light, or electricity.",
+              "Thermal decomposition requires heat energy, such as heating Ferrous Sulphate crystals.",
+              "Electrolytic decomposition uses electricity, as seen in the electrolysis of water into Hydrogen and Oxygen.",
+              "Photolytic decomposition uses light, such as Silver Chloride turning grey in sunlight.",
+              "Displacement reaction: A more reactive element displaces a less reactive element from its compound.",
+              "Double displacement reaction: An exchange of ions between reactants forms new compounds and precipitates.",
+              "Exothermic reactions release heat energy, whereas endothermic reactions absorb energy.",
+              "Oxidation is the gain of oxygen or loss of hydrogen/electrons; Reduction is the loss of oxygen or gain of hydrogen.",
+              "Redox reactions occur when oxidation and reduction take place simultaneously in a reaction.",
+              "Corrosion is the gradual degradation of metals by air/moisture; Rancidity is the oxidation of fats and oils."
             ]
           },
           {
             title: "Acids, Bases and Salts",
-            vId: "v8B_T2W6D8o",
+            videoId: "v8B_T2W6D8o",
             lines: [
-              "1. Acids taste sour, turn blue litmus paper red, and release H+ or H3O+ ions in aqueous solutions.",
-              "2. Bases taste bitter, feel soapy, turn red litmus blue, and yield OH- hydroxide ions in aqueous solutions.",
-              "3. Natural indicators include Litmus and Turmeric, while synthetic indicators include Phenolphthalein and Methyl Orange.",
-              "4. Olfactory indicators change their smell in acidic or basic solutions, such as onion extract and clove oil.",
-              "5. Acids react with metals to produce a corresponding metal salt and Hydrogen gas, tested using the pop sound test.",
-              "6. Carbonates and hydrogen carbonates react with acids to liberate Carbon Dioxide gas, which turns lime water milky.",
-              "7. Neutralization reaction occurs when an acid reacts with a base to form salt and water with heat release.",
-              "8. Non-metallic oxides are acidic in nature, while metallic oxides exhibit basic characteristics.",
-              "9. The pH scale measures Hydrogen ion concentration ranging from 0 (highly acidic) to 14 (highly basic), with 7 being neutral.",
-              "10. Human body functions optimally within a narrow pH range of 7.0 to 7.8; acid rain has a pH lower than 5.6.",
-              "11. Tooth decay begins when oral pH drops below 5.5, causing enamel dissolution by bacterial acids.",
-              "12. Bleaching Powder (CaOCl2) is produced by reacting chlorine gas with dry slaked lime, used as a disinfectant.",
-              "13. Baking Soda (NaHCO3) releases Carbon Dioxide on heating, making cakes and bread soft and spongy.",
-              "14. Washing Soda (Na2CO3.10H2O) contains 10 water molecules of crystallization and removes permanent hardness of water.",
-              "15. Plaster of Paris (CaSO4.1/2H2O) hardens into Gypsum (CaSO4.2H2O) upon mixing with water, used for setting fractured bones."
+              "Acids produce hydrogen ions [H+] in water, taste sour, and turn blue litmus paper red.",
+              "Bases produce hydroxide ions [OH-] in water, taste bitter, feel soapy, and turn red litmus blue.",
+              "Indicators like litmus (natural) and phenolphthalein (synthetic) signal acidic or basic nature.",
+              "Acids react with metals to liberate Hydrogen gas, which burns with a distinct pop sound.",
+              "Acids react with metal carbonates/bicarbonates to form salt, water, and Carbon Dioxide gas.",
+              "CO2 gas turns lime water milky due to the formation of insoluble Calcium Carbonate.",
+              "Neutralization reaction occurs when an acid and base react to produce salt and water.",
+              "The pH scale measures hydrogen ion concentration ranging from 0 (acidic) to 14 (basic).",
+              "Neutral solutions have a pH of 7; solutions with pH < 7 are acidic and pH > 7 are basic.",
+              "Tooth decay begins when the pH inside the human mouth falls below 5.5.",
+              "Bleaching powder (CaOCl2) is prepared by reacting chlorine gas with dry slaked lime.",
+              "Baking soda (NaHCO3) releases Carbon Dioxide gas on heating, causing cakes to rise.",
+              "Washing soda (Na2CO3.10H2O) is used in soap manufacturing and removing water hardness.",
+              "Plaster of Paris (CaSO4.1/2H2O) sets into hard Gypsum when mixed with water.",
+              "Water of crystallization represents the fixed number of water molecules in one salt formula unit."
             ]
           },
           {
-            title: "Metals and Non-metals",
-            vId: "YdM4vX2P2w4",
+            title: "Metals and Non-metals", videoId: "YdM4vX2P2w4",
             lines: [
-              "1. Metals are malleable, ductile, sonorous, good conductors of heat and electricity, and possess high luster.",
-              "2. Non-metals exist in solid, liquid, or gas forms and are generally poor conductors, non-malleable, and non-ductile.",
-              "3. Mercury is the only metal liquid at room temperature, while Iodine is a non-metal with metallic luster.",
-              "4. Metals react with oxygen to form basic oxides, though Aluminum and Zinc form amphoteric oxides reacting with both acids and bases.",
-              "5. Highly reactive metals like Sodium and Potassium react violently with cold water and are stored under kerosene oil.",
-              "6. Less reactive metals like Iron react only with steam to yield metal oxides and Hydrogen gas.",
-              "7. Metals placed above Hydrogen in the reactivity series displace Hydrogen gas from dilute mineral acids.",
-              "8. Aqua Regia is a fresh mixture of concentrated HCl and HNO3 in a 3:1 ratio that dissolves Gold and Platinum.",
-              "9. Ionic compounds are formed by electron transfer from metals to non-metals, having high melting points and high solubility.",
-              "10. Ionic compounds conduct electricity only in molten state or aqueous solution due to free-moving ions.",
-              "11. Metallurgy is the multi-step industrial process of extracting pure metals from naturally occurring ores.",
-              "12. Roasting heats sulfide ores strongly in the presence of excess air to convert them into metal oxides.",
-              "13. Calcination heats carbonate ores strongly in limited air or absence of air to yield metal oxides.",
-              "14. Thermite reaction uses Aluminum powder to reduce Iron Oxide, releasing immense heat used to weld railway tracks.",
-              "15. Alloys are homogeneous mixtures of a metal with other metals or non-metals (e.g., Brass = Cu + Zn, Bronze = Cu + Sn)."
+              "Metals are malleable, ductile, sonorous, lustrous, and good conductors of heat and electricity.",
+              "Non-metals are brittle, non-lustrous (except Iodine), and poor conductors (except Graphite).",
+              "Metals react with oxygen to form basic metal oxides, while non-metals form acidic oxides.",
+              "Amphoteric oxides like Aluminum oxide react with both acids and bases to yield salt and water.",
+              "Metals react with water to form metal hydroxides/oxides and release hydrogen gas.",
+              "Reactivity series arranges metals in decreasing order of their chemical reactivity.",
+              "Ionic compounds are formed by electron transfer from metals to non-metals.",
+              "Ionic compounds have high melting points, high boiling points, and conduct electricity in solution.",
+              "Ores are naturally occurring minerals from which metals can be extracted profitably.",
+              "Roasting heats sulphide ores in excess air to convert them into metal oxides.",
+              "Calcination heats carbonate ores in limited air to convert them into oxides.",
+              "Thermite process uses aluminum powder to reduce iron oxide for welding rail tracks.",
+              "Refining purifies impure metals using electrolytic refining with copper sulphate electrolyte.",
+              "Anodizing forms a thick protective oxide layer on aluminum to prevent further corrosion.",
+              "Alloys like Brass (Cu+Zn) and Bronze (Cu+Sn) improve metal strength and corrosion resistance."
             ]
           },
           {
-            title: "Carbon and its Compounds",
-            vId: "mG4zJ2W9w4E",
+            title: "Carbon and its Compounds", videoId: "mG4zJ2W9w4E",
             lines: [
-              "1. Carbon forms covalent bonds by sharing valence electrons to achieve stable noble gas electron configurations.",
-              "2. Catenation is the unique ability of carbon atoms to form long stable chains, branched networks, or cyclic rings.",
-              "3. Tetravalency allows carbon to form strong covalent bonds with four other monovalent atoms or functional groups.",
-              "4. Allotropes of carbon include Diamond (rigid 3D structure), Graphite (hexagonal layers, conducts electricity), and Fullerene.",
-              "5. Hydrocarbons are divided into Saturated (alkanes with single bonds) and Unsaturated (alkenes with double, alkynes with triple bonds).",
-              "6. Homologous series consists of organic compounds with identical functional groups and similar properties differing by -CH2- unit.",
-              "7. Functional groups like Alcohol (-OH), Aldehyde (-CHO), Ketone (-CO-), and Carboxylic Acid (-COOH) determine chemical behavior.",
-              "8. Combustion of carbon compounds in oxygen produces Carbon Dioxide, water, heat, and light energy.",
-              "9. Oxidation of Ethanol using alkaline KMnO4 or acidified K2Cr2O7 converts it into Ethanoic acid.",
-              "10. Addition reactions convert unsaturated hydrocarbons into saturated hydrocarbons using Nickel or Palladium catalysts.",
-              "11. Substitution reactions replace Hydrogen atoms in alkanes with Chlorine in the presence of sunlight.",
-              "12. Ethanol (C2H5OH) is a versatile solvent that reacts with Sodium metal to evolve Hydrogen gas.",
-              "13. Ethanoic acid (CH3COOH) turns blue litmus red and reacts with alcohols to form sweet-smelling Esters (Esterification).",
-              "14. Saponification is the alkaline hydrolysis of esters using NaOH to manufacture Soaps and Glycerol.",
-              "15. Soaps form insoluble scum in hard water, while Synthetic Detergents remain effective in hard water."
+              "Carbon is tetravalent and forms covalent bonds by sharing electrons with other atoms.",
+              "Catenation is the unique ability of carbon to form long chains with other carbon atoms.",
+              "Hydrocarbons consist purely of hydrogen and carbon; classified as saturated or unsaturated.",
+              "Alkanes are saturated hydrocarbons containing single bonds with formula CnH2n+2.",
+              "Alkenes (CnH2n) contain at least one double bond; Alkynes (CnH2n-2) contain triple bonds.",
+              "Functional groups like alcohols (-OH), aldehydes (-CHO), and carboxylic acids (-COOH) determine properties.",
+              "Homologous series consists of compounds with similar structures differing by a -CH2- unit.",
+              "Isomers share the same molecular formula but possess different structural arrangements.",
+              "Combustion of carbon compounds releases heat, light, Carbon Dioxide, and water vapor.",
+              "Addition reactions convert unsaturated hydrocarbons to saturated ones using nickel catalyst.",
+              "Substitution reactions replace hydrogen atoms in alkanes with chlorine in sunlight.",
+              "Ethanol (C2H5OH) reacts with sodium metal to release hydrogen gas.",
+              "Ethanoic acid (CH3COOH) reacts with ethanol in the presence of acid to form sweet-smelling Esters.",
+              "Saponification converts esters back into soap and alcohol using sodium hydroxide.",
+              "Soaps form hydrophobic tails and hydrophilic heads creating micelles to remove greasy dirt."
             ]
           },
           {
-            title: "Life Processes",
-            vId: "J9e4e2_G84E",
+            title: "Life Processes", videoId: "J9e4e2_G84E",
             lines: [
-              "1. Life processes are fundamental biological activities like nutrition, respiration, transportation, and excretion maintaining life.",
-              "2. Autotrophic nutrition uses inorganic raw materials (CO2, H2O) and sunlight trapped by chlorophyll to synthesize glucose.",
-              "3. Photosynthesis equation: 6CO2 + 12H2O + Sunlight -> C6H12O6 + 6O2 + 6H2O.",
-              "4. Heterotrophic nutrition is categorized into Holozoic (humans), Saprophytic (fungi), and Parasitic (leeches, cuscuta).",
-              "5. Digestion breaks down complex food molecules into simple absorbable units using digestive enzymes like Amylase, Pepsin, and Trypsin.",
-              "6. Small intestine is the main site for complete digestion and absorption, facilitated by finger-like projections called Villi.",
-              "7. Respiration breaks down glucose to release usable energy stored in the form of Adenosine Triphosphate (ATP).",
-              "8. Aerobic respiration occurs in mitochondria producing 38 ATP, CO2, and H2O in the presence of Oxygen.",
-              "9. Anaerobic respiration in yeast yields Ethanol, CO2, and 2 ATP; in human muscles, Oxygen lack produces Lactic acid.",
-              "10. Human heart has 4 chambers to prevent mixing of oxygenated blood (left side) and deoxygenated blood (right side).",
-              "11. Double circulation involves Pulmonary circulation (heart-lungs) and Systemic circulation (heart-body tissues).",
-              "12. Blood plasma transports nutrients, CO2, and nitrogenous wastes, while RBCs carry oxygen via Hemoglobin.",
-              "13. Xylem tissues transport water and minerals unidirectionally driven by root pressure and transpiration pull.",
-              "14. Phloem tissues transport photosynthetic products bidirectionally using metabolic ATP energy (Translocation).",
-              "15. Excretion removes nitrogenous wastes via Nephrons, the functional filtration units inside human kidneys."
+              "Life processes are essential activities performed by living organisms to maintain life.",
+              "Autotrophic nutrition involves synthesizing organic food from inorganic raw materials using light.",
+              "Photosynthesis equation: 6CO2 + 12H2O + Sunlight + Chlorophyll -> C6H12O6 + 6O2 + 6H2O.",
+              "Stomata are tiny pores on leaves regulated by guard cells for gas exchange and transpiration.",
+              "Heterotrophic nutrition includes holozoic, saprophytic, and parasitic nutritional strategies.",
+              "Human digestive system breaks down food using enzymes: Amylase, Pepsin, Trypsin, and Lipase.",
+              "Villi in the small intestine increase surface area for maximum nutrient absorption.",
+              "Respiration breaks down glucose to release energy stored as ATP molecules.",
+              "Aerobic respiration occurs in mitochondria in presence of O2 yielding 38 ATP.",
+              "Anaerobic respiration in yeast produces Ethanol, CO2, and 2 ATP molecules.",
+              "Lack of oxygen in human muscle cells leads to Lactic acid accumulation causing cramps.",
+              "Double circulation in human heart keeps oxygenated and deoxygenated blood separate.",
+              "Xylem transports water and minerals upwards; Phloem translocates food synthesized in leaves.",
+              "Excretion removes harmful nitrogenous metabolic wastes from the living body.",
+              "Nephrons are the functional structural filtering units inside human kidneys."
             ]
           },
           {
-            title: "Control and Coordination",
-            vId: "92Z_pP74eW0",
+            title: "Control and Coordination", videoId: "92Z_pP74eW0",
             lines: [
-              "1. Nervous system and Endocrine system work together in human body to maintain homeostasis and respond to stimuli.",
-              "2. Neurons are structural units consisting of Dendrites (receive signal), Cyton (body), and Axon (transmits impulse).",
-              "3. Synapse is the microscopic gap between adjacent neurons where electrical signals convert into chemical neurotransmitters.",
-              "4. Reflex action is an involuntary, rapid response to an environmental stimulus controlled directly by the Spinal Cord.",
-              "5. Reflex arc represents the neural pathway: Receptor -> Sensory Neuron -> Spinal Cord -> Motor Neuron -> Effector Organ.",
-              "6. Human brain is divided into Forebrain (thinking/memory), Midbrain (involuntary actions), and Hindbrain (balance/vital functions).",
-              "7. Cerebrum in forebrain controls voluntary actions, intelligence, speech, sensory interpretation, and conscious thought.",
-              "8. Cerebellum in hindbrain maintains body posture, equilibrium, and precision of voluntary motor movements.",
-              "9. Medulla oblongata controls crucial involuntary functions including heartbeat, blood pressure, salivation, and vomiting.",
-              "10. Plant movements are classified into Nastic movements (non-directional) and Tropic movements (directional growth).",
-              "11. Tropisms include Phototropism (light), Geotropism (gravity), Hydrotropism (water), and Chemotropism (pollen tube growth).",
-              "12. Plant hormone Auxin promotes cell elongation towards light, while Gibberellins stimulate stem expansion.",
-              "13. Cytokinins stimulate rapid cell division in fruits/seeds, while Abscisic Acid inhibits growth and causes leaf wilting.",
-              "14. Pituitary gland is the master endocrine gland secreting Growth Hormone (GH) regulating physical growth.",
-              "15. Thyroid gland requires Iodine to synthesize Thyroxine, preventing Goitre, while Insulin from Pancreas regulates blood sugar."
+              "Control and coordination in animals are mediated by nervous and endocrine systems.",
+              "Neurons are structural units of the nervous system consisting of dendrite, cyton, and axon.",
+              "Synapse is the functional junction between two neurons where electrical impulses convert to chemical signals.",
+              "Reflex arcs provide rapid automatic involuntary responses to stimuli passing through the spinal cord.",
+              "Central Nervous System (CNS) comprises the Brain and Spinal Cord protected by meninges.",
+              "Forebrain handles thinking, memory, intelligence, and voluntary action control.",
+              "Midbrain coordinates visual and auditory reflexes; Hindbrain controls involuntary actions.",
+              "Cerebellum maintains body posture, equilibrium, and precision of voluntary movements.",
+              "Plant movements are classified into directional Tropic movements and non-directional Nastic movements.",
+              "Phototropism is growth response to light; Geotropism is response to gravity.",
+              "Hydrotropism responds to water; Chemotropism responds to chemical stimuli like pollen tube growth.",
+              "Auxins promote cell elongation towards shaded regions causing plants to bend to light.",
+              "Gibberellins spur stem growth; Cytokinins promote rapid cell division in fruits and seeds.",
+              "Abscisic acid acts as a plant growth inhibitor causing leaf wilting and stomatal closure.",
+              "Endocrine glands secrete hormones directly into the bloodstream to target organs."
             ]
           },
           {
-            title: "How do Organisms Reproduce?",
-            vId: "zX2P7e9G84E",
+            title: "How do Organisms Reproduce?", videoId: "zX2P7e9G84E",
             lines: [
-              "1. Reproduction is the biological process by which existing organisms produce new individuals of the same species.",
-              "2. DNA replication ensures transmission of hereditary parental characteristics with minor variations driving evolution.",
-              "3. Asexual reproduction involves a single parent producing genetically identical offspring without gamete fusion.",
-              "4. Binary fission splits single-celled organisms like Amoeba, while Multiple fission divides Leishmania into many cells.",
-              "5. Budding involves outgrowth formation developing into new individuals in organisms like Hydra and Yeast.",
-              "6. Fragmentation breaks multicellular bodies like Spirogyra into fragments that grow into complete new organisms.",
-              "7. Regeneration allows specialized cells in Planaria to regenerate a full body from severed body fragments.",
-              "8. Vegetative propagation uses plant roots, stems, or leaves to grow new plants (e.g., Bryophyllum leaf buds).",
-              "9. Sexual reproduction combines male and female gametes to restore species chromosome number in zygotes.",
-              "10. Flowers are angiosperm reproductive structures containing Stamen (male unit) and Carpel/Pistil (female unit).",
-              "11. Pollination transfers pollen grains from Anther to Stigma via wind, water, or insects, leading to double fertilization.",
-              "12. Male human reproductive system comprises Testes producing Sperm and Testosterone inside the scrotum.",
-              "13. Female human system includes Ovaries producing Eggs/Oocytes, Estrogen, and Progesterone monthly.",
-              "14. Fertilization occurs in the Fallopian tube (Oviduct), forming a zygote that implants in the uterine wall.",
-              "15. Barrier, chemical, surgical (Vasectomy/Tubectomy), and IUCD methods provide safe family planning and prevent STDs."
+              "Reproduction is the biological process by which organisms produce offspring of their own kind.",
+              "Asexual reproduction involves a single parent without gamete fusion, producing genetically identical clones.",
+              "Binary fission in Amoeba divides one parent cell into two equal daughter cells.",
+              "Multiple fission in Plasmodium produces many daughter cells simultaneously within a protective cyst.",
+              "Budding in Yeast and Hydra forms an outgrowth that detaches to become an independent individual.",
+              "Regeneration in Planaria allows broken body fragments to regrow into full organisms.",
+              "Vegetative propagation generates new plants from roots, stems, or leaves (e.g., Bryophyllum).",
+              "Sexual reproduction involves two parents and fusion of male and female haploid gametes.",
+              "Flowers contain reproductive organs: Stamen (male - anther/filament) and Carpel (female - stigma/style/ovary).",
+              "Pollination transfers pollen grains from anther to stigma via wind, water, or animal vectors.",
+              "Double fertilization in flowering plants leads to zygote formation and endosperm production.",
+              "Testes produce male gamete sperm and hormone testosterone inside the scrotum.",
+              "Ovaries produce female eggs and hormones estrogen and progesterone.",
+              "Menstruation is the monthly shedding of the uterine lining when fertilization does not occur.",
+              "Contraceptive methods include barrier methods, oral pills, IUCDs (Copper-T), and surgical techniques."
             ]
           },
           {
-            title: "Heredity",
-            vId: "9w2_e4G84E0",
+            title: "Heredity", videoId: "9w2_e4G84E0",
             lines: [
-              "1. Heredity is the transmission of genetically inherited physical or physiological traits from parents to offspring.",
-              "2. Variations are structural differences among individuals of a species resulting from sexual reproduction and gene mutations.",
-              "3. Gregor Johann Mendel conducted pioneering genetic experiments on garden pea plants (Pisum sativum).",
-              "4. Mendel selected 7 contrasting pea plant characteristics including tallness, seed shape, flower color, and pod shape.",
-              "5. Monohybrid cross examines inheritance of a single trait pair, yielding F2 phenotypic ratio of 3:1 and genotypic ratio of 1:2:1.",
-              "6. Dominant traits express in both homozygous and heterozygous conditions, while Recessive traits need homozygous presence.",
-              "7. Law of Segregation states that gene alleles separate during gamete formation so each gamete carries one allele.",
-              "8. Dihybrid cross analyzes two trait pairs simultaneously, producing a characteristic F2 phenotypic ratio of 9:3:3:1.",
-              "9. Law of Independent Assortment states that alleles of different genes segregate independently of one another.",
-              "10. Genes are specific functional segments of DNA located on cell chromosomes encoding proteins.",
-              "11. Humans possess 23 pairs of chromosomes, comprising 22 pairs of Autosomes and 1 pair of Sex Chromosomes.",
-              "12. Human females possess two X chromosomes (XX), while human males possess one X and one Y chromosome (XY).",
-              "13. Sex of human child is determined by father: fertilizing sperm carrying X yields female, Y yields male.",
-              "14. Acquired traits gained during an individual's lifetime are non-heritable as they do not alter germ cell DNA.",
-              "15. Inherited traits are encoded in germ cell DNA and passed across generations, forming the foundation of genetics."
+              "Heredity is the transmission of genetically controlled traits from parents to offspring.",
+              "Variations are differences shown by individuals of the same species due to genetic recombination.",
+              "Gregor Mendel is known as the Father of Genetics for his work on Garden Pea plants.",
+              "Monohybrid cross studies one trait inheritance yielding 3:1 phenotypic ratio in F2 generation.",
+              "Genotypic ratio of Mendel's monohybrid cross in F2 generation is 1:2:1 (TT : Tt : tt).",
+              "Dihybrid cross studies two traits yielding a phenotypic ratio of 9:3:3:1 in F2 generation.",
+              "Dominant traits express themselves in homozygous or heterozygous states (e.g., Tallness 'T').",
+              "Recessive traits express themselves only in homozygous conditions (e.g., Dwarfness 'tt').",
+              "Law of Segregation states allele pairs separate during gamete formation so each gamete carries one allele.",
+              "Law of Independent Assortment states traits inherit independently of each other.",
+              "DNA (Deoxyribonucleic Acid) carries genetic information within cell chromosomes.",
+              "Genes are specific functional segments of DNA coding for particular proteins.",
+              "Sex determination in humans depends on the 23rd pair of chromosomes.",
+              "Females possess XX sex chromosomes; males possess XY sex chromosomes.",
+              "Father determines child sex because sperm supplies either an X or Y chromosome."
             ]
           },
           {
-            title: "Light – Reflection and Refraction",
-            vId: "X3p7e9G84E0",
+            title: "Light – Reflection and Refraction", videoId: "X3p7e9G84E0",
             lines: [
-              "1. Light travels in straight lines; reflection returns light into the same medium upon striking a polished surface.",
-              "2. Laws of Reflection: Angle of Incidence equals Angle of Reflection (i = r); Incident ray, reflected ray, normal lie in one plane.",
-              "3. Concave mirrors are converging mirrors; Convex mirrors are diverging mirrors forming virtual diminished erect images.",
-              "4. Mirror Formula relates object distance (u), image distance (v), and focal length (f): 1/f = 1/v + 1/u.",
-              "5. Magnification (m) = Height of Image / Height of Object = -v / u.",
-              "6. Refraction is the bending of light as it passes obliquely from one optical medium into another with different density.",
-              "7. Laws of Refraction (Snell's Law): Sin i / Sin r = Constant (Refractive Index n).",
-              "8. Refractive index n = Speed of light in vacuum (c) / Speed of light in medium (v).",
-              "9. Light bends towards normal when entering optically denser medium, and away from normal in rarer medium.",
-              "10. Convex lenses are converging lenses forming real inverted images; Concave lenses are diverging lenses.",
-              "11. Lens Formula relates object distance (u), image distance (v), and focal length (f): 1/f = 1/v - 1/u.",
-              "12. Lens Magnification (m) = Height of Image / Height of Object = v / u.",
-              "13. Power of Lens (P) is the reciprocal of focal length in meters: P = 1 / f(m), measured in Dioptres (D).",
-              "14. Power of convex lens is positive (+D), while power of concave lens is negative (-D).",
-              "15. Combination power of thin lenses placed in contact equals the algebraic sum: P = P1 + P2 + P3."
+              "Light travels in straight lines and exhibits both wave and particle characteristics.",
+              "Law of Reflection: Angle of incidence equals angle of reflection (angle i = angle r).",
+              "Incident ray, reflected ray, and normal at the point of incidence lie in the same plane.",
+              "Concave mirrors are converging mirrors; Convex mirrors are diverging mirrors.",
+              "Mirror formula: 1/f = 1/v + 1/u, where f is focal length, v is image distance, u is object distance.",
+              "Magnification (m) = height of image / height of object = -v/u.",
+              "Refraction is the bending of light as it passes obliquely from one transparent medium to another.",
+              "Snell's Law: sin(i) / sin(r) = constant (refractive index n21).",
+              "Speed of light in vacuum is approximately 3 x 10^8 meters per second.",
+              "Convex lenses are converging lenses; Concave lenses are diverging lenses.",
+              "Lens formula: 1/f = 1/v - 1/u.",
+              "Lens magnification (m) = height of image / height of object = +v/u.",
+              "Power of a lens (P) = 1 / f (in meters); measured in Dioptres (D).",
+              "Power of convex lens is positive (+); power of concave lens is negative (-).",
+              "Refractive index indicates light speed variation across optical media."
             ]
           },
           {
-            title: "The Human Eye and the Colorful World",
-            vId: "P2v9Z7e84E0",
+            title: "The Human Eye and the Colorful World", videoId: "P2v9Z7e84E0",
             lines: [
-              "1. Human eye uses a crystalline convex lens to focus light rays onto the retina to form real inverted images.",
-              "2. Ciliary muscles adjust lens curvature, altering focal length to view near and distant objects (Power of Accommodation).",
-              "3. Near point of distinct vision for a normal human eye is 25 cm; Far point is infinity.",
-              "4. Myopia (Short-sightedness) allows viewing near objects clearly; corrected using a Concave lens of suitable power.",
-              "5. Hypermetropia (Far-sightedness) allows viewing distant objects clearly; corrected using a Convex lens.",
-              "6. Presbyopia is age-related diminished accommodation power; corrected using Bifocal lenses.",
-              "7. Dispersion of light splits white light into seven spectral colors (VIBGYOR) when passing through a glass prism.",
-              "8. Red light bends the least due to longer wavelength; Violet light bends the most due to shorter wavelength.",
-              "9. Rainbow is a natural spectrum produced by dispersion, refraction, and internal reflection in raindrops.",
-              "10. Atmospheric refraction causes twinkling of stars as light passes through varying air density layers.",
-              "11. Planets do not twinkle because they are extended light sources averaging out brightness fluctuations.",
-              "12. Advanced sunrise and delayed sunset occur by about 2 minutes due to atmospheric light refraction.",
-              "13. Tyndall effect is the scattering of light beam by colloidal particles in a suspension or mist.",
-              "14. Sky appears blue because atmospheric gas molecules scatter shorter blue wavelengths more strongly than red.",
-              "15. Sun appears reddish during sunrise and sunset because longer red wavelengths travel through thicker air layers."
+              "Human eye uses a crystalline convex lens to focus light on the light-sensitive retina.",
+              "Accommodation is the ability of the eye lens to adjust its focal length using ciliary muscles.",
+              "Near point of distinct vision for a normal human eye is 25 cm; far point is infinity.",
+              "Myopia (short-sightedness) is corrected using a concave lens of suitable focal length.",
+              "Hypermetropia (far-sightedness) is corrected using a convex lens of suitable power.",
+              "Presbyopia arises due to aging ciliary muscles and is corrected using bifocal lenses.",
+              "Dispersion is the splitting of white light into its seven constituent colors (VIBGYOR) through a glass prism.",
+              "Red light bends the least due to longest wavelength; Violet light bends the most.",
+              "Atmospheric refraction causes twinkling of stars and advance sunrise/delayed sunset by 2 minutes.",
+              "Planets do not twinkle because they act as extended sources of light.",
+              "Tyndall effect is the scattering of light by colloidal particles in a medium.",
+              "Blue color of the clear sky is caused by fine atmospheric particles scattering shorter blue wavelengths.",
+              "Sun appears reddish at sunrise and sunset because longer red light passes through thicker atmosphere.",
+              "Rainbow is formed by dispersion, refraction, and internal reflection of light inside water droplets.",
+              "Cornea protects eye interior and performs most light refraction."
             ]
           },
           {
-            title: "Electricity",
-            vId: "Z9p7e84E000",
+            title: "Electricity", videoId: "Z9p7e84E000",
             lines: [
-              "1. Electric current (I) is the rate of flow of electric charges across a conductor: I = Q / t (Ampere, A).",
-              "2. Electric potential difference (V) is work done moving a unit positive charge between two points: V = W / Q (Volt, V).",
-              "3. Ohm's Law states potential difference across a conductor is proportional to current at constant temperature: V = I * R.",
-              "4. Resistance (R) measures opposition to electric current flow; SI unit is Ohm (Ω).",
-              "5. Factors affecting resistance: R is directly proportional to length (l) and inversely to cross-sectional area (A).",
-              "6. Resistivity (ρ) is an intrinsic material property: R = ρ * (l / A), measured in Ohm-meters (Ω·m).",
-              "7. Series connection: Total resistance equals sum of individual resistances: Rs = R1 + R2 + R3.",
-              "8. Current remains constant across all components connected in series, while voltage divides.",
-              "9. Parallel connection: Reciprocal of total resistance equals sum of reciprocals: 1/Rp = 1/R1 + 1/R2 + 1/R3.",
-              "10. Potential difference remains constant across all branches in parallel connection, while current divides.",
-              "11. Heating effect of electric current (Joule's Law): Heat generated H = I^2 * R * t.",
-              "12. Electric heating devices like irons and heaters use Nichrome wire due to high resistivity and melting point.",
-              "13. Electric Fuse is a safety device made of low melting point alloy connected in series to protect circuits.",
-              "14. Electric Power (P) is the rate of electrical energy consumption: P = V * I = I^2 * R = V^2 / R (Watt, W).",
-              "15. Commercial unit of electrical energy is kilowatt-hour (kWh): 1 kWh = 3.6 * 10^6 Joules."
+              "Electric current (I) is the rate of flow of electric charge (Q): I = Q / t.",
+              "SI unit of electric current is Ampere (A); electric charge is measured in Coulombs (C).",
+              "Electric potential difference (V) = Work done (W) / Charge (Q); unit is Volt (V).",
+              "Ohm's Law states current flowing through a conductor is directly proportional to potential difference (V = IR).",
+              "Resistance (R) depends on conductor length (L), cross-sectional area (A), and material resistivity.",
+              "Resistivity (rho) is an intrinsic material property measured in Ohm-meters.",
+              "Resistors in Series: Equivalent resistance R_s = R1 + R2 + R3; current remains uniform.",
+              "Resistors in Parallel: 1/R_p = 1/R1 + 1/R2 + 1/R3; potential difference remains uniform.",
+              "Joule's Law of Heating: Heat generated H = I^2 * R * t.",
+              "Electric power (P) = V * I = I^2 * R = V^2 / R.",
+              "SI unit of electric power is Watt (W); commercial unit is Kilowatt-hour (kWh).",
+              "1 kWh (Unit) = 3.6 x 10^6 Joules of electrical energy.",
+              "Fuse wire has low melting point and high resistance to protect circuits from overloading.",
+              "Ammeter measures current and connects in series; Voltmeter measures voltage and connects in parallel.",
+              "Tungsten is used for filament bulbs due to its high melting point."
             ]
           },
           {
-            title: "Magnetic Effects of Electric Current",
-            vId: "L9e84E00000",
+            title: "Magnetic Effects of Electric Current", videoId: "L9e84E00000",
             lines: [
-              "1. Magnetic field is the region around a magnet or current-carrying conductor where magnetic forces are exerted.",
-              "2. Magnetic field lines emerge from North pole and enter South pole outside a magnet, forming continuous closed loops.",
-              "3. Right-Hand Thumb Rule determines magnetic field direction around a straight current-carrying wire.",
-              "4. Magnetic field pattern around a straight wire consists of concentric circular loops centered on the wire.",
-              "5. Solenoid is a long coil of insulated copper wire wrapped tightly into a cylinder; acts like a bar magnet when energized.",
-              "6. Magnetic field inside a current-carrying solenoid is uniform and parallel throughout its interior.",
-              "7. Electromagnet is created by placing a soft iron core inside a solenoid, producing strong temporary magnetism.",
-              "8. Current-carrying conductor placed inside a magnetic field experiences a mechanical force perpendicular to both.",
-              "9. Fleming's Left-Hand Rule determines force direction: Forefinger (Field), Middle finger (Current), Thumb (Motion/Force).",
-              "10. Electromagnetic induction produces induced electric current in a closed loop moving inside a magnetic field.",
-              "11. Fleming's Right-Hand Rule determines induced current direction: Forefinger (Field), Thumb (Motion), Middle (Current).",
-              "12. Alternating Current (AC) reverses direction periodically; Direct Current (DC) flows continuously in one direction.",
-              "13. Domestic power supply in India is AC at 220 V potential difference and 50 Hz frequency.",
-              "14. Domestic wiring uses Live wire (Red, 220V), Neutral wire (Black, 0V), and Earth wire (Green, safety protection).",
-              "15. Overloading occurs when excessive current flows due to connecting too many appliances; Short circuit occurs when Live touches Neutral."
+              "Magnetic field lines emerge from North pole and enter South pole outside a magnet.",
+              "Magnetic field lines never intersect because field direction at any point is unique.",
+              "Right-Hand Thumb Rule determines magnetic field direction around a straight current-carrying conductor.",
+              "Magnetic field pattern produced by a current-carrying circular loop consists of concentric circles.",
+              "Solenoid is a long coil of insulated copper wire acting like a bar magnet when energized.",
+              "Electromagnet consists of a soft iron core placed inside a current-carrying solenoid.",
+              "Current-carrying conductor experiences maximum force in a magnetic field when perpendicular to field lines.",
+              "Fleming's Left-Hand Rule predicts force direction: Thumb = Force, Forefinger = Field, Middle finger = Current.",
+              "Electric motor converts electrical energy into mechanical energy using magnetic forces.",
+              "Electromagnetic induction induces current in a closed loop moving relative to a magnetic field.",
+              "Fleming's Right-Hand Rule predicts induced current direction.",
+              "Alternating Current (AC) changes direction periodically; Direct Current (DC) flows in one direction.",
+              "In India, domestic AC supply frequency is 50 Hz with voltage of 220 V.",
+              "Short circuit occurs when live wire contacts neutral wire directly due to insulation damage.",
+              "Earth wire provides low resistance safety path for leaking current to prevent shock."
             ]
           },
           {
-            title: "Our Environment",
-            vId: "K9e84E00001",
+            title: "Our Environment", videoId: "K9e84E00001",
             lines: [
-              "1. Environment comprises all living (biotic) organisms and non-living (abiotic) surroundings interacting together.",
-              "2. Ecosystem is a self-sustaining functional unit comprising plants, animals, microorganisms, soil, water, and air.",
-              "3. Producers (autotrophs) synthesize organic food from inorganic compounds using solar energy during photosynthesis.",
-              "4. Consumers are heterotrophs categorized into Primary (herbivores), Secondary (carnivores), and Tertiary consumers.",
-              "5. Decomposers (bacteria, fungi) break down complex organic remains into simple inorganic nutrient salts.",
-              "6. Food chain represents sequential transfer of energy and matter from organism to organism in an ecosystem.",
-              "7. Trophic levels are functional step positions occupied by organisms along a food chain.",
-              "8. 10 Percent Law states only 10% of energy is transferred to the next higher trophic level; 90% is lost as heat.",
-              "9. Short food chains consisting of 3 to 4 levels preserve more usable energy than longer chains.",
-              "10. Food web is a complex network of interconnected food chains reflecting real ecological interactions.",
-              "11. Biological Magnification is the progressive accumulation of non-biodegradable toxic chemicals (e.g., DDT) up trophic levels.",
-              "12. Ozone layer (O3) in the stratosphere shields Earth by absorbing harmful ultraviolet (UV) solar radiation.",
-              "13. Ozone layer depletion is caused by synthetic Chlorofluorocarbons (CFCs) used in refrigerators and fire extinguishers.",
-              "14. Biodegradable wastes (peels, paper) are broken down naturally by microorganisms without polluting.",
-              "15. Non-biodegradable wastes (plastics, metals) persist in nature long-term, causing severe environmental pollution."
+              "Ecosystem comprises biotic (living) and abiotic (non-living) components interacting in an area.",
+              "Producers (autotrophs) convert solar energy into chemical food energy via photosynthesis.",
+              "Consumers are classified as herbivores, carnivores, omnivores, and parasites.",
+              "Decomposers like bacteria and fungi breakdown complex organic dead matter into simple nutrients.",
+              "Food chain shows linear sequential energy transfer from one organism to another.",
+              "10 Percent Law states only 10% energy transfers to the next trophic level; 90% is lost as heat.",
+              "Food web represents interlinked complex network of multiple food chains in an ecosystem.",
+              "Biological magnification accumulates non-biodegradable chemicals progressively along trophic levels.",
+              "Human beings occupy top trophic levels and suffer maximum chemical toxicity from biomagnification.",
+              "Ozone layer (O3) in the stratosphere shields Earth from harmful solar ultraviolet (UV) radiation.",
+              "UV radiation causes skin cancer, eye cataracts, and damages immune systems.",
+              "Chlorofluorocarbons (CFCs) used in refrigerants deplete stratospheric ozone molecules.",
+              "1987 UNEP agreement froze CFC production at 1986 levels globally.",
+              "Biodegradable wastes break down naturally by biological process; non-biodegradable wastes persist.",
+              "Proper waste management requires reducing, reusing, recycling, and composting."
             ]
           }
         ]
       },
       maths: {
         educator: "Shobhit Nirwan",
-        searchQuery: "Shobhit Nirwan Class 10 Maths",
         items: [
           {
-            title: "Real Numbers",
-            vId: "0c_7M_s9W2k",
+            title: "Real Numbers", videoId: "0c_7M_s9W2k",
             lines: [
-              "1. Fundamental Theorem of Arithmetic states every composite number can be uniquely expressed as a product of primes.",
-              "2. Prime factorization is unique except for the order in which prime factors occur.",
-              "3. HCF is the product of the smallest power of each common prime factor in the numbers.",
-              "4. LCM is the product of the greatest power of each prime factor involved in the numbers.",
-              "5. For any two positive integers a and b: HCF(a, b) * LCM(a, b) = a * b.",
-              "6. The relation HCF * LCM = a * b applies exclusively to two numbers, not three.",
-              "7. A number is irrational if it cannot be written as a/b, where a and b are integers and b ≠ 0.",
-              "8. Proof of irrationality for √2, √3, and √5 relies on proof by contradiction using divisibility theorems.",
-              "9. Theorem: If a prime p divides a^2, then p also divides a for any positive integer a.",
-              "10. Sum or difference of a rational number and an irrational number is always irrational.",
-              "11. Product or quotient of a non-zero rational number and an irrational number is always irrational.",
-              "12. Real numbers consist of the complete set of both rational and irrational numbers.",
-              "13. Every real number corresponds to a unique point on the real number line.",
-              "14. Composite numbers possess factors other than 1 and the number itself.",
-              "15. Co-prime numbers are pairs of integers having no common factor other than 1 (HCF = 1)."
+              "Fundamental Theorem of Arithmetic: Every composite number factors uniquely into prime numbers.",
+              "HCF is the product of smallest powers of common prime factors.",
+              "LCM is the product of greatest powers of all prime factors involved.",
+              "For any two positive integers a and b: HCF(a,b) x LCM(a,b) = a x b.",
+              "A number is irrational if it cannot be expressed as a ratio of two co-prime integers.",
+              "Square root of any prime number (e.g., sqrt(2), sqrt(3), sqrt(5)) is always irrational.",
+              "Proof of irrationality relies on proof by contradiction method.",
+              "Sum or difference of a rational and an irrational number is always irrational.",
+              "Product or quotient of a non-zero rational and irrational number is irrational.",
+              "Prime factorization of denominator decides decimal expansion properties.",
+              "Coprime numbers share no common factors other than 1.",
+              "HCF is always a factor of LCM for any given set of numbers.",
+              "Euclid's division concepts lay theoretical groundwork for number divisibility.",
+              "Real numbers consist of the complete set of rational and irrational numbers combined.",
+              "Checking terminal prime factors helps solve real number board problems."
             ]
           },
           {
-            title: "Polynomials",
-            vId: "zX9P8e4G84E",
+            title: "Polynomials", videoId: "zX9P8e4G84E",
             lines: [
-              "1. Polynomial p(x) is an algebraic expression with non-negative integer exponents of variable x.",
-              "2. Degree of a polynomial is the highest power of x with a non-zero coefficient.",
-              "3. Linear polynomial has degree 1, quadratic polynomial degree 2, and cubic polynomial degree 3.",
-              "4. Value of p(x) at x = k is obtained by replacing x with k, denoted as p(k).",
-              "5. A real number k is a zero of polynomial p(x) if p(k) = 0.",
-              "6. Zeros of p(x) correspond to x-coordinates where graph y = p(x) intersects X-axis.",
-              "7. A polynomial of degree n can have at most n real zeros.",
-              "8. Graph of quadratic polynomial ax^2 + bx + c is a U-shaped curve called a parabola.",
-              "9. Parabola opens upwards if coefficient a > 0, and downwards if a < 0.",
-              "10. For quadratic polynomial ax^2 + bx + c, sum of zeros α + β = -b / a.",
-              "11. For quadratic polynomial ax^2 + bx + c, product of zeros α * β = c / a.",
-              "12. Quadratic polynomial with given zeros α and β is formed using k[x^2 - (α + β)x + αβ].",
-              "13. If a quadratic polynomial has no real zeros, its graph does not cross the X-axis.",
-              "14. For cubic polynomial ax^3 + bx^2 + cx + d, sum of zeros α + β + γ = -b / a.",
-              "15. Product of zeros of a cubic polynomial α * β * γ = -d / a."
+              "Degree of a polynomial is the highest power of the variable x in p(x).",
+              "Linear polynomial has degree 1; Quadratic has degree 2; Cubic has degree 3.",
+              "Zeros of polynomial p(x) are x-values where p(x) equals zero.",
+              "Geometrically, zeros are x-intercepts of the graph y = p(x).",
+              "A quadratic polynomial ax^2 + bx + c can have at most 2 real zeros.",
+              "Sum of zeros (alpha + beta) = -b/a = -(coeff of x)/(coeff of x^2).",
+              "Product of zeros (alpha * beta) = c/a = (constant term)/(coeff of x^2).",
+              "Quadratic polynomial formula: k[x^2 - (Sum of zeros)x + (Product of zeros)].",
+              "Graph of a quadratic polynomial forms a U-shaped or inverted U-shaped Parabola.",
+              "Parabola opens upwards if a > 0 and opens downwards if a < 0.",
+              "Discriminant D = b^2 - 4ac determines nature of roots for quadratic equations.",
+              "If D > 0, polynomial has two distinct real zeros.",
+              "If D = 0, polynomial has two equal real zeros.",
+              "If D < 0, polynomial has no real zeros.",
+              "Cubic polynomial ax^3 + bx^2 + cx + d has at most 3 real zeros."
             ]
           },
           {
-            title: "Pair of Linear Equations in Two Variables",
-            vId: "9w2_e4G84E0",
+            title: "Pair of Linear Equations in Two Variables", videoId: "9w2_e4G84E0",
             lines: [
-              "1. General pair of linear equations: a1*x + b1*y + c1 = 0 and a2*x + b2*y + c2 = 0.",
-              "2. Graphical representation yields two straight lines in a two-dimensional Cartesian plane.",
-              "3. Intersecting lines have a unique single solution (Consistent system): a1/a2 ≠ b1/b2.",
-              "4. Coincident lines have infinitely many solutions (Dependent Consistent system): a1/a2 = b1/b2 = c1/c2.",
-              "5. Parallel lines have no solution (Inconsistent system): a1/a2 = b1/b2 ≠ c1/c2.",
-              "6. Substitution method solves equations by expressing one variable in terms of the other.",
-              "7. Elimination method solves equations by multiplying to eliminate one variable by addition/subtraction.",
-              "8. Algebraic methods provide exact solutions compared to graphical approximation.",
-              "9. Linear equations can model real-life problems involving speed, distance, age, and cost.",
-              "10. Speed of boat downstream = Speed in still water + Speed of stream.",
-              "11. Speed of boat upstream = Speed in still water - Speed of stream.",
-              "12. Two-digit number with tens digit x and units digit y is expressed as 10x + y.",
-              "13. Reversing digits of a two-digit number 10x + y gives 10y + x.",
-              "14. Fractional word problems translate statements into numerator and denominator equations.",
-              "15. Consistency of a linear pair can be tested directly using coefficient ratios."
+              "General form: a1*x + b1*y + c1 = 0 and a2*x + b2*y + c2 = 0.",
+              "Intersecting lines have a unique solution if a1/a2 != b1/b2 (Consistent).",
+              "Coincident lines have infinitely many solutions if a1/a2 = b1/b2 = c1/c2 (Dependent/Consistent).",
+              "Parallel lines have no solution if a1/a2 = b1/b2 != c1/c2 (Inconsistent).",
+              "Graphical method plots both equations to find intersection coordinates.",
+              "Substitution method expresses one variable in terms of another to solve.",
+              "Elimination method multiplies equations to eliminate one variable.",
+              "Speed of boat upstream = (speed in still water - speed of stream).",
+              "Speed of boat downstream = (speed in still water + speed of stream).",
+              "Linear equations model real-world word problems involving age, cost, and geometry.",
+              "Consistency check using coefficient ratios gives instant algebraic solutions.",
+              "Determinant conditions verify system of linear equations.",
+              "Word problems require defining two variables clearly.",
+              "Verification of calculated x and y values in original equations avoids errors.",
+              "System with non-zero unique solution represents crossing lines."
             ]
           },
           {
-            title: "Quadratic Equations",
-            vId: "P2v9Z7e84E0",
+            title: "Quadratic Equations", videoId: "P2v9Z7e84E0",
             lines: [
-              "1. Standard form of a quadratic equation is ax^2 + bx + c = 0, where a ≠ 0.",
-              "2. Roots of a quadratic equation are values of x that satisfy the equation ax^2 + bx + c = 0.",
-              "3. A quadratic equation has exactly two roots (real or complex).",
-              "4. Factorization method splits the middle term bx into two terms whose product equals a * c.",
-              "5. Quadratic Formula yields roots: x = [-b ± √(b^2 - 4ac)] / (2a).",
-              "6. Discriminant D = b^2 - 4ac determines the nature of roots.",
-              "7. If D > 0, the equation has two distinct real roots.",
-              "8. If D = 0, the equation has two equal real roots: x = -b / (2a).",
-              "9. If D < 0, the equation has no real roots (imaginary roots).",
-              "10. Sum of roots of quadratic equation = -b / a.",
-              "11. Product of roots of quadratic equation = c / a.",
-              "12. Word problems convert physical conditions into quadratic equations.",
-              "13. Consecutive integers can be represented algebraically as x and x + 1.",
-              "14. Pythagorean theorem applications yield quadratic equations in right triangles.",
-              "15. Time and work problems equate rate of work done per unit time to form quadratic expressions."
+              "Standard form of a quadratic equation: ax^2 + bx + c = 0, where a != 0.",
+              "Roots of quadratic equation are values of x satisfying the equation.",
+              "Factorization method splits middle term to find linear factors.",
+              "Quadratic Formula: x = [-b ± sqrt(b^2 - 4ac)] / (2a).",
+              "Discriminant (D) is defined as D = b^2 - 4ac.",
+              "If D > 0, equation has two distinct real roots.",
+              "If D = 0, equation has two equal real roots (x = -b / 2a).",
+              "If D < 0, equation has no real roots.",
+              "Sum of roots = -b/a; Product of roots = c/a.",
+              "Word problems involve age, area, speed, distance, and work time.",
+              "Real roots exist whenever D is greater than or equal to zero.",
+              "Checking non-zero quadratic coefficient 'a' prevents linear conversion.",
+              "Speed-time problems formulate equations using Time = Distance / Speed.",
+              "Hypotenuse problems use Pythagoras theorem yielding quadratic equations.",
+              "Quadratic formula guarantees roots for any real quadratic expression."
             ]
           },
           {
-            title: "Arithmetic Progressions",
-            vId: "L_A2YxZ2L08",
+            title: "Arithmetic Progressions", videoId: "L_A2YxZ2L08",
             lines: [
-              "1. Arithmetic Progression (AP) is a sequence where each term is obtained by adding a fixed common difference d.",
-              "2. First term of an AP is denoted as a, and common difference as d.",
-              "3. Common difference d can be positive, negative, or zero: d = a_(k+1) - a_k.",
-              "4. General form of an AP is a, a + d, a + 2d, a + 3d, ...",
-              "5. General n-th term of an AP: a_n = a + (n - 1) * d.",
-              "6. If an AP has m terms, a_m represents the last term l.",
-              "7. n-th term from the end of an AP with last term l is given by: l - (n - 1) * d.",
-              "8. Sum of first n terms of an AP: S_n = (n / 2) * [2a + (n - 1) * d].",
-              "9. Alternative sum formula using last term l: S_n = (n / 2) * [a + l].",
-              "10. Sum of first n natural numbers is given by: S_n = n * (n + 1) / 2.",
-              "11. n-th term can be found from sum of terms: a_n = S_n - S_(n-1).",
-              "12. Three terms in AP are chosen as (a - d), a, (a + d) to simplify sum problems.",
-              "13. Four terms in AP are chosen as (a - 3d), (a - d), (a + d), (a + 3d).",
-              "14. Arithmetic Mean between two numbers a and b is given by (a + b) / 2.",
-              "15. AP models installment payments, population growth, and structured patterns."
+              "Arithmetic Progression (AP) is a sequence where consecutive terms differ by constant 'd'.",
+              "First term is denoted by 'a'; Common Difference is denoted by 'd'.",
+              "Common difference 'd' can be positive, negative, or zero.",
+              "General form of an AP: a, a+d, a+2d, a+3d, ...",
+              "nth term formula: a_n = a + (n - 1)d.",
+              "Sum of first n terms formula: S_n = (n/2) * [2a + (n - 1)d].",
+              "Alternative Sum formula: S_n = (n/2) * [a + l], where 'l' is the last term.",
+              "nth term from the end formula: L - (n - 1)d.",
+              "Three terms in AP can be assumed as (a - d), a, (a + d).",
+              "Common difference d = a_k - a_(k-1) for any term index.",
+              "If a, b, c are in AP, then Arithmetic Mean b = (a + c) / 2.",
+              "nth term can also be calculated as a_n = S_n - S_(n-1).",
+              "AP concepts solve practical savings, salary, and seating arrangement problems.",
+              "Number of terms 'n' must always be a positive integer.",
+              "Linear expression in 'n' represents nth term of an AP."
             ]
           },
           {
-            title: "Triangles",
-            vId: "v8B_T2W6D8o",
+            title: "Triangles", videoId: "v8B_T2W6D8o",
             lines: [
-              "1. Two figures having same shape but not necessarily same size are called similar figures.",
-              "2. All congruent figures are similar, but similar figures are not necessarily congruent.",
-              "3. Two polygons are similar if corresponding angles are equal and corresponding sides are proportional.",
-              "4. Basic Proportionality Theorem (Thales Theorem): Line drawn parallel to one side of a triangle divides other two sides proportionally.",
-              "5. Converse of BPT: Line dividing two sides of a triangle in the same ratio is parallel to third side.",
-              "6. AAA Similarity Criterion: If corresponding angles of two triangles are equal, their corresponding sides are proportional.",
-              "7. AA Similarity Criterion: If two angles of one triangle equal two angles of another, triangles are similar.",
-              "8. SSS Similarity Criterion: If corresponding sides of two triangles are proportional, their corresponding angles are equal.",
-              "9. SAS Similarity Criterion: If one angle equals one angle of another and including sides are proportional, triangles are similar.",
-              "10. Ratio of areas of two similar triangles equals square of ratio of their corresponding sides.",
-              "11. Pythagoras Theorem: In a right triangle, square of hypotenuse equals sum of squares of other two sides.",
-              "12. Converse of Pythagoras Theorem: If square of one side equals sum of squares of other two, angle opposite is right angle.",
-              "13. Altitude drawn from right-angle vertex to hypotenuse divides triangle into two similar right triangles.",
-              "14. In similar triangles, ratio of perimeters equals ratio of corresponding sides.",
-              "15. Medians and angle bisectors in similar triangles are in the same ratio as corresponding sides."
+              "Two figures are similar if shapes match regardless of size differences.",
+              "Similar triangles have equal corresponding angles and proportional corresponding sides.",
+              "Basic Proportionality Theorem (Thales Theorem): Line parallel to one triangle side divides other two sides proportionally.",
+              "Converse of BPT: Line dividing two triangle sides proportionally is parallel to third side.",
+              "AAA Similarity Criterion: Triangles are similar if corresponding angles are equal.",
+              "SSS Similarity Criterion: Triangles are similar if corresponding sides are proportional.",
+              "SAS Similarity Criterion: Triangles are similar if one angle matches and including sides are proportional.",
+              "Perimeters of similar triangles are proportional to their corresponding sides.",
+              "Ratios of altitudes of similar triangles equal ratios of corresponding sides.",
+              "Ratios of medians of similar triangles equal ratios of corresponding sides.",
+              "Angle bisector theorem divides opposite side in ratio of adjacent sides.",
+              "Midpoint theorem is a special case of Basic Proportionality Theorem.",
+              "Congruent triangles are always similar, but similar triangles are not necessarily congruent.",
+              "Proof of similarity requires identifying correct order of corresponding vertices.",
+              "Geometric construction problems rely heavily on BPT properties."
             ]
           },
           {
-            title: "Coordinate Geometry",
-            vId: "YdM4vX2P2w4",
+            title: "Coordinate Geometry", videoId: "YdM4vX2P2w4",
             lines: [
-              "1. Cartesian plane uses two perpendicular axes: horizontal X-axis and vertical Y-axis intersecting at origin (0, 0).",
-              "2. Distance formula between points P(x1, y1) and Q(x2, y2): PQ = √[(x2 - x1)^2 + (y2 - y1)^2].",
-              "3. Distance of point P(x, y) from origin O(0, 0) is given by: OP = √(x^2 + y^2).",
-              "4. Section formula for internal division in ratio m1:m2 gives coordinates: [(m1*x2 + m2*x1)/(m1+m2), (m1*y2 + m2*y1)/(m1+m2)].",
-              "5. Mid-point coordinates of line joining (x1, y1) and (x2, y2) are [(x1 + x2)/2, (y1 + y2)/2].",
-              "6. Centroid of a triangle with vertices (x1, y1), (x2, y2), (x3, y3) is [(x1+x2+x3)/3, (y1+y2+y3)/3].",
-              "7. Points are collinear if distance between two segments equals total length (AB + BC = AC).",
-              "8. Any point on X-axis has coordinates of the form (x, 0).",
-              "9. Any point on Y-axis has coordinates of the form (0, y).",
-              "10. Diagonals of a parallelogram bisect each other, sharing identical midpoint coordinates.",
-              "11. Rhombus has all four sides equal and diagonals perpendicular to each other.",
-              "12. Square has all sides equal and diagonals equal and perpendicular.",
-              "13. Rectangle has opposite sides equal and diagonals equal.",
-              "14. Equidistant point problems set squared distance formulas equal to solve coordinates.",
-              "15. Coordinate geometry connects algebraic equations with geometric figures."
+              "Distance formula between P(x1,y1) and Q(x2,y2): sqrt[(x2-x1)^2 + (y2-y1)^2].",
+              "Distance of point P(x,y) from origin O(0,0): sqrt(x^2 + y^2).",
+              "Section formula for internal division in ratio m1:m2: [(m1*x2 + m2*x1)/(m1+m2), (m1*y2 + m2*y1)/(m1+m2)].",
+              "Midpoint formula of line segment: [(x1 + x2)/2, (y1 + y2)/2].",
+              "Centroid of triangle with vertices (x1,y1), (x2,y2), (x3,y3): [(x1+x2+x3)/3, (y1+y2+y3)/3].",
+              "Points are collinear if they lie on the exact same straight line.",
+              "Abscissa represents x-coordinate; Ordinate represents y-coordinate.",
+              "Any point on X-axis has coordinates of the form (x, 0).",
+              "Any point on Y-axis has coordinates of the form (0, y).",
+              "Distance is always a non-negative scalar quantity.",
+              "Rhombus vertices checked by equal side lengths and unequal diagonal lengths.",
+              "Square vertices checked by equal side lengths and equal diagonal lengths.",
+              "Parallelogram diagonals bisect each other at a common midpoint.",
+              "Section formula ratio assumed as k:1 simplifies algebraic computation.",
+              "Equidistant points set up distance formula equality equations."
             ]
           },
           {
-            title: "Introduction to Trigonometry",
-            vId: "mG4zJ2W9w4E",
+            title: "Introduction to Trigonometry", videoId: "mG4zJ2W9w4E",
             lines: [
-              "1. Trigonometry studies relationships between side lengths and angles of right-angled triangles.",
-              "2. Sin θ = Opposite / Hypotenuse = Perpendicular / Hypotenuse.",
-              "3. Cos θ = Adjacent / Hypotenuse = Base / Hypotenuse.",
-              "4. Tan θ = Opposite / Adjacent = Perpendicular / Base = Sin θ / Cos θ.",
-              "5. Cosec θ = 1 / Sin θ, Sec θ = 1 / Cos θ, Cot θ = 1 / Tan θ.",
-              "6. Standard values: Sin 0° = 0, Sin 30° = 1/2, Sin 45° = 1/√2, Sin 60° = √3/2, Sin 90° = 1.",
-              "7. Standard values: Cos 0° = 1, Cos 30° = √3/2, Cos 45° = 1/√2, Cos 60° = 1/2, Cos 90° = 0.",
-              "8. Tan 45° = 1, Tan 30° = 1/√3, Tan 60° = √3; Tan 90° is undefined.",
-              "9. Fundamental Identity 1: sin^2 θ + cos^2 θ = 1.",
-              "10. Fundamental Identity 2: 1 + tan^2 θ = sec^2 θ.",
-              "11. Fundamental Identity 3: 1 + cot^2 θ = cosec^2 θ.",
-              "12. Values of trigonometric ratios lie between 0 and 1 for sin θ and cos θ.",
-              "13. Sec θ and cosec θ are always greater than or equal to 1.",
-              "14. Trigonometric identities are proven by expressing terms in sin θ and cos θ.",
-              "15. Right-triangle orientation determines perpendicular and base relative to acute angle θ."
+              "Trigonometry studies relationships between side lengths and angles of right-angled triangles.",
+              "sin(theta) = Perpendicular / Hypotenuse; cos(theta) = Base / Hypotenuse.",
+              "tan(theta) = Perpendicular / Base = sin(theta) / cos(theta).",
+              "cosec(theta) = 1/sin(theta); sec(theta) = 1/cos(theta); cot(theta) = 1/tan(theta).",
+              "Values for standard angles: sin(30)=1/2, sin(45)=1/sqrt(2), sin(60)=sqrt(3)/2.",
+              "cos(30)=sqrt(3)/2, cos(45)=1/sqrt(2), cos(60)=1/2; tan(45)=1.",
+              "Trigonometric Identity 1: sin^2(theta) + cos^2(theta) = 1.",
+              "Trigonometric Identity 2: 1 + tan^2(theta) = sec^2(theta).",
+              "Trigonometric Identity 3: 1 + cot^2(theta) = cosec^2(theta).",
+              "Hypotenuse is always the longest side in a right-angled triangle.",
+              "Perpendicular and Base change based on chosen acute reference angle theta.",
+              "tan(theta) increases from 0 to infinity as theta goes from 0 to 90 degrees.",
+              "sin(theta) increases from 0 to 1 as theta increases from 0 to 90 degrees.",
+              "cos(theta) decreases from 1 to 0 as theta increases from 0 to 90 degrees.",
+              "Trigonometric identities hold true for all angle values between 0 and 90 degrees."
             ]
           },
           {
-            title: "Some Applications of Trigonometry",
-            vId: "J9e4e2_G84E",
+            title: "Some Applications of Trigonometry", videoId: "J9e4e2_G84E",
             lines: [
-              "1. Line of sight is drawn from observer's eye to point viewed on the object.",
-              "2. Angle of elevation is formed by line of sight with horizontal when object is above horizontal level.",
-              "3. Angle of depression is formed by line of sight with horizontal when object is below horizontal level.",
-              "4. Angle of elevation equals angle of depression due to alternate interior angles.",
-              "5. Height and distance problems construct right-angled triangles from given physical descriptions.",
-              "6. Tan θ is most frequently used ratio as it connects height (perpendicular) and distance (base).",
-              "7. Increasing angle of elevation indicates observer is moving closer to object base.",
-              "8. Decreasing angle of elevation indicates observer is moving farther away from object base.",
-              "9. Two right triangles are formed when observing objects from heights or multiple points.",
-              "10. Value √3 ≈ 1.732 and √2 ≈ 1.414 are used for numerical height evaluations.",
-              "11. Height of tower can be calculated without direct physical measurement using trigonometry.",
-              "12. Multi-building problems use horizontal parallel lines to create upper right triangles.",
-              "13. Speed, time, and distance equations combine with tan ratios in moving object problems.",
-              "14. Shadow length changes with sun's altitude angle according to cot or tan relations.",
-              "15. Accurate geometric figures are necessary first step for solving heights and distances."
+              "Line of sight is drawn from observer's eye to object being viewed.",
+              "Angle of elevation is formed above horizontal level when looking up.",
+              "Angle of depression is formed below horizontal level when looking down.",
+              "Angle of elevation equals angle of depression due to alternate interior angles.",
+              "Right triangles modeled from word problems solved using trigonometric ratios.",
+              "tan(theta) is most commonly used ratio to calculate heights and distances.",
+              "Height of tower or building calculated without direct physical measurement.",
+              "Shadow length problems use tan(theta) = height / shadow length.",
+              "Two observer problems use system of right triangles with common height.",
+              "Moving object problems track changing angle of elevation over time.",
+              "Accurate diagram construction is essential first step for solving application problems.",
+              "Standard angle values (30, 45, 60 degrees) applied directly.",
+              "Multi-storey building problems involve combined heights.",
+              "Speed of moving vehicle calculated using distance = speed x time in trig figures.",
+              "Rounding off roots (like sqrt(3) = 1.732) required for final numerical answers."
             ]
           },
           {
-            title: "Circles",
-            vId: "92Z_pP74eW0",
+            title: "Circles", videoId: "92Z_pP74eW0",
             lines: [
-              "1. A line intersecting a circle at two distinct points is called a secant.",
-              "2. A line touching a circle at exactly one single point is called a tangent.",
-              "3. Point of contact is the common point where tangent touches the circle.",
-              "4. Theorem 1: Tangent at any point of a circle is perpendicular to radius through point of contact.",
-              "5. Only one tangent can be drawn to a circle at a given point on its circumference.",
-              "6. No tangent can be drawn to a circle from a point lying inside the circle.",
-              "7. Exactly two tangents can be drawn to a circle from an external point.",
-              "8. Theorem 2: Lengths of tangents drawn from an external point to a circle are equal.",
-              "9. Tangents drawn from external point subtend equal angles at the center of the circle.",
-              "10. Tangents drawn from external point are equally inclined to line joining point to center.",
-              "11. Center of circle lies on angle bisector of angle formed between two external tangents.",
-              "12. Perpendicular drawn from center to a chord bisects the chord.",
-              "13. Parallel tangents to a circle can exist only at endpoints of a diameter.",
-              "14. Quadrilateral circumscribing a circle has sum of opposite sides equal: AB + CD = AD + BC.",
-              "15. Tangent properties solve circle contact geometric proofs."
+              "Tangent to a circle is a line intersecting the circle at exactly one point.",
+              "Point of contact is where tangent touches the circle.",
+              "Tangent at any point is perpendicular to radius through point of contact.",
+              "No tangent can be drawn to a circle from a point inside it.",
+              "Exactly one tangent can be drawn at any point on the circle.",
+              "Exactly two tangents can be drawn to a circle from an external point.",
+              "Lengths of tangents drawn from an external point to a circle are equal.",
+              "Tangents subtend equal angles at circle center.",
+              "Tangents from external point are equally inclined to line joining point to center.",
+              "Center of circle lies on angle bisector of two external tangents.",
+              "Parallelogram circumscribing a circle is always a Rhombus.",
+              "Opposite sides of a quadrilateral circumscribing a circle subtend supplementary angles at center.",
+              "Secant is a line intersecting circle at two distinct points.",
+              "Concentric circles share the same center point.",
+              "Chords of concentric circles tangent to inner circle are bisected at contact point."
             ]
           },
           {
-            title: "Areas Related to Circles",
-            vId: "zX2P7e9G84E",
+            title: "Areas Related to Circles", videoId: "zX2P7e9G84E",
             lines: [
-              "1. Circumference of a circle with radius r is given by 2 * π * r.",
-              "2. Area of a circle with radius r is given by π * r^2.",
-              "3. Sector is region bounded by two radii and arc of a circle.",
-              "4. Length of arc of a sector with angle θ: L = (θ / 360°) * 2 * π * r.",
-              "5. Area of a sector with central angle θ: Area = (θ / 360°) * π * r^2.",
-              "6. Segment is region bounded by a chord and corresponding arc of a circle.",
-              "7. Area of minor segment = Area of corresponding sector - Area of triangle formed at center.",
-              "8. Area of triangle with central angle θ: Area = (1/2) * r^2 * sin θ.",
-              "9. Area of major sector = Total circle area - Area of minor sector.",
-              "10. Area of major segment = Total circle area - Area of minor segment.",
-              "11. Distance moved by a rotating wheel in one complete revolution equals its circumference.",
-              "12. Number of revolutions = Total distance traveled / Circumference of wheel.",
-              "13. Minute hand rotates 360° in 60 minutes, covering 6° per minute.",
-              "14. Hour hand rotates 360° in 12 hours, covering 0.5° per minute.",
-              "15. Value of π is taken as 22/7 or 3.14 as specified in problems."
+              "Circumference of a circle with radius r = 2 * pi * r.",
+              "Area of a circle with radius r = pi * r^2.",
+              "Length of an arc of sector with angle theta = (theta / 360) * 2 * pi * r.",
+              "Area of a sector of circle with central angle theta = (theta / 360) * pi * r^2.",
+              "Area of minor segment = Area of sector - Area of corresponding triangle.",
+              "Area of major sector = Total Circle Area - Area of minor sector.",
+              "Area of major segment = Total Circle Area - Area of minor segment.",
+              "Distance traveled by a wheel in one complete revolution = Circumference.",
+              "Number of revolutions = Total distance traveled / Circumference.",
+              "Area of equilateral triangle with side 'a' = (sqrt(3) / 4) * a^2.",
+              "Area of triangle with angle theta between two radii = (1/2) * r^2 * sin(theta).",
+              "Minute hand of a clock turns 6 degrees in 1 minute.",
+              "Hour hand of a clock turns 0.5 degrees in 1 minute.",
+              "Semicircle area = (1/2) * pi * r^2; Perimeter = pi * r + 2r.",
+              "Quadrant of a circle has central angle theta = 90 degrees."
             ]
           },
           {
-            title: "Surface Areas and Volumes",
-            vId: "9w2_e4G84E0",
+            title: "Surface Areas and Volumes", videoId: "9w2_e4G84E0",
             lines: [
-              "1. Total surface area of solid combination equals sum of exposed surface areas of component solids.",
-              "2. Volume of solid combination equals algebraic sum of volumes of individual constituent solids.",
-              "3. Cuboid: TSA = 2(lb + bh + hl), Volume = l * b * h.",
-              "4. Cube: TSA = 6 * a^2, Volume = a^3.",
-              "5. Cylinder: Curved Surface Area (CSA) = 2*π*r*h, TSA = 2*π*r*(r + h), Volume = π*r^2*h.",
-              "6. Cone: Slant height l = √(r^2 + h^2), CSA = π*r*l, TSA = π*r*(r + l), Volume = (1/3)*π*r^2*h.",
-              "7. Sphere: Surface Area = 4*π*r^2, Volume = (4/3)*π*r^3.",
-              "8. Hemisphere: CSA = 2*π*r^2, TSA = 3*π*r^2, Volume = (2/3)*π*r^3.",
-              "9. Melting one solid and recasting into another preserves total volume.",
-              "10. Number of smaller solids formed = Volume of large solid / Volume of one small solid.",
-              "11. Liquid flow through pipe: Volume per unit time = Cross-sectional area * Flow speed.",
-              "12. Embankment problems equate volume of dug-out earth to volume of circular ring ring-embankment.",
-              "13. Canvas required for conical tent equals curved surface area of cone.",
-              "14. Ice cream cone combining cone and hemisphere sums volume of cone and hemisphere.",
-              "15. Correct unit conversion (cm^3 to liters: 1000 cm^3 = 1 L) is essential for volume calculations."
+              "Combined solids surface area equals sum of visible exposed outer surface areas.",
+              "Cuboid Surface Area = 2(lb + bh + hl); Volume = l * b * h.",
+              "Cube Surface Area = 6a^2; Volume = a^3.",
+              "Right Circular Cylinder CSA = 2*pi*r*h; TSA = 2*pi*r*(r + h); Volume = pi*r^2*h.",
+              "Right Circular Cone CSA = pi*r*l; TSA = pi*r*(r + l); Slant height l = sqrt(r^2 + h^2).",
+              "Volume of Cone = (1/3) * pi * r^2 * h.",
+              "Sphere Surface Area = 4 * pi * r^2; Volume = (4/3) * pi * r^3.",
+              "Hemisphere CSA = 2 * pi * r^2; TSA = 3 * pi * r^2; Volume = (2/3) * pi * r^3.",
+              "Melting solid and recasting into new shape preserves total volume.",
+              "Hollow Cylinder Volume = pi * (R^2 - r^2) * h.",
+              "Embankment problems calculate volume of earth dug out from well.",
+              "Water flow in pipes volume = Cross-sectional area x flow speed x time.",
+              "Units conversion mandatory (1 m^3 = 1000 Liters, 1 cm^3 = 1 mL).",
+              "Slant height formula applies specifically to conical shapes.",
+              "Calculations simplified by taking pi common in algebraic steps."
             ]
           },
           {
-            title: "Statistics",
-            vId: "X3p7e9G84E0",
+            title: "Statistics", videoId: "X3p7e9G84E0",
             lines: [
-              "1. Mean is average value of variable x over total number of observations.",
-              "2. Direct method for grouped mean: x̄ = Σ(fi * xi) / Σfi.",
-              "3. Class mark xi = (Upper class limit + Lower class limit) / 2.",
-              "4. Assumed Mean method: x̄ = a + [Σ(fi * di) / Σfi], where di = xi - a.",
-              "5. Step-deviation method: x̄ = a + [Σ(fi * ui) / Σfi] * h, where ui = (xi - a) / h.",
-              "6. Mode is value of variable with highest frequency in a data set.",
-              "7. Modal class is class interval having maximum frequency.",
-              "8. Mode formula: Mode = l + [(f1 - f0) / (2f1 - f0 - f2)] * h.",
-              "9. l = lower limit of modal class, f1 = modal frequency, f0 = preceding frequency, f2 = succeeding frequency.",
-              "10. Median is middle value dividing data set into two equal halves.",
-              "11. Median class is class interval whose cumulative frequency is just greater than N / 2.",
-              "12. Median formula: Median = l + [(N/2 - cf) / f] * h.",
-              "13. Empirical relationship between central tendencies: Mode = 3 * Median - 2 * Mean.",
-              "14. Cumulative frequency table is constructed by adding successive class frequencies.",
-              "15. Class limits must be made continuous before calculating median or mode."
+              "Mean is the arithmetic average of given central data values.",
+              "Direct Method Mean: x_bar = Sum(f_i * x_i) / Sum(f_i).",
+              "Assumed Mean Method: x_bar = a + [Sum(f_i * d_i) / Sum(f_i)], where d_i = x_i - a.",
+              "Class Mark (x_i) = (Upper Class Limit + Lower Class Limit) / 2.",
+              "Mode is value with maximum frequency in data set.",
+              "Modal Class is class interval with highest frequency f1.",
+              "Mode Formula: L + [(f1 - f0) / (2*f1 - f0 - f2)] * h.",
+              "L is lower limit of modal class; h is class width; f0 and f2 are adjacent frequencies.",
+              "Median is middlemost value of arranged data distribution.",
+              "Cumulative frequency table required for median computation.",
+              "Median Class is interval whose cumulative frequency is just greater than N/2.",
+              "Median Formula: L + [(N/2 - cf) / f] * h.",
+              "Empirical Relationship: 3 * Median = Mode + 2 * Mean.",
+              "Mode determined graphically using highest bar of Histogram.",
+              "Class intervals must be continuous for accurate statistical calculations."
             ]
           },
           {
-            title: "Probability",
-            vId: "P2v9Z7e84E0",
+            title: "Probability", videoId: "P2v9Z7e84E0",
             lines: [
-              "1. Theoretical probability P(E) = Number of outcomes favorable to E / Total number of possible outcomes.",
-              "2. Probability of an event lies between 0 and 1 inclusive: 0 ≤ P(E) ≤ 1.",
-              "3. Probability of a sure/certain event equals 1.",
-              "4. Probability of an impossible event equals 0.",
-              "5. Complementary event Ē means 'not E': P(E) + P(Ē) = 1.",
-              "6. P(Ē) = 1 - P(E) provides simple calculation for 'at least one' problems.",
-              "7. Elementary event is an outcome having only one single element.",
-              "8. Sum of probabilities of all elementary events of an experiment equals 1.",
-              "9. Tossing a coin yields 2 outcomes: Head (H), Tail (T).",
-              "10. Tossing two coins yields 4 outcomes: HH, HT, TH, TT.",
-              "11. Rolling a single die yields 6 outcomes: {1, 2, 3, 4, 5, 6}.",
-              "12. Rolling two dice simultaneously yields 36 total outcomes.",
-              "13. Standard deck of cards contains 52 cards divided into 4 suits of 13 cards each.",
-              "14. Suits: Hearts and Diamonds (Red, 26 cards); Spades and Clubs (Black, 26 cards).",
-              "15. Face cards comprise Kings, Queens, and Jacks, totaling 12 cards in a deck."
+              "Probability measures numerical likelihood of event occurrence.",
+              "Theoretical Probability P(E) = Number of favorable outcomes / Total possible outcomes.",
+              "Probability of any event E always satisfies 0 <= P(E) <= 1.",
+              "Sure or Certain event has probability equal to 1.",
+              "Impossible event has probability equal to 0.",
+              "Complementary Event E' means 'Not E': P(E) + P(E') = 1.",
+              "Sum of probabilities of all elementary events of an experiment equals 1.",
+              "Single die toss total outcomes = 6: {1, 2, 3, 4, 5, 6}.",
+              "Pair of dice tossed total outcomes = 36.",
+              "Single coin toss total outcomes = 2 {H, T}; Two coins = 4; Three coins = 8.",
+              "Deck of cards has 52 playing cards split into 4 suits of 13 cards each.",
+              "Suits are Spades (Black), Clubs (Black), Hearts (Red), Diamonds (Red).",
+              "Face cards total 12 (4 Kings, 4 Queens, 4 Jacks).",
+              "Leap year contains 366 days (52 weeks + 2 extra days).",
+              "Non-leap year contains 365 days (52 weeks + 1 extra day)."
             ]
           }
         ]
       },
       sst: {
         educator: "Digraj Singh Rajput",
-        searchQuery: "Digraj Singh Rajput Class 10 SST",
         items: [
           {
-            title: "The Rise of Nationalism in Europe",
-            vId: "L_A2YxZ2L08",
+            title: "The Rise of Nationalism in Europe", videoId: "L_A2YxZ2L08",
             lines: [
-              "1. Frédéric Sorrieu painted vision of democratic social republics in 1848, visualizing nations marching together.",
-              "2. French Revolution of 1789 introduced ideas of La Patrie (fatherland) and Le Citoyen (citizen).",
-              "3. Estates General was renamed National Assembly; centralized administrative system was introduced.",
-              "4. Civil Code of 1804 (Napoleonic Code) abolished feudal privileges, established equality, and secured property rights.",
-              "5. Liberalism advocated individual freedom, equality before law, and end of autocratic privileges.",
-              "6. Zollverein was a customs union formed in 1834 by Prussia that abolished tariff barriers across German states.",
-              "7. Treaty of Vienna (1815) hosted by Duke Metternich restored Bourbon dynasty and conservative regimes.",
-              "8. Giuseppe Mazzini founded secret societies Young Italy and Young Europe to promote unified democratic republics.",
-              "9. Greek War of Independence (1821-1829) won independence from Ottoman Empire with Treaty of Constantinople.",
-              "10. Revolutions of 1848 led by educated middle class demanded constitutionalism and national unification.",
-              "11. Unification of Germany (1871) was led by Otto von Bismarck using Policy of Blood and Iron.",
-              "12. Unification of
+              "Frédéric Sorrieu's 1848 prints visualized a world of democratic and social republics.",
+              "French Revolution of 1789 marked the origin of nationalism in Europe.",
+              "Ideas of la patrie (the fatherland) and le citoyen (the citizen) emphasized a united community.",
+              "Napoleonic Code of 1804 abolished feudal privileges and established equality before law.",
+              "Conservatism gained power after Napoleon's defeat at the Battle of Waterloo in 1815.",
+              "Treaty of Vienna (1815) restored the Bourbon dynasty in France.",
+              "Giuseppe Mazzini founded secret societies 'Young Italy' and 'Young Europe' for unification.",
+              "Greek War of Independence (1821) mobilized nationalist feelings across Europe.",
+              "Treaty of Constantinople (1832) recognized Greece as an independent nation.",
+              "Revolutions of 1848 were led by educated middle-class liberals demanding constitutionalism.",
+              "Otto von Bismarck unified Germany using an 'Iron and Blood' policy through three wars.",
+              "Kaiser William I was proclaimed German Emperor at the Palace of Versailles in 1871.",
+              "Count Cavour and Giuseppe Garibaldi unified Italy alongside King Victor Emmanuel II.",
+              "Marianne in France and Germania in Germany served as female allegories of nations.",
+              "Balkan region became a major source of nationalist tension leading to World War I."
+            ]
+          },
+          {
+            title: "Nationalism in India", videoId: "v8B_T2W6D8o",
+            lines: [
+              "Mahatma Gandhi returned to India from South Africa in January 1915.",
+              "Satyagraha emphasized the power of truth and non-violent struggle against injustice.",
+              "Early local Satyagraha movements occurred in Champaran (1917), Kheda (1917), and Ahmedabad (1918).",
+              "Rowlatt Act of 1919 authorized detention of political prisoners without trial for two years.",
+              "Jallianwala Bagh massacre occurred on April 13, 1919, under General Dyer's orders.",
+              "Khilafat Movement was launched by Muhammad Ali and Shaukat Ali to support the Ottoman Caliph.",
+              "Non-Cooperation Movement was adopted at the Nagpur Congress session in December 1920.",
+              "Chauri Chaura incident in February 1922 led Gandhi to withdraw Non-Cooperation Movement.",
+              "Swaraj Party was formed by C.R. Das and Motilal Nehru inside the Congress.",
+              "Simon Commission arrived in India in 1928 and faced 'Go Back Simon' protests due to zero Indian members.",
+              "Lahore Congress Session (1929) under Jawaharlal Nehru demanded 'Purna Swaraj' (Complete Independence).",
+              "Dandi Salt March started on March 12, 1930, marking the Civil Disobedience Movement launch.",
+              "Gandhi-Irwin Pact was signed in March 1931, agreeing to participate in Round Table Conference.",
+              "Dr. B.R. Ambedkar established Depressed Classes Association (1930) and signed Poona Pact (1932).",
+              "Cultural unity was promoted by Bankim Chandra's 'Vande Mataram' and Abanindranath Tagore's Bharat Mata image."
+            ]
+          },
+          {
+            title: "The Making of a Global World", videoId: "YdM4vX2P2w4",
+            lines: [
+              "Silk Routes connected Asia with Europe and Northern Africa for trade and cultural exchange.",
+              "Food like spaghetti, noodles, and potatoes traveled across continents during early global trade.",
+              "European conquest of America was facilitated by diseases like Smallpox rather than conventional weapons.",
+              "Corn Laws in Britain restricted grain imports to protect domestic landlord interests.",
+              "Abolition of Corn Laws allowed cheaper food imports, accelerating British industrial urbanization.",
+              "Refrigerated ships allowed transport of perishable meat over long ocean distances.",
+              "19th-century indentured labor migration served as a 'new system of slavery'.",
+              "Rinderpest (Cattle Plague) arrived in Africa in late 1880s, destroying 90% of local livestock.",
+              "First World War (1914-1918) was the first modern industrial war involving mass production of weapons.",
+              "Great Depression of 1929 caused severe economic collapses, unemployment, and crop price drops globally.",
+              "US stock market crash in October 1929 triggered global economic panic.",
+              "Bretton Woods Conference (1944) established International Monetary Fund (IMF) and World Bank.",
+              "Bretton Woods system was based on fixed exchange rates pegged to US Dollar value.",
+              "Decolonization in post-WWII era created newly independent developing nations.",
+              "G-77 group was formed by developing nations to demand a New International Economic Order (NIEO)."
+            ]
+          },
+          {
+            title: "The Age of Industrialisation", videoId: "mG4zJ2W9w4E",
+            lines: [
+              "Proto-industrialization was a decentralized production system existing prior to factory establishment.",
+              "Merchants in 17th century moved to countryside to supply money to peasants for producing goods.",
+              "Richard Arkwright created the first modern mill-based cotton factory system.",
+              "James Watt patented the improved Steam Engine in 1781, produced by Matthew Boulton.",
+              "Hand labor was preferred in Britain due to abundant cheap labor and demand for intricate designs.",
+              "Spinning Jenny invented by James Hargreaves in 1764 reduced hand spinning requirements.",
+              "Gomasthas were paid servants appointed by East India Company to supervise Indian weavers.",
+              "Indian hand-woven textile exports declined due to high tariffs imposed in Britain.",
+              "Manchester cotton goods flooded Indian domestic markets, creating weaver distress.",
+              "First cotton mill in India was established in Bombay in 1854.",
+              "First jute mill was set up at Rishra near Calcutta in 1855.",
+              "Early Indian entrepreneurs included Dwarkanath Tagore, Dinshaw Petit, and Jamsetji Tata.",
+              "Jobbers were trusted old workers hired by mill owners to recruit new factory workers.",
+              "Swadeshi Movement encouraged domestic industrial expansion and boycott of foreign textiles.",
+              "Advertisements and calendar prints were used to create new consumer demands for British products."
+            ]
+          },
+          {
+            title: "Print Culture and the Modern World", videoId: "J9e4e2_G84E",
+            lines: [
+              "Earliest print technology developed in China, Japan, and Korea using hand woodblock printing.",
+              "China produced imperial civil service exam textbooks using woodblock prints.",
+              "Marco Polo introduced woodblock printing knowledge to Europe from China in 1295.",
+              "Johann Gutenberg invented the first mechanical movable type printing press in Germany in 1430s.",
+              "First book printed by Gutenberg on his mechanical press was the Bible.",
+              "Print Revolution transformed reading habits, creating a new public reading culture.",
+              "Martin Luther wrote Ninety-Five Theses in 1517 criticizing Roman Catholic Church practices.",
+              "Protestant Reformation was fueled by Luther's German translation of the New Testament.",
+              "Index of Prohibited Books was maintained by Catholic Church from 1559 to suppress heresy.",
+              "Penny chapbooks were cheap books sold by chapmen in England for ordinary readers.",
+              "James Augustus Hickey published 'Bengal Gazette', India's first weekly magazine, in 1780.",
+              "Raja Rammohan Roy published 'Sambad Kaumudi' in 1821 to promote social reforms.",
+              "Vernacular Press Act of 1878 was passed to censor native language newspapers.",
+              "Jyotiba Phule wrote 'Gulamgiri' in 1871 exposing low-caste oppression in India.",
+              "Print enabled nationalist ideas to spread rapidly across various regions of India."
+            ]
+          },
+          {
+            title: "Resources and Development", videoId: "92Z_pP74eW0",
+            lines: [
+              "Resources are environment components that are technologically accessible, economically feasible, and culturally acceptable.",
+              "Resources are classified by origin (Biotic/Abiotic) and exhaustibility (Renewable/Non-Renewable).",
+              "International resources are managed by oceanic international institutions beyond 200 nautical miles.",
+              "Indiscriminate resource use causes depletion, global warming, and ecological crises.",
+              "Sustainable development satisfies present needs without compromising future generation requirements.",
+              "Rio de Janeiro Earth Summit (1992) adopted Agenda 21 for global sustainable development.",
+              "Resource planning involves identification, inventory, planning structure, and national integration.",
+              "Land degradation is caused by deforestation, overgrazing, mining, and excessive irrigation.",
+              "Soil formation is influenced by parent rock, climate, vegetation, time, and relief features.",
+              "Alluvial soil is highly fertile, rich in potash and lime, deposited by Indus, Ganga, Brahmaputra rivers.",
+              "Black soil (Regur soil) is ideal for cotton cultivation and rich in clayey material.",
+              "Red and Yellow soils derive reddish color from iron diffusion in crystalline rocks.",
+              "Laterite soil forms under high temperature and heavy rainfall due to intense leaching.",
+              "Arid soil is sandy, saline, and lacks humus and moisture content.",
+              "Soil erosion is prevented by contour plowing, terrace farming, strip cropping, and shelter belts."
+            ]
+          },
+          {
+            title: "Forest and Wildlife Resources", videoId: "zX2P7e9G84E",
+            lines: [
+              "India is rich in biodiversity, housing nearly 8 percent of global species count.",
+              "IUCN classifies species as Normal, Endangered, Vulnerable, Rare, Endemic, and Extinct.",
+              "Endangered species face extinction threat (e.g., Indian Wild Ass, Sangai).",
+              "Extinct species are not found in known natural habitats (e.g., Asiatic Cheetah).",
+              "Forest loss is caused by agricultural expansion, mining, large river projects, and overgrazing.",
+              "Project Tiger was launched in 1973 to save declining Indian tiger populations.",
+              "Reserved Forests are fully protected forests reserved for timber production.",
+              "Protected Forests are protected from further depletion by state forest departments.",
+              "Unclassed Forests are managed by local communities and private individuals.",
+              "Chipko Movement in the Himalayas successfully resisted deforestation by hugging trees.",
+              "Beej Bachao Andolan in Tehri promoted traditional seed conservation without synthetic chemicals.",
+              "Joint Forest Management (JFM) involves local village communities in restoring degraded forests.",
+              "Orissa passed the first official JFM resolution in 1988.",
+              "Sacred Groves are virgin forest patches protected by indigenous tribal faiths.",
+              "Biodiversity conservation is vital for ecological balance and human survival."
+            ]
+          },
+          {
+            title: "Water Resources", videoId: "9w2_e4G84E0",
+            lines: [
+              "Three-fourths of Earth's surface is covered with water, but freshwater is scarce.",
+              "Freshwater is obtained from surface runoff and groundwater recharged by hydrologic cycle.",
+              "Water scarcity is caused by over-exploitation, population growth, and industrial pollution.",
+              "Jawaharlal Nehru called Multi-Purpose Dams the 'Temples of Modern India'.",
+              "Dams help flood control, irrigation, power generation, navigation, and fish breeding.",
+              "Dams cause ecological damage, river fragmentation, sediment loss, and displacement of locals.",
+              "Narmada Bachao Andolan protested against construction of Sardar Sarovar Dam.",
+              "Rooftop rainwater harvesting is traditional practice in arid regions like Rajasthan.",
+              "Rooftop rainwater is collected in underground storage tanks called 'Tankas' in Rajasthan.",
+              "Gendathur village in Karnataka installed rooftop harvesting in 200 households.",
+              "Bamboo drip irrigation system is a 200-year-old practice in Meghalaya.",
+              "Guls and Kuls are diversion channels used for agriculture in Western Himalayas.",
+              "Khadins and Johads are rain-fed storage structures in agricultural fields of Rajasthan.",
+              "Inter-state water disputes arise from sharing dam waters among neighboring states.",
+              "Water conservation is critical for national food security and sustainable life."
+            ]
+          },
+          {
+            title: "Agriculture", videoId: "X3p7e9G84E0",
+            lines: [
+              "Two-thirds of India's population is engaged in agricultural activities.",
+              "Primitive Subsistence Farming uses family labor and basic tools like hoe and dao.",
+              "Slash and Burn Agriculture (Jhumming) involves clearing forest patches for crop farming.",
+              "Intensive Subsistence Farming is practiced in high-population areas using high chemical inputs.",
+              "Commercial Farming uses high-yielding seeds, chemical fertilizers, and modern machinery.",
+              "Plantation is a type of commercial farming growing a single crop over large estates.",
+              "Rabi crops are sown in winter (Oct-Dec) and harvested in summer (Apr-Jun) (e.g., Wheat, Mustard).",
+              "Kharif crops are sown with monsoon onset and harvested in Oct-Nov (e.g., Rice, Maize).",
+              "Zaid is a short summer cropping season between Rabi and Kharif (e.g., Watermelon, Cucumber).",
+              "Rice is India's staple food crop, requiring high temperature and rainfall above 100 cm.",
+              "Wheat requires cool growing climate, bright sunshine, and 50-75 cm annual rainfall.",
+              "Millets (Jowar, Bajra, Ragi) are coarse grains rich in nutritional value.",
+              "Sugarcane is a tropical/subtropical crop needing hot, humid climate and 75-100 cm rainfall.",
+              "Tea and Coffee are major beverage plantation crops grown on well-drained hill slopes.",
+              "Bhoodan-Gramdan movement initiated by Vinoba Bhave is known as Bloodless Revolution."
+            ]
+          },
+          {
+            title: "Minerals and Energy Resources", videoId: "P2v9Z7e84E0",
+            lines: [
+              "Minerals are naturally occurring homogeneous substances with a definable internal structure.",
+              "Ores are mineral aggregations containing sufficient metal concentration for economic extraction.",
+              "Ferrous minerals contain iron (e.g., Iron Ore, Manganese); Non-Ferrous do not (e.g., Copper, Bauxite).",
+              "Magnetite is the finest iron ore with up to 70% iron content and magnetic properties.",
+              "Hematite is the most important industrial iron ore containing 50-60% iron.",
+              "Kudremukh iron ore deposits in Karnataka are known to be among the largest worldwide.",
+              "Manganese is primarily used in manufacturing steel and ferro-manganese alloys.",
+              "Bauxite is the ore from which light and durable Aluminum metal is extracted.",
+              "Mica is an essential mineral used in electrical industries due to di-electric strength.",
+              "Conventional energy sources include Coal, Petroleum, Natural Gas, and Electricity.",
+              "Coal is the most abundantly available fossil fuel in India (Anthracite, Bituminous, Lignite).",
+              "Mumbai High is India's premier offshore petroleum producing field.",
+              "Non-conventional energy sources include Solar, Wind, Nuclear, Biogas, and Tidal energy.",
+              "Nuclear power is generated from uranium and thorium deposits found in Rajasthan and Kerala.",
+              "Biogas plants convert organic waste into high-grade energy and nutrient-rich manure."
+            ]
+          },
+          {
+            title: "Manufacturing Industries", videoId: "Z9p7e84E000",
+            lines: [
+              "Manufacturing transforms raw materials into valuable finished goods in large quantities.",
+              "Manufacturing sector is considered the backbone of economic development.",
+              "Agro-based industries use agricultural raw materials (e.g., Cotton, Jute, Sugar, Tea).",
+              "Mineral-based industries use mineral ores as raw materials (e.g., Iron & Steel, Cement).",
+              "Cotton textile industry was traditionally concentrated in Maharashtra and Gujarat.",
+              "Jute mills are concentrated along Hooghly river banks due to raw material proximity.",
+              "Iron and Steel industry is the basic industry supporting heavy capital machinery.",
+              "Chota Nagpur plateau has maximum concentration of iron and steel plants.",
+              "Chemical industry contributes significantly to GDP, producing organic and inorganic chemicals.",
+              "Fertilizer industry expanded rapidly after the success of the Green Revolution.",
+              "Cement industry requires bulky raw materials like limestone, silica, and alumina.",
+              "Information Technology (IT) industry centered in Bengaluru has generated major employment.",
+              "Industrial pollution harms environment via Air, Water, Thermal, and Noise pollution.",
+              "NTPC shows proactive industrial environmental management through ecological preservation.",
+              "Sewage treatment and rainwater harvesting minimize industrial water pollution."
+            ]
+          },
+          {
+            title: "Life Lines of National Economy", videoId: "L9e84E00000",
+            lines: [
+              "Efficient transport and communication networks are prerequisites for fast economic development.",
+              "Means of transport are categorized into Land, Water, and Air transport.",
+              "Roadways have an edge over Railways due to lower construction cost and door-to-door service.",
+              "Golden Quadrilateral super highways connect Delhi, Mumbai, Chennai, and Kolkata.",
+              "National Highways are constructed and maintained by Central Public Works Department (CPWD).",
+              "Railways are the principal mode of transportation for freight and passengers in India.",
+              "Pipelines transport crude oil, petroleum products, and natural gas over long distances.",
+              "HVJ (Hazira-Vijaipur-Jagdishpur) is a major cross-country gas pipeline network.",
+              "Waterways are the cheapest mode of transport for bulky and heavy goods.",
+              "National Waterway No. 1 stretches along Ganga river between Allahabad and Haldia.",
+              "Major seaports like Kandla (Tidal port) and Mumbai handle bulk ocean trade.",
+              "Air transport provides fastest travel across difficult terrains like North-Eastern states.",
+              "Pawanhans Helicopters provides helicopter services to oil extraction sites and remote areas.",
+              "Digital communications and India Post connect urban and rural areas across the nation.",
+              "International trade via ports acts as an economic barometer for a nation."
+            ]
+          },
+          {
+            title: "Power Sharing", videoId: "K9e84E00001",
+            lines: [
+              "Belgium has complex ethnic composition: 59% Dutch-speaking, 40% French-speaking, 1% German.",
+              "Brussels capital of Belgium had 80% French speakers and 20% Dutch speakers.",
+              "Belgian model amended constitution 4 times between 1970 and 1995 to accommodate diversity.",
+              "Equal number of Dutch and French ministers were mandated in Belgian central government.",
+              "Community Government in Belgium is elected by people belonging to one language community.",
+              "Sri Lanka gained independence in 1948 with Sinhala majority dominance.",
+              "1956 Act in Sri Lanka recognized Sinhala as sole official language, disregarding Tamil.",
+              "Majoritarian policy in Sri Lanka led to distrust and protracted Civil War.",
+              "Prudential reasons state power sharing reduces social conflict and maintains political stability.",
+              "Moral reasons state power sharing is the true spirit of democracy.",
+              "Horizontal power sharing divides power among Executive, Legislature, and Judiciary.",
+              "Horizontal distribution establishes a system of checks and balances.",
+              "Vertical power sharing divides power among Federal, State, and Local government levels.",
+              "Power sharing among political parties and pressure groups prevents power concentration.",
+              "Power sharing ensures peaceful co-existence of multi-ethnic societies."
+            ]
+          },
+          {
+            title: "Federalism", videoId: "M9e84E00002",
+            lines: [
+              "Federalism is a system dividing power between central authority and constituent units.",
+              "Unitary system concentrates all political powers within a single central government.",
+              "Federalism features 2 or more government tiers governing the same citizens.",
+              "Jurisdiction of respective government tiers is specified in the Constitution.",
+              "'Coming Together' federations pool independent states together (e.g., USA, Australia, Switzerland).",
+              "'Holding Together' federations divide power between central and state units (e.g., India, Spain, Belgium).",
+              "Union List contains subjects of national importance like Defense, Foreign Affairs, Banking.",
+              "State List contains local importance subjects like Police, Trade, Agriculture, Health.",
+              "Concurrent List contains common subjects like Education, Forest, Trade Unions, Marriage.",
+              "Residuary subjects not in any list are governed exclusively by Union Government.",
+              "Special constitutional status was historically granted to certain states under Article 371.",
+              "Linguistic reorganization of Indian states in 1956 strengthened national unity.",
+              "Language policy of India did not give official national language status to any single language.",
+              "73rd and 74th Constitutional Amendments (1992) strengthened local self-government bodies.",
+              "Panchayati Raj operates at local village levels supervised by Zilla Parishads."
+            ]
+          },
+          {
+            title: "Gender, Religion and Caste", videoId: "N9e84E00003",
+            lines: [
+              "Sexual division of labor assigns household chores to women and public work to men.",
+              "Feminist movements demand equal rights, educational opportunities, and voting power for women.",
+              "Patriarchal system values men over women in decision-making and property inheritance.",
+              "India has a low female literacy rate compared to male literacy rate.",
+              "Child Sex Ratio has declined due to female foeticide despite legal bans.",
+              "Women reservation of 33% seats is mandated in local Panchayati Raj bodies.",
+              "Communalism occurs when religious identities override civic citizenship.",
+              "Communal politics uses religious symbols, leaders, and emotional appeals to split votes.",
+              "Secular state has no official state religion and guarantees freedom of faith.",
+              "Indian Constitution enforces secularism to prevent religious discrimination.",
+              "Caste system is an extreme hereditary form of institutionalized social inequality.",
+              "Social reformers like Jotiba Phule, Gandhiji, and Ambedkar fought caste oppression.",
+              "Urbanization and literacy have weakened traditional rigid caste boundaries.",
+              "Caste in politics occurs when parties select candidates based on caste demography.",
+              "Politics in caste occurs when caste groups form alliances to demand political power."
+            ]
+          },
+          {
+            title: "Political Parties", videoId: "O9e84E00004",
+            lines: [
+              "Political party is a group of people organized to contest elections and hold government power.",
+              "Components of political parties: The Leaders, Active Members, and The Followers.",
+              "Parties contest elections, formulate policies, shape public opinion, and form governments.",
+              "Opposition parties critique ruling government policies and represent alternative views.",
+              "One-Party system limits power to a single party (e.g., Communist Party in China).",
+              "Two-Party system alternates power between two major political parties (e.g., USA, UK).",
+              "Multi-Party system allows multiple parties to compete and form coalition governments (e.g., India).",
+              "National Parties must secure at least 6% votes in Lok Sabha or 4 state assembly polls + 4 seats.",
+              "State Parties must secure at least 6% votes in State Assembly election + 2 seats.",
+              "Election Commission of India registers and allocates official symbols to political parties.",
+              "Challenges to political parties include lack of internal democracy and dynastic succession.",
+              "Growing influence of money and muscle power poses serious threats during elections.",
+              "Anti-Defection Law prevents elected MPs/MLAs from changing political parties after elections.",
+              "Affidavit submission regarding assets and criminal cases is mandatory for election candidates.",
+              "Active citizen participation is vital for reforming political parties."
+            ]
+          },
+          {
+            title: "Outcomes of Democracy", videoId: "P9e84E00005",
+            lines: [
+              "Democracy promotes citizen equality, individual dignity, and peaceful conflict resolution.",
+              "Accountable government responds to citizens' needs and expectations.",
+              "Responsive government acts on public demands through open democratic channels.",
+              "Legitimate government is chosen by citizens through free and fair periodic elections.",
+              "Democracy ensures transparency, allowing citizens to examine decision-making processes.",
+              "Democratic governments are often slower than dictatorships in executing decisions.",
+              "Economic growth in democracies is slightly lower than non-democratic dictatorships.",
+              "Democracy reduces social conflict by accommodating religious, linguistic, and cultural diversity.",
+              "Democracy respects minority rights and prevents majority tyranny.",
+              "Individual dignity of women and marginalized castes is best upheld in democracies.",
+              "Democracy allows citizens to correct past electoral and policy mistakes.",
+              "Poverty reduction remains a major challenge for many developing democracies.",
+              "Regular elections and public debates signal healthy democratic functioning.",
+              "Citizens in democracies transition from passive subjects to active political voters.",
+              "Expectations from democracy act as a test of its ongoing political success."
+            ]
+          },
+          {
+            title: "Development", videoId: "Q9e84E00006",
+            lines: [
+              "Development goals differ among individuals; what is development for one may harm another.",
+              "Income is the primary goal, but non-material goals like freedom, equality, and security matter.",
+              "Per Capita Income = Total National Income / Total Country Population.",
+              "World Bank uses Per Capita Income to categorize countries into High and Low income.",
+              "Human Development Index (HDI) published by UNDP evaluates Income, Health, and Education.",
+              "Infant Mortality Rate (IMR) measures child deaths under 1 year per 1,000 live births.",
+              "Literacy Rate measures literate population percentage in 7 years and above age group.",
+              "Net Attendance Ratio measures 14-15 age children attending school percentage.",
+              "Body Mass Index (BMI) evaluates adult nutritional status: Weight (kg) / Height (m)^2.",
+              "Public facilities like PDS, healthcare, and schools are essential for community welfare.",
+              "Kerala has lower IMR than Punjab due to superior public health and education facilities.",
+              "Sustainable development ensures non-renewable natural resources are conserved.",
+              "Groundwater depletion in India highlights reckless over-exploitation of natural reserves.",
+              "Crude oil reserves globally are limited and face exhaustion within decades.",
+              "Development planning must balance economic growth with environmental preservation."
+            ]
+          },
+          {
+            title: "Sectors of the Indian Economy", videoId: "R9e84E00007",
+            lines: [
+              "Primary Sector extracts natural resources directly (e.g., Agriculture, Mining, Fishing).",
+              "Secondary Sector processes primary products into finished industrial goods (e.g., Manufacturing).",
+              "Tertiary Sector provides support services to primary/secondary sectors (e.g., Banking, Transport).",
+              "Gross Domestic Product (GDP) is total value of final goods/services produced in a year.",
+              "Tertiary sector has emerged as the largest GDP producing sector in India.",
+              "Primary sector remains the largest employer despite lower GDP contribution.",
+              "Disguised Unemployment occurs when more people work in agriculture than required.",
+              "Underemployment means workers contribute below their full capacity.",
+              "Organized Sector provides formal employment, fixed hours, job security, and benefits.",
+              "Unorganized Sector features low paid jobs, no job security, and zero formal benefits.",
+              "Public Sector enterprises are owned and operated by Government (e.g., Railways, BSNL).",
+              "Private Sector enterprises are owned by private individuals (e.g., TATA, Reliance).",
+              "MGNREGA 2005 guarantees 100 days of wage employment annually to rural households.",
+              "Government provides subsidized food via PDS to protect unorganized poor workers.",
+              "Public sector investments build infrastructure essential for overall national growth."
+            ]
+          },
+          {
+            title: "Money and Credit", videoId: "S9e84E00008",
+            lines: [
+              "Barter system relied on double coincidence of wants, which was inconvenient.",
+              "Money eliminates double coincidence of wants by acting as a universal medium of exchange.",
+              "Modern forms of money include currency notes, coins, and bank demand deposits.",
+              "Reserve Bank of India (RBI) issues currency notes on behalf of the Central Government.",
+              "Demand deposits in banks can be withdrawn on demand and transferred using cheques.",
+              "Banks keep a portion of deposits as cash reserves and lend the rest as credit.",
+              "Credit (Loan) refers to an agreement where lender supplies money against future repayment.",
+              "Collateral is an asset owned by borrower pledged as security to lender.",
+              "Terms of Credit include Interest rate, Collateral, Documentation, and Repayment mode.",
+              "Debt-trap occurs when credit pushes borrower into a cycle of painful distress.",
+              "Formal credit sources include Commercial Banks and Cooperative societies supervised by RBI.",
+              "Informal credit sources include Moneylenders, Traders, Landlords charging exorbitant interest.",
+              "Rich urban households depend heavily on formal credit; rural poor rely on informal sources.",
+              "Self-Help Groups (SHGs) pool small savings to lend money to members without collateral.",
+              "Grameen Bank of Bangladesh founded by Muhammad Yunus empowered poor rural women."
+            ]
+          }
+        ]
+      },
+      english: {
+        educator: "Dear Sir",
+        items: [
+          {
+            title: "A Letter to God", videoId: "L_A2YxZ2L08",
+            lines: [
+              "Lencho was a hardworking farmer living on the crest of a low hill.",
+              "He anticipated rain to nourish his field of ripe corn.",
+              "Rain started falling, which Lencho called 'new coins' for his family.",
+              "Suddenly a strong wind blew, bringing a devastating hailstorm.",
+              "Hailstones destroyed the entire corn field completely overnight.",
+              "Lencho had immense faith in God and believed God sees everything.",
+              "He wrote a letter to God requesting 100 pesos to sow his field again.",
+              "Postman saw the letter addressed to God and laughed heartily.",
+              "Postmaster decided to answer the letter to keep Lencho's faith intact.",
+              "Postmaster collected money from employees and friends, raising 70 pesos.",
+              "He signed the letter with a single word: 'God'.",
+              "Lencho was not surprised upon receiving the letter with money.",
+              "He counted the money and became angry finding only 70 pesos.",
+              "Lencho wrote a second letter asking God for the remaining 30 pesos.",
+              "He called post office employees a 'bunch of crooks', displaying ironic faith."
+            ]
+          },
+          {
+            title: "Nelson Mandela: Long Walk to Freedom", videoId: "v8B_T2W6D8o",
+            lines: [
+              "Inauguration ceremony took place on May 10, 1994, in Pretoria amphitheater.",
+              "Nelson Mandela became South Africa's first Black President after centuries of white rule.",
+              "Apartheid was a political system separating people based on racial discrimination.",
+              "Dignitaries from over 140 countries attended the historical victory of justice.",
+              "Mandela pledged to liberate his people from poverty, deprivation, and discrimination.",
+              "Two national anthems were sung representing both white and black citizens.",
+              "Mandela remembered freedom fighters like Oliver Tambo and Walter Sisulu.",
+              "He stated that courage is not the absence of fear, but victory over fear.",
+              "Man's goodness is a flame that can be hidden but never extinguished.",
+              "Every man has twin obligations: to his family and to his nation.",
+              "Freedom transformed Mandela from a fearful young man into a bold revolutionary.",
+              "African National Congress (ANC) joined the freedom struggle for equal human rights.",
+              "Oppressor must be liberated just as surely as the oppressed.",
+              "Mandela highlighted that freedom is indivisible for all human beings.",
+              "Historical triumph marked the birth of a peaceful democratic non-racial nation."
+            ]
+          },
+          {
+            title: "Two Stories about Flying", videoId: "YdM4vX2P2w4",
+            lines: [
+              "First story features a young seagull afraid to take his maiden flight.",
+              "His parents and siblings flew away, leaving him alone on the ledge.",
+              "Young seagull was terrified of falling into the vast sea below.",
+              "His parents starved and scolded him to force him to fly.",
+              "Mother seagull picked up a piece of fish to entice him.",
+              "Maddened by hunger, the young seagull dived at the fish.",
+              "He fell outwards and downwards into space, feeling absolute terror.",
+              "His wings spread outwards automatically, and he realized he was flying.",
+              "His family cheered and offered him dogfish pieces for his success.",
+              "Second story involves a pilot flying his old Dakota airplane over France.",
+              "He encountered massive storm clouds looking like black mountains.",
+              "Instruments like compass and radio stopped working inside storm clouds.",
+              "A mysterious black airplane without lights appeared beside him.",
+              "The unknown pilot guided him safely through dark clouds to land.",
+              "Control tower woman revealed no other plane was flying that night."
+            ]
+          },
+          {
+            title: "From the Diary of Anne Frank", videoId: "mG4zJ2W9w4E",
+            lines: [
+              "Anne Frank was a 13-year-old Jewish girl hiding in Amsterdam during WWII.",
+              "She felt paper has more patience than people to listen to thoughts.",
+              "Anne received a red-and-white check diary on her 13th birthday.",
+              "She named her diary 'Kitty' and treated it as a true friend.",
+              "Anne lived in a loving family with parents, sister Margot, and grandmother.",
+              "Her father Otto Frank migrated to Holland to escape Nazi persecution.",
+              "Mr. Keesing was her strict math teacher who got annoyed by her talking.",
+              "He assigned her an essay on 'A Chatterbox' as punishment.",
+              "Anne argued that talking is a student's trait inherited from her mother.",
+              "Keesing assigned a second essay titled 'An Incorrigible Chatterbox'.",
+              "Third assignment was 'Quack, Quack, Quack, Said Mistress Chatterback'.",
+              "Anne wrote a funny poem about a mother duck and father swan.",
+              "Father swan bit three ducklings to death for quacking too much.",
+              "Mr. Keesing took the joke in good spirit and read poem to class.",
+              "Keesing allowed Anne to talk without further extra homework."
+            ]
+          },
+          {
+            title: "Glimpses of India", videoId: "J9e4e2_G84E",
+            lines: [
+              "Part 1 describes traditional Portuguese bakery culture in Goa.",
+              "Bakers in Goa are traditionally called 'Pader' and recognized by 'jhang-jhang' sound.",
+              "Traditional baking dresses were known as 'Kabai' (one-piece long frock).",
+              "Bread loaves and sweet breads like 'bol' are vital for Goan festivals.",
+              "Part 2 explores Coorg (Kodagu), a beautiful coffee country in Karnataka.",
+              "Coorg is famous for coffee plantations, evergreen rainforests, and spices.",
+              "Coorgi people are fiercely independent, believed to be of Greek or Arab descent.",
+              "Kodavus are the only people in India permitted to carry firearms without license.",
+              "Mahaseer, a large freshwater fish, abounds in the waters of Kaveri river.",
+              "Part 3 focuses on Tea from Assam, world's largest tea-growing region.",
+              "Pranjol and Rajvir were classmates traveling to Assam during summer break.",
+              "Rajvir shared legends about tea discovery from Chinese and Indian traditions.",
+              "Chinese emperor discovered tea when leaves accidentally fell into boiling water.",
+              "Indian legend credits Buddhist monk Bodhidharma who cut eyelids to prevent sleep.",
+              "Tea bushes sprouted from Bodhidharma's discarded eyelids."
+            ]
+          },
+          {
+            title: "Mijbil the Otter", videoId: "92Z_pP74eW0",
+            lines: [
+              "Gavin Maxwell traveled to Southern Iraq in 1956 after his dog died.",
+              "He decided to keep an otter as a pet instead of a dog.",
+              "His friend presented him an otter in a sack from Tigris marshes.",
+              "Maxwell named the otter species 'Mijbil' (Maxwell's otter).",
+              "Mijbil loved playing with water, plunging and splashing in bath tub.",
+              "Otters treat every drop of water as something to be spilled and squandered.",
+              "Maxwell had to transport Mijbil from Basra to England via air flight.",
+              "Airlines mandated Mijbil to be carried inside a small wooden box.",
+              "Mijbil tore the box lining and injured himself, bleeding profusely.",
+              "In the flight, Mijbil escaped the box, causing commotion among passengers.",
+              "A kind air hostess helped Maxwell retrieve the pet safely.",
+              "In London, Mijbil played with ping-pong balls, marbles, and rubber fruit.",
+              "He developed habits like running along school wall boundary.",
+              "Londoners made funny guesses about Mijbil's species (beaver, seal, hippo).",
+              "Maxwell developed a deep emotional bond with his unique pet."
+            ]
+          },
+          {
+            title: "Madam Rides the Bus", videoId: "zX2P7e9G84E",
+            lines: [
+              "Valliammai (Valli) was an 8-year-old curious girl with no playmates.",
+              "Her favorite pastime was standing at her doorstep watching street activities.",
+              "Her strongest desire was to ride the bus traveling to the nearest town.",
+              "She listened to neighbors' conversations to collect bus journey details.",
+              "Town was 6 miles away; bus fare was 30 paise one way (60 paise round trip).",
+              "Bus ride took 45 minutes to reach the town destination.",
+              "Valli saved 60 paise meticulously by resisting candies, toys, and rides.",
+              "She boarded the 1 o'clock afternoon bus while her mother slept.",
+              "Jolly conductor called her 'Madam' due to her self-confident attitude.",
+              "Valli stood up on seat to view landscape over window canvas blind.",
+              "She enjoyed seeing a young cow running wildly in front of bus.",
+              "Valli refused conductor's offer of cold drink in town to save money.",
+              "On return journey, she saw the same young cow lying dead by roadside.",
+              "Sight of dead cow filled Valli with deep sadness and silence.",
+              "She returned home safely without her mother ever discovering her adventure."
+            ]
+          },
+          {
+            title: "The Sermon at Benares", videoId: "9w2_e4G84E0",
+            lines: [
+              "Gautama Buddha was born as Prince Siddhartha Gautama in Northern India.",
+              "At age 25, he witnessed a sick man, old man, funeral process, and monk.",
+              "Deeply moved, he left his royal life to seek spiritual enlightenment.",
+              "He sat under a Peepal tree in Bodh Gaya until gaining enlightenment after 7 days.",
+              "Buddha preached his first sermon at the sacred city of Benares.",
+              "Kisa Gotami had an only son who died, causing her extreme grief.",
+              "She went door to door asking for medicine to bring her child back.",
+              "A man advised her to seek help from Lord Buddha.",
+              "Buddha asked her to bring mustard seeds from a household where no one had died.",
+              "Kisa Gotami searched everywhere but could not find a single death-free house.",
+              "Tired and hopeless, she sat at roadside watching city lights flicker and extinguish.",
+              "She realized human lives flicker like lights and death is inevitable.",
+              "Buddha taught that mortal lives are troubled, brief, and combined with pain.",
+              "Grief and weeping cannot bring peace of mind to grieving mortals.",
+              "Overcoming sorrow is the true path to achieving internal tranquility and enlightenment."
+            ]
+          },
+          {
+            title: "The Proposal", videoId: "X3p7e9G84E0",
+            lines: [
+              "Anton Chekhov's play 'The Proposal' is a one-act comedy farce.",
+              "Ivan Lomov is a 35-year-old anxious landowner seeking a proposal.",
+              "Stepan Chubukov is a wealthy landowner and father of Natalya.",
+              "Lomov visits Chubukov dressed formally in jacket and gloves.",
+              "Chubukov initially fears Lomov came to borrow money.",
+              "Chubukov becomes delighted upon learning Lomov wants to marry Natalya.",
+              "Natalya enters, and conversation shifts to property ownership.",
+              "Argument breaks out over ownership of 'Oxen Meadows'.",
+              "Lomov claims Oxen Meadows belong to him; Natalya insists they are hers.",
+              "Chubukov joins argument supporting Natalya, abusing Lomov verbally.",
+              "Lomov suffers heart palpitations and leaves house in anger.",
+              "Chubukov reveals Lomov came to propose marriage to Natalya.",
+              "Natalya panics, hysterically demanding her father fetch Lomov back.",
+              "Lomov returns, but second argument erupts over hunting dogs (Guess vs Squeezer).",
+              "Lomov collapses; Chubukov quickly joins their hands, declaring proposal accepted."
+            ]
+          },
+          {
+            title: "Dust of Snow", videoId: "P2v9Z7e84E0",
+            lines: [
+              "Short poem written by famous American poet Robert Frost.",
+              "Poet was in a depressive, gloomy, and regretful mood.",
+              "He was standing under a poisonous Hemlock tree.",
+              "A crow perched on the tree shook down dust of snow on him.",
+              "Falling snow dust instantly changed poet's internal mood.",
+              "His heart experienced a uplifting shift from sadness to joy.",
+              "Poet saved remaining part of day from being wasted in regret.",
+              "Hemlock tree and crow are traditionally negative symbols in literature.",
+              "Frost used negative nature elements to bring positive transformation.",
+              "Poem highlights significance of small nature events in human life.",
+              "Nature possesses innate power to heal human minds from sorrow.",
+              "Simple occurrences can dramatically alter human emotional perspective.",
+              "Poem follows ABAB CDCD strict rhyming scheme.",
+              "Symbolizes shedding burden of negative past thoughts.",
+              "Teaches us to find hope and joy in simple nature moments."
+            ]
+          },
+          {
+            title: "Fire and Ice", videoId: "Z9p7e84E000",
+            lines: [
+              "Poem composed by Robert Frost exploring end of the world.",
+              "One group believes world will end in fire; another believes ice.",
+              "'Fire' symbolizes human desire, passion, greed, and lust.",
+              "Poet favors those who support fire based on his desires experience.",
+              "'Ice' symbolizes hatred, coldness, indifference, and rigidity.",
+              "If world had to perish twice, ice is equally powerful.",
+              "Cold hatred can destroy humanity just as destructively as fire.",
+              "Human emotions possess power to bring global annihilation.",
+              "Poem uses simple, direct, yet deep metaphorical language.",
+              "Rhyming scheme of poem is ABA ABC BCB.",
+              "Warns against uncontrolled human desire and emotional hatred.",
+              "Indifference can freeze human empathy, destroying social bonds.",
+              "Both extremes hold capability to end human existence.",
+              "Short 9-line poem delivering profound philosophical warning.",
+              "Encourages emotional control, empathy, and mutual harmony."
+            ]
+          },
+          {
+            title: "A Tiger in the Zoo", videoId: "L9e84E00000",
+            lines: [
+              "Poem written by Leslie Norris contrasting captive and wild tiger.",
+              "Tiger stalks in his vivid stripes inside small cage boundaries.",
+              "He walks with quiet rage on soft pads of velvet.",
+              "In wild, he should lurk in shadows near water holes.",
+              "He should hunt plump deer passing near forest water bodies.",
+              "He should snarl around houses at jungle edges, scaring villagers.",
+              "Instead, tiger is locked inside a strong concrete cell.",
+              "His strength is trapped behind thick metal bars.",
+              "He ignores visiting humans, walking indifferently inside cage.",
+              "At night, he hears last voice of patrolling police cars.",
+              "He stares with brilliant eyes at brilliant night stars.",
+              "Poem highlights cruelty of keeping wild animals in captivity.",
+              "Freedom is natural right of every living creature on Earth.",
+              "Contrasts artificial cage life with majestic wild jungle habitat.",
+              "Urges human society to preserve wildlife in natural habitats."
+            ]
+          },
+          {
+            title: "How to Tell Wild Animals", videoId: "K9e84E00001",
+            lines: [
+              "Humorous poem written by Carolyn Wells describing dangerous wild beasts.",
+              "Asian Lion is large, tawny beast roaring while you die of fear.",
+              "Bengal Tiger has black stripes on yellow ground, devouring you instantly.",
+              "Leopard has spots on skin and leaps on you repeatedly (lep and lep again).",
+              "Bear hugs you tightly in a warm embrace to kill you.",
+              "Hyena comes with merry smiles; Crocodile sheds deceitful tears.",
+              "Chamaleon is small lizard-like creature with no ears or wings.",
+              "Chameleon changes body color to blend with tree background.",
+              "Poet uses dark humor and poetic liberties with word spellings.",
+              "Helps readers identify wild animals through humorous descriptions.",
+              "Creates laughter while describing terrifying life threats.",
+              "Poem consists of six stanzas following ABABCC rhyming scheme.",
+              "Poetic license used in words like 'lept' and 'lep'.",
+              "Entertaining way to learn distinct wild animal characteristics.",
+              "Highlights unpredictable dangers associated with wild beasts."
+            ]
+          },
+          {
+            title: "The Ball Poem", videoId: "M9e84E00002",
+            lines: [
+              "Poem written by John Berryman about a boy losing his ball.",
+              "Boy was playing when ball bounced down street into water.",
+              "Boy stood rigid, trembling, staring down into harbor.",
+              "Ball symbolizes innocent childhood memories and possessions.",
+              "Poet decides not to intrude or offer money for new ball.",
+              "Dime or another ball is worthless in replacing lost memories.",
+              "Boy learns his first lesson in world of possessions.",
+              "Epistemology of loss: understanding what it means to lose something.",
+              "Every person must learn to stand up after experiencing loss.",
+              "Losses are inevitable part of growing up and human life.",
+              "Money cannot buy back precious lost childhood memories.",
+              "Boy develops emotional maturity through this small loss experience.",
+              "Poem highlights psychological growth of young child.",
+              "Free verse structure reflecting raw emotional child thoughts.",
+              "Teaches importance of accepting grief and moving forward in life."
+            ]
+          },
+          {
+            title: "Amanda!", videoId: "N9e84E00003",
+            lines: [
+              "Poem composed by Robin Klein exploring child freedom and nagging parents.",
+              "Amanda is continuously instructed by her mother regarding behavior.",
+              "Mother scolds her for biting nails, hunching shoulders, and bending back.",
+              "Amanda retreats into her imaginative inner daydream world.",
+              "She imagines herself as a mermaid drifting peacefully in green sea.",
+              "Mother asks if she finished homework, cleaned room, and wiped shoes.",
+              "Amanda imagines herself as an orphan walking barefoot in soft dust.",
+              "Silence is golden and freedom is sweet for young Amanda.",
+              "Mother warns her against eating chocolate to avoid facial acne.",
+              "Amanda imagines herself as Rapunzel living peacefully in high tower.",
+              "She vows she will never let down her bright golden hair.",
+              "Mother scolds her for being moody, sulking, and unhappy.",
+              "Poem alternates between parent nagging and Amanda's imaginative thoughts.",
+              "Highlights negative impact of constant nagging on child psychology.",
+              "Emphasizes child's need for personal space, freedom, and understanding."
+            ]
+          },
+          {
+            title: "The Trees", videoId: "O9e84E00004",
+            lines: [
+              "Poem written by Adrienne Rich depicting nature's revolt.",
+              "Trees inside house are moving out into empty forest.",
+              "Forest was empty with no birds, insects, or sun shadow.",
+              "Roots work all night to disengage from veranda floor cracks.",
+              "Leaves strain towards glass; twigs turn stiff with exertion.",
+              "Trees move like newly discharged patients stumbling out clinic doors.",
+              "Poet sits inside writing long letters, hardly mentioning tree departure.",
+              "Night is fresh, full moon shines in open sky.",
+              "Smell of leaves and lichen reaches like a voice into rooms.",
+              "Glass breaks as trees stumble forward into night wind.",
+              "Moon breaks like a mirror into pieces over tallest Oak tree crown.",
+              "Trees symbolize women breaking free from indoor domestic patriarchal confinement.",
+              "Reclaimed forest symbolizes restoration of natural ecological balance.",
+              "Depicts powerful movement of liberation and freedom.",
+              "Urges humans to stop confining nature and women within walls."
+            ]
+          },
+          {
+            title: "Fog", videoId: "P9e84E00005",
+            lines: [
+              "Short poem composed by Carl Sandburg capturing fog arrival.",
+              "Fog comes quietly on little cat feet.",
+              "Compares silent arrival of fog to sneaky movement of cat.",
+              "Fog sits looking over harbor and city on silent haunches.",
+              "Metaphorically stays temporarily over city like perching cat.",
+              "Then fog quietly moves on without making any sound.",
+              "Poem consists of six simple lines written in free verse.",
+              "Uses extended metaphor comparing fog directly to cat.",
+              "Captures subtle, quiet transformation of nature weather.",
+              "Demonstrates poet's keen observation of nature phenomena.",
+              "No rhyming scheme, reflecting natural unconstructed flow.",
+              "Creates vivid visual image in reader's imagination.",
+              "Highlights mysterious, transient nature of natural events.",
+              "Simple words conveying deep artistic atmospheric beauty.",
+              "Teaches appreciation for silent, gentle nature movements."
+            ]
+          },
+          {
+            title: "The Tale of Custard the Dragon", videoId: "Q9e84E00006",
+            lines: [
+              "Humorous ballad poem written by Ogden Nash.",
+              "Belinda lived in a little white house with four pets.",
+              "Pets were Ink (black kitten), Blink (grey mouse), Mustard (yellow dog), Custard (dragon).",
+              "Ink and Blink chased lions down stairs; Mustard was brave as tiger.",
+              "Custard was considered coward, crying for a nice safe cage.",
+              "Belinda tickled Custard unmercifully; pets called him Percival.",
+              "Suddenly, a dangerous pirate broke into house through window.",
+              "Pirate held pistols in hands and cutlass bright in teeth.",
+              "Belinda cried for help; Mustard fled barking in fear.",
+              "Ink trickled down; Blink ran into mouse hole terrified.",
+              "Custard jumped up snorting like engine to confront pirate.",
+              "Custard clashed tail like irons in a dungeon and attacked pirate.",
+              "Pirate fired two bullets, but Custard swallowed him whole.",
+              "Belinda embraced Custard; pets danced around him happily.",
+              "Soon after, pets resumed boasting, while Custard humbly agreed he was cowardly."
+            ]
+          },
+          {
+            title: "For Anne Gregory", videoId: "R9e84E00007",
+            lines: [
+              "Poem composed by famous Irish poet W.B. Yeats.",
+              "Dialogue between young speaker and young woman Anne Gregory.",
+              "Men fall in despair over Anne's beautiful honey-colored hair.",
+              "Speaker states young men love her for external beauty alone.",
+              "No man loves Anne for her internal self alone without hair.",
+              "Anne replies she can dye her hair brown, black, or carrot.",
+              "She wants men to love her for her internal soul.",
+              "Speaker quotes an old religious text found previous night.",
+              "Text proves only God can love a person for themselves alone.",
+              "Human beings are easily swayed by superficial physical appearance.",
+              "True love looks beyond external physical looks into human character.",
+              "Highlights difference between divine love and human love.",
+              "Poem follows strict ABABCB rhyming structure.",
+              "Emphasizes spiritual internal beauty over temporal physical charm.",
+              "Teaches readers to value authentic internal human character."
+            ]
+          }
+        ]
+      },
+      hindi: {
+        educator: "Educational Bhaiya",
+        items: [
+          {
+            title: "पद - सूरदास", videoId: "L_A2YxZ2L08",
+            lines: [
+              "सूरदास जी द्वारा रचित पद श्री कृष्ण और गोपियों के प्रेम पर आधारित हैं।",
+              "उद्धव जी गोपियों को योग और ज्ञान का संदेश देने ब्रज आते हैं।",
+              "गोपियां उद्धव को 'बड़भागी' (भाग्यशाली) कहकर उन पर व्यंग्य करती हैं।",
+              "गोपियां कहती हैं कि उद्धव कृष्ण के समीप रहकर भी उनके प्रेम से अछूते रहे।",
+              "उद्धव की तुलना जल में रहने वाले कमल के पत्ते से की गई है जो जल से भीगा नहीं रहता।",
+              "उद्धव की तुलना तेल की गागर से की गई है जिस पर पानी की बूंद टिक नहीं पाती।",
+              "गोपियां स्वयं को 'गुड़ से चिपटी चींटी' के समान कृष्ण प्रेम में लीन बताती हैं।",
+              "गोपियां अपने प्रेम को हारिल पक्षी की लकड़ी के समान दृढ़ बताती हैं।",
+              "गोपियों के लिए उद्धव का योग संदेश 'कड़वी ककड़ी' के समान अरुचिकर है।",
+              "गोपियां कहती हैं कि योग की आवश्यकता उन लोगों को है जिनका मन चंचल है।",
+              "गोपियों का मन श्री कृष्ण के प्रेम में एकाग्र और स्थिर हो चुका है।",
+              "गोपियां उद्धव को सच्चा 'राजधर्म' याद दिलाती हैं कि प्रजा को सताया न जाए।",
+              "कृष्ण ने ब्रज छोड़कर गोपियों के साथ अन्याय किया है।",
+              "पदों में ब्रजभाषा का अत्यंत सुंदर, मधुर और भावात्मक प्रयोग हुआ है।",
+              "सूरदास जी ने वियोग श्रृंगार रस की अनुपम अभिव्यक्ति की है।"
+            ]
+          },
+          {
+            title: "राम-लक्ष्मण-परशुराम संवाद", videoId: "v8B_T2W6D8o",
+            lines: [
+              "यह प्रसंग गोस्वामी तुलसीदास द्वारा रचित 'रामचरितमानस' के बालकांड से लिया गया है।",
+              "जनकपुरी में सीता स्वयंवर के समय श्री राम द्वारा शिवधनुष तोड़ा जाता है।",
+              "शिवधनुष टूटने की प्रचंड ध्वनि सुनकर महर्षि परशुराम अत्यंत क्रोधित होकर आते हैं।",
+              "श्री राम अत्यंत विनम्रतापूर्वक कहते हैं कि धनुष तोड़ने वाला कोई आपका दास ही होगा।",
+              "परशुराम जी कहते हैं कि सेवक वह है जो सेवा करे, शत्रुता करने वाले से युद्ध होता है।",
+              "लक्ष्मण जी परशुराम जी के साथ व्यंग्यात्मक और तर्कपूर्ण बातें करते हैं।",
+              "लक्ष्मण कहते हैं कि बचपन में हमने कई धनुहियां तोड़ीं, तब ऐसा क्रोध नहीं किया।",
+              "परशुराम जी अपने फरसे की भयानकता और सहस्त्रबाहु वध की गाथा गाते हैं।",
+              "लक्ष्मण कहते हैं कि हम कोई 'कुम्हड़बतिया' नहीं जो तर्जनी उंगली देखकर मुरझा जाएं।",
+              "भृगुवंशी और विप्र समझकर लक्ष्मण परशुराम पर शस्त्र नहीं उठाते।",
+              "रघुकुल में देवता, ब्राह्मण, भक्त और गाय पर शस्त्र उठाना पाप माना जाता है।",
+              "लक्ष्मण कहते हैं कि आपके वचन ही करोड़ों वज्र के समान कठोर हैं, फरसा व्यर्थ है।",
+              "विश्वामित्र जी मन ही मन हंसते हैं कि परशुराम लोहे की खांड को गन्ना समझ रहे हैं।",
+              "रचना में अवधी भाषा, चौपाई और दोहा छंद का सुंदर संयोजन है।",
+              "वीर और रौद्र रस का सुंदर एवं ओजस्वी चित्रण देखने को मिलता है।"
+            ]
+          },
+          {
+            title: "सवैया और कवित्त - देव", videoId: "YdM4vX2P2w4",
+            lines: [
+              "रीतिकाल के महान कवि देव द्वारा रचित सवैया में श्री कृष्ण के रूप-सौंदर्य का वर्णन है।",
+              "कृष्ण के पांवों में सुंदर नूपुर (पायल) बज रहे हैं जो मधुर ध्वनि उत्पन्न करते हैं।",
+              "उनकी कमर में बंधी किंकिणी (करधनी) की किणकिण ध्वनि अत्यंत मनमोहक है।",
+              "कृष्ण के सांवले शरीर पर पीला वस्त्र (पट पीत) अत्यंत शोभित हो रहा है।",
+              "उनके गले में वनमाला सुशोभित है तथा सिर पर मुकुट धारण किया हुआ है।",
+              "कृष्ण के मुख रूपी चंद्रमा पर मंद मुस्कान चांदनी के समान छिटक रही है।",
+              "कवि देव ने श्री कृष्ण को जगत् रूपी मंदिर का जलता हुआ सुंदर दीपक कहा है।",
+              "कवित्त में कवि ने बसंत ऋतु को एक नवजात शिशु के रूप में चित्रित किया है।",
+              "प्रकृति रूपी माता बसंत रूपी बालक के लिए पल्लवों का बिछौना बनाती है।",
+              "पेड़ों की डालियां झूला झुलाती हैं और कोयल उससे बातें करती है।",
+              "मोर और तोता बालक बसंत का मन बहलाते हैं।",
+              "कमल की कली रूपी नायिका बसंत बालक की नजर उतारती है।",
+              "दूसरे कवित्त में पूर्णिमा की रात में आकाश और चांदनी के सौंदर्य का वर्णन है।",
+              "आकाश सफ़िक (स्फटिक) की शिलाओं से बने पारदर्शी महल जैसा दिखता है।",
+              "कविताओं में ब्रजभाषा का तत्समयुक्त आलंकारिक प्रयोग हुआ है।"
+            ]
+          },
+          {
+            title: "आत्मकथ्य - जयशंकर प्रसाद", videoId: "mG4zJ2W9w4E",
+            lines: [
+              "यह कविता छायावाद के प्रवर्तक जयशंकर प्रसाद द्वारा रचित है।",
+              "मित्रों के कहने पर भी कवि अपनी आत्मकथा लिखने से हिचकिचाते हैं।",
+              "कवि का मानना है कि उनके जीवन में कोई बड़ी उपलब्धि या सुख नहीं रहा है।",
+              "मधुप (भौंरा) गुनगुनाकर अपनी वेदना की करुण कहानी कह जाता है।",
+              "जीवन रूपी वृक्ष से पत्तियां मुरझाकर एक-एक कर गिर रही हैं।",
+              "कवि कहते हैं कि इस संसार में अनंत आत्मकथाएं लिखी गईं जो उपहास का पात्र बनीं।",
+              "कवि अपने खाली और खालीपन से भरे जीवन का ढोल नहीं पीटना चाहते।",
+              "उन्हें उज्ज्वल गाथाओं की याद आती है जो अधूरी रह गईं।",
+              "अपनी प्रेयसी के साथ बिताए मधुर क्षण स्वप्न की भांति ओझल हो गए।",
+              "सुख बांहों में आते-आते मुस्कुराकर भाग गया।",
+              "कवि अपनी कमजोरियों और व्यक्तिगत दुखों को जगजाहिर नहीं करना चाहते।",
+              "उनकी स्मृतियां ही उनके थके हुए जीवन की राह का पाथेय (संबल) हैं।",
+              "कवि कहते हैं कि मेरी मौन व्यथा अभी सोई हुई है, उसे जगाना व्यर्थ है।",
+              "कविता में छायावादी शैली, तत्सम शब्दावली और प्रतीकात्मकता है।",
+              "कवि की सादगी, विनम्रता और अंतर्मुखी स्वभाव स्पष्ट झलकता है।"
+            ]
+          },
+          {
+            title: "उत्साह और अट नहीं रही है - निराला", videoId: "J9e4e2_G84E",
+            lines: [
+              "सूर्यकांत त्रिपाठी 'निराला' जी की 'उत्साह' कविता एक आह्वान गीत है।",
+              "कवि बादलों को गर्जन करने और क्रांति का संदेश देने के लिए पुकारते हैं।",
+              "बादल पीड़ित और प्यासे जन की आकांक्षाओं को पूरा करने वाले हैं।",
+              "बादल विद्युत-छवि (बिजली) को अपने हृदय में छिपाए हुए नए कवि के समान हैं।",
+              "कवि बादलों से विकल और उन्मन संसार में नई चेतना भरने को कहते हैं।",
+              "बादल नवजीवन प्रदान करने वाले और क्रांति के प्रतीक हैं।",
+              "कवि बादलों से पूरे आकाश को घेरकर घोर गर्जना करने का आग्रह करते हैं।",
+              "'अट नहीं रही है' कविता में फाल्गुन मास की प्राकृतिक सुंदरता का वर्णन है।",
+              "फाल्गुन की मादक आभा और सुंदरता प्रकृति में समा नहीं पा रही है।",
+              "फाल्गुन में पेड़-पौधे नए पत्तों, लाल-हरी कोपलों और फूलों से लद गए हैं।",
+              "चारों तरफ सुगंधित हवा बह रही है जिससे मन प्रसन्न हो जाता है।",
+              "कवि की आंखें प्रकृति के इस अप्रतिम सौंदर्य से हट नहीं पा रही हैं।",
+              "फाल्गुन की सुंदरता घर-घर में उल्लास और उमंग भर देती है।",
+              "दोनों कविताओं में खड़ी बोली हिंदी और मानवीकरण अलंकार का सुंदर प्रयोग है।",
+              "निराला जी ने प्रकृति के माध्यम से सामाजिक परिवर्तन का आवाह्न किया है।"
+            ]
+          },
+          {
+            title: "यह दंतुरित मुस्कान और फसल - नागार्जुन", videoId: "92Z_pP74eW0",
+            lines: [
+              "प्रगतिवादी कवि नागार्जुन द्वारा रचित यह कविता छोटे बच्चे की मुस्कान पर आधारित है।",
+              "बच्चे की दंतुरित (निकलते हुए दांतों वाली) मुस्कान मृतक में भी जान फूंक देती है।",
+              "धूल-धूसरित बच्चे का शरीर देखकर लगता है मानो कमल तालाब छोड़कर झोपड़ी में खिल गया हो।",
+              "बच्चे का स्पर्श पाकर कठोर पत्थर भी पिघलकर जल बन जाता है।",
+              "बांस और बबूल जैसे कठोर स्वभाव वाले लोगों से भी शेफालिका के फूल झरने लगते हैं।",
+              "बच्चा कवि को पहली बार देखता है तो अनिमेष (बिना पलक झपकाए) ताकता रहता है।",
+              "बच्चे की मां की मध्यस्थता के कारण ही कवि बच्चे की मुस्कान का दर्शन कर पाता है।",
+              "बच्चा तिरछी नजरों से देखकर जब मुस्कुराता है, तो कवि मुग्ध हो जाता है।",
+              "'फसल' कविता में फसलों के उत्पादन में विभिन्न तत्वों के योगदान को दर्शाया गया है।",
+              "फसल नदियों के पानी का जादू और हाथों के स्पर्श की महिमा है।",
+              "फसल लाखों-करोड़ों खेतों की मिट्टी का गुण-धर्म है।",
+              "फसल सूरज की किरणों का रूपांतरण और हवा की थिरकन का सिमटा हुआ संकोच है।",
+              "फसल केवल मनुष्य के परिश्रम, जल, मिट्टी और सूर्य-हवा का सम्मिलित रूप है।",
+              "कविता मनुष्य और प्रकृति के आत्मीय संबंध को रेखांकित करती है।",
+              "सहज खड़ी बोली और बिंब विधान का सुंदर उपयोग किया गया है।"
+            ]
+          },
+          {
+            title: "छाया मत छूना - गिरिजाकुमार माथुर", videoId: "zX2P7e9G84E",
+            lines: [
+              "कवि गिरिजाकुमार माथुर अतीत की स्मृतियों में खोने से मना करते हैं।",
+              "'छाया' का अर्थ अतीत की मधुर यादें और दुखों का छलावा है।",
+              "अतीत की यादों में डूबे रहने से वर्तमान का दुख दूना हो जाता है।",
+              "जीवन में पुरानी स्मृतियां सुहावनी लगती हैं, पर वे वापस नहीं आ सकतीं।",
+              "धन, वैभव, मान और प्रभुता केवल छलावा (मृगतृष्णा) हैं।",
+              "हर चांदनी रात के पीछे एक काली अंधेरी रात (अमावस्या) छिपी होती है।",
+              "कवि वर्तमान की यथार्थ परिस्थितियों का साहसपूर्वक सामना करने को कहते हैं।",
+              "जो बीत गया उसे भूलकर वर्तमान को स्वीकार करना चाहिए।",
+              "समय पर अवसर न मिलने का दुख मनुष्य को व्यथित करता है।",
+              "देर से मिला सुख भी मन को संतोष नहीं दे पाता।",
+              "कवि भविष्य को उज्ज्वल बनाने के लिए संघर्ष करने का संदेश देते हैं।",
+              "अतीत के मोह में जीने वाला व्यक्ति कभी सुखी नहीं रह सकता।",
+              "दुख की घड़ी में धैर्य रखना और यथार्थ से आंखें न चुराना आवश्यक है।",
+              "कविता में तत्सम शब्दावली और खड़ी बोली का भावात्मक प्रयोग है।",
+              "यह कविता जीवन दर्शन और यथार्थवादी सोच की प्रेरणा देती है।"
+            ]
+          },
+          {
+            title: "कन्यादान - ऋतुराज", videoId: "9w2_e4G84E0",
+            lines: [
+              "ऋतुराज जी की कविता 'कन्यादान' मां और पुत्री के भावुक संबंध को दर्शाती है।",
+              "कन्यादान के समय मां का दुख अत्यंत प्रमाणिक और सच्चा होता है।",
+              "मां को लगता है कि उसकी बेटी ही उसकी अंतिम पूंजी है।",
+              "लड़की अभी सयानी (समझदार) नहीं थी, वह अत्यंत भोली और सरल थी।",
+              "उसे सुख का आभास तो होता था, परंतु दुख बांचना (समझना) नहीं आता था।",
+              "वह धुंधले प्रकाश में तुकों और लयबद्ध पंक्तियों को पढ़ने वाली पाठिका जैसी थी।",
+              "मां अपनी बेटी को वस्त्र और आभूषणों के मोहजाल से सावधान करती है।",
+              "मां कहती है कि वस्त्र और आभूषण स्त्री जीवन के लिए शाब्दिक भ्रम और बंधन हैं।",
+              "मां सीख देती है कि पानी में झांककर अपने सौंदर्य पर रीझना मत।",
+              "आग रोटी सेकने के लिए होती है, जल मरने के लिए नहीं।",
+              "दहेज के लोभियों द्वारा लड़कियों को जलाने की कुप्रथा पर प्रहार किया गया है।",
+              "मां कहती है कि लड़की होना पर लड़की जैसी दिखाई मत देना।",
+              "बेटी को अपने अधिकारों के प्रति सजग और साहसी बनने की सलाह दी गई है।",
+              "पारंपरिक रूढ़ियों को तोड़कर स्त्री सशक्तिकरण का संदेश दिया गया है।",
+              "कविता की भाषा अत्यंत सरल, प्रभावमयी और मर्मस्पर्शी है।"
+            ]
+          },
+          {
+            title: "संगतकार - मंगलेश डबराल", videoId: "X3p7e9G84E0",
+            lines: [
+              "मंगलेश डबराल जी की कविता 'संगतकार' सह-कलाकारों के योगदान पर आधारित है।",
+              "संगतकार मुख्य गायक के साथ गायन में अपनी धीमी और गंभीर आवाज मिलाता है।",
+              "वह मुख्य गायक का छोटा भाई, शिष्य या कोई दूर का रिश्तेदार हो सकता है।",
+              "वह मुख्य गायक की गरजती आवाज में अपनी सुंदर कमजोर आवाज मिलाता आया है।",
+              "जब मुख्य गायक अनहद में खो जाता है, तो संगतकार ही स्थाई को संभाले रखता है।",
+              "वह मुख्य गायक को उसके बीते दिनों और बचपन की नौसिखिया स्थिति की याद दिलाता है।",
+              "तारसप्तक में जब मुख्य गायक का गला बैठने लगता है, तब संगतकार संबल देता है।",
+              "गायक का प्रेरणा-उत्साह समाप्त होने पर संगतकार उसकी ढांढस बंधाता है।",
+              "संगतकार यह अहसास दिलाता है कि मुख्य गायक अकेला नहीं है।",
+              "संगतकार अपनी आवाज को मुख्य गायक से ऊंचा न उठाने की कोशिश करता है।",
+              "उसकी इस कोशिश को उसकी विफलता नहीं, बल्कि उसकी मनुष्यता माना जाना चाहिए।",
+              "समाज में मुख्य स्थान पाने वालों के पीछे अनेक अज्ञात लोगों का योगदान होता है।",
+              "नाटक, संगीत, खेल और राजनीति में संगतकारों का महत्व सर्वोपरि है।",
+              "कविता में यथार्थवादी सोच और मानवीय संवेदना का सुंदर संगम है।",
+              "सरल खड़ी बोली में रचित यह कविता सम्मान की भावना जगाती है।"
+            ]
+          },
+          {
+            title: "नेताजी का चश्मा - स्वयं प्रकाश", videoId: "P2v9Z7e84E0",
+            lines: [
+              "यह कहानी स्वयं प्रकाश जी द्वारा रचित एक देशभक्तिपूर्ण रचना है।",
+              "हालदार साहब हर पंद्रहवें दिन कस्बे से होकर काम के सिलसिले में गुजरते थे।",
+              "कस्बे के मुख्य बाजार के चौराहे पर नेताजी सुभाष चंद्र बोस की संगमरमर की मूर्ति थी।",
+              "मूर्ति को स्थानीय हाई स्कूल के ड्राइंग मास्टर मोतीलाल जी ने बनाया था।",
+              "मूर्ति में सब ठीक था, पर नेताजी का चश्मा संगमरमर का नहीं था।",
+              "मूर्ति पर असली फ्रेम का चश्मा पहनाया गया था जिसे देखकर हालदार साहब मुस्कुराए।",
+              "चश्मा बदलने का काम कैप्टन नाम का एक बूढ़ा चश्मेवाला करता था।",
+              "कैप्टन स्वतंत्रता सेनानी नहीं था, पर उसके दिल में देशभक्ति की प्रबल भावना थी।",
+              "पानवाला कैप्टन का उपहास उड़ाता था और उसे लंगड़ा व पागल कहता था।",
+              "हालदार साहब को पानवाले द्वारा एक देशभक्त का मजाक उड़ाना अच्छा नहीं लगा।",
+              "कैप्टन की मृत्यु के बाद नेताजी की मूर्ति बिना चश्मे के सूनी हो गई।",
+              "हालदार साहब उदास हो गए कि अब कस्बे में देशभक्ति की भावना खत्म हो गई है।",
+              "अगली बार आने पर हालदार साहब ने देखा कि मूर्ति पर सरकंडे का छोटा चश्मा लगा था।",
+              "सरकंडे का चश्मा बच्चों द्वारा बनाया और लगाया गया था।",
+              "यह देखकर हालदार साहब भावुक हो गए कि देश की भावी पीढ़ी में देशभक्ति जीवित है।"
+            ]
+          },
+          {
+            title: "बालगोबिन भगत - रामवृक्ष बेनीपुरी", videoId: "Z9p7e84E000",
+            lines: [
+              "यह रामवृक्ष बेनीपुरी जी द्वारा रचित एक रेखाचित्र है।",
+              "बालगोबिन भगत साठ वर्ष के मंझोले कद के गोरे-चिट्टे गृहस्थ साधु थे।",
+              "वे कबीरदास जी को 'साहब' मानते थे और उन्हीं के पदों को गाते थे।",
+              "वे कभी झूठ नहीं बोलते थे, खरा व्यवहार रखते थे और किसी की चीज बिना पूछे नहीं लेते थे।",
+              "खेती-बाड़ी से जो भी उपज होती, उसे पहले कबीरपंथी मठ में ले जाकर अर्पित करते थे।",
+              "आषाढ़ के महीने में खेत में रोपाई करते समय वे मधुर कबीर पद गाते थे।",
+              "भदोही की अंधेरी रातों में उनकी खंजड़ी बजती थी और वे गाते रहते थे।",
+              "कार्तिक मास से शुरू होकर फागुन तक उनकी प्रभातियां (सुबह के गीत) चलती थीं।",
+              "भगत जी का इकलौता बेटा सुस्त और बोदा था, जिसे वे अधिक प्यार करते थे।",
+              "बेटे की मृत्यु होने पर भगत जी ने रोने के बजाय उत्सव मनाने को कहा।",
+              "वे मानते थे कि आत्मा परमात्मा से मिल गई है, यह आनंद का समय है।",
+              "उन्होंने पतोहू (पुत्रवधू) से ही बेटे की चिता को अग्नि दिलवाई।",
+              "श्राद्ध खत्म होते ही पतोहू के भाई को बुलाकर उसका दूसरा विवाह करने को कहा।",
+              "भगत जी की मृत्यु भी उन्हीं के अनुरूप शांत और नियम-व्रत का पालन करते हुई।",
+              "कहानी सामाजिक रूढ़ियों पर प्रहार और कबीर के आदर्शों को प्रस्तुत करती है।"
+            ]
+          },
+          {
+            title: "लखनवी अंदाज - यशपाल", videoId: "L9e84E00000",
+            lines: [
+              "यह यशपाल जी द्वारा रचित एक व्यंग्यात्मक कहानी है।",
+              "लेखक ने भीड़ से बचने और नई कहानी सोचने के लिए सेकंड क्लास का टिकट लिया।",
+              "डिब्बे में एक सफेदपोश लखनवी नवाब साहब पहले से पालथी मारे बैठे थे।",
+              "नवाब साहब ने लेखक के आने पर कोई उत्सुकता या शिष्टाचार नहीं दिखाया।",
+              "नवाब साहब के पास तौलिए पर दो चिकने खीरे रखे हुए थे।",
+              "नवाब साहब ने खीरे को खिड़की से बाहर धोया, पोंछा और करीने से काटा।",
+              "उन्होंने खीरे की फांकों पर जीरा-नमक और मिर्च बुरकी।",
+              "नवाब साहब के मुख में खीरे की फांकें देखकर पानी आ रहा था।",
+              "नवाब साहब ने खीरे की फांक को उठाया, सूंघा और आनंद में आंखें मूंद लीं।",
+              "उन्होंने खीरे को खाया नहीं, बल्कि खिड़की से बाहर फेंक दिया।",
+              "फेंकने के बाद नवाब साहब ने डकार ली और लेखक की तरफ गर्व से देखा।",
+              "नवाब साहब ने जताया कि यह है खानदानी रईसों का 'खानदानी तरीका'।",
+              "लेखक ने सोचा कि जब सूंघने से पेट भर सकता है, तो बिना पात्र के कहानी भी बन सकती है।",
+              "यह कहानी पतनशील सामंती वर्ग की बनावटी जीवनशैली पर तीखा व्यंग्य है।",
+              "कहानी दिखावा पसंद संस्कृति और झूठी शान शौकत को बेनकाब करती है।"
+            ]
+          },
+          {
+            title: "मानवीय करुणा की दिव्य चमक - सर्वेश्वर दयाल सक्सेना", videoId: "K9e84E00001",
+            lines: [
+              "यह संस्मरण फादर कामिल बुल्के के जीवन पर सर्वेश्वर दयाल सक्सेना जी द्वारा लिखा गया है।",
+              "फादर बुल्के का जन्म बेल्जियम के रैम्सचैपल शहर में हुआ था।",
+              "इंजीनियरिंग के अंतिम वर्ष में मन में संन्यास की इच्छा जागी और वे भारत आ गए।",
+              "फादर बुल्के भारत को ही अपना सच्चा देश मानते थे।",
+              "उन्होंने कोलकाता से बीए और इलाहाबाद विश्वविद्यालय से हिंदी में एमए किया।",
+              "उन्होंने प्रयाग विश्वविद्यालय से 'रामकथा: उत्पत्ति और विकास' पर शोध प्रबंध लिखा।",
+              "उन्होंने प्रसिद्ध अंग्रेजी-हिंदी कोश (डिक्शनरी) तैयार किया।",
+              "फादर परिमल संस्था से जुड़े थे और हिंदी को राष्ट्रभाषा बनाने के लिए तत्पर रहते थे।",
+              "वे जिससे भी रिश्ता बनाते थे, उसे जीवन भर आत्मीयता से निभाते थे।",
+              "उनकी उपस्थिति चीड़ के वृक्ष की घनी छाया के समान शांति और शीतलता देती थी।",
+              "लेखक के पारिवारिक उत्सवों और दुखों में फादर हमेशा साथ खड़े रहते थे।",
+              "फादर बुल्के की मृत्यु 'जहरबाद' (गैंग्रीन) नामक कष्टदायक बीमारी से हुई।",
+              "दिल्ली में कश्मीरी गेट के निकोलसन सेंट जेवियर्स कब्रगाह में उन्हें दफनाया गया।",
+              "उनकी मृत्यु पर प्रसिद्ध साहित्यकारों की आंखें नम थीं।",
+              "फादर कामिल बुल्के भारतीय संस्कृति के एक अद्भुत और स्मरणीय अंग बन गए।"
+            ]
+          },
+          {
+            title: "एक कहानी यह भी - मन्नू भंडारी", videoId: "M9e84E00002",
+            lines: [
+              "यह प्रसिद्ध लेखिका मन्नू भंडारी जी की आत्मकथ्य शैली में लिखी रचना है।",
+              "लेखिका का जन्म मध्य प्रदेश के भानपुरा में हुआ था, पर बचपन अजमेर में बीता।",
+              "लेखिका के पिता दरियादिल, कोमल और संवेदनशील थे, पर क्रोधी और शक्की भी थे।",
+              "पिताजी ने आर्थिक घाटे के बाद अजमेर में 'विषय-कोश' तैयार करने का काम किया।",
+              "लेखिका की मां अनपढ़, सहनशील और परिवार के प्रति समर्पित महिला थीं।",
+              "लेखिका अपने पांच भाई-बहनों में सबसे छोटी थीं और रंग काला था।",
+              "पिताजी लेखिका की तुलना उनकी गोरी और होशियार बड़ी बहन सुशीला से करते थे।",
+              "1945 में सावित्री गर्ल्स कॉलेज में हिंदी प्राध्यापिका शीला अग्रवाल से मुलाकात हुई।",
+              "शीला अग्रवाल ने लेखिका में साहित्य के प्रति रुचि जगाई और देश की राजनीति से जोड़ा।",
+              "लेखिका 1947 के स्वतंत्रता आंदोलन में सड़कों पर भाषण और हड़तालें करने लगीं।",
+              "कॉलेज से नोटिस आने पर पिताजी क्रोधित हुए, पर प्राचार्य द्वारा प्रशंसा सुनकर खुश हुए।",
+              "आजाद हिंद फौज के मुकदमे के समय लेखिका ने अजमेर के चौराहे पर ऐतिहासिक भाषण दिया।",
+              "पिताजी के रूढ़िवादी दोस्त ने शिकायत की, पर राजेंद्र यादव के पिता ने प्रशंसा की।",
+              "लेखिका के व्यक्तित्व निर्माण में उनके पिता और शीला अग्रवाल का गहरा प्रभाव रहा।",
+              "रचना में एक साधारण लड़की के असाधारण लेखिका बनने की प्रेरणादायी यात्रा है।"
+            ]
+          },
+          {
+            title: "स्त्री शिक्षा के विरोधी कुतर्कों का खंडन - महावीर प्रसाद द्विवेदी", videoId: "N9e84E00003",
+            lines: [
+              "यह निबंध महावीर प्रसाद द्विवेदी जी द्वारा रचित स्त्री शिक्षा का समर्थन करने वाला निबंध है।",
+              "लेखक उन पढ़े-लिखे लोगों पर दुख व्यक्त करते हैं जो स्त्रियों को अनपढ़ रखना चाहते हैं।",
+              "विरोधी कुतर्क देते हैं कि पुराने जमाने में स्त्रियां नहीं पढ़ती थीं।",
+              "विरोधी कहते हैं कि स्त्रियों के पढ़ने से गृह-सुख का नाश होता है और शकुंतला का उदाहरण देते हैं।",
+              "द्विवेदी जी कहते हैं कि प्राचीन काल में भी गार्गी, मैत्रेयी और अत्रि की पत्नी विदुषी थीं।",
+              "गार्गी ने बड़े-बड़े ब्रह्मज्ञानियों को शास्त्रार्थ में हरा दिया था।",
+              "रुक्मिणी ने श्री कृष्ण को जो पत्र लिखा था, वह संस्कृत में था और विद्वतापूर्ण था।",
+              "प्राकृत भाषा अनपढ़ों की भाषा नहीं थी, वह उस समय की आम जनभाषा थी।",
+              "बौद्धों और जैनों के धार्मिक ग्रंथ प्राकृत भाषा में ही रचे गए थे।",
+              "यदि स्त्री शिक्षा से अनर्थ होता है, तो पुरुषों द्वारा किए जाने वाले अपराध भी शिक्षा के कारण हैं।",
+              "अनर्थ का कारण शिक्षा नहीं, बल्कि व्यक्ति की दुर्बुद्धि और संस्कार होते हैं।",
+              "द्विवेदी जी कहते हैं कि स्त्रियों को न पढ़ाना समाज के प्रति घोर अन्याय है।",
+              "आज के युग में स्त्रियों को पढ़ा-लिखाकर समाज को आगे बढ़ाना अनिवार्य है।",
+              "निबंध में तर्कसंगत शैली, व्यंग्य और ऐतिहासिक प्रमाणों का सुंदर प्रयोग है।",
+              "यह निबंध स्त्री-समानता और शिक्षा की महत्ता पर एक मजबूत दस्तावेज है।"
+            ]
+          },
+          {
+            title: "नौबतखाने में इबादत - यतींद्र मिश्र", videoId: "O9e84E00004",
+            lines: [
+              "यह यतींद्र मिश्र जी द्वारा रचित प्रसिद्ध शहनाई वादक उस्ताद बिस्मिल्ला खां का व्यक्तिचित्र है।",
+              "बिस्मिल्ला खां का बचपन का नाम अमरुद्दीन था और जन्म डुमरांव (बिहार) में हुआ था।",
+              "शहनाई बजाने के लिए 'नरकट' (रीड) की आवश्यकता होती है जो सोन नदी के किनारे मिलती है।",
+              "अमरुद्दीन 6 वर्ष की उम्र में अपने मामा सादिक हुसैन और अलीबख्श के पास काशी आ गए।",
+              "वे बालाजी मंदिर और मंगला गौरी मंदिर के नौबतखाने में रियाज करते थे।",
+              "रसूलनबाई और बतूलनबाई के ठुमरी-टप्पा गायन से उन्हें संगीत की प्रेरणा मिली।",
+              "बिस्मिल्ला खां सच्चे मुसलमान थे, पर काशी विश्वनाथ और गंगा मैया के प्रति अपार श्रद्धा थी।",
+              "वे मुहर्रम के 10 दिनों तक शहनाई नहीं बजाते थे और नंगे पांव रोते हुए जुलूस में चलते थे।",
+              "उन्हें भारत रत्न सहित देश के सर्वोच्च नागरिक सम्मानों से नवाजा गया।",
+              "इतनी सफलता के बाद भी वे फटी तहमद (लुंगी) पहनते थे और ईश्वर से 'सुर' मांगते थे।",
+              "वे कहते थे कि 'मालिक फटा सुर न बख्शे, लुंगी का क्या है, वह तो फटकर सिल जाएगी'।",
+              "वे काशी की गंगा-जमुनी संस्कृति और धार्मिक सद्भाव के जीवंत प्रतीक थे।",
+              "काशी में संगीत, साहित्य और कला का अद्भुत संगम रहा है।",
+              "बिस्मिल्ला खां की मृत्यु 90 वर्ष की आयु में हुई, पर उनकी शहनाई अमर रहेगी।",
+              "पाठ में संगीत साधना, सादगी और सांप्रदायिक सौहार्द का सुंदर संदेश है।"
+            ]
+          },
+          {
+            title: "संस्कृति - भदंत आनंद कौसल्यायन", videoId: "P9e84E00005",
+            lines: [
+              "यह निबंध भदंत आनंद कौसल्यायन जी द्वारा 'संस्कृति' और 'सभ्यता' के अंतर को स्पष्ट करता है।",
+              "'संस्कृति' मनुष्य की वह आंतरिक योग्यता है जिससे वह नया आविष्कार या विचार पैदा करता है।",
+              "'सभ्यता' संस्कृति का परिणाम है, जो वस्तुएं या साधन मनुष्य संस्कृति से बनाता है।",
+              "आग की खोज करने वाला पहला व्यक्ति और सुई-धागे का आविष्कारक 'संस्कृत मानव' थे।",
+              "आज का भौतिक विज्ञान जानने वाला व्यक्ति अपनी पूर्वजों से अधिक सभ्य हो सकता है, पर संस्कृत नहीं।",
+              "संस्कृति में मानव-कल्याण की भावना छिपी होती है।",
+              "जब संस्कृति का उपयोग मानव विनाश के लिए किया जाता है, तो वह 'असंस्कृति' बन जाती है।",
+              "न्यूटन ने गुरुत्वाकर्षण के नियम की खोज की, इसलिए वह 'संस्कृत मानव' था।",
+              "कार्ल मार्क्स ने अपना पूरा जीवन मजदूरों के हक के लिए न्योछावर कर दिया, वह उसकी संस्कृति थी।",
+              "सिद्धार्थ (बुद्ध) ने मानव दुख निवारण के लिए राजपाठ छोड़ दिया, यह उनकी संस्कृति थी।",
+              "असंस्कृति कभी भी स्थाई नहीं हो सकती और वह विनाश का कारण बनती है।",
+              "मानव-कल्याण की भावना से रहित ज्ञान केवल विनाशकारी साधन बनाता है।",
+              "सच्ची संस्कृति वही है जो मनुष्य को संवेदनशील, परोपकारी और प्राणीमात्र का प्रेमी बनाए।",
+              "भाषा अत्यंत विचारप्रधान, सुगठित और तत्समयुक्त है।",
+              "यह निबंध पाठकों को आत्मचिंतन और मानव-कल्याणकारी मार्ग अपनाने की प्रेरणा देता है।"
+            ]
+          }
+        ]
+      }
+    };
+
+    function renderSubjectContainers() {
+      const subjects = ["science", "maths", "sst", "english", "hindi"];
+
+      subjects.forEach((subjectKey) => {
+        const container = document.getElementById(`${subjectKey}-container`);
+        container.innerHTML = "";
+        
+        const subjData = chaptersData[subjectKey];
+
+        subjData.items.forEach((ch, idx) => {
+          const chNum = idx + 1;
+          const subjectTitleUpper = subjectKey.toUpperCase();
+
+          let linesListHtml = "<ol class='summary-list'>";
+          ch.lines.forEach((line) => {
+            linesListHtml += `<li>${line}</li>`;
+          });
+          linesListHtml += "</ol>";
+
+          const cardHtml = `
+            <div class="chapter-card">
+              <div class="chapter-header">
+                <div class="chapter-title-box">
+                  <span>${subjectTitleUpper} - CHAPTER ${chNum}</span>
+                  <h3>${ch.title}</h3>
+                  <div class="educator-tag">🎓 Master Video Lecture by: ${subjData.educator}</div>
+                </div>
+              </div>
+
+              <div class="video-container">
+                <iframe 
+                  src="https://www.youtube.com/embed/${ch.videoId}?autoplay=0&rel=0" 
+                  title="${ch.title}" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+
+              <div class="video-fallback-bar">
+                <span>▶ Open Video Directly on YouTube App/Web:</span>
+                <a href="https://www.youtube.com/watch?v=${ch.videoId}" target="_blank" class="video-link-btn">
+                  Watch Video (${subjData.educator})
+                </a>
+              </div>
+
+              <div class="download-bar">
+                <span style="font-size: 13px; font-weight: 700;">Download Complete 15-Point Chapter Sheet</span>
+                <button onclick="downloadChapterPDF('${subjectTitleUpper}', '${chNum}', '${escapeQuotes(ch.title)}', ${JSON.stringify(ch.lines).replace(/"/g, '&quot;')})" class="download-btn">
+                  Download Printable PDF
+                </button>
+              </div>
+
+              <div class="summary-sheet">
+                <h4>📌 15 High-Yield Examination Points (${ch.title})</h4>
+                ${linesListHtml}
+              </div>
+            </div>
+          `;
+          container.innerHTML += cardHtml;
+        });
+      });
+    }
+
+    function escapeQuotes(str) {
+      return str.replace(/'/g, "\\'").replace(/\n/g, "\\n");
+    }
+
+    // PDF Generator for 15 Important Points per Chapter
+    function downloadChapterPDF(subject, chNum, title, lines) {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+
+      function addHeaderFooter(doc, pageNum, totalPages) {
+        doc.setFillColor(15, 23, 42);
+        doc.rect(0, 0, 210, 18, 'F');
+        
+        doc.setFont("Helvetica", "bold");
+        doc.setFontSize(11);
+        doc.setTextColor(255, 255, 255);
+        doc.text("Phogat Study Hub - Class 10 NCERT Revision Notes", 10, 12);
+        
+        doc.setFontSize(9);
+        doc.text(`Page ${pageNum} of ${totalPages}`, 180, 12);
+
+        doc.setDrawColor(203, 213, 225);
+        doc.line(10, 285, 200, 285);
+        doc.setFontSize(8);
+        doc.setTextColor(100, 116, 139);
+        doc.text("© Phogat Study Hub - Class 10 NCERT Board Examination Revision Series", 10, 290);
+      }
+
+      // Page 1 Setup
+      addHeaderFooter(doc, 1, 2);
+      
+      doc.setFont("Helvetica", "bold");
+      doc.setFontSize(14);
+      doc.setTextColor(37, 99, 235);
+      doc.text(`${subject} CHAPTER ${chNum}: ${title}`, 10, 28);
+
+      doc.setFontSize(11);
+      doc.setTextColor(15, 23, 42);
+      doc.text("15 HIGH-YIELD BOARD EXAMINATION REVISION POINTS", 10, 36);
+
+      doc.setFont("Helvetica", "normal");
+      doc.setFontSize(9.5);
+      doc.setTextColor(51, 65, 85);
+
+      let yPos = 46;
+
+      for (let i = 0; i < lines.length; i++) {
+        if (i === 8) {
+          doc.addPage();
+          addHeaderFooter(doc, 2, 2);
+          yPos = 28;
+          doc.setFont("Helvetica", "bold");
+          doc.setFontSize(11);
+          doc.setTextColor(15, 23, 42);
+          doc.text("15 HIGH-YIELD REVISION POINTS (CONTINUED)", 10, yPos);
+          doc.setFont("Helvetica", "normal");
+          doc.setFontSize(9.5);
+          doc.setTextColor(51, 65, 85);
+          yPos += 10;
+        }
+
+        const pointText = `${i + 1}. ${lines[i]}`;
+        const splitText = doc.splitTextToSize(pointText, 190);
+        doc.text(splitText, 10, yPos);
+        yPos += (splitText.length * 6) + 3;
+      }
+
+      doc.save(`${subject}_Ch${chNum}_15_Important_Points.pdf`);
+    }
+
+    function filterSubject(subjectClass) {
+      const buttons = document.querySelectorAll('.subject-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const sections = document.querySelectorAll('.subject-section');
+      sections.forEach(sec => {
+        if (sec.classList.contains(subjectClass)) {
+          sec.style.display = 'block';
+        } else {
+          sec.style.display = 'none';
+        }
+      });
+    }
+
+    function submitPaymentScreenshot() {
+      const fileInput = document.getElementById('payment-shot');
+      if (fileInput.files.length === 0) {
+        alert('Please select your payment screenshot first.');
+        return;
+      }
+      alert('Thank you! Payment screenshot received. Offline PDF downloads are unlocked.');
+    }
+
+    window.onload = function() {
+      renderSubjectContainers();
+    };
+  </script>
+</body>
+</html>
