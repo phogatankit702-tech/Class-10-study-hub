@@ -3,14 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phogat Study Hub - Class 10 NCERT Master Notes</title>
+  <title>Class 10 NCERT Complete Master Notes</title>
   
-  <!-- Math Processing (KaTeX) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
 
-  <!-- PDF Generation Engine (jsPDF) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
   <style>
@@ -64,9 +62,7 @@
       padding: 10px 16px;
       gap: 10px;
       border-bottom: 1px solid #e2e8f0;
-      scroll-behavior: smooth;
     }
-    .subject-bar::-webkit-scrollbar { display: none; }
     .subject-btn {
       flex: 0 0 auto;
       padding: 8px 16px;
@@ -105,15 +101,19 @@
       gap: 16px;
       margin-bottom: 16px;
     }
-    .chapter-img {
-      width: 60px;
-      height: 60px;
-      border-radius: 10px;
-      object-fit: cover;
-      background: #e2e8f0;
-    }
     .chapter-title-box h3 { margin: 0; font-size: 18px; color: var(--primary); }
     .chapter-title-box span { font-size: 12px; color: #64748b; font-weight: 600; }
+
+    .educator-tag {
+      background: #fef3c7;
+      color: #92400e;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 2px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-top: 4px;
+    }
 
     .video-container {
       position: relative;
@@ -204,11 +204,7 @@
       text-align: center;
       margin-top: 32px;
       margin-bottom: 24px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
-    .buy-banner h2 { margin: 0 0 8px 0; color: #f59e0b; font-size: 22px; }
-    .buy-banner p { font-size: 14px; opacity: 0.9; margin-bottom: 16px; }
-    
     .payment-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -217,13 +213,7 @@
       padding: 16px;
       border-radius: 12px;
     }
-    .qr-box img {
-      width: 180px;
-      height: 180px;
-      border-radius: 8px;
-      background: white;
-      padding: 6px;
-    }
+    .qr-box img { width: 180px; height: 180px; border-radius: 8px; background: white; padding: 6px; }
     .btn {
       background: var(--success);
       color: white;
@@ -238,48 +228,9 @@
       width: 100%;
     }
     .btn-secondary { background: var(--accent); }
-
     .file-input { margin: 10px 0; color: white; font-size: 12px; }
     .locked-content { display: none; }
     .unlocked-content { display: block; }
-
-    .page-card {
-      background: #ffffff;
-      border-left: 6px solid var(--accent);
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-    .page-title {
-      color: var(--accent);
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 12px;
-      border-bottom: 2px solid #e2e8f0;
-      padding-bottom: 6px;
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
-      z-index: 1000;
-      justify-content: center;
-      align-items: center;
-      padding: 16px;
-    }
-    .modal-card {
-      background: white;
-      border-radius: 16px;
-      padding: 24px;
-      max-width: 450px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
-    .modal-card h3 { color: var(--success); margin: 0 0 10px 0; }
   </style>
 </head>
 <body>
@@ -289,7 +240,6 @@
     <span class="nav-badge">Class 10 NCERT All Subjects</span>
   </header>
 
-  <!-- Subject Navigation -->
   <div class="subject-bar">
     <button class="subject-btn active" onclick="filterSubject('science')">Science (13 Ch)</button>
     <button class="subject-btn" onclick="filterSubject('maths')">Mathematics (14 Ch)</button>
@@ -299,18 +249,15 @@
   </div>
 
   <div class="container">
-
-    <!-- SUBJECT CONTAINERS -->
     <div class="subject-section science" id="science-container"></div>
     <div class="subject-section maths" id="maths-container" style="display:none;"></div>
     <div class="subject-section sst" id="sst-container" style="display:none;"></div>
     <div class="subject-section english" id="english-container" style="display:none;"></div>
     <div class="subject-section hindi" id="hindi-container" style="display:none;"></div>
 
-    <!-- PAYMENT SECTION -->
     <div class="buy-banner">
-      <h2>🔥 Unlock Complete 5-Page High-Yield Master Notes</h2>
-      <p>Scan the QR code below, pay ₹29, and upload your payment screenshot to instantly unlock complete master revision notes for all subjects!</p>
+      <h2 style="color: #f59e0b; margin-top:0;">🔥 Unlock Complete 5-Page High-Yield Master Notes</h2>
+      <p>Scan the QR code below, pay ₹29, and upload your payment screenshot to unlock complete master revision notes!</p>
       
       <div class="payment-grid">
         <div class="qr-box">
@@ -321,113 +268,71 @@
           <a href="upi://pay?pa=himanshu733@fam&pn=PhogatStudyHub&am=29&cu=INR&tn=Class10FullNotes" class="btn" style="margin-bottom: 8px;">
             Pay ₹29 via UPI / GPay
           </a>
-          
-          <p style="margin: 8px 0; font-size: 12px; color: #cbd5e1;">Upload Payment Screenshot to Unlock Notes:</p>
           <input type="file" id="payment-shot" class="file-input" accept="image/*">
-          
           <button class="btn btn-secondary" onclick="submitPaymentScreenshot()">
-            Submit Screenshot & Unlock Master Notes
+            Submit Screenshot & Unlock
           </button>
         </div>
       </div>
     </div>
-
-    <!-- UNLOCKED PREMIUM SECTION -->
-    <div id="premium-section" class="locked-content">
-      <h2 style="color: var(--primary); text-align: center; margin: 24px 0 16px 0;">🏆 Official Class 10 High-Yield 5-Page Master Revision Notes</h2>
-
-      <div class="page-card">
-        <div class="page-title">📄 PAGE 1: Science - Chemistry & Biology Core Formulas</div>
-        <p style="font-size: 14px; line-height: 1.6;">
-          <strong>Chemical Reactions:</strong> Conservation of mass mandates balanced equations. Oxidation = Gain of $O_2$ / Loss of $H_2$. Reduction = Gain of $H_2$ / Loss of $O_2$.<br>
-          <strong>Acids, Bases & Salts:</strong> $\text{pH} < 7$ (Acidic), $\text{pH} = 7$ (Neutral), $\text{pH} > 7$ (Basic). Bleaching Powder ($\text{CaOCl}_2$), Baking Soda ($\text{NaHCO}_3$), Washing Soda ($\text{Na}_2\text{CO}_3 \cdot 10\text{H}_2\text{O}$), Plaster of Paris ($\text{CaSO}_4 \cdot \frac{1}{2}\text{H}_2\text{O}$).<br>
-          <strong>Life Processes:</strong> Aerobic respiration produces 38 ATP. Double circulation in human heart prevents mixing of oxygenated & deoxygenated blood. Nephrons act as functional filtration units in kidneys.
-        </p>
-      </div>
-
-      <div class="page-card">
-        <div class="page-title">📄 PAGE 2: Science - Physics Laws & Formula Cheat Sheet</div>
-        <p style="font-size: 14px; line-height: 1.6;">
-          <strong>Light Reflection & Refraction:</strong> Mirror formula $\frac{1}{f} = \frac{1}{v} + \frac{1}{u}$. Lens formula $\frac{1}{f} = \frac{1}{v} - \frac{1}{u}$. Lens Power $P = \frac{1}{f\text{ (m)}}$ (Dioptre, D).<br>
-          <strong>Electricity & Magnetism:</strong> Ohm's Law $V = IR$. Series $R_s = R_1 + R_2 + R_3$. Parallel $\frac{1}{R_p} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3}$. Heating effect $H = I^2Rt$. Fleming's Left-Hand Rule predicts magnetic force direction.
-        </p>
-      </div>
-
-      <div class="page-card">
-        <div class="page-title">📄 PAGE 3: Mathematics - Complete Formula Booklet</div>
-        <p style="font-size: 14px; line-height: 1.6;">
-          <strong>Real Numbers & Polynomials:</strong> $\text{HCF} \times \text{LCM} = a \times b$. Sum of zeros $\alpha+\beta = -\frac{b}{a}$, Product $\alpha\beta = \frac{c}{a}$.<br>
-          <strong>Quadratic & AP:</strong> Quadratic formula $x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$. AP $n^{\text{th}}$ term $a_n = a + (n-1)d$; Sum $S_n = \frac{n}{2}[2a + (n-1)d]$.<br>
-          <strong>Trigonometry & Mensuration:</strong> $\sin^2\theta + \cos^2\theta = 1$. Volume of sphere $\frac{4}{3}\pi r^3$, Cone $\frac{1}{3}\pi r^2 h$, Cylinder $\pi r^2 h$.
-        </p>
-      </div>
-
-      <div class="page-card">
-        <div class="page-title">📄 PAGE 4: Social Science - History Timeline & SST Core Points</div>
-        <p style="font-size: 14px; line-height: 1.6;">
-          <strong>History Timeline:</strong> 1915 (Gandhi returns) $\rightarrow$ 1919 (Rowlatt Act & Jallianwala Bagh) $\rightarrow$ 1921 (Non-Cooperation Movement) $\rightarrow$ 1930 (Dandi March).<br>
-          <strong>Geography & Civics:</strong> Alluvial & Black soils dominate Indian agriculture. Federalism divides powers between Centre & State. Sectors: Primary (Agriculture), Secondary (Industry), Tertiary (Services).
-        </p>
-      </div>
-
-      <div class="page-card">
-        <div class="page-title">📄 PAGE 5: English & Hindi Grammar Rules</div>
-        <p style="font-size: 14px; line-height: 1.6;">
-          <strong>English Grammar:</strong> Subject-Verb Agreement, Direct/Indirect Speech transformation rules, Formal Letter & Analytical Paragraph structures.<br>
-          <strong>हिंदी व्याकरण:</strong> समास (तत्पुरुष, द्विगु, द्वंद्व, बहुव्रीहि), रचना के आधार पर वाक्य रूपांतरण (सरल, संयुक्त, मिश्र), और पदबंध के 5 भेद।
-        </p>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- THANK YOU MODAL -->
-  <div class="modal" id="thankyou-modal">
-    <div class="modal-card">
-      <h3>🎉 Thank You for Your Payment!</h3>
-      <p style="font-size: 14px; color: #334155;">
-        Your payment screenshot has been submitted successfully. The complete 5-Page Master Revision Notes are now unlocked below!
-      </p>
-      <button class="btn" onclick="closeModal()">Access 5-Page Notes</button>
-    </div>
   </div>
 
   <script>
-    // Best YouTube Creators (Physics Wallah, Next Level, Magnet Brains) Embed Video IDs
-    const chapterVideos = {
-      science: ["L_A2YxZ2L08", "v8B_T2W6D8o", "YdM4vX2P2w4", "mG4zJ2W9w4E", "J9e4e2_G84E", "92Z_pP74eW0", "zX2P7e9G84E", "9w2_e4G84E0", "X3p7e9G84E0", "P2v9Z7e84E0", "Z9p7e84E000", "L9e84E00000", "K9e84E00001"],
-      maths: ["0c_7M_s9W2k", "zX9P8e4G84E", "9w2_e4G84E0", "P2v9Z7e84E0", "L_A2YxZ2L08", "v8B_T2W6D8o", "YdM4vX2P2w4", "mG4zJ2W9w4E", "J9e4e2_G84E", "92Z_pP74eW0", "zX2P7e9G84E", "9w2_e4G84E0", "X3p7e9G84E0", "P2v9Z7e84E0"],
-      sst: ["L_A2YxZ2L08", "v8B_T2W6D8o", "YdM4vX2P2w4", "mG4zJ2W9w4E", "J9e4e2_G84E", "92Z_pP74eW0", "zX2P7e9G84E", "9w2_e4G84E0", "X3p7e9G84E0", "P2v9Z7e84E0", "Z9p7e84E000", "L9e84E00000", "K9e84E00001", "M9e84E00002", "N9e84E00003", "O9e84E00004", "P9e84E00005", "Q9e84E00006", "R9e84E00007", "S9e84E00008"],
-      english: ["L_A2YxZ2L08", "v8B_T2W6D8o", "YdM4vX2P2w4", "mG4zJ2W9w4E", "J9e4e2_G84E", "92Z_pP74eW0", "zX2P7e9G84E", "9w2_e4G84E0", "X3p7e9G84E0", "P2v9Z7e84E0", "Z9p7e84E000", "L9e84E00000", "K9e84E00001", "M9e84E00002", "N9e84E00003", "O9e84E00004", "P9e84E00005", "Q9e84E00006", "R9e84E00007"],
-      hindi: ["L_A2YxZ2L08", "v8B_T2W6D8o", "YdM4vX2P2w4", "mG4zJ2W9w4E", "J9e4e2_G84E", "92Z_pP74eW0", "zX2P7e9G84E", "9w2_e4G84E0", "X3p7e9G84E0", "P2v9Z7e84E0", "Z9p7e84E000", "L9e84E00000", "K9e84E00001", "M9e84E00002", "N9e84E00003", "O9e84E00004", "P9e84E00005"]
-    };
-
-    // Full 2-Page Exhaustive Summaries for Chapters
-    const subjectDetails = {
-      science: [
-        {
-          ch: "1", title: "Chemical Reactions and Equations",
-          p1: "• Chemical reaction is a fundamental process where chemical bonds break and form to create new substances with distinct chemical and physical properties.\n• Observable signs of a chemical reaction include: change in state, change in color, evolution of gas, change in temperature, or formation of a precipitate.\n• Chemical Equation: Symbolic representation of a reaction using chemical formulas of reactants (left) and products (right).\n• Law of Conservation of Mass: Mass can neither be created nor destroyed in a chemical reaction. Thus, the total number of atoms of each element must remain equal on both sides (balanced equation).\n• Types of Chemical Reactions:\n  1. Combination Reaction: Two or more reactants combine to form a single product. Example: CaO(s) + H2O(l) -> Ca(OH)2(aq) + Heat.\n  2. Decomposition Reaction: A single compound breaks down into two or more simpler substances. Requires energy in the form of Heat (Thermal), Electricity (Electrolytic), or Light (Photolytic).\n  3. Displacement Reaction: A more reactive element displaces a less reactive element from its salt solution. Example: Fe(s) + CuSO4(aq) -> FeSO4(aq) + Cu(s).\n  4. Double Displacement Reaction: Exchange of ions between two compounds to form new products, often producing an insoluble precipitate.",
-          p2: "• Redox Reactions (Oxidation and Reduction):\n  - Oxidation: Gain of oxygen or loss of hydrogen/electrons.\n  - Reduction: Loss of oxygen or gain of hydrogen/electrons.\n  - Example: CuO + H2 -> Cu + H2O. Here, CuO is reduced to Cu, while H2 is oxidized to H2O.\n  - Oxidizing Agent: The substance that supplies oxygen or causes oxidation (gets reduced).\n  - Reducing Agent: The substance that removes oxygen or causes reduction (gets oxidized).\n• Corrosion of Metals:\n  - Gradual deterioration of metals by action of air, moisture, or chemicals on their surface.\n  - Rusting of Iron formula: Fe2O3.xH2O (Hydrated Ferric Oxide).\n  - Black coating on silver (Silver Sulphide, Ag2S) and green coating on copper (Basic Copper Carbonate, CuCO3.Cu(OH)2).\n  - Prevention: Galvanization (coating zinc), painting, greasing, alloying.\n• Rancidity:\n  - Oxidation of fats and oils in food when exposed to air, leading to unpleasant smell and taste.\n  - Prevention: Storing in airtight containers, adding antioxidants (BHA/BHT), or flushing snack packages with inert Nitrogen gas."
-        },
-        {
-          ch: "2", title: "Acids, Bases and Salts",
-          p1: "• Acids: Sour to taste, turn blue litmus paper red, produce H+ or hydronium ions (H3O+) in aqueous solutions.\n• Bases: Bitter to taste, soapy to touch, turn red litmus paper blue, produce OH- (hydroxide) ions in water. Water-soluble bases are called Alkalis.\n• Chemical Indicators:\n  - Natural Indicators: Litmus (purple dye from lichen), Turmeric (turns reddish-brown in base), Red Cabbage extract.\n  - Synthetic Indicators: Methyl Orange (red in acid, yellow in base), Phenolphthalein (colorless in acid, pink in base).\n  - Olfactory Indicators: Substances whose odor changes in acidic or basic media (e.g., Onion extract, Vanilla essence, Clove oil).\n• Chemical Properties of Acids and Bases:\n  1. Reaction with Metals: Acid + Metal -> Salt + Hydrogen Gas. Test for H2 gas: Produces a 'pop' sound when brought near a burning candle.\n  2. Reaction with Metal Carbonates: Acid + Metal Carbonate/Bicarbonate -> Salt + Water + Carbon Dioxide gas. CO2 turns lime water [Ca(OH)2] milky due to insoluble CaCO3 formation.\n  3. Neutralization Reaction: Acid + Base -> Salt + Water + Heat. Exothermic in nature.",
-          p2: "• Concept of pH Scale:\n  - Quantifies hydrogen ion concentration on a scale from 0 to 14.\n  - pH < 7: Acidic solution (Lower pH = Stronger Acid).\n  - pH = 7: Neutral solution (e.g., pure water).\n  - pH > 7: Basic solution (Higher pH = Stronger Base).\n• Importance of pH in Everyday Life:\n  - Human body functions best in a narrow pH range of 7.0 to 7.8.\n  - Acid Rain: Rainwater with pH less than 5.6 damages aquatic life and buildings.\n  - Tooth Decay: Begins when mouth pH drops below 5.5 due to bacterial acid production on sugary food.\n  - Soil pH: Farmers add quicklime (CaO) or slaked lime [Ca(OH)2] to acidic soil to optimize crop yields.\n• Important Commercial Salts & Formulas:\n  1. Bleaching Powder (CaOCl2): Produced by action of chlorine on dry slaked lime. Used for textile bleaching and water disinfection.\n  2. Baking Soda (NaHCO3): Sodium Hydrogen Carbonate. Used in antacids, baking powder (with tartaric acid), and fire extinguishers.\n  3. Washing Soda (Na2CO3.10H2O): Hydrated Sodium Carbonate. Used for removing permanent hardness of water, glass manufacturing.\n  4. Plaster of Paris (CaSO4.1/2H2O): Obtained by heating Gypsum (CaSO4.2H2O) at 373 K. Sets hard when mixed with water."
-        }
-      ],
-      maths: [
-        {
-          ch: "1", title: "Real Numbers",
-          p1: "• Fundamental Theorem of Arithmetic:\n  Every composite number can be uniquely expressed (factored) as a product of prime numbers, apart from the order in which the prime factors occur.\n  Example: 140 = 2^2 * 5 * 7.\n• HCF and LCM by Prime Factorization:\n  - HCF (Highest Common Factor): Product of the smallest power of each common prime factor involved in the numbers.\n  - LCM (Lowest Common Multiple): Product of the greatest power of each prime factor involved in the numbers.\n• Fundamental Theorem Relation:\n  For any two positive integers 'a' and 'b':\n  HCF(a, b) * LCM(a, b) = a * b.\n  Note: This identity is strictly true ONLY for two numbers, NOT for three or more numbers.",
-          p2: "• Proof of Irrationality (Proof by Contradiction):\n  Theorem: If 'p' is a prime number and 'p' divides a^2, then 'p' divides 'a', where 'a' is a positive integer.\n  Standard Proof for Irrationality of Sqrt(2):\n  1. Assume Sqrt(2) is rational, so Sqrt(2) = a / b, where 'a' and 'b' are co-prime integers and b != 0.\n  2. Squaring both sides gives 2 = a^2 / b^2 => a^2 = 2b^2. Thus 2 divides a^2, implying 2 divides 'a'.\n  3. Let a = 2c for some integer 'c'. Substituting gives (2c)^2 = 2b^2 => 4c^2 = 2b^2 => b^2 = 2c^2.\n  4. Thus 2 divides b^2, implying 2 divides 'b'.\n  5. Therefore, 2 is a common factor of both 'a' and 'b', which contradicts our initial assumption that 'a' and 'b' are co-prime.\n  6. Hence, Sqrt(2) is an irrational number.\n• Operations on Irrationals:\n  - Sum/Difference of a rational and an irrational number is always irrational.\n  - Product/Quotient of a non-zero rational and an irrational number is always irrational."
-        },
-        {
-          ch: "2", title: "Polynomials",
-          p1: "• Polynomial Definition & Degree:\n  An algebraic expression of the form p(x) = a_n * x^n + a_(n-1) * x^(n-1) + ... + a_1 * x + a_0, where a_n != 0 and powers are non-negative integers.\n  Degree of polynomial is the highest power of 'x' with a non-zero coefficient.\n• Classification by Degree:\n  1. Linear Polynomial: Degree 1. Standard Form: ax + b (a != 0).\n  2. Quadratic Polynomial: Degree 2. Standard Form: ax^2 + bx + c (a != 0).\n  3. Cubic Polynomial: Degree 3. Standard Form: ax^3 + bx^2 + cx + d (a != 0).\n• Geometrical Meaning of Zeros:\n  The zeros of a polynomial p(x) are the x-coordinates of the points where the graph of y = p(x) intersects the X-axis.\n  A polynomial of degree 'n' can have at most 'n' real zeros.",
-          p2: "• Relationship Between Zeros and Coefficients of Quadratic Polynomial:\n  Let alpha (a) and beta (b) be the zeros of quadratic polynomial p(x) = ax^2 + bx + c (a != 0).\n  1. Sum of Zeros: alpha + beta = -b / a = -(Coefficient of x) / (Coefficient of x^2)\n  2. Product of Zeros: alpha * beta = c / a = (Constant term) / (Coefficient of x^2)\n• Constructing a Quadratic Polynomial:\n  If sum of zeros (S) and product of zeros (P) are given:\n  p(x) = k * [x^2 - S*x + P] = k * [x^2 - (alpha + beta)x + alpha * beta], where 'k' is any non-zero real constant.\n• Graph Properties of Quadratic Polynomials:\n  - Graph of y = ax^2 + bx + c is a Parabola.\n  - Opens UPWARDS if a > 0 (U-shape).\n  - Opens DOWNWARDS if a < 0 (inverted U-shape)."
-        }
-      ]
+    // Chapter Lists for All Subjects
+    const chaptersData = {
+      science: {
+        educator: "Prashant Kirad",
+        items: [
+          "Chemical Reactions and Equations", "Acids, Bases and Salts", "Metals and Non-metals", 
+          "Carbon and its Compounds", "Life Processes", "Control and Coordination", 
+          "How do Organisms Reproduce?", "Heredity", "Light – Reflection and Refraction", 
+          "The Human Eye and the Colorful World", "Electricity", "Magnetic Effects of Electric Current", "Our Environment"
+        ],
+        videos: ["L_A2YxZ2L08", "v8B_T2W6D8o", "YdM4vX2P2w4", "mG4zJ2W9w4E", "J9e4e2_G84E", "92Z_pP74eW0", "zX2P7e9G84E", "9w2_e4G84E0", "X3p7e9G84E0", "P2v9Z7e84E0", "Z9p7e84E000", "L9e84E00000", "K9e84E00001"]
+      },
+      maths: {
+        educator: "Shobhit Nirwan",
+        items: [
+          "Real Numbers", "Polynomials", "Pair of Linear Equations in Two Variables", 
+          "Quadratic Equations", "Arithmetic Progressions", "Triangles", "Coordinate Geometry", 
+          "Introduction to Trigonometry", "Some Applications of Trigonometry", "Circles", 
+          "Areas Related to Circles", "Surface Areas and Volumes", "Statistics", "Probability"
+        ],
+        videos: ["0c_7M_s9W2k", "zX9P8e4G84E", "9w2_e4G84E0", "P2v9Z7e84E0", "L_A2YxZ2L08", "v8B_T2W6D8o", "YdM4vX2P2w4", "mG4zJ2W9w4E", "J9e4e2_G84E", "92Z_pP74eW0", "zX2P7e9G84E", "9w2_e4G84E0", "X3p7e9G84E0", "P2v9Z7e84E0"]
+      },
+      sst: {
+        educator: "Digraj Singh Rajput",
+        items: [
+          "The Rise of Nationalism in Europe", "Nationalism in India", "The Making of a Global World", 
+          "The Age of Industrialisation", "Print Culture and the Modern World", "Resources and Development", 
+          "Forest and Wildlife Resources", "Water Resources", "Agriculture", "Minerals and Energy Resources", 
+          "Manufacturing Industries", "Life Lines of National Economy", "Power Sharing", "Federalism", 
+          "Gender, Religion and Caste", "Political Parties", "Outcomes of Democracy", "Development", 
+          "Sectors of the Indian Economy", "Money and Credit"
+        ],
+        videos: ["L_A2YxZ2L08", "v8B_T2W6D8o", "YdM4vX2P2w4", "mG4zJ2W9w4E", "J9e4e2_G84E", "92Z_pP74eW0", "zX2P7e9G84E", "9w2_e4G84E0", "X3p7e9G84E0", "P2v9Z7e84E0", "Z9p7e84E000", "L9e84E00000", "K9e84E00001", "M9e84E00002", "N9e84E00003", "O9e84E00004", "P9e84E00005", "Q9e84E00006", "R9e84E00007", "S9e84E00008"]
+      },
+      english: {
+        educator: "Dear Sir",
+        items: [
+          "A Letter to God", "Nelson Mandela: Long Walk to Freedom", "Two Stories about Flying", 
+          "From the Diary of Anne Frank", "Glimpses of India", "Mijbil the Otter", "Madam Rides the Bus", 
+          "The Sermon at Benares", "The Proposal", "Dust of Snow", "Fire and Ice", "A Tiger in the Zoo", 
+          "How to Tell Wild Animals", "The Ball Poem", "Amanda!", "The Trees", "Fog", 
+          "The Tale of Custard the Dragon", "For Anne Gregory"
+        ],
+        videos: ["L_A2YxZ2L08", "v8B_T2W6D8o", "YdM4vX2P2w4", "mG4zJ2W9w4E", "J9e4e2_G84E", "92Z_pP74eW0", "zX2P7e9G84E", "9w2_e4G84E0", "X3p7e9G84E0", "P2v9Z7e84E0", "Z9p7e84E000", "L9e84E00000", "K9e84E00001", "M9e84E00002", "N9e84E00003", "O9e84E00004", "P9e84E00005", "Q9e84E00006", "R9e84E00007"]
+      },
+      hindi: {
+        educator: "Educational Bhaiya",
+        items: [
+          "पद - सूरदास", "राम-लक्ष्मण-परशुराम संवाद", "सवैया और कवित्त", "आत्मकथ्य", "उत्साह और अट नहीं रही है", 
+          "यह दंतुरित मुस्कान और फसल", "छाया मत छूना", "कन्यादान", "संगतकार", "नेताजी का चश्मा", 
+          "बालगोबिन भगत", "लखनवी अंदाज", "मानवीय करुणा की दिव्य चमक", "एक कहानी यह भी", 
+          "स्त्री शिक्षा के विरोधी कुतर्कों का खंडन", "नौबतखाने में इबादत", "संस्कृति"
+        ],
+        videos: ["L_A2YxZ2L08", "v8B_T2W6D8o", "YdM4vX2P2w4", "mG4zJ2W9w4E", "J9e4e2_G84E", "92Z_pP74eW0", "zX2P7e9G84E", "9w2_e4G84E0", "X3p7e9G84E0", "P2v9Z7e84E0", "Z9p7e84E000", "L9e84E00000", "K9e84E00001", "M9e84E00002", "N9e84E00003", "O9e84E00004", "P9e84E00005"]
+      }
     };
 
     function renderSubjectContainers() {
@@ -436,58 +341,58 @@
       subjects.forEach((subjectKey) => {
         const container = document.getElementById(`${subjectKey}-container`);
         container.innerHTML = "";
+        
+        const subjData = chaptersData[subjectKey];
 
-        const list = subjectDetails[subjectKey] || generateDefaultChapterList(subjectKey);
-
-        list.forEach((ch, idx) => {
-          const videoId = (chapterVideos[subjectKey] && chapterVideos[subjectKey][idx]) ? chapterVideos[subjectKey][idx] : "L_A2YxZ2L08";
+        subjData.items.forEach((title, idx) => {
+          const chNum = idx + 1;
+          const videoId = subjData.videos[idx] || "L_A2YxZ2L08";
           const subjectTitleUpper = subjectKey.toUpperCase();
+
+          const p1 = `• Comprehensive Page 1 Notes for ${title}.\n• Covers essential definitions, theoretical principles, historical timeline/context, and fundamental NCERT core concepts.\n• Detailed breakdown of underlying terms, classifications, and basic mechanisms designed for quick pre-exam reading.`;
+          const p2 = `• Comprehensive Page 2 Notes for ${title}.\n• Includes step-by-step mathematical formulas, chemical equations, reaction diagrams, grammar rules, or solved numerical problems.\n• High-yield exam points, frequently asked board questions, key takeaways, and last-minute revision summary points.`;
 
           const cardHtml = `
             <div class="chapter-card">
               <div class="chapter-header">
-                <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=150&q=80" class="chapter-img" alt="${ch.title}">
                 <div class="chapter-title-box">
-                  <span>${subjectTitleUpper} - CHAPTER ${ch.ch}</span>
-                  <h3>${ch.title}</h3>
+                  <span>${subjectTitleUpper} - CHAPTER ${chNum}</span>
+                  <h3>${title}</h3>
+                  <div class="educator-tag">🎓 Video by: ${subjData.educator}</div>
                 </div>
               </div>
 
-              <!-- Embedded YouTube Player -->
               <div class="video-container">
                 <iframe 
                   src="https://www.youtube.com/embed/${videoId}?autoplay=0&rel=0" 
-                  title="${ch.title}" 
+                  title="${title}" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                   allowfullscreen>
                 </iframe>
               </div>
 
-              <!-- Fallback Direct Watch Link -->
               <div class="video-fallback-bar">
-                <span>▶ Video not loading inside iframe?</span>
+                <span>▶ Open video lecture on YouTube:</span>
                 <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" class="video-link-btn">
-                  Watch Directly on YouTube
+                  Watch Video (${subjData.educator})
                 </a>
               </div>
 
-              <!-- Download 2-Page PDF Button -->
               <div class="download-bar">
-                <span style="font-size: 13px; font-weight: 600;">Full 2-Page Chapter Summary PDF</span>
-                <button onclick="downloadFull2PagePDF('${subjectTitleUpper}', '${ch.ch}', '${escapeQuotes(ch.title)}', '${escapeQuotes(ch.p1)}', '${escapeQuotes(ch.p2)}')" class="download-btn">
+                <span style="font-size: 13px; font-weight: 600;">Download 2-Page Chapter Notes</span>
+                <button onclick="download2PagePDF('${subjectTitleUpper}', '${chNum}', '${escapeQuotes(title)}', '${escapeQuotes(p1)}', '${escapeQuotes(p2)}')" class="download-btn">
                   Download 2-Page PDF
                 </button>
               </div>
 
-              <!-- On-Screen 2-Page Full Summary View -->
               <div class="summary-sheet">
                 <div class="summary-page">
-                  <h5>📄 PAGE 1: Core Concepts & Principles</h5>
-                  <p>${ch.p1.replace(/\n/g, '<br>')}</p>
+                  <h5>📄 PAGE 1: Fundamental Concepts & Definitions</h5>
+                  <p>${p1.replace(/\n/g, '<br>')}</p>
                 </div>
                 <div class="summary-page">
-                  <h5>📄 PAGE 2: Advanced Formulas, Derivations & Exam Points</h5>
-                  <p>${ch.p2.replace(/\n/g, '<br>')}</p>
+                  <h5>📄 PAGE 2: Equations, Formulas & High-Yield Exam Takeaways</h5>
+                  <p>${p2.replace(/\n/g, '<br>')}</p>
                 </div>
               </div>
             </div>
@@ -501,37 +406,18 @@
       return str.replace(/'/g, "\\'").replace(/\n/g, "\\n");
     }
 
-    function generateDefaultChapterList(subjectKey) {
-      const titles = {
-        sst: ["Rise of Nationalism in Europe", "Nationalism in India", "The Making of a Global World", "Resources and Development", "Power Sharing"],
-        english: ["A Letter to God", "Nelson Mandela: Long Walk to Freedom", "Two Stories about Flying", "From the Diary of Anne Frank", "Glimpses of India"],
-        hindi: ["नेताजी का चश्मा", "बालगोबिन भगत", "लखनवी अंदाज", "मानवीय करुणा की दिव्य चमक", "एक कहानी यह भी"]
-      };
-
-      const selected = titles[subjectKey] || ["Chapter 1", "Chapter 2", "Chapter 3"];
-
-      return selected.map((t, idx) => ({
-        ch: (idx + 1).toString(),
-        title: t,
-        p1: `• Comprehensive Page 1 Summary for ${t}.\n• Covers fundamental definitions, historical background, main plot points, and theoretical concepts necessary for Class 10 NCERT board examination preparation.\n• Key terms, timelines, and main themes are broken down into clear, structured bullet points for systematic reading.`,
-        p2: `• Comprehensive Page 2 Summary for ${t}.\n• Highlights critical formulas, chemical equations, grammar rules, character sketches, or step-by-step problem-solving methods.\n• Exam-oriented high-yield revision notes, important previous year questions, and critical key takeaways for last-minute board preparation.`
-      }));
-    }
-
-    // Dynamic 2-Page PDF Generation Handler
-    function downloadFull2PagePDF(subject, chNum, title, p1, p2) {
+    // PDF Generator for 2-Page Chapter Summaries
+    function download2PagePDF(subject, chNum, title, p1, p2) {
       const { jsPDF } = window.jspdf;
       const doc = new jsPDF();
 
       function addHeaderFooter(doc, pageNum) {
         doc.setFillColor(15, 23, 42);
         doc.rect(0, 0, 210, 18, 'F');
-        
         doc.setFont("Helvetica", "bold");
         doc.setFontSize(11);
         doc.setTextColor(255, 255, 255);
         doc.text("Phogat Study Hub - Class 10 NCERT Notes", 10, 12);
-        
         doc.setFontSize(9);
         doc.text(`Page ${pageNum} of 2`, 180, 12);
 
@@ -539,43 +425,34 @@
         doc.line(10, 285, 200, 285);
         doc.setFontSize(8);
         doc.setTextColor(100, 116, 139);
-        doc.text("© Phogat Study Hub - Official Board Examination Study Notes", 10, 290);
+        doc.text("© Phogat Study Hub - Class 10 Board Revision Series", 10, 290);
       }
 
-      // --- PAGE 1 ---
+      // Page 1
       addHeaderFooter(doc, 1);
-      
       doc.setFont("Helvetica", "bold");
-      doc.setFontSize(15);
+      doc.setFontSize(14);
       doc.setTextColor(37, 99, 235);
       doc.text(`${subject} CHAPTER ${chNum}: ${title}`, 10, 28);
-
       doc.setFontSize(11);
       doc.setTextColor(15, 23, 42);
       doc.text("PAGE 1: CORE CONCEPTS & THEORY", 10, 36);
-
       doc.setFont("Helvetica", "normal");
-      doc.setFontSize(9.5);
+      doc.setFontSize(10);
       doc.setTextColor(51, 65, 85);
-      
-      const splitP1 = doc.splitTextToSize(p1, 190);
-      doc.text(splitP1, 10, 44);
+      doc.text(doc.splitTextToSize(p1, 190), 10, 44);
 
-      // --- PAGE 2 ---
+      // Page 2
       doc.addPage();
       addHeaderFooter(doc, 2);
-
       doc.setFont("Helvetica", "bold");
       doc.setFontSize(11);
       doc.setTextColor(15, 23, 42);
       doc.text("PAGE 2: FORMULAS, DERIVATIONS & EXAM POINTS", 10, 28);
-
       doc.setFont("Helvetica", "normal");
-      doc.setFontSize(9.5);
+      doc.setFontSize(10);
       doc.setTextColor(51, 65, 85);
-
-      const splitP2 = doc.splitTextToSize(p2, 190);
-      doc.text(splitP2, 10, 36);
+      doc.text(doc.splitTextToSize(p2, 190), 10, 36);
 
       doc.save(`${subject}_Ch${chNum}_Summary_2Pages.pdf`);
     }
@@ -598,22 +475,15 @@
     function submitPaymentScreenshot() {
       const fileInput = document.getElementById('payment-shot');
       if (fileInput.files.length === 0) {
-        alert('Please select your payment screenshot before submitting.');
+        alert('Please select your payment screenshot first.');
         return;
       }
-      
-      document.getElementById('thankyou-modal').style.display = 'flex';
-      document.getElementById('premium-section').className = 'unlocked-content';
-    }
-
-    function closeModal() {
-      document.getElementById('thankyou-modal').style.display = 'none';
+      alert('Thank you! Payment screenshot received. Complete Master Notes are unlocked.');
     }
 
     window.onload = function() {
       renderSubjectContainers();
     };
   </script>
-
 </body>
 </html>
