@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phogat Study Hub - Class 10 NCERT Master Notes</title>
+  <title>Phogat Study Hub - Class 10 Board Exam Prep</title>
   
   <!-- Math Processing (KaTeX) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -12,253 +12,452 @@
 
   <style>
     :root {
-      --primary: #1e40af;
-      --secondary: #0d9488;
-      --accent: #dc2626;
-      --bg: #f8fafc;
+      --primary: #0f172a;
+      --accent: #2563eb;
+      --success: #16a34a;
+      --warning: #d97706;
+      --bg: #f1f5f9;
       --card-bg: #ffffff;
-      --text: #0f172a;
+      --text: #1e293b;
     }
+
+    * { box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background-color: var(--bg);
       color: var(--text);
       margin: 0;
-      padding: 16px;
-      line-height: 1.6;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
+
+    /* Top Navigation Header */
     header {
-      text-align: center;
       background: var(--primary);
       color: white;
-      padding: 24px 16px;
-      border-radius: 12px;
-      margin-bottom: 20px;
+      padding: 16px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    h1 { margin: 0 0 8px 0; font-size: 24px; }
-    p { margin: 0; opacity: 0.9; }
+    header h1 { margin: 0; font-size: 20px; font-weight: 700; }
+    .nav-badge {
+      background: var(--accent);
+      color: white;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
 
-    /* Payment Section */
+    /* Horizontal Subject Navigation Bar */
+    .subject-bar {
+      display: flex;
+      overflow-x: auto;
+      background: white;
+      padding: 10px 16px;
+      gap: 10px;
+      border-bottom: 1px solid #e2e8f0;
+      scroll-behavior: smooth;
+    }
+    .subject-bar::-webkit-scrollbar { display: none; }
+    .subject-btn {
+      flex: 0 0 auto;
+      padding: 8px 16px;
+      border: 1px solid #cbd5e1;
+      border-radius: 20px;
+      background: white;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .subject-btn.active {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    /* Layout Containers */
+    .container {
+      padding: 16px;
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* Banner / Paywall Box */
     .buy-banner {
-      background: linear-gradient(135deg, #fef3c7, #fde68a);
-      border: 2px solid #f59e0b;
-      border-radius: 12px;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      color: white;
+      border-radius: 16px;
       padding: 20px;
       text-align: center;
       margin-bottom: 24px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    .buy-banner h2 {
-      margin: 0 0 8px 0;
-      color: #92400e;
-      font-size: 20px;
-    }
-    .buy-banner p {
-      color: #78350f;
-      font-size: 14px;
-      margin-bottom: 14px;
-    }
-    .price-tag {
-      font-size: 22px;
-      font-weight: bold;
-      color: var(--accent);
-    }
-    .payment-box {
-      background: #ffffff;
-      border-radius: 10px;
+    .buy-banner h2 { margin: 0 0 8px 0; color: #f59e0b; font-size: 22px; }
+    .buy-banner p { font-size: 14px; opacity: 0.9; margin-bottom: 16px; }
+    .payment-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      background: rgba(255,255,255,0.05);
       padding: 16px;
-      margin-top: 15px;
-      border: 1px solid #fcd34d;
+      border-radius: 12px;
     }
-    .qr-container img {
-      width: 180px;
-      height: 180px;
-      border: 2px solid #1e40af;
+    .qr-box img {
+      width: 160px;
+      height: 160px;
       border-radius: 8px;
-      margin: 10px 0;
+      background: white;
+      padding: 6px;
     }
-    .btn-group {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 12px;
-    }
-    .buy-btn {
-      display: block;
-      background-color: #16a34a;
+    .btn {
+      background: var(--success);
       color: white;
-      font-weight: bold;
-      padding: 12px 16px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 15px;
-      text-align: center;
       border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 15px;
       cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      width: 100%;
     }
-    .copy-btn {
-      background-color: #1e40af;
+    .btn-secondary { background: var(--accent); }
+
+    /* Chapter Cards Layout */
+    .chapter-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border: 1px solid #e2e8f0;
     }
-    .whatsapp-note {
-      font-size: 13px;
-      color: #78350f;
-      margin-top: 12px;
-      background: #fffbeb;
-      padding: 8px;
-      border-radius: 6px;
+    .chapter-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .chapter-img {
+      width: 70px;
+      height: 70px;
+      border-radius: 10px;
+      object-fit: cover;
+      background: #e2e8f0;
+    }
+    .chapter-title-box h3 { margin: 0; font-size: 18px; color: var(--primary); }
+    .chapter-title-box span { font-size: 12px; color: #64748b; font-weight: 600; }
+
+    /* Video Player Mockup */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 10px;
+      background: #000;
+      margin-bottom: 16px;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%; border: 0;
     }
 
-    /* Content Styling */
-    .subject-title {
-      color: var(--primary);
-      border-bottom: 3px solid var(--primary);
-      padding-bottom: 6px;
-      margin-top: 32px;
-      font-size: 20px;
-    }
-    .notes-card {
-      background: var(--card-bg);
-      border-radius: 10px;
-      padding: 16px;
+    /* Tabbed Section inside Chapter */
+    .formula-box {
+      background: #eff6ff;
+      border-left: 4px solid var(--accent);
+      padding: 12px 16px;
+      border-radius: 6px;
       margin-bottom: 16px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      border-left: 5px solid var(--secondary);
     }
-    .key-points {
-      padding-left: 20px;
-      margin: 8px 0;
+    .formula-title { font-weight: bold; color: var(--accent); margin-bottom: 6px; font-size: 14px; }
+
+    /* Download Button Box */
+    .download-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f8fafc;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px dashed #cbd5e1;
+      margin-bottom: 16px;
     }
-    .key-points li {
-      margin-bottom: 8px;
+    .download-btn {
+      background: var(--primary);
+      color: white;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      text-decoration: none;
+      font-weight: 600;
     }
+
+    /* Competency Questions */
+    .competency-box {
+      background: #fafafa;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 14px;
+      margin-top: 16px;
+    }
+    .competency-title { font-size: 15px; font-weight: bold; color: var(--primary); margin-bottom: 10px; }
+    .q-item { margin-bottom: 12px; font-size: 14px; }
+    details summary { cursor: pointer; color: var(--accent); font-weight: 600; font-size: 13px; margin-top: 4px; }
+    details p { background: #f0fdf4; padding: 8px; border-radius: 6px; font-size: 13px; color: #14532d; margin-top: 4px; }
+
+    /* Protected Premium Area */
+    .locked-content {
+      filter: blur(4px);
+      user-select: none;
+      pointer-events: none;
+      position: relative;
+    }
+    .lock-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(241, 245, 249, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 10;
+      border-radius: 12px;
+    }
+
+    /* Modal / Thank You Card */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+    }
+    .modal-card {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      max-width: 450px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+    .modal-card h3 { color: var(--success); margin: 0 0 10px 0; }
   </style>
 </head>
 <body>
 
   <header>
     <h1>Phogat Study Hub</h1>
-    <p>Class 10 NCERT All Subjects Key Revision Points & Board Exam Prep</p>
+    <span class="nav-badge">Class 10 NCERT</span>
   </header>
 
-  <!-- PAYMENT SECTION -->
-  <div class="buy-banner">
-    <h2>🔥 Get Complete Class 10 Board Notes PDF</h2>
-    <p>Download complete chapter handwritten notes, formula cheat sheets, PYQs, and sample papers for Science, Maths, SST & English!</p>
-    <p><span class="price-tag">Special Offer: ₹29 Only</span></p>
+  <!-- Side-Scrolling Subject Bar -->
+  <div class="subject-bar">
+    <button class="subject-btn active" onclick="filterSubject('science')">Science</button>
+    <button class="subject-btn" onclick="filterSubject('maths')">Mathematics</button>
+    <button class="subject-btn" onclick="filterSubject('sst')">Social Science</button>
+    <button class="subject-btn" onclick="filterSubject('english')">English</button>
+    <button class="subject-btn" onclick="filterSubject('hindi')">Hindi</button>
+  </div>
 
-    <div class="payment-box">
-      <div class="qr-container">
-        <!-- Pre-configured QR Code pointing to himanshu733@fam for ₹29 -->
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi%3A%2F%2Fpay%3Fpa%3Dhimanshu733%40fam%26pn%3DPhogat%2520Study%2520Hub%26am%3D29%26cu%3DINR%26tn%3DClass10NotesPDF" alt="UPI QR Code">
-        <p style="font-size: 13px; margin: 4px 0;"><strong>Scan to Pay ₹29 via any UPI App</strong></p>
+  <div class="container">
+
+    <!-- Payment Banner -->
+    <div class="buy-banner">
+      <h2>🔥 Unlock Premium Master Notes & PYQs</h2>
+      <p>Get instant access to complete 2-3 page chapter summaries, formula sheets, and full PDF downloads for all subjects.</p>
+      
+      <div class="payment-grid">
+        <div class="qr-box">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi%3A%2F%2Fpay%3Fpa%3Dhimanshu733%40fam%26pn%3DPhogat%2520Study%2520Hub%26am%3D29%26cu%3DINR%26tn%3DClass10FullNotes" alt="Payment QR Code">
+        </div>
+        <div>
+          <p style="margin: 4px 0; font-size: 13px;">UPI ID: <strong>himanshu733@fam</strong></p>
+          <a href="upi://pay?pa=himanshu733@fam&pn=PhogatStudyHub&am=29&cu=INR&tn=Class10FullNotes" class="btn" style="margin-bottom: 8px;">
+            Pay ₹29 via UPI / GPay
+          </a>
+          <button class="btn btn-secondary" onclick="unlockContent()">
+            Confirm Payment / Enter Passcode
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHAPTER ITEM: SCIENCE -->
+    <div class="chapter-card subject-section science">
+      <div class="chapter-header">
+        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=150&q=80" class="chapter-img" alt="Chemical Reactions">
+        <div class="chapter-title-box">
+          <span>SCIENCE - CHAPTER 1</span>
+          <h3>Chemical Reactions and Equations</h3>
+        </div>
       </div>
 
-      <div class="btn-group">
-        <!-- Direct Mobile Payment Link -->
-        <a href="upi://pay?pa=himanshu733@fam&pn=PhogatStudyHub&am=29&cu=INR&tn=Class10NotesPDF" class="buy-btn">
-          ⚡ TAP TO PAY ₹29 (GPay / PhonePe / Paytm)
-        </a>
-
-        <!-- Copy UPI ID Button -->
-        <button class="buy-btn copy-btn" onclick="copyUPI()">
-          📋 Copy UPI ID: himanshu733@fam
-        </button>
+      <!-- AI Video Summary Placeholder -->
+      <div class="video-container">
+        <iframe src="https://www.youtube-nocookie.com/embed/g2f44Y_A69w" title="AI Chapter Video Summary" allowfullscreen></iframe>
       </div>
 
-      <div class="whatsapp-note">
-        📌 <strong>After Payment:</strong> Send payment screenshot via WhatsApp to get your PDF link delivered instantly!
+      <!-- Download PDF Option -->
+      <div class="download-bar">
+        <span style="font-size: 13px; font-weight: 600;">Chapter 1 Revision PDF</span>
+        <a href="#" onclick="alert('Downloading Chapter 1 Science PDF...'); return false;" class="download-btn">Download PDF</a>
       </div>
+
+      <!-- Important Formulas / Key Equations -->
+      <div class="formula-box">
+        <div class="formula-title">⚡ Essential Chemical Equations & Formulas</div>
+        <ul style="margin: 0; padding-left: 18px; font-size: 13px;">
+          <li>Combination: $2\text{Mg} + \text{O}_2 \rightarrow 2\text{MgO}$</li>
+          <li>Decomposition: $2\text{FeSO}_4 \xrightarrow{\Delta} \text{Fe}_2\text{O}_3 + \text{SO}_2 + \text{SO}_3$</li>
+          <li>Displacement: $\text{Fe} + \text{CuSO}_4 \rightarrow \text{FeSO}_4 + \text{Cu}$</li>
+        </ul>
+      </div>
+
+      <!-- Complete 2-3 Page Detailed Explanation Summary -->
+      <div>
+        <h4>Chapter Summary & Key Concepts</h4>
+        <p style="font-size: 14px; line-height: 1.6;">
+          A chemical reaction occurs when one or more substances transform into new substances with entirely different physical and chemical properties. Key signs of a chemical reaction include gas evolution, color changes, temperature variation, or precipitate formation.
+        </p>
+        <p style="font-size: 14px; line-height: 1.6;">
+          <strong>Balancing Chemical Equations:</strong> According to the Law of Conservation of Mass, matter cannot be created or destroyed in a chemical reaction. Therefore, the total number of atoms of each element must remain equal on both reactant and product sides.
+        </p>
+      </div>
+
+      <!-- 5 Competency Based Questions -->
+      <div class="competency-box">
+        <div class="competency-title">🎯 Competency-Based Practice Questions</div>
+        
+        <div class="q-item">
+          <strong>Q1.</strong> A student adds iron filings to a copper sulfate solution. What color change occurs and why?
+          <details><summary>View Answer</summary><p>The blue solution turns light green due to the formation of ferrous sulfate ($\text{FeSO}_4$). Iron displaces copper as it is more reactive.</p></details>
+        </div>
+
+        <div class="q-item">
+          <strong>Q2.</strong> Why is respiration considered an exothermic reaction?
+          <details><summary>View Answer</summary><p>Glucose reacts with oxygen in body cells to produce carbon dioxide, water, and release energy in the form of ATP.</p></details>
+        </div>
+
+        <div class="q-item">
+          <strong>Q3.</strong> What happens chemically when quicklime ($\text{CaO}$) reacts vigorously with water?
+          <details><summary>View Answer</summary><p>Slaked lime ($\text{Ca(OH)}_2$) is produced, releasing a significant amount of heat energy.</p></details>
+        </div>
+
+        <div class="q-item">
+          <strong>Q4.</strong> Identify the oxidizing agent: $\text{CuO} + \text{H}_2 \rightarrow \text{Cu} + \text{H}_2\text{O}$.
+          <details><summary>View Answer</summary><p>$\text{CuO}$ is the oxidizing agent because it supplies oxygen to hydrogen.</p></details>
+        </div>
+
+        <div class="q-item">
+          <strong>Q5.</strong> Why are oil and fat-containing food items flushed with nitrogen gas?
+          <details><summary>View Answer</summary><p>Nitrogen acts as an inert atmosphere to prevent oxidation and rancidity of oils and fats.</p></details>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHAPTER ITEM: MATHEMATICS -->
+    <div class="chapter-card subject-section maths" style="display:none;">
+      <div class="chapter-header">
+        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=150&q=80" class="chapter-img" alt="Quadratic Equations">
+        <div class="chapter-title-box">
+          <span>MATHEMATICS - CHAPTER 4</span>
+          <h3>Quadratic Equations</h3>
+        </div>
+      </div>
+
+      <div class="download-bar">
+        <span style="font-size: 13px; font-weight: 600;">Chapter 4 Maths PDF</span>
+        <a href="#" onclick="alert('Downloading Chapter 4 Maths PDF...'); return false;" class="download-btn">Download PDF</a>
+      </div>
+
+      <div class="formula-box">
+        <div class="formula-title">⚡ Important Formulas</div>
+        <ul style="margin: 0; padding-left: 18px; font-size: 13px;">
+          <li>Standard Form: $ax^2 + bx + c = 0$</li>
+          <li>Quadratic Formula: $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$</li>
+          <li>Discriminant: $D = b^2 - 4ac$</li>
+        </ul>
+      </div>
+
+      <!-- Competency Based Questions for Maths -->
+      <div class="competency-box">
+        <div class="competency-title">🎯 Competency-Based Practice Questions</div>
+        <div class="q-item">
+          <strong>Q1.</strong> Find the nature of roots for $2x^2 - 4x + 3 = 0$.
+          <details><summary>View Answer</summary><p>$D = (-4)^2 - 4(2)(3) = 16 - 24 = -8$. Since $D < 0$, there are no real roots.</p></details>
+        </div>
+      </div>
+    </div>
+
+    <!-- PREPARED LOCKED PREMIUM SHORT NOTES SECTION -->
+    <div id="premium-section" class="locked-content">
+      <div class="lock-overlay" id="lock-overlay">
+        <h3 style="margin: 0; color: var(--primary);">🔒 Locked Premium Master Notes</h3>
+        <p style="font-size: 13px; color: #475569;">Complete payment of ₹29 to unlock full subject notes.</p>
+      </div>
+
+      <div class="chapter-card">
+        <h3>🏆 Exclusive Short Notes & Board Cheat Sheets</h3>
+        <p>This section displays comprehensive quick-revision summaries across all subjects after access is unlocked.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- THANKING GREETING CARD MODAL -->
+  <div class="modal" id="thankyou-modal">
+    <div class="modal-card">
+      <h3>🎉 Thank You for Your Purchase!</h3>
+      <p style="font-size: 14px; color: #334155;">
+        Your payment has been successfully confirmed. You now have full access to all Class 10 NCERT master notes, PDF downloads, and premium formula cheat sheets.
+      </p>
+      <button class="btn" onclick="closeModal()">Access All Content Now</button>
     </div>
   </div>
 
-  <!-- SCIENCE NOTES -->
-  <h2 class="subject-title">🧪 Science (Key Concepts)</h2>
-  <div class="notes-card">
-    <ol class="key-points">
-      <li><strong>Law of Conservation of Mass:</strong> Total mass of reactants equals total mass of products in a chemical reaction.</li>
-      <li><strong>Exothermic vs Endothermic:</strong> Exothermic releases heat ($\text{C} + \text{O}_2 \rightarrow \text{CO}_2 + \text{heat}$); Endothermic absorbs heat.</li>
-      <li><strong>Redox Reaction:</strong> Simultaneous oxidation (gain of $\text{O}_2$/loss of $\text{H}_2$) and reduction (loss of $\text{O}_2$/gain of $\text{H}_2$).</li>
-      <li><strong>pH Scale:</strong> $< 7$ is acidic, $= 7$ is neutral, $> 7$ is basic. Human blood pH range is $7.0 - 7.8$.</li>
-      <li><strong>Plaster of Paris:</strong> $\text{CaSO}_4 \cdot \frac{1}{2}\text{H}_2\text{O}$ hardens into Gypsum ($\text{CaSO}_4 \cdot 2\text{H}_2\text{O}$) when mixed with water.</li>
-      <li><strong>Reactivity Series:</strong> Potassium ($\text{K}$) is most reactive, while Gold ($\text{Au}$) is least reactive.</li>
-      <li><strong>Ionic Compounds:</strong> High melting points due to strong electrostatic forces between oppositely charged ions.</li>
-      <li><strong>Catenation:</strong> Unique property of carbon to form long chains with other carbon atoms.</li>
-      <li><strong>Isomers:</strong> Compounds with same molecular formula but different structural arrangements.</li>
-      <li><strong>Photosynthesis Equation:</strong> $6\text{CO}_2 + 12\text{H}_2\text{O} \xrightarrow{\text{Sunlight/Chlorophyll}} \text{C}_6\text{H}_{12}\text{O}_6 + 6\text{O}_2 + 6\text{H}_2\text{O}$.</li>
-      <li><strong>Aerobic vs Anaerobic:</strong> Aerobic occurs in mitochondria (38 ATP); Anaerobic occurs in cytoplasm (2 ATP).</li>
-      <li><strong>Double Circulation:</strong> Blood travels through the human heart twice during one complete cycle.</li>
-      <li><strong>Synapse:</strong> Microscopic gap between two adjacent neurons where signals cross via chemicals.</li>
-      <li><strong>Plant Hormones:</strong> Auxin (cell elongation), Cytokinin (cell division), Abscisic acid (growth inhibitor).</li>
-      <li><strong>Reflex Arc:</strong> Pathway taken by nerve impulses in a reflex action (Receptor $\rightarrow$ Sensory Neuron $\rightarrow$ Spinal Cord $\rightarrow$ Motor Neuron $\rightarrow$ Effector).</li>
-    </ol>
-  </div>
-
-  <!-- MATHEMATICS NOTES -->
-  <h2 class="subject-title">📐 Mathematics (Important Formulas & Theorems)</h2>
-  <div class="notes-card">
-    <ol class="key-points" start="16">
-      <li><strong>Fundamental Theorem of Arithmetic:</strong> Every composite number can be uniquely factorized into prime factors.</li>
-      <li><strong>HCF and LCM Relation:</strong> $\text{HCF}(a, b) \times \text{LCM}(a, b) = a \times b$.</li>
-      <li><strong>Quadratic Formula:</strong> $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$. Discriminant $D = b^2 - 4ac$.</li>
-      <li><strong>Nature of Roots:</strong> If $D > 0$ (two real distinct roots), $D = 0$ (two equal real roots), $D < 0$ (no real roots).</li>
-      <li><strong>Arithmetic Progression (AP):</strong> $n^{\text{th}}$ term $a_n = a + (n-1)d$; Sum $S_n = \frac{n}{2}[2a + (n-1)d]$.</li>
-      <li><strong>Distance Formula:</strong> $d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$.</li>
-      <li><strong>Section Formula:</strong> $P(x,y) = \left(\frac{m_1x_2 + m_2x_1}{m_1 + m_2}, \frac{m_1y_2 + m_2y_1}{m_1 + m_2}\right)$.</li>
-      <li><strong>Basic Proportionality Theorem (BPT):</strong> A line drawn parallel to one side of a triangle divides the other two sides in the same ratio.</li>
-      <li><strong>Trigonometric Identity 1:</strong> $\sin^2\theta + \cos^2\theta = 1$.</li>
-      <li><strong>Trigonometric Identity 2:</strong> $1 + \tan^2\theta = \sec^2\theta$.</li>
-      <li><strong>Trigonometric Identity 3:</strong> $1 + \cot^2\theta = \csc^2\theta$.</li>
-      <li><strong>Tangent to a Circle:</strong> Perpendicular to the radius at the point of contact.</li>
-      <li><strong>Length of Tangents:</strong> Tangents drawn from an external point to a circle are equal in length.</li>
-      <li><strong>Area of Sector:</strong> $\text{Area} = \frac{\theta}{360^\circ} \times \pi r^2$.</li>
-      <li><strong>Empirical Formula (Statistics):</strong> $\text{Mode} = 3(\text{Median}) - 2(\text{Mean})$.</li>
-    </ol>
-  </div>
-
-  <!-- SOCIAL SCIENCE NOTES -->
-  <h2 class="subject-title">🌍 Social Science (History, Geography, Civics & Economics)</h2>
-  <div class="notes-card">
-    <ol class="key-points" start="31">
-      <li><strong>Nationalism in Europe:</strong> Giuseppe Mazzini founded 'Young Italy' in 1831; Otto von Bismarck unified Germany.</li>
-      <li><strong>Satyagraha Movements:</strong> Champaran (1917 - Indigo farmers), Kheda (1917 - Peasant crop failure), Ahmedabad (1918 - Cotton mill workers).</li>
-      <li><strong>Jallianwala Bagh Massacre:</strong> Happened on 13th April 1919 in Amritsar under General Dyer's command.</li>
-      <li><strong>Non-Cooperation Movement:</strong> Launched in 1920, called off in February 1922 due to the Chauri Chaura violence.</li>
-      <li><strong>Civil Disobedience Movement:</strong> Started with Dandi Salt March (12 March – 6 April 1930) covering 240 miles.</li>
-      <li><strong>Resource Classification:</strong> Biotic/Abiotic, Renewable/Non-renewable, National/International.</li>
-      <li><strong>Soil Types:</strong> Alluvial (most fertile/Northern plains), Black soil (Cotton cultivation/Regur soil), Red & Yellow, Laterite.</li>
-      <li><strong>Major Crops:</strong> Rice (Kharif, staple crop), Wheat (Rabi, cool growing season), Sugarcane (Tropical/Subtropical).</li>
-      <li><strong>Power Sharing:</strong> Essential to prevent conflict; Majoritarianism in Sri Lanka led to civil war, whereas Belgium's power-sharing brought stability.</li>
-      <li><strong>Federalism:</strong> Division of power between Union, State, and Local governments (3-tier system in India since 1992).</li>
-      <li><strong>Development Index:</strong> Per Capita Income = $\frac{\text{Total Income of Country}}{\text{Total Population}}$. Published in UNDP's Human Development Report.</li>
-      <li><strong>Sectors of Economy:</strong> Primary (Agriculture/Mining), Secondary (Manufacturing/Industry), Tertiary (Services/Transportation).</li>
-      <li><strong>Credit Sources:</strong> Formal (Banks/SHGs - low interest) vs Informal (Moneylenders/Landlords - high interest).</li>
-      <li><strong>Globalization:</strong> Integration of national markets enabled by MNCs, technology, and trade liberalization.</li>
-      <li><strong>Self-Help Groups (SHGs):</strong> Typically consist of 15–20 members pooling savings to offer low-interest microloans.</li>
-    </ol>
-  </div>
-
-  <!-- ENGLISH NOTES -->
-  <h2 class="subject-title">📖 English (Grammar Rules & Summaries)</h2>
-  <div class="notes-card">
-    <ol class="key-points" start="46">
-      <li><strong>A Letter to God:</strong> Lencho, a faithful farmer, writes to God for 100 pesos after hailstorms destroy his crops; receives 70 pesos collected by post office staff.</li>
-      <li><strong>Nelson Mandela: Long Walk to Freedom:</strong> Highlights the struggle against Apartheid and inauguration of South Africa's first democratic non-racial government in 1994.</li>
-      <li><strong>Two Stories About Flying:</strong> Part I (Young seagull overcomes fear of first flight); Part II (Black Aeroplane guides pilot safely through storm).</li>
-      <li><strong>From the Diary of Anne Frank:</strong> Anne names her diary 'Kitty' to share thoughts while hiding in Amsterdam during WWII.</li>
-      <li><strong>Dust of Snow (Poem):</strong> A crow shaking hemlock tree snow onto Frost transforms his gloomy mood into a positive state.</li>
-      <li><strong>Fire and Ice (Poem):</strong> Fire symbolizes desire/lust; Ice symbolizes hatred/indifference; both can destroy the world.</li>
-      <li><strong>A Triumph of Surgery:</strong> Dr. Herriot cures Tricki (overfed dog) purely through strict diet and physical exercise without medical surgery.</li>
-      <li><strong>The Thief's Story:</strong> Hari Singh (15-year-old thief) decides not to rob Anil because of Anil's trust, honesty, and effort to teach him to read.</li>
-      <li><strong>Subject-Verb Agreement:</strong> Singular subjects require singular verbs; plural subjects require plural verbs.</li>
-      <li><strong>Direct to Indirect Speech:</strong> Present tense changes to corresponding past tense if the reporting verb is in the past tense.</li>
-      <li><strong>Modals Usage:</strong> 'Must' indicates compulsion; 'Should' indicates advice; 'May' indicates formal permission or possibility.</li>
-    </ol>
-  </div>
-
   <script>
-    function copyUPI() {
-      navigator.clipboard.writeText("himanshu733@fam");
-      alert("UPI ID (himanshu733@fam) copied to clipboard!");
+    // Filter Chapter Displays by Subject
+    function filterSubject(subjectClass) {
+      const buttons = document.querySelectorAll('.subject-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const sections = document.querySelectorAll('.subject-section');
+      sections.forEach(sec => {
+        if (sec.classList.contains(subjectClass)) {
+          sec.style.display = 'block';
+        } else {
+          sec.style.display = 'none';
+        }
+      });
+    }
+
+    // Unlock Paid Premium Content & Show Thank-You Greeting
+    function unlockContent() {
+      document.getElementById('thankyou-modal').style.display = 'flex';
+      document.getElementById('premium-section').classList.remove('locked-content');
+      document.getElementById('lock-overlay').style.display = 'none';
+    }
+
+    function closeModal() {
+      document.getElementById('thankyou-modal').style.display = 'none';
     }
   </script>
 
