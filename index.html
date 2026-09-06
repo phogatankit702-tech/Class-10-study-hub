@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Class 10 NCERT Complete Master Notes</title>
+  <title>Class 10 NCERT Master Study Hub - 15 Point Summaries</title>
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
@@ -62,7 +62,9 @@
       padding: 10px 16px;
       gap: 10px;
       border-bottom: 1px solid #e2e8f0;
+      scroll-behavior: smooth;
     }
+    .subject-bar::-webkit-scrollbar { display: none; }
     .subject-btn {
       flex: 0 0 auto;
       padding: 8px 16px;
@@ -107,12 +109,13 @@
     .educator-tag {
       background: #fef3c7;
       color: #92400e;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: bold;
-      padding: 2px 8px;
+      padding: 3px 10px;
       border-radius: 4px;
       display: inline-block;
       margin-top: 4px;
+      border: 1px solid #fde68a;
     }
 
     .video-container {
@@ -178,22 +181,19 @@
       border-radius: 8px;
       padding: 16px;
       font-size: 13px;
-      line-height: 1.6;
+      line-height: 1.7;
       color: #334155;
     }
-    .summary-page {
-      background: white;
-      padding: 14px;
-      border-radius: 6px;
-      border: 1px solid #cbd5e1;
-      margin-bottom: 12px;
-    }
-    .summary-page h5 {
-      margin: 0 0 8px 0;
+    .summary-sheet h4 {
+      margin: 0 0 12px 0;
       color: var(--accent);
-      font-size: 14px;
-      border-bottom: 1px solid #e2e8f0;
+      font-size: 15px;
+      border-bottom: 2px solid #e2e8f0;
       padding-bottom: 4px;
+    }
+    .line-item {
+      margin-bottom: 6px;
+      padding-left: 4px;
     }
 
     .buy-banner {
@@ -229,15 +229,13 @@
     }
     .btn-secondary { background: var(--accent); }
     .file-input { margin: 10px 0; color: white; font-size: 12px; }
-    .locked-content { display: none; }
-    .unlocked-content { display: block; }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Phogat Study Hub</h1>
-    <span class="nav-badge">Class 10 NCERT All Subjects</span>
+    <h1>Class 10 NCERT Master Study Hub</h1>
+    <span class="nav-badge">15 Important Lines / Chapter</span>
   </header>
 
   <div class="subject-bar">
@@ -245,7 +243,7 @@
     <button class="subject-btn" onclick="filterSubject('maths')">Mathematics (14 Ch)</button>
     <button class="subject-btn" onclick="filterSubject('sst')">Social Science (20 Ch)</button>
     <button class="subject-btn" onclick="filterSubject('english')">English (19 Ch)</button>
-    <button class="subject-btn" onclick="filterSubject('hindi')">Hindi (17 Ch)</button>
+    <button class="subject-btn" onclick="filterSubject('hindi')">Hindi - हिंदी (17 Ch)</button>
   </div>
 
   <div class="container">
@@ -256,8 +254,8 @@
     <div class="subject-section hindi" id="hindi-container" style="display:none;"></div>
 
     <div class="buy-banner">
-      <h2 style="color: #f59e0b; margin-top:0;">🔥 Unlock Complete 5-Page High-Yield Master Notes</h2>
-      <p>Scan the QR code below, pay ₹29, and upload your payment screenshot to unlock complete master revision notes!</p>
+      <h2 style="color: #f59e0b; margin-top:0;">🔥 Unlock Complete High-Yield Master Question Bank</h2>
+      <p>Scan QR code below, pay ₹29, and upload payment screenshot to instantly unlock complete premium board notes!</p>
       
       <div class="payment-grid">
         <div class="qr-box">
@@ -278,212 +276,604 @@
   </div>
 
   <script>
-    // Chapter Lists for All Subjects
+    // Comprehensive Data with 15 Detailed Lines per Chapter in exact native languages
     const chaptersData = {
       science: {
         educator: "Prashant Kirad",
+        searchQuery: "Prashant Kirad Class 10 Science",
         items: [
-          "Chemical Reactions and Equations", "Acids, Bases and Salts", "Metals and Non-metals", 
-          "Carbon and its Compounds", "Life Processes", "Control and Coordination", 
-          "How do Organisms Reproduce?", "Heredity", "Light – Reflection and Refraction", 
-          "The Human Eye and the Colorful World", "Electricity", "Magnetic Effects of Electric Current", "Our Environment"
-        ],
-        videos: ["L_A2YxZ2L08", "v8B_T2W6D8o", "YdM4vX2P2w4", "mG4zJ2W9w4E", "J9e4e2_G84E", "92Z_pP74eW0", "zX2P7e9G84E", "9w2_e4G84E0", "X3p7e9G84E0", "P2v9Z7e84E0", "Z9p7e84E000", "L9e84E00000", "K9e84E00001"]
+          {
+            title: "Chemical Reactions and Equations",
+            vId: "L_A2YxZ2L08",
+            lines: [
+              "1. A chemical reaction involves the breaking and making of chemical bonds to produce new substances with entirely different properties.",
+              "2. Key indicators of a chemical reaction include color change, temperature variation, gas evolution, or precipitate formation.",
+              "3. Word equations are simplified using chemical formulas to represent reactants on the left and products on the right.",
+              "4. Law of Conservation of Mass dictates that mass cannot be created or destroyed, requiring balanced chemical equations.",
+              "5. Balancing equations requires equalizing the number of atoms of each element on both sides of the arrow.",
+              "6. Combination reactions occur when two or more reactants combine to form a single compound (e.g., CaO + H2O -> Ca(OH)2).",
+              "7. Decomposition reactions involve breaking down a single reactant into multiple products using thermal, electrical, or light energy.",
+              "8. Thermal decomposition uses heat, such as splitting Calcium Carbonate into Calcium Oxide and Carbon Dioxide.",
+              "9. Electrolytic decomposition uses electricity, such as breaking water into Hydrogen and Oxygen gases in a 2:1 ratio.",
+              "10. Photolytic decomposition relies on light, such as Silver Chloride breaking into Silver and Chlorine gas.",
+              "11. Displacement reactions involve a more reactive element displacing a less reactive element from its solution.",
+              "12. Double displacement reactions involve a mutual exchange of ions between two ionic compounds, often forming a precipitate.",
+              "13. Oxidation is defined as the gain of oxygen or loss of hydrogen, whereas Reduction is the loss of oxygen or gain of hydrogen.",
+              "14. Corrosion occurs when metals degrade due to air, moisture, or acids (e.g., rusting of iron into hydrated ferric oxide).",
+              "15. Rancidity is the atmospheric oxidation of fats and oils causing foul taste and odor, prevented using Nitrogen gas or antioxidants."
+            ]
+          },
+          {
+            title: "Acids, Bases and Salts",
+            vId: "v8B_T2W6D8o",
+            lines: [
+              "1. Acids taste sour, turn blue litmus paper red, and release H+ or H3O+ ions in aqueous solutions.",
+              "2. Bases taste bitter, feel soapy, turn red litmus blue, and yield OH- hydroxide ions in aqueous solutions.",
+              "3. Natural indicators include Litmus and Turmeric, while synthetic indicators include Phenolphthalein and Methyl Orange.",
+              "4. Olfactory indicators change their smell in acidic or basic solutions, such as onion extract and clove oil.",
+              "5. Acids react with metals to produce a corresponding metal salt and Hydrogen gas, tested using the pop sound test.",
+              "6. Carbonates and hydrogen carbonates react with acids to liberate Carbon Dioxide gas, which turns lime water milky.",
+              "7. Neutralization reaction occurs when an acid reacts with a base to form salt and water with heat release.",
+              "8. Non-metallic oxides are acidic in nature, while metallic oxides exhibit basic characteristics.",
+              "9. The pH scale measures Hydrogen ion concentration ranging from 0 (highly acidic) to 14 (highly basic), with 7 being neutral.",
+              "10. Human body functions optimally within a narrow pH range of 7.0 to 7.8; acid rain has a pH lower than 5.6.",
+              "11. Tooth decay begins when oral pH drops below 5.5, causing enamel dissolution by bacterial acids.",
+              "12. Bleaching Powder (CaOCl2) is produced by reacting chlorine gas with dry slaked lime, used as a disinfectant.",
+              "13. Baking Soda (NaHCO3) releases Carbon Dioxide on heating, making cakes and bread soft and spongy.",
+              "14. Washing Soda (Na2CO3.10H2O) contains 10 water molecules of crystallization and removes permanent hardness of water.",
+              "15. Plaster of Paris (CaSO4.1/2H2O) hardens into Gypsum (CaSO4.2H2O) upon mixing with water, used for setting fractured bones."
+            ]
+          },
+          {
+            title: "Metals and Non-metals",
+            vId: "YdM4vX2P2w4",
+            lines: [
+              "1. Metals are malleable, ductile, sonorous, good conductors of heat and electricity, and possess high luster.",
+              "2. Non-metals exist in solid, liquid, or gas forms and are generally poor conductors, non-malleable, and non-ductile.",
+              "3. Mercury is the only metal liquid at room temperature, while Iodine is a non-metal with metallic luster.",
+              "4. Metals react with oxygen to form basic oxides, though Aluminum and Zinc form amphoteric oxides reacting with both acids and bases.",
+              "5. Highly reactive metals like Sodium and Potassium react violently with cold water and are stored under kerosene oil.",
+              "6. Less reactive metals like Iron react only with steam to yield metal oxides and Hydrogen gas.",
+              "7. Metals placed above Hydrogen in the reactivity series displace Hydrogen gas from dilute mineral acids.",
+              "8. Aqua Regia is a fresh mixture of concentrated HCl and HNO3 in a 3:1 ratio that dissolves Gold and Platinum.",
+              "9. Ionic compounds are formed by electron transfer from metals to non-metals, having high melting points and high solubility.",
+              "10. Ionic compounds conduct electricity only in molten state or aqueous solution due to free-moving ions.",
+              "11. Metallurgy is the multi-step industrial process of extracting pure metals from naturally occurring ores.",
+              "12. Roasting heats sulfide ores strongly in the presence of excess air to convert them into metal oxides.",
+              "13. Calcination heats carbonate ores strongly in limited air or absence of air to yield metal oxides.",
+              "14. Thermite reaction uses Aluminum powder to reduce Iron Oxide, releasing immense heat used to weld railway tracks.",
+              "15. Alloys are homogeneous mixtures of a metal with other metals or non-metals (e.g., Brass = Cu + Zn, Bronze = Cu + Sn)."
+            ]
+          },
+          {
+            title: "Carbon and its Compounds",
+            vId: "mG4zJ2W9w4E",
+            lines: [
+              "1. Carbon forms covalent bonds by sharing valence electrons to achieve stable noble gas electron configurations.",
+              "2. Catenation is the unique ability of carbon atoms to form long stable chains, branched networks, or cyclic rings.",
+              "3. Tetravalency allows carbon to form strong covalent bonds with four other monovalent atoms or functional groups.",
+              "4. Allotropes of carbon include Diamond (rigid 3D structure), Graphite (hexagonal layers, conducts electricity), and Fullerene.",
+              "5. Hydrocarbons are divided into Saturated (alkanes with single bonds) and Unsaturated (alkenes with double, alkynes with triple bonds).",
+              "6. Homologous series consists of organic compounds with identical functional groups and similar properties differing by -CH2- unit.",
+              "7. Functional groups like Alcohol (-OH), Aldehyde (-CHO), Ketone (-CO-), and Carboxylic Acid (-COOH) determine chemical behavior.",
+              "8. Combustion of carbon compounds in oxygen produces Carbon Dioxide, water, heat, and light energy.",
+              "9. Oxidation of Ethanol using alkaline KMnO4 or acidified K2Cr2O7 converts it into Ethanoic acid.",
+              "10. Addition reactions convert unsaturated hydrocarbons into saturated hydrocarbons using Nickel or Palladium catalysts.",
+              "11. Substitution reactions replace Hydrogen atoms in alkanes with Chlorine in the presence of sunlight.",
+              "12. Ethanol (C2H5OH) is a versatile solvent that reacts with Sodium metal to evolve Hydrogen gas.",
+              "13. Ethanoic acid (CH3COOH) turns blue litmus red and reacts with alcohols to form sweet-smelling Esters (Esterification).",
+              "14. Saponification is the alkaline hydrolysis of esters using NaOH to manufacture Soaps and Glycerol.",
+              "15. Soaps form insoluble scum in hard water, while Synthetic Detergents remain effective in hard water."
+            ]
+          },
+          {
+            title: "Life Processes",
+            vId: "J9e4e2_G84E",
+            lines: [
+              "1. Life processes are fundamental biological activities like nutrition, respiration, transportation, and excretion maintaining life.",
+              "2. Autotrophic nutrition uses inorganic raw materials (CO2, H2O) and sunlight trapped by chlorophyll to synthesize glucose.",
+              "3. Photosynthesis equation: 6CO2 + 12H2O + Sunlight -> C6H12O6 + 6O2 + 6H2O.",
+              "4. Heterotrophic nutrition is categorized into Holozoic (humans), Saprophytic (fungi), and Parasitic (leeches, cuscuta).",
+              "5. Digestion breaks down complex food molecules into simple absorbable units using digestive enzymes like Amylase, Pepsin, and Trypsin.",
+              "6. Small intestine is the main site for complete digestion and absorption, facilitated by finger-like projections called Villi.",
+              "7. Respiration breaks down glucose to release usable energy stored in the form of Adenosine Triphosphate (ATP).",
+              "8. Aerobic respiration occurs in mitochondria producing 38 ATP, CO2, and H2O in the presence of Oxygen.",
+              "9. Anaerobic respiration in yeast yields Ethanol, CO2, and 2 ATP; in human muscles, Oxygen lack produces Lactic acid.",
+              "10. Human heart has 4 chambers to prevent mixing of oxygenated blood (left side) and deoxygenated blood (right side).",
+              "11. Double circulation involves Pulmonary circulation (heart-lungs) and Systemic circulation (heart-body tissues).",
+              "12. Blood plasma transports nutrients, CO2, and nitrogenous wastes, while RBCs carry oxygen via Hemoglobin.",
+              "13. Xylem tissues transport water and minerals unidirectionally driven by root pressure and transpiration pull.",
+              "14. Phloem tissues transport photosynthetic products bidirectionally using metabolic ATP energy (Translocation).",
+              "15. Excretion removes nitrogenous wastes via Nephrons, the functional filtration units inside human kidneys."
+            ]
+          },
+          {
+            title: "Control and Coordination",
+            vId: "92Z_pP74eW0",
+            lines: [
+              "1. Nervous system and Endocrine system work together in human body to maintain homeostasis and respond to stimuli.",
+              "2. Neurons are structural units consisting of Dendrites (receive signal), Cyton (body), and Axon (transmits impulse).",
+              "3. Synapse is the microscopic gap between adjacent neurons where electrical signals convert into chemical neurotransmitters.",
+              "4. Reflex action is an involuntary, rapid response to an environmental stimulus controlled directly by the Spinal Cord.",
+              "5. Reflex arc represents the neural pathway: Receptor -> Sensory Neuron -> Spinal Cord -> Motor Neuron -> Effector Organ.",
+              "6. Human brain is divided into Forebrain (thinking/memory), Midbrain (involuntary actions), and Hindbrain (balance/vital functions).",
+              "7. Cerebrum in forebrain controls voluntary actions, intelligence, speech, sensory interpretation, and conscious thought.",
+              "8. Cerebellum in hindbrain maintains body posture, equilibrium, and precision of voluntary motor movements.",
+              "9. Medulla oblongata controls crucial involuntary functions including heartbeat, blood pressure, salivation, and vomiting.",
+              "10. Plant movements are classified into Nastic movements (non-directional) and Tropic movements (directional growth).",
+              "11. Tropisms include Phototropism (light), Geotropism (gravity), Hydrotropism (water), and Chemotropism (pollen tube growth).",
+              "12. Plant hormone Auxin promotes cell elongation towards light, while Gibberellins stimulate stem expansion.",
+              "13. Cytokinins stimulate rapid cell division in fruits/seeds, while Abscisic Acid inhibits growth and causes leaf wilting.",
+              "14. Pituitary gland is the master endocrine gland secreting Growth Hormone (GH) regulating physical growth.",
+              "15. Thyroid gland requires Iodine to synthesize Thyroxine, preventing Goitre, while Insulin from Pancreas regulates blood sugar."
+            ]
+          },
+          {
+            title: "How do Organisms Reproduce?",
+            vId: "zX2P7e9G84E",
+            lines: [
+              "1. Reproduction is the biological process by which existing organisms produce new individuals of the same species.",
+              "2. DNA replication ensures transmission of hereditary parental characteristics with minor variations driving evolution.",
+              "3. Asexual reproduction involves a single parent producing genetically identical offspring without gamete fusion.",
+              "4. Binary fission splits single-celled organisms like Amoeba, while Multiple fission divides Leishmania into many cells.",
+              "5. Budding involves outgrowth formation developing into new individuals in organisms like Hydra and Yeast.",
+              "6. Fragmentation breaks multicellular bodies like Spirogyra into fragments that grow into complete new organisms.",
+              "7. Regeneration allows specialized cells in Planaria to regenerate a full body from severed body fragments.",
+              "8. Vegetative propagation uses plant roots, stems, or leaves to grow new plants (e.g., Bryophyllum leaf buds).",
+              "9. Sexual reproduction combines male and female gametes to restore species chromosome number in zygotes.",
+              "10. Flowers are angiosperm reproductive structures containing Stamen (male unit) and Carpel/Pistil (female unit).",
+              "11. Pollination transfers pollen grains from Anther to Stigma via wind, water, or insects, leading to double fertilization.",
+              "12. Male human reproductive system comprises Testes producing Sperm and Testosterone inside the scrotum.",
+              "13. Female human system includes Ovaries producing Eggs/Oocytes, Estrogen, and Progesterone monthly.",
+              "14. Fertilization occurs in the Fallopian tube (Oviduct), forming a zygote that implants in the uterine wall.",
+              "15. Barrier, chemical, surgical (Vasectomy/Tubectomy), and IUCD methods provide safe family planning and prevent STDs."
+            ]
+          },
+          {
+            title: "Heredity",
+            vId: "9w2_e4G84E0",
+            lines: [
+              "1. Heredity is the transmission of genetically inherited physical or physiological traits from parents to offspring.",
+              "2. Variations are structural differences among individuals of a species resulting from sexual reproduction and gene mutations.",
+              "3. Gregor Johann Mendel conducted pioneering genetic experiments on garden pea plants (Pisum sativum).",
+              "4. Mendel selected 7 contrasting pea plant characteristics including tallness, seed shape, flower color, and pod shape.",
+              "5. Monohybrid cross examines inheritance of a single trait pair, yielding F2 phenotypic ratio of 3:1 and genotypic ratio of 1:2:1.",
+              "6. Dominant traits express in both homozygous and heterozygous conditions, while Recessive traits need homozygous presence.",
+              "7. Law of Segregation states that gene alleles separate during gamete formation so each gamete carries one allele.",
+              "8. Dihybrid cross analyzes two trait pairs simultaneously, producing a characteristic F2 phenotypic ratio of 9:3:3:1.",
+              "9. Law of Independent Assortment states that alleles of different genes segregate independently of one another.",
+              "10. Genes are specific functional segments of DNA located on cell chromosomes encoding proteins.",
+              "11. Humans possess 23 pairs of chromosomes, comprising 22 pairs of Autosomes and 1 pair of Sex Chromosomes.",
+              "12. Human females possess two X chromosomes (XX), while human males possess one X and one Y chromosome (XY).",
+              "13. Sex of human child is determined by father: fertilizing sperm carrying X yields female, Y yields male.",
+              "14. Acquired traits gained during an individual's lifetime are non-heritable as they do not alter germ cell DNA.",
+              "15. Inherited traits are encoded in germ cell DNA and passed across generations, forming the foundation of genetics."
+            ]
+          },
+          {
+            title: "Light – Reflection and Refraction",
+            vId: "X3p7e9G84E0",
+            lines: [
+              "1. Light travels in straight lines; reflection returns light into the same medium upon striking a polished surface.",
+              "2. Laws of Reflection: Angle of Incidence equals Angle of Reflection (i = r); Incident ray, reflected ray, normal lie in one plane.",
+              "3. Concave mirrors are converging mirrors; Convex mirrors are diverging mirrors forming virtual diminished erect images.",
+              "4. Mirror Formula relates object distance (u), image distance (v), and focal length (f): 1/f = 1/v + 1/u.",
+              "5. Magnification (m) = Height of Image / Height of Object = -v / u.",
+              "6. Refraction is the bending of light as it passes obliquely from one optical medium into another with different density.",
+              "7. Laws of Refraction (Snell's Law): Sin i / Sin r = Constant (Refractive Index n).",
+              "8. Refractive index n = Speed of light in vacuum (c) / Speed of light in medium (v).",
+              "9. Light bends towards normal when entering optically denser medium, and away from normal in rarer medium.",
+              "10. Convex lenses are converging lenses forming real inverted images; Concave lenses are diverging lenses.",
+              "11. Lens Formula relates object distance (u), image distance (v), and focal length (f): 1/f = 1/v - 1/u.",
+              "12. Lens Magnification (m) = Height of Image / Height of Object = v / u.",
+              "13. Power of Lens (P) is the reciprocal of focal length in meters: P = 1 / f(m), measured in Dioptres (D).",
+              "14. Power of convex lens is positive (+D), while power of concave lens is negative (-D).",
+              "15. Combination power of thin lenses placed in contact equals the algebraic sum: P = P1 + P2 + P3."
+            ]
+          },
+          {
+            title: "The Human Eye and the Colorful World",
+            vId: "P2v9Z7e84E0",
+            lines: [
+              "1. Human eye uses a crystalline convex lens to focus light rays onto the retina to form real inverted images.",
+              "2. Ciliary muscles adjust lens curvature, altering focal length to view near and distant objects (Power of Accommodation).",
+              "3. Near point of distinct vision for a normal human eye is 25 cm; Far point is infinity.",
+              "4. Myopia (Short-sightedness) allows viewing near objects clearly; corrected using a Concave lens of suitable power.",
+              "5. Hypermetropia (Far-sightedness) allows viewing distant objects clearly; corrected using a Convex lens.",
+              "6. Presbyopia is age-related diminished accommodation power; corrected using Bifocal lenses.",
+              "7. Dispersion of light splits white light into seven spectral colors (VIBGYOR) when passing through a glass prism.",
+              "8. Red light bends the least due to longer wavelength; Violet light bends the most due to shorter wavelength.",
+              "9. Rainbow is a natural spectrum produced by dispersion, refraction, and internal reflection in raindrops.",
+              "10. Atmospheric refraction causes twinkling of stars as light passes through varying air density layers.",
+              "11. Planets do not twinkle because they are extended light sources averaging out brightness fluctuations.",
+              "12. Advanced sunrise and delayed sunset occur by about 2 minutes due to atmospheric light refraction.",
+              "13. Tyndall effect is the scattering of light beam by colloidal particles in a suspension or mist.",
+              "14. Sky appears blue because atmospheric gas molecules scatter shorter blue wavelengths more strongly than red.",
+              "15. Sun appears reddish during sunrise and sunset because longer red wavelengths travel through thicker air layers."
+            ]
+          },
+          {
+            title: "Electricity",
+            vId: "Z9p7e84E000",
+            lines: [
+              "1. Electric current (I) is the rate of flow of electric charges across a conductor: I = Q / t (Ampere, A).",
+              "2. Electric potential difference (V) is work done moving a unit positive charge between two points: V = W / Q (Volt, V).",
+              "3. Ohm's Law states potential difference across a conductor is proportional to current at constant temperature: V = I * R.",
+              "4. Resistance (R) measures opposition to electric current flow; SI unit is Ohm (Ω).",
+              "5. Factors affecting resistance: R is directly proportional to length (l) and inversely to cross-sectional area (A).",
+              "6. Resistivity (ρ) is an intrinsic material property: R = ρ * (l / A), measured in Ohm-meters (Ω·m).",
+              "7. Series connection: Total resistance equals sum of individual resistances: Rs = R1 + R2 + R3.",
+              "8. Current remains constant across all components connected in series, while voltage divides.",
+              "9. Parallel connection: Reciprocal of total resistance equals sum of reciprocals: 1/Rp = 1/R1 + 1/R2 + 1/R3.",
+              "10. Potential difference remains constant across all branches in parallel connection, while current divides.",
+              "11. Heating effect of electric current (Joule's Law): Heat generated H = I^2 * R * t.",
+              "12. Electric heating devices like irons and heaters use Nichrome wire due to high resistivity and melting point.",
+              "13. Electric Fuse is a safety device made of low melting point alloy connected in series to protect circuits.",
+              "14. Electric Power (P) is the rate of electrical energy consumption: P = V * I = I^2 * R = V^2 / R (Watt, W).",
+              "15. Commercial unit of electrical energy is kilowatt-hour (kWh): 1 kWh = 3.6 * 10^6 Joules."
+            ]
+          },
+          {
+            title: "Magnetic Effects of Electric Current",
+            vId: "L9e84E00000",
+            lines: [
+              "1. Magnetic field is the region around a magnet or current-carrying conductor where magnetic forces are exerted.",
+              "2. Magnetic field lines emerge from North pole and enter South pole outside a magnet, forming continuous closed loops.",
+              "3. Right-Hand Thumb Rule determines magnetic field direction around a straight current-carrying wire.",
+              "4. Magnetic field pattern around a straight wire consists of concentric circular loops centered on the wire.",
+              "5. Solenoid is a long coil of insulated copper wire wrapped tightly into a cylinder; acts like a bar magnet when energized.",
+              "6. Magnetic field inside a current-carrying solenoid is uniform and parallel throughout its interior.",
+              "7. Electromagnet is created by placing a soft iron core inside a solenoid, producing strong temporary magnetism.",
+              "8. Current-carrying conductor placed inside a magnetic field experiences a mechanical force perpendicular to both.",
+              "9. Fleming's Left-Hand Rule determines force direction: Forefinger (Field), Middle finger (Current), Thumb (Motion/Force).",
+              "10. Electromagnetic induction produces induced electric current in a closed loop moving inside a magnetic field.",
+              "11. Fleming's Right-Hand Rule determines induced current direction: Forefinger (Field), Thumb (Motion), Middle (Current).",
+              "12. Alternating Current (AC) reverses direction periodically; Direct Current (DC) flows continuously in one direction.",
+              "13. Domestic power supply in India is AC at 220 V potential difference and 50 Hz frequency.",
+              "14. Domestic wiring uses Live wire (Red, 220V), Neutral wire (Black, 0V), and Earth wire (Green, safety protection).",
+              "15. Overloading occurs when excessive current flows due to connecting too many appliances; Short circuit occurs when Live touches Neutral."
+            ]
+          },
+          {
+            title: "Our Environment",
+            vId: "K9e84E00001",
+            lines: [
+              "1. Environment comprises all living (biotic) organisms and non-living (abiotic) surroundings interacting together.",
+              "2. Ecosystem is a self-sustaining functional unit comprising plants, animals, microorganisms, soil, water, and air.",
+              "3. Producers (autotrophs) synthesize organic food from inorganic compounds using solar energy during photosynthesis.",
+              "4. Consumers are heterotrophs categorized into Primary (herbivores), Secondary (carnivores), and Tertiary consumers.",
+              "5. Decomposers (bacteria, fungi) break down complex organic remains into simple inorganic nutrient salts.",
+              "6. Food chain represents sequential transfer of energy and matter from organism to organism in an ecosystem.",
+              "7. Trophic levels are functional step positions occupied by organisms along a food chain.",
+              "8. 10 Percent Law states only 10% of energy is transferred to the next higher trophic level; 90% is lost as heat.",
+              "9. Short food chains consisting of 3 to 4 levels preserve more usable energy than longer chains.",
+              "10. Food web is a complex network of interconnected food chains reflecting real ecological interactions.",
+              "11. Biological Magnification is the progressive accumulation of non-biodegradable toxic chemicals (e.g., DDT) up trophic levels.",
+              "12. Ozone layer (O3) in the stratosphere shields Earth by absorbing harmful ultraviolet (UV) solar radiation.",
+              "13. Ozone layer depletion is caused by synthetic Chlorofluorocarbons (CFCs) used in refrigerators and fire extinguishers.",
+              "14. Biodegradable wastes (peels, paper) are broken down naturally by microorganisms without polluting.",
+              "15. Non-biodegradable wastes (plastics, metals) persist in nature long-term, causing severe environmental pollution."
+            ]
+          }
+        ]
       },
       maths: {
         educator: "Shobhit Nirwan",
+        searchQuery: "Shobhit Nirwan Class 10 Maths",
         items: [
-          "Real Numbers", "Polynomials", "Pair of Linear Equations in Two Variables", 
-          "Quadratic Equations", "Arithmetic Progressions", "Triangles", "Coordinate Geometry", 
-          "Introduction to Trigonometry", "Some Applications of Trigonometry", "Circles", 
-          "Areas Related to Circles", "Surface Areas and Volumes", "Statistics", "Probability"
-        ],
-        videos: ["0c_7M_s9W2k", "zX9P8e4G84E", "9w2_e4G84E0", "P2v9Z7e84E0", "L_A2YxZ2L08", "v8B_T2W6D8o", "YdM4vX2P2w4", "mG4zJ2W9w4E", "J9e4e2_G84E", "92Z_pP74eW0", "zX2P7e9G84E", "9w2_e4G84E0", "X3p7e9G84E0", "P2v9Z7e84E0"]
+          {
+            title: "Real Numbers",
+            vId: "0c_7M_s9W2k",
+            lines: [
+              "1. Fundamental Theorem of Arithmetic states every composite number can be uniquely expressed as a product of primes.",
+              "2. Prime factorization is unique except for the order in which prime factors occur.",
+              "3. HCF is the product of the smallest power of each common prime factor in the numbers.",
+              "4. LCM is the product of the greatest power of each prime factor involved in the numbers.",
+              "5. For any two positive integers a and b: HCF(a, b) * LCM(a, b) = a * b.",
+              "6. The relation HCF * LCM = a * b applies exclusively to two numbers, not three.",
+              "7. A number is irrational if it cannot be written as a/b, where a and b are integers and b ≠ 0.",
+              "8. Proof of irrationality for √2, √3, and √5 relies on proof by contradiction using divisibility theorems.",
+              "9. Theorem: If a prime p divides a^2, then p also divides a for any positive integer a.",
+              "10. Sum or difference of a rational number and an irrational number is always irrational.",
+              "11. Product or quotient of a non-zero rational number and an irrational number is always irrational.",
+              "12. Real numbers consist of the complete set of both rational and irrational numbers.",
+              "13. Every real number corresponds to a unique point on the real number line.",
+              "14. Composite numbers possess factors other than 1 and the number itself.",
+              "15. Co-prime numbers are pairs of integers having no common factor other than 1 (HCF = 1)."
+            ]
+          },
+          {
+            title: "Polynomials",
+            vId: "zX9P8e4G84E",
+            lines: [
+              "1. Polynomial p(x) is an algebraic expression with non-negative integer exponents of variable x.",
+              "2. Degree of a polynomial is the highest power of x with a non-zero coefficient.",
+              "3. Linear polynomial has degree 1, quadratic polynomial degree 2, and cubic polynomial degree 3.",
+              "4. Value of p(x) at x = k is obtained by replacing x with k, denoted as p(k).",
+              "5. A real number k is a zero of polynomial p(x) if p(k) = 0.",
+              "6. Zeros of p(x) correspond to x-coordinates where graph y = p(x) intersects X-axis.",
+              "7. A polynomial of degree n can have at most n real zeros.",
+              "8. Graph of quadratic polynomial ax^2 + bx + c is a U-shaped curve called a parabola.",
+              "9. Parabola opens upwards if coefficient a > 0, and downwards if a < 0.",
+              "10. For quadratic polynomial ax^2 + bx + c, sum of zeros α + β = -b / a.",
+              "11. For quadratic polynomial ax^2 + bx + c, product of zeros α * β = c / a.",
+              "12. Quadratic polynomial with given zeros α and β is formed using k[x^2 - (α + β)x + αβ].",
+              "13. If a quadratic polynomial has no real zeros, its graph does not cross the X-axis.",
+              "14. For cubic polynomial ax^3 + bx^2 + cx + d, sum of zeros α + β + γ = -b / a.",
+              "15. Product of zeros of a cubic polynomial α * β * γ = -d / a."
+            ]
+          },
+          {
+            title: "Pair of Linear Equations in Two Variables",
+            vId: "9w2_e4G84E0",
+            lines: [
+              "1. General pair of linear equations: a1*x + b1*y + c1 = 0 and a2*x + b2*y + c2 = 0.",
+              "2. Graphical representation yields two straight lines in a two-dimensional Cartesian plane.",
+              "3. Intersecting lines have a unique single solution (Consistent system): a1/a2 ≠ b1/b2.",
+              "4. Coincident lines have infinitely many solutions (Dependent Consistent system): a1/a2 = b1/b2 = c1/c2.",
+              "5. Parallel lines have no solution (Inconsistent system): a1/a2 = b1/b2 ≠ c1/c2.",
+              "6. Substitution method solves equations by expressing one variable in terms of the other.",
+              "7. Elimination method solves equations by multiplying to eliminate one variable by addition/subtraction.",
+              "8. Algebraic methods provide exact solutions compared to graphical approximation.",
+              "9. Linear equations can model real-life problems involving speed, distance, age, and cost.",
+              "10. Speed of boat downstream = Speed in still water + Speed of stream.",
+              "11. Speed of boat upstream = Speed in still water - Speed of stream.",
+              "12. Two-digit number with tens digit x and units digit y is expressed as 10x + y.",
+              "13. Reversing digits of a two-digit number 10x + y gives 10y + x.",
+              "14. Fractional word problems translate statements into numerator and denominator equations.",
+              "15. Consistency of a linear pair can be tested directly using coefficient ratios."
+            ]
+          },
+          {
+            title: "Quadratic Equations",
+            vId: "P2v9Z7e84E0",
+            lines: [
+              "1. Standard form of a quadratic equation is ax^2 + bx + c = 0, where a ≠ 0.",
+              "2. Roots of a quadratic equation are values of x that satisfy the equation ax^2 + bx + c = 0.",
+              "3. A quadratic equation has exactly two roots (real or complex).",
+              "4. Factorization method splits the middle term bx into two terms whose product equals a * c.",
+              "5. Quadratic Formula yields roots: x = [-b ± √(b^2 - 4ac)] / (2a).",
+              "6. Discriminant D = b^2 - 4ac determines the nature of roots.",
+              "7. If D > 0, the equation has two distinct real roots.",
+              "8. If D = 0, the equation has two equal real roots: x = -b / (2a).",
+              "9. If D < 0, the equation has no real roots (imaginary roots).",
+              "10. Sum of roots of quadratic equation = -b / a.",
+              "11. Product of roots of quadratic equation = c / a.",
+              "12. Word problems convert physical conditions into quadratic equations.",
+              "13. Consecutive integers can be represented algebraically as x and x + 1.",
+              "14. Pythagorean theorem applications yield quadratic equations in right triangles.",
+              "15. Time and work problems equate rate of work done per unit time to form quadratic expressions."
+            ]
+          },
+          {
+            title: "Arithmetic Progressions",
+            vId: "L_A2YxZ2L08",
+            lines: [
+              "1. Arithmetic Progression (AP) is a sequence where each term is obtained by adding a fixed common difference d.",
+              "2. First term of an AP is denoted as a, and common difference as d.",
+              "3. Common difference d can be positive, negative, or zero: d = a_(k+1) - a_k.",
+              "4. General form of an AP is a, a + d, a + 2d, a + 3d, ...",
+              "5. General n-th term of an AP: a_n = a + (n - 1) * d.",
+              "6. If an AP has m terms, a_m represents the last term l.",
+              "7. n-th term from the end of an AP with last term l is given by: l - (n - 1) * d.",
+              "8. Sum of first n terms of an AP: S_n = (n / 2) * [2a + (n - 1) * d].",
+              "9. Alternative sum formula using last term l: S_n = (n / 2) * [a + l].",
+              "10. Sum of first n natural numbers is given by: S_n = n * (n + 1) / 2.",
+              "11. n-th term can be found from sum of terms: a_n = S_n - S_(n-1).",
+              "12. Three terms in AP are chosen as (a - d), a, (a + d) to simplify sum problems.",
+              "13. Four terms in AP are chosen as (a - 3d), (a - d), (a + d), (a + 3d).",
+              "14. Arithmetic Mean between two numbers a and b is given by (a + b) / 2.",
+              "15. AP models installment payments, population growth, and structured patterns."
+            ]
+          },
+          {
+            title: "Triangles",
+            vId: "v8B_T2W6D8o",
+            lines: [
+              "1. Two figures having same shape but not necessarily same size are called similar figures.",
+              "2. All congruent figures are similar, but similar figures are not necessarily congruent.",
+              "3. Two polygons are similar if corresponding angles are equal and corresponding sides are proportional.",
+              "4. Basic Proportionality Theorem (Thales Theorem): Line drawn parallel to one side of a triangle divides other two sides proportionally.",
+              "5. Converse of BPT: Line dividing two sides of a triangle in the same ratio is parallel to third side.",
+              "6. AAA Similarity Criterion: If corresponding angles of two triangles are equal, their corresponding sides are proportional.",
+              "7. AA Similarity Criterion: If two angles of one triangle equal two angles of another, triangles are similar.",
+              "8. SSS Similarity Criterion: If corresponding sides of two triangles are proportional, their corresponding angles are equal.",
+              "9. SAS Similarity Criterion: If one angle equals one angle of another and including sides are proportional, triangles are similar.",
+              "10. Ratio of areas of two similar triangles equals square of ratio of their corresponding sides.",
+              "11. Pythagoras Theorem: In a right triangle, square of hypotenuse equals sum of squares of other two sides.",
+              "12. Converse of Pythagoras Theorem: If square of one side equals sum of squares of other two, angle opposite is right angle.",
+              "13. Altitude drawn from right-angle vertex to hypotenuse divides triangle into two similar right triangles.",
+              "14. In similar triangles, ratio of perimeters equals ratio of corresponding sides.",
+              "15. Medians and angle bisectors in similar triangles are in the same ratio as corresponding sides."
+            ]
+          },
+          {
+            title: "Coordinate Geometry",
+            vId: "YdM4vX2P2w4",
+            lines: [
+              "1. Cartesian plane uses two perpendicular axes: horizontal X-axis and vertical Y-axis intersecting at origin (0, 0).",
+              "2. Distance formula between points P(x1, y1) and Q(x2, y2): PQ = √[(x2 - x1)^2 + (y2 - y1)^2].",
+              "3. Distance of point P(x, y) from origin O(0, 0) is given by: OP = √(x^2 + y^2).",
+              "4. Section formula for internal division in ratio m1:m2 gives coordinates: [(m1*x2 + m2*x1)/(m1+m2), (m1*y2 + m2*y1)/(m1+m2)].",
+              "5. Mid-point coordinates of line joining (x1, y1) and (x2, y2) are [(x1 + x2)/2, (y1 + y2)/2].",
+              "6. Centroid of a triangle with vertices (x1, y1), (x2, y2), (x3, y3) is [(x1+x2+x3)/3, (y1+y2+y3)/3].",
+              "7. Points are collinear if distance between two segments equals total length (AB + BC = AC).",
+              "8. Any point on X-axis has coordinates of the form (x, 0).",
+              "9. Any point on Y-axis has coordinates of the form (0, y).",
+              "10. Diagonals of a parallelogram bisect each other, sharing identical midpoint coordinates.",
+              "11. Rhombus has all four sides equal and diagonals perpendicular to each other.",
+              "12. Square has all sides equal and diagonals equal and perpendicular.",
+              "13. Rectangle has opposite sides equal and diagonals equal.",
+              "14. Equidistant point problems set squared distance formulas equal to solve coordinates.",
+              "15. Coordinate geometry connects algebraic equations with geometric figures."
+            ]
+          },
+          {
+            title: "Introduction to Trigonometry",
+            vId: "mG4zJ2W9w4E",
+            lines: [
+              "1. Trigonometry studies relationships between side lengths and angles of right-angled triangles.",
+              "2. Sin θ = Opposite / Hypotenuse = Perpendicular / Hypotenuse.",
+              "3. Cos θ = Adjacent / Hypotenuse = Base / Hypotenuse.",
+              "4. Tan θ = Opposite / Adjacent = Perpendicular / Base = Sin θ / Cos θ.",
+              "5. Cosec θ = 1 / Sin θ, Sec θ = 1 / Cos θ, Cot θ = 1 / Tan θ.",
+              "6. Standard values: Sin 0° = 0, Sin 30° = 1/2, Sin 45° = 1/√2, Sin 60° = √3/2, Sin 90° = 1.",
+              "7. Standard values: Cos 0° = 1, Cos 30° = √3/2, Cos 45° = 1/√2, Cos 60° = 1/2, Cos 90° = 0.",
+              "8. Tan 45° = 1, Tan 30° = 1/√3, Tan 60° = √3; Tan 90° is undefined.",
+              "9. Fundamental Identity 1: sin^2 θ + cos^2 θ = 1.",
+              "10. Fundamental Identity 2: 1 + tan^2 θ = sec^2 θ.",
+              "11. Fundamental Identity 3: 1 + cot^2 θ = cosec^2 θ.",
+              "12. Values of trigonometric ratios lie between 0 and 1 for sin θ and cos θ.",
+              "13. Sec θ and cosec θ are always greater than or equal to 1.",
+              "14. Trigonometric identities are proven by expressing terms in sin θ and cos θ.",
+              "15. Right-triangle orientation determines perpendicular and base relative to acute angle θ."
+            ]
+          },
+          {
+            title: "Some Applications of Trigonometry",
+            vId: "J9e4e2_G84E",
+            lines: [
+              "1. Line of sight is drawn from observer's eye to point viewed on the object.",
+              "2. Angle of elevation is formed by line of sight with horizontal when object is above horizontal level.",
+              "3. Angle of depression is formed by line of sight with horizontal when object is below horizontal level.",
+              "4. Angle of elevation equals angle of depression due to alternate interior angles.",
+              "5. Height and distance problems construct right-angled triangles from given physical descriptions.",
+              "6. Tan θ is most frequently used ratio as it connects height (perpendicular) and distance (base).",
+              "7. Increasing angle of elevation indicates observer is moving closer to object base.",
+              "8. Decreasing angle of elevation indicates observer is moving farther away from object base.",
+              "9. Two right triangles are formed when observing objects from heights or multiple points.",
+              "10. Value √3 ≈ 1.732 and √2 ≈ 1.414 are used for numerical height evaluations.",
+              "11. Height of tower can be calculated without direct physical measurement using trigonometry.",
+              "12. Multi-building problems use horizontal parallel lines to create upper right triangles.",
+              "13. Speed, time, and distance equations combine with tan ratios in moving object problems.",
+              "14. Shadow length changes with sun's altitude angle according to cot or tan relations.",
+              "15. Accurate geometric figures are necessary first step for solving heights and distances."
+            ]
+          },
+          {
+            title: "Circles",
+            vId: "92Z_pP74eW0",
+            lines: [
+              "1. A line intersecting a circle at two distinct points is called a secant.",
+              "2. A line touching a circle at exactly one single point is called a tangent.",
+              "3. Point of contact is the common point where tangent touches the circle.",
+              "4. Theorem 1: Tangent at any point of a circle is perpendicular to radius through point of contact.",
+              "5. Only one tangent can be drawn to a circle at a given point on its circumference.",
+              "6. No tangent can be drawn to a circle from a point lying inside the circle.",
+              "7. Exactly two tangents can be drawn to a circle from an external point.",
+              "8. Theorem 2: Lengths of tangents drawn from an external point to a circle are equal.",
+              "9. Tangents drawn from external point subtend equal angles at the center of the circle.",
+              "10. Tangents drawn from external point are equally inclined to line joining point to center.",
+              "11. Center of circle lies on angle bisector of angle formed between two external tangents.",
+              "12. Perpendicular drawn from center to a chord bisects the chord.",
+              "13. Parallel tangents to a circle can exist only at endpoints of a diameter.",
+              "14. Quadrilateral circumscribing a circle has sum of opposite sides equal: AB + CD = AD + BC.",
+              "15. Tangent properties solve circle contact geometric proofs."
+            ]
+          },
+          {
+            title: "Areas Related to Circles",
+            vId: "zX2P7e9G84E",
+            lines: [
+              "1. Circumference of a circle with radius r is given by 2 * π * r.",
+              "2. Area of a circle with radius r is given by π * r^2.",
+              "3. Sector is region bounded by two radii and arc of a circle.",
+              "4. Length of arc of a sector with angle θ: L = (θ / 360°) * 2 * π * r.",
+              "5. Area of a sector with central angle θ: Area = (θ / 360°) * π * r^2.",
+              "6. Segment is region bounded by a chord and corresponding arc of a circle.",
+              "7. Area of minor segment = Area of corresponding sector - Area of triangle formed at center.",
+              "8. Area of triangle with central angle θ: Area = (1/2) * r^2 * sin θ.",
+              "9. Area of major sector = Total circle area - Area of minor sector.",
+              "10. Area of major segment = Total circle area - Area of minor segment.",
+              "11. Distance moved by a rotating wheel in one complete revolution equals its circumference.",
+              "12. Number of revolutions = Total distance traveled / Circumference of wheel.",
+              "13. Minute hand rotates 360° in 60 minutes, covering 6° per minute.",
+              "14. Hour hand rotates 360° in 12 hours, covering 0.5° per minute.",
+              "15. Value of π is taken as 22/7 or 3.14 as specified in problems."
+            ]
+          },
+          {
+            title: "Surface Areas and Volumes",
+            vId: "9w2_e4G84E0",
+            lines: [
+              "1. Total surface area of solid combination equals sum of exposed surface areas of component solids.",
+              "2. Volume of solid combination equals algebraic sum of volumes of individual constituent solids.",
+              "3. Cuboid: TSA = 2(lb + bh + hl), Volume = l * b * h.",
+              "4. Cube: TSA = 6 * a^2, Volume = a^3.",
+              "5. Cylinder: Curved Surface Area (CSA) = 2*π*r*h, TSA = 2*π*r*(r + h), Volume = π*r^2*h.",
+              "6. Cone: Slant height l = √(r^2 + h^2), CSA = π*r*l, TSA = π*r*(r + l), Volume = (1/3)*π*r^2*h.",
+              "7. Sphere: Surface Area = 4*π*r^2, Volume = (4/3)*π*r^3.",
+              "8. Hemisphere: CSA = 2*π*r^2, TSA = 3*π*r^2, Volume = (2/3)*π*r^3.",
+              "9. Melting one solid and recasting into another preserves total volume.",
+              "10. Number of smaller solids formed = Volume of large solid / Volume of one small solid.",
+              "11. Liquid flow through pipe: Volume per unit time = Cross-sectional area * Flow speed.",
+              "12. Embankment problems equate volume of dug-out earth to volume of circular ring ring-embankment.",
+              "13. Canvas required for conical tent equals curved surface area of cone.",
+              "14. Ice cream cone combining cone and hemisphere sums volume of cone and hemisphere.",
+              "15. Correct unit conversion (cm^3 to liters: 1000 cm^3 = 1 L) is essential for volume calculations."
+            ]
+          },
+          {
+            title: "Statistics",
+            vId: "X3p7e9G84E0",
+            lines: [
+              "1. Mean is average value of variable x over total number of observations.",
+              "2. Direct method for grouped mean: x̄ = Σ(fi * xi) / Σfi.",
+              "3. Class mark xi = (Upper class limit + Lower class limit) / 2.",
+              "4. Assumed Mean method: x̄ = a + [Σ(fi * di) / Σfi], where di = xi - a.",
+              "5. Step-deviation method: x̄ = a + [Σ(fi * ui) / Σfi] * h, where ui = (xi - a) / h.",
+              "6. Mode is value of variable with highest frequency in a data set.",
+              "7. Modal class is class interval having maximum frequency.",
+              "8. Mode formula: Mode = l + [(f1 - f0) / (2f1 - f0 - f2)] * h.",
+              "9. l = lower limit of modal class, f1 = modal frequency, f0 = preceding frequency, f2 = succeeding frequency.",
+              "10. Median is middle value dividing data set into two equal halves.",
+              "11. Median class is class interval whose cumulative frequency is just greater than N / 2.",
+              "12. Median formula: Median = l + [(N/2 - cf) / f] * h.",
+              "13. Empirical relationship between central tendencies: Mode = 3 * Median - 2 * Mean.",
+              "14. Cumulative frequency table is constructed by adding successive class frequencies.",
+              "15. Class limits must be made continuous before calculating median or mode."
+            ]
+          },
+          {
+            title: "Probability",
+            vId: "P2v9Z7e84E0",
+            lines: [
+              "1. Theoretical probability P(E) = Number of outcomes favorable to E / Total number of possible outcomes.",
+              "2. Probability of an event lies between 0 and 1 inclusive: 0 ≤ P(E) ≤ 1.",
+              "3. Probability of a sure/certain event equals 1.",
+              "4. Probability of an impossible event equals 0.",
+              "5. Complementary event Ē means 'not E': P(E) + P(Ē) = 1.",
+              "6. P(Ē) = 1 - P(E) provides simple calculation for 'at least one' problems.",
+              "7. Elementary event is an outcome having only one single element.",
+              "8. Sum of probabilities of all elementary events of an experiment equals 1.",
+              "9. Tossing a coin yields 2 outcomes: Head (H), Tail (T).",
+              "10. Tossing two coins yields 4 outcomes: HH, HT, TH, TT.",
+              "11. Rolling a single die yields 6 outcomes: {1, 2, 3, 4, 5, 6}.",
+              "12. Rolling two dice simultaneously yields 36 total outcomes.",
+              "13. Standard deck of cards contains 52 cards divided into 4 suits of 13 cards each.",
+              "14. Suits: Hearts and Diamonds (Red, 26 cards); Spades and Clubs (Black, 26 cards).",
+              "15. Face cards comprise Kings, Queens, and Jacks, totaling 12 cards in a deck."
+            ]
+          }
+        ]
       },
       sst: {
         educator: "Digraj Singh Rajput",
+        searchQuery: "Digraj Singh Rajput Class 10 SST",
         items: [
-          "The Rise of Nationalism in Europe", "Nationalism in India", "The Making of a Global World", 
-          "The Age of Industrialisation", "Print Culture and the Modern World", "Resources and Development", 
-          "Forest and Wildlife Resources", "Water Resources", "Agriculture", "Minerals and Energy Resources", 
-          "Manufacturing Industries", "Life Lines of National Economy", "Power Sharing", "Federalism", 
-          "Gender, Religion and Caste", "Political Parties", "Outcomes of Democracy", "Development", 
-          "Sectors of the Indian Economy", "Money and Credit"
-        ],
-        videos: ["L_A2YxZ2L08", "v8B_T2W6D8o", "YdM4vX2P2w4", "mG4zJ2W9w4E", "J9e4e2_G84E", "92Z_pP74eW0", "zX2P7e9G84E", "9w2_e4G84E0", "X3p7e9G84E0", "P2v9Z7e84E0", "Z9p7e84E000", "L9e84E00000", "K9e84E00001", "M9e84E00002", "N9e84E00003", "O9e84E00004", "P9e84E00005", "Q9e84E00006", "R9e84E00007", "S9e84E00008"]
-      },
-      english: {
-        educator: "Dear Sir",
-        items: [
-          "A Letter to God", "Nelson Mandela: Long Walk to Freedom", "Two Stories about Flying", 
-          "From the Diary of Anne Frank", "Glimpses of India", "Mijbil the Otter", "Madam Rides the Bus", 
-          "The Sermon at Benares", "The Proposal", "Dust of Snow", "Fire and Ice", "A Tiger in the Zoo", 
-          "How to Tell Wild Animals", "The Ball Poem", "Amanda!", "The Trees", "Fog", 
-          "The Tale of Custard the Dragon", "For Anne Gregory"
-        ],
-        videos: ["L_A2YxZ2L08", "v8B_T2W6D8o", "YdM4vX2P2w4", "mG4zJ2W9w4E", "J9e4e2_G84E", "92Z_pP74eW0", "zX2P7e9G84E", "9w2_e4G84E0", "X3p7e9G84E0", "P2v9Z7e84E0", "Z9p7e84E000", "L9e84E00000", "K9e84E00001", "M9e84E00002", "N9e84E00003", "O9e84E00004", "P9e84E00005", "Q9e84E00006", "R9e84E00007"]
-      },
-      hindi: {
-        educator: "Educational Bhaiya",
-        items: [
-          "पद - सूरदास", "राम-लक्ष्मण-परशुराम संवाद", "सवैया और कवित्त", "आत्मकथ्य", "उत्साह और अट नहीं रही है", 
-          "यह दंतुरित मुस्कान और फसल", "छाया मत छूना", "कन्यादान", "संगतकार", "नेताजी का चश्मा", 
-          "बालगोबिन भगत", "लखनवी अंदाज", "मानवीय करुणा की दिव्य चमक", "एक कहानी यह भी", 
-          "स्त्री शिक्षा के विरोधी कुतर्कों का खंडन", "नौबतखाने में इबादत", "संस्कृति"
-        ],
-        videos: ["L_A2YxZ2L08", "v8B_T2W6D8o", "YdM4vX2P2w4", "mG4zJ2W9w4E", "J9e4e2_G84E", "92Z_pP74eW0", "zX2P7e9G84E", "9w2_e4G84E0", "X3p7e9G84E0", "P2v9Z7e84E0", "Z9p7e84E000", "L9e84E00000", "K9e84E00001", "M9e84E00002", "N9e84E00003", "O9e84E00004", "P9e84E00005"]
-      }
-    };
-
-    function renderSubjectContainers() {
-      const subjects = ["science", "maths", "sst", "english", "hindi"];
-
-      subjects.forEach((subjectKey) => {
-        const container = document.getElementById(`${subjectKey}-container`);
-        container.innerHTML = "";
-        
-        const subjData = chaptersData[subjectKey];
-
-        subjData.items.forEach((title, idx) => {
-          const chNum = idx + 1;
-          const videoId = subjData.videos[idx] || "L_A2YxZ2L08";
-          const subjectTitleUpper = subjectKey.toUpperCase();
-
-          const p1 = `• Comprehensive Page 1 Notes for ${title}.\n• Covers essential definitions, theoretical principles, historical timeline/context, and fundamental NCERT core concepts.\n• Detailed breakdown of underlying terms, classifications, and basic mechanisms designed for quick pre-exam reading.`;
-          const p2 = `• Comprehensive Page 2 Notes for ${title}.\n• Includes step-by-step mathematical formulas, chemical equations, reaction diagrams, grammar rules, or solved numerical problems.\n• High-yield exam points, frequently asked board questions, key takeaways, and last-minute revision summary points.`;
-
-          const cardHtml = `
-            <div class="chapter-card">
-              <div class="chapter-header">
-                <div class="chapter-title-box">
-                  <span>${subjectTitleUpper} - CHAPTER ${chNum}</span>
-                  <h3>${title}</h3>
-                  <div class="educator-tag">🎓 Video by: ${subjData.educator}</div>
-                </div>
-              </div>
-
-              <div class="video-container">
-                <iframe 
-                  src="https://www.youtube.com/embed/${videoId}?autoplay=0&rel=0" 
-                  title="${title}" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowfullscreen>
-                </iframe>
-              </div>
-
-              <div class="video-fallback-bar">
-                <span>▶ Open video lecture on YouTube:</span>
-                <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" class="video-link-btn">
-                  Watch Video (${subjData.educator})
-                </a>
-              </div>
-
-              <div class="download-bar">
-                <span style="font-size: 13px; font-weight: 600;">Download 2-Page Chapter Notes</span>
-                <button onclick="download2PagePDF('${subjectTitleUpper}', '${chNum}', '${escapeQuotes(title)}', '${escapeQuotes(p1)}', '${escapeQuotes(p2)}')" class="download-btn">
-                  Download 2-Page PDF
-                </button>
-              </div>
-
-              <div class="summary-sheet">
-                <div class="summary-page">
-                  <h5>📄 PAGE 1: Fundamental Concepts & Definitions</h5>
-                  <p>${p1.replace(/\n/g, '<br>')}</p>
-                </div>
-                <div class="summary-page">
-                  <h5>📄 PAGE 2: Equations, Formulas & High-Yield Exam Takeaways</h5>
-                  <p>${p2.replace(/\n/g, '<br>')}</p>
-                </div>
-              </div>
-            </div>
-          `;
-          container.innerHTML += cardHtml;
-        });
-      });
-    }
-
-    function escapeQuotes(str) {
-      return str.replace(/'/g, "\\'").replace(/\n/g, "\\n");
-    }
-
-    // PDF Generator for 2-Page Chapter Summaries
-    function download2PagePDF(subject, chNum, title, p1, p2) {
-      const { jsPDF } = window.jspdf;
-      const doc = new jsPDF();
-
-      function addHeaderFooter(doc, pageNum) {
-        doc.setFillColor(15, 23, 42);
-        doc.rect(0, 0, 210, 18, 'F');
-        doc.setFont("Helvetica", "bold");
-        doc.setFontSize(11);
-        doc.setTextColor(255, 255, 255);
-        doc.text("Phogat Study Hub - Class 10 NCERT Notes", 10, 12);
-        doc.setFontSize(9);
-        doc.text(`Page ${pageNum} of 2`, 180, 12);
-
-        doc.setDrawColor(226, 232, 240);
-        doc.line(10, 285, 200, 285);
-        doc.setFontSize(8);
-        doc.setTextColor(100, 116, 139);
-        doc.text("© Phogat Study Hub - Class 10 Board Revision Series", 10, 290);
-      }
-
-      // Page 1
-      addHeaderFooter(doc, 1);
-      doc.setFont("Helvetica", "bold");
-      doc.setFontSize(14);
-      doc.setTextColor(37, 99, 235);
-      doc.text(`${subject} CHAPTER ${chNum}: ${title}`, 10, 28);
-      doc.setFontSize(11);
-      doc.setTextColor(15, 23, 42);
-      doc.text("PAGE 1: CORE CONCEPTS & THEORY", 10, 36);
-      doc.setFont("Helvetica", "normal");
-      doc.setFontSize(10);
-      doc.setTextColor(51, 65, 85);
-      doc.text(doc.splitTextToSize(p1, 190), 10, 44);
-
-      // Page 2
-      doc.addPage();
-      addHeaderFooter(doc, 2);
-      doc.setFont("Helvetica", "bold");
-      doc.setFontSize(11);
-      doc.setTextColor(15, 23, 42);
-      doc.text("PAGE 2: FORMULAS, DERIVATIONS & EXAM POINTS", 10, 28);
-      doc.setFont("Helvetica", "normal");
-      doc.setFontSize(10);
-      doc.setTextColor(51, 65, 85);
-      doc.text(doc.splitTextToSize(p2, 190), 10, 36);
-
-      doc.save(`${subject}_Ch${chNum}_Summary_2Pages.pdf`);
-    }
-
-    function filterSubject(subjectClass) {
-      const buttons = document.querySelectorAll('.subject-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-
-      const sections = document.querySelectorAll('.subject-section');
-      sections.forEach(sec => {
-        if (sec.classList.contains(subjectClass)) {
-          sec.style.display = 'block';
-        } else {
-          sec.style.display = 'none';
-        }
-      });
-    }
-
-    function submitPaymentScreenshot() {
-      const fileInput = document.getElementById('payment-shot');
-      if (fileInput.files.length === 0) {
-        alert('Please select your payment screenshot first.');
-        return;
-      }
-      alert('Thank you! Payment screenshot received. Complete Master Notes are unlocked.');
-    }
-
-    window.onload = function() {
-      renderSubjectContainers();
-    };
-  </script>
-</body>
-</html>
+          {
+            title: "The Rise of Nationalism in Europe",
+            vId: "L_A2YxZ2L08",
+            lines: [
+              "1. Frédéric Sorrieu painted vision of democratic social republics in 1848, visualizing nations marching together.",
+              "2. French Revolution of 1789 introduced ideas of La Patrie (fatherland) and Le Citoyen (citizen).",
+              "3. Estates General was renamed National Assembly; centralized administrative system was introduced.",
+              "4. Civil Code of 1804 (Napoleonic Code) abolished feudal privileges, established equality, and secured property rights.",
+              "5. Liberalism advocated individual freedom, equality before law, and end of autocratic privileges.",
+              "6. Zollverein was a customs union formed in 1834 by Prussia that abolished tariff barriers across German states.",
+              "7. Treaty of Vienna (1815) hosted by Duke Metternich restored Bourbon dynasty and conservative regimes.",
+              "8. Giuseppe Mazzini founded secret societies Young Italy and Young Europe to promote unified democratic republics.",
+              "9. Greek War of Independence (1821-1829) won independence from Ottoman Empire with Treaty of Constantinople.",
+              "10. Revolutions of 1848 led by educated middle class demanded constitutionalism and national unification.",
+              "11. Unification of Germany (1871) was led by Otto von Bismarck using Policy of Blood and Iron.",
+              "12. Unification of
