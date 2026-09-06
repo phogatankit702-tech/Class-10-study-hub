@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phogat Study Hub - Class 10 Board Exam Prep</title>
+  <title>Phogat Study Hub - Class 10 NCERT Master Notes</title>
   
   <!-- Math Processing (KaTeX) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -15,7 +15,6 @@
       --primary: #0f172a;
       --accent: #2563eb;
       --success: #16a34a;
-      --warning: #d97706;
       --bg: #f1f5f9;
       --card-bg: #ffffff;
       --text: #1e293b;
@@ -33,7 +32,6 @@
       min-height: 100vh;
     }
 
-    /* Top Navigation Header */
     header {
       background: var(--primary);
       color: white;
@@ -56,7 +54,6 @@
       font-weight: bold;
     }
 
-    /* Horizontal Subject Navigation Bar */
     .subject-bar {
       display: flex;
       overflow-x: auto;
@@ -84,7 +81,6 @@
       border-color: var(--accent);
     }
 
-    /* Layout Containers */
     .container {
       padding: 16px;
       max-width: 900px;
@@ -92,18 +88,88 @@
       width: 100%;
     }
 
-    /* Banner / Paywall Box */
+    .chapter-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border: 1px solid #e2e8f0;
+    }
+    .chapter-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .chapter-img {
+      width: 70px;
+      height: 70px;
+      border-radius: 10px;
+      object-fit: cover;
+      background: #e2e8f0;
+    }
+    .chapter-title-box h3 { margin: 0; font-size: 18px; color: var(--primary); }
+    .chapter-title-box span { font-size: 12px; color: #64748b; font-weight: 600; }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 10px;
+      background: #000;
+      margin-bottom: 16px;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+
+    .formula-box {
+      background: #eff6ff;
+      border-left: 4px solid var(--accent);
+      padding: 12px 16px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+    }
+    .formula-title { font-weight: bold; color: var(--accent); margin-bottom: 6px; font-size: 14px; }
+
+    .download-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f8fafc;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px dashed #cbd5e1;
+      margin-bottom: 16px;
+    }
+    .download-btn {
+      background: var(--primary);
+      color: white;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      text-decoration: none;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+
     .buy-banner {
       background: linear-gradient(135deg, #1e293b, #0f172a);
       color: white;
       border-radius: 16px;
       padding: 20px;
       text-align: center;
+      margin-top: 32px;
       margin-bottom: 24px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
     .buy-banner h2 { margin: 0 0 8px 0; color: #f59e0b; font-size: 22px; }
     .buy-banner p { font-size: 14px; opacity: 0.9; margin-bottom: 16px; }
+    
     .payment-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -134,110 +200,20 @@
     }
     .btn-secondary { background: var(--accent); }
 
-    /* Chapter Cards Layout */
-    .chapter-card {
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 24px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      border: 1px solid #e2e8f0;
-    }
-    .chapter-header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 16px;
-    }
-    .chapter-img {
-      width: 70px;
-      height: 70px;
-      border-radius: 10px;
-      object-fit: cover;
-      background: #e2e8f0;
-    }
-    .chapter-title-box h3 { margin: 0; font-size: 18px; color: var(--primary); }
-    .chapter-title-box span { font-size: 12px; color: #64748b; font-weight: 600; }
-
-    /* Video Player Mockup */
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 10px;
-      background: #000;
-      margin-bottom: 16px;
-    }
-    .video-container iframe {
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%; border: 0;
-    }
-
-    /* Tabbed Section inside Chapter */
-    .formula-box {
-      background: #eff6ff;
-      border-left: 4px solid var(--accent);
-      padding: 12px 16px;
-      border-radius: 6px;
-      margin-bottom: 16px;
-    }
-    .formula-title { font-weight: bold; color: var(--accent); margin-bottom: 6px; font-size: 14px; }
-
-    /* Download Button Box */
-    .download-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #f8fafc;
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px dashed #cbd5e1;
-      margin-bottom: 16px;
-    }
-    .download-btn {
-      background: var(--primary);
+    .file-input {
+      margin: 10px 0;
       color: white;
-      padding: 8px 14px;
-      border-radius: 6px;
-      font-size: 13px;
-      text-decoration: none;
-      font-weight: 600;
+      font-size: 12px;
     }
 
-    /* Competency Questions */
-    .competency-box {
-      background: #fafafa;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 14px;
-      margin-top: 16px;
-    }
-    .competency-title { font-size: 15px; font-weight: bold; color: var(--primary); margin-bottom: 10px; }
-    .q-item { margin-bottom: 12px; font-size: 14px; }
-    details summary { cursor: pointer; color: var(--accent); font-weight: 600; font-size: 13px; margin-top: 4px; }
-    details p { background: #f0fdf4; padding: 8px; border-radius: 6px; font-size: 13px; color: #14532d; margin-top: 4px; }
-
-    /* Protected Premium Area */
+    /* Locked Content Container */
     .locked-content {
-      filter: blur(4px);
-      user-select: none;
-      pointer-events: none;
-      position: relative;
+      display: none;
     }
-    .lock-overlay {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(241, 245, 249, 0.8);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      z-index: 10;
-      border-radius: 12px;
+    .unlocked-content {
+      display: block;
     }
 
-    /* Modal / Thank You Card */
     .modal {
       display: none;
       position: fixed;
@@ -267,7 +243,6 @@
     <span class="nav-badge">Class 10 NCERT</span>
   </header>
 
-  <!-- Side-Scrolling Subject Bar -->
   <div class="subject-bar">
     <button class="subject-btn active" onclick="filterSubject('science')">Science</button>
     <button class="subject-btn" onclick="filterSubject('maths')">Mathematics</button>
@@ -278,28 +253,7 @@
 
   <div class="container">
 
-    <!-- Payment Banner -->
-    <div class="buy-banner">
-      <h2>🔥 Unlock Premium Master Notes & PYQs</h2>
-      <p>Get instant access to complete 2-3 page chapter summaries, formula sheets, and full PDF downloads for all subjects.</p>
-      
-      <div class="payment-grid">
-        <div class="qr-box">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi%3A%2F%2Fpay%3Fpa%3Dhimanshu733%40fam%26pn%3DPhogat%2520Study%2520Hub%26am%3D29%26cu%3DINR%26tn%3DClass10FullNotes" alt="Payment QR Code">
-        </div>
-        <div>
-          <p style="margin: 4px 0; font-size: 13px;">UPI ID: <strong>himanshu733@fam</strong></p>
-          <a href="upi://pay?pa=himanshu733@fam&pn=PhogatStudyHub&am=29&cu=INR&tn=Class10FullNotes" class="btn" style="margin-bottom: 8px;">
-            Pay ₹29 via UPI / GPay
-          </a>
-          <button class="btn btn-secondary" onclick="unlockContent()">
-            Confirm Payment / Enter Passcode
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- CHAPTER ITEM: SCIENCE -->
+    <!-- SCIENCE CHAPTER 1 -->
     <div class="chapter-card subject-section science">
       <div class="chapter-header">
         <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=150&q=80" class="chapter-img" alt="Chemical Reactions">
@@ -309,18 +263,15 @@
         </div>
       </div>
 
-      <!-- AI Video Summary Placeholder -->
       <div class="video-container">
         <iframe src="https://www.youtube-nocookie.com/embed/g2f44Y_A69w" title="AI Chapter Video Summary" allowfullscreen></iframe>
       </div>
 
-      <!-- Download PDF Option -->
       <div class="download-bar">
-        <span style="font-size: 13px; font-weight: 600;">Chapter 1 Revision PDF</span>
-        <a href="#" onclick="alert('Downloading Chapter 1 Science PDF...'); return false;" class="download-btn">Download PDF</a>
+        <span style="font-size: 13px; font-weight: 600;">Chapter 1 Text Notes</span>
+        <button onclick="downloadChapterNotes('Chemical Reactions', '1. Combination Reaction: Two reactants form one product.\n2. Decomposition: Single reactant breaks down.\n3. Displacement: More reactive element displaces less reactive element.\n4. Redox: Simultaneous oxidation and reduction.')" class="download-btn">1-Click Download Notes</button>
       </div>
 
-      <!-- Important Formulas / Key Equations -->
       <div class="formula-box">
         <div class="formula-title">⚡ Essential Chemical Equations & Formulas</div>
         <ul style="margin: 0; padding-left: 18px; font-size: 13px;">
@@ -330,49 +281,18 @@
         </ul>
       </div>
 
-      <!-- Complete 2-3 Page Detailed Explanation Summary -->
       <div>
-        <h4>Chapter Summary & Key Concepts</h4>
+        <h4>1-Page Complete Chapter Summary</h4>
         <p style="font-size: 14px; line-height: 1.6;">
-          A chemical reaction occurs when one or more substances transform into new substances with entirely different physical and chemical properties. Key signs of a chemical reaction include gas evolution, color changes, temperature variation, or precipitate formation.
+          A chemical reaction represents the transformation of chemical substances into new items possessing distinct chemical properties. Key signs of chemical activity include changes in temperature, color evolution, gas release, or precipitate formation.
         </p>
         <p style="font-size: 14px; line-height: 1.6;">
-          <strong>Balancing Chemical Equations:</strong> According to the Law of Conservation of Mass, matter cannot be created or destroyed in a chemical reaction. Therefore, the total number of atoms of each element must remain equal on both reactant and product sides.
+          <strong>Law of Conservation of Mass:</strong> Total mass of reactants must equal total mass of products. Therefore, all chemical equations must be strictly balanced on both sides.
         </p>
-      </div>
-
-      <!-- 5 Competency Based Questions -->
-      <div class="competency-box">
-        <div class="competency-title">🎯 Competency-Based Practice Questions</div>
-        
-        <div class="q-item">
-          <strong>Q1.</strong> A student adds iron filings to a copper sulfate solution. What color change occurs and why?
-          <details><summary>View Answer</summary><p>The blue solution turns light green due to the formation of ferrous sulfate ($\text{FeSO}_4$). Iron displaces copper as it is more reactive.</p></details>
-        </div>
-
-        <div class="q-item">
-          <strong>Q2.</strong> Why is respiration considered an exothermic reaction?
-          <details><summary>View Answer</summary><p>Glucose reacts with oxygen in body cells to produce carbon dioxide, water, and release energy in the form of ATP.</p></details>
-        </div>
-
-        <div class="q-item">
-          <strong>Q3.</strong> What happens chemically when quicklime ($\text{CaO}$) reacts vigorously with water?
-          <details><summary>View Answer</summary><p>Slaked lime ($\text{Ca(OH)}_2$) is produced, releasing a significant amount of heat energy.</p></details>
-        </div>
-
-        <div class="q-item">
-          <strong>Q4.</strong> Identify the oxidizing agent: $\text{CuO} + \text{H}_2 \rightarrow \text{Cu} + \text{H}_2\text{O}$.
-          <details><summary>View Answer</summary><p>$\text{CuO}$ is the oxidizing agent because it supplies oxygen to hydrogen.</p></details>
-        </div>
-
-        <div class="q-item">
-          <strong>Q5.</strong> Why are oil and fat-containing food items flushed with nitrogen gas?
-          <details><summary>View Answer</summary><p>Nitrogen acts as an inert atmosphere to prevent oxidation and rancidity of oils and fats.</p></details>
-        </div>
       </div>
     </div>
 
-    <!-- CHAPTER ITEM: MATHEMATICS -->
+    <!-- MATHEMATICS CHAPTER 1 -->
     <div class="chapter-card subject-section maths" style="display:none;">
       <div class="chapter-header">
         <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=150&q=80" class="chapter-img" alt="Quadratic Equations">
@@ -383,8 +303,8 @@
       </div>
 
       <div class="download-bar">
-        <span style="font-size: 13px; font-weight: 600;">Chapter 4 Maths PDF</span>
-        <a href="#" onclick="alert('Downloading Chapter 4 Maths PDF...'); return false;" class="download-btn">Download PDF</a>
+        <span style="font-size: 13px; font-weight: 600;">Chapter 4 Text Notes</span>
+        <button onclick="downloadChapterNotes('Quadratic Equations', 'Standard form: ax^2 + bx + c = 0.\nDiscriminant D = b^2 - 4ac.\nIf D > 0: Real and distinct roots.\nIf D = 0: Real and equal roots.\nIf D < 0: No real roots.')" class="download-btn">1-Click Download Notes</button>
       </div>
 
       <div class="formula-box">
@@ -396,44 +316,81 @@
         </ul>
       </div>
 
-      <!-- Competency Based Questions for Maths -->
-      <div class="competency-box">
-        <div class="competency-title">🎯 Competency-Based Practice Questions</div>
-        <div class="q-item">
-          <strong>Q1.</strong> Find the nature of roots for $2x^2 - 4x + 3 = 0$.
-          <details><summary>View Answer</summary><p>$D = (-4)^2 - 4(2)(3) = 16 - 24 = -8$. Since $D < 0$, there are no real roots.</p></details>
+      <div>
+        <h4>1-Page Complete Chapter Summary</h4>
+        <p style="font-size: 14px; line-height: 1.6;">
+          A quadratic equation in the variable $x$ is an equation of the form $ax^2 + bx + c = 0$, where $a, b, c$ are real numbers and $a \neq 0$. The roots of the quadratic equation represent the values of $x$ that satisfy the relation.
+        </p>
+      </div>
+    </div>
+
+    <!-- PAYMENT OPTION AT THE VERY BOTTOM -->
+    <div class="buy-banner">
+      <h2>🔥 Unlock Complete 3-Page Master Book Notes</h2>
+      <p>Scan the QR code below, pay ₹29, and submit your screenshot to unlock complete master revision notes for all chapters.</p>
+      
+      <div class="payment-grid">
+        <div class="qr-box">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi%3A%2F%2Fpay%3Fpa%3Dhimanshu733%40fam%26pn%3DPhogat%2520Study%2520Hub%26am%3D29%26cu%3DINR%26tn%3DClass10FullNotes" alt="Payment QR Code">
+        </div>
+        <div>
+          <p style="margin: 4px 0; font-size: 13px;">UPI ID: <strong>himanshu733@fam</strong></p>
+          <a href="upi://pay?pa=himanshu733@fam&pn=PhogatStudyHub&am=29&cu=INR&tn=Class10FullNotes" class="btn" style="margin-bottom: 8px;">
+            Pay ₹29 via UPI / GPay
+          </a>
+          
+          <p style="margin: 8px 0; font-size: 12px; color: #cbd5e1;">Upload Payment Screenshot to Unlock Notes:</p>
+          <input type="file" id="payment-shot" class="file-input" accept="image/*">
+          
+          <button class="btn btn-secondary" onclick="submitPaymentScreenshot()">
+            Submit Screenshot & Get Notes
+          </button>
         </div>
       </div>
     </div>
 
-    <!-- PREPARED LOCKED PREMIUM SHORT NOTES SECTION -->
+    <!-- LOCKED 3-PAGE MASTER NOTES (UNLOCKS ONLY AFTER PAYMENT SUBMISSION) -->
     <div id="premium-section" class="locked-content">
-      <div class="lock-overlay" id="lock-overlay">
-        <h3 style="margin: 0; color: var(--primary);">🔒 Locked Premium Master Notes</h3>
-        <p style="font-size: 13px; color: #475569;">Complete payment of ₹29 to unlock full subject notes.</p>
-      </div>
-
       <div class="chapter-card">
-        <h3>🏆 Exclusive Short Notes & Board Cheat Sheets</h3>
-        <p>This section displays comprehensive quick-revision summaries across all subjects after access is unlocked.</p>
+        <h2 style="color: var(--accent); margin-top: 0;">📚 3-Page Science Complete Book Master Notes</h2>
+        
+        <h3>Page 1: Chemical World & Reactions</h3>
+        <p style="font-size: 14px; line-height: 1.6;">
+          <strong>Chemical Reactions:</strong> Conservation of mass dictates balance. Types: Combination, Decomposition, Displacement, Double Displacement, Oxidation & Reduction.<br>
+          <strong>Acids, Bases & Salts:</strong> $\text{pH} < 7$ (Acidic), $\text{pH} = 7$ (Neutral), $\text{pH} > 7$ (Basic). Important Compounds: Bleaching Powder ($\text{CaOCl}_2$), Baking Soda ($\text{NaHCO}_3$), Washing Soda ($\text{Na}_2\text{CO}_3\cdot 10\text{H}_2\text{O}$), Plaster of Paris ($\text{CaSO}_4\cdot \frac{1}{2}\text{H}_2\text{O}$).<br>
+          <strong>Metals & Non-Metals:</strong> Reactivity series governs displacement. Ionic compounds have high melting points due to strong electrostatic attraction.
+        </p>
+
+        <h3>Page 2: Life Processes & Control System</h3>
+        <p style="font-size: 14px; line-height: 1.6;">
+          <strong>Nutrition & Respiration:</strong> Autotrophic vs Heterotrophic. Aerobic respiration produces 38 ATP molecules; anaerobic produces lactic acid or ethanol.<br>
+          <strong>Transportation & Excretion:</strong> Double circulation system in human heart. Nephrons serve as basic filtration units in kidneys.<br>
+          <strong>Control & Coordination:</strong> Nervous system employs electrical impulses; endocrine system utilizes chemical hormones (Insulin, Thyroxin, Adrenaline).
+        </p>
+
+        <h3>Page 3: Physics - Light, Electricity & Magnetism</h3>
+        <p style="font-size: 14px; line-height: 1.6;">
+          <strong>Light Reflection & Refraction:</strong> Mirror formula $\frac{1}{f} = \frac{1}{v} + \frac{1}{u}$. Lens formula $\frac{1}{f} = \frac{1}{v} - \frac{1}{u}$. Power of lens $P = \frac{1}{f\text{ (in meters)}}$.<br>
+          <strong>Electricity:</strong> Ohm's Law $V = IR$. Series resistance $R_s = R_1 + R_2 + R_3$. Parallel resistance $\frac{1}{R_p} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3}$. Joule's Law of Heating $H = I^2Rt$.<br>
+          <strong>Magnetic Effects:</strong> Fleming's Left-Hand Rule determines force direction on a current-carrying conductor in a magnetic field.
+        </p>
       </div>
     </div>
 
   </div>
 
-  <!-- THANKING GREETING CARD MODAL -->
+  <!-- THANKING GREETING CARD MODAL (SHOWS ONLY AFTER SUBMITTING SCREENSHOT) -->
   <div class="modal" id="thankyou-modal">
     <div class="modal-card">
-      <h3>🎉 Thank You for Your Purchase!</h3>
+      <h3>🎉 Thank You for Your Payment!</h3>
       <p style="font-size: 14px; color: #334155;">
-        Your payment has been successfully confirmed. You now have full access to all Class 10 NCERT master notes, PDF downloads, and premium formula cheat sheets.
+        Your payment screenshot has been submitted successfully. The complete 3-page master revision notes for the book are now fully unlocked below!
       </p>
-      <button class="btn" onclick="closeModal()">Access All Content Now</button>
+      <button class="btn" onclick="closeModal()">Access 3-Page Master Notes</button>
     </div>
   </div>
 
   <script>
-    // Filter Chapter Displays by Subject
     function filterSubject(subjectClass) {
       const buttons = document.querySelectorAll('.subject-btn');
       buttons.forEach(btn => btn.classList.remove('active'));
@@ -449,11 +406,27 @@
       });
     }
 
-    // Unlock Paid Premium Content & Show Thank-You Greeting
-    function unlockContent() {
+    // Direct 1-Click File Download Function
+    function downloadChapterNotes(chapterName, contentText) {
+      const element = document.createElement("a");
+      const file = new Blob([`Phogat Study Hub - Notes\n\nChapter: ${chapterName}\n\n${contentText}`], {type: 'text/plain'});
+      element.href = URL.createObjectURL(file);
+      element.download = `${chapterName}_Notes.txt`;
+      document.body.appendChild(element);
+      element.click();
+      document.body.removeChild(element);
+    }
+
+    // Submit Payment Screenshot & Unlock Greeting + 3-Page Notes
+    function submitPaymentScreenshot() {
+      const fileInput = document.getElementById('payment-shot');
+      if (fileInput.files.length === 0) {
+        alert('Please select a payment screenshot image first before submitting.');
+        return;
+      }
+      
       document.getElementById('thankyou-modal').style.display = 'flex';
-      document.getElementById('premium-section').classList.remove('locked-content');
-      document.getElementById('lock-overlay').style.display = 'none';
+      document.getElementById('premium-section').className = 'unlocked-content';
     }
 
     function closeModal() {
