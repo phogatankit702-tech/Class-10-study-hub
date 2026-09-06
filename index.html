@@ -10,6 +10,9 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
 
+  <!-- PDF Generation Library (jsPDF) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
   <style>
     :root {
       --primary: #0f172a;
@@ -151,10 +154,15 @@
       padding: 8px 14px;
       border-radius: 6px;
       font-size: 13px;
-      text-decoration: none;
       font-weight: 600;
       border: none;
       cursor: pointer;
+    }
+
+    .summary-text {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #334155;
     }
 
     .buy-banner {
@@ -206,13 +214,8 @@
       font-size: 12px;
     }
 
-    /* Locked Content Container */
-    .locked-content {
-      display: none;
-    }
-    .unlocked-content {
-      display: block;
-    }
+    .locked-content { display: none; }
+    .unlocked-content { display: block; }
 
     .modal {
       display: none;
@@ -243,6 +246,7 @@
     <span class="nav-badge">Class 10 NCERT</span>
   </header>
 
+  <!-- Horizontal Navigation Bar for All Subjects -->
   <div class="subject-bar">
     <button class="subject-btn active" onclick="filterSubject('science')">Science</button>
     <button class="subject-btn" onclick="filterSubject('maths')">Mathematics</button>
@@ -253,7 +257,7 @@
 
   <div class="container">
 
-    <!-- SCIENCE CHAPTER 1 -->
+    <!-- 1. SCIENCE CHAPTER -->
     <div class="chapter-card subject-section science">
       <div class="chapter-header">
         <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=150&q=80" class="chapter-img" alt="Chemical Reactions">
@@ -264,16 +268,16 @@
       </div>
 
       <div class="video-container">
-        <iframe src="https://www.youtube-nocookie.com/embed/g2f44Y_A69w" title="AI Chapter Video Summary" allowfullscreen></iframe>
+        <iframe src="https://www.youtube-nocookie.com/embed/g2f44Y_A69w" title="AI Video Summary" allowfullscreen></iframe>
       </div>
 
       <div class="download-bar">
-        <span style="font-size: 13px; font-weight: 600;">Chapter 1 Text Notes</span>
-        <button onclick="downloadChapterNotes('Chemical Reactions', '1. Combination Reaction: Two reactants form one product.\n2. Decomposition: Single reactant breaks down.\n3. Displacement: More reactive element displaces less reactive element.\n4. Redox: Simultaneous oxidation and reduction.')" class="download-btn">1-Click Download Notes</button>
+        <span style="font-size: 13px; font-weight: 600;">Chapter 1 PDF Notes (3 Pages)</span>
+        <button onclick="downloadPDF('Science - Chemical Reactions', sciencePDFText)" class="download-btn">1-Click PDF Download</button>
       </div>
 
       <div class="formula-box">
-        <div class="formula-title">⚡ Essential Chemical Equations & Formulas</div>
+        <div class="formula-title">⚡ Important Chemical Equations & Formulas</div>
         <ul style="margin: 0; padding-left: 18px; font-size: 13px;">
           <li>Combination: $2\text{Mg} + \text{O}_2 \rightarrow 2\text{MgO}$</li>
           <li>Decomposition: $2\text{FeSO}_4 \xrightarrow{\Delta} \text{Fe}_2\text{O}_3 + \text{SO}_2 + \text{SO}_3$</li>
@@ -282,17 +286,16 @@
       </div>
 
       <div>
-        <h4>1-Page Complete Chapter Summary</h4>
-        <p style="font-size: 14px; line-height: 1.6;">
-          A chemical reaction represents the transformation of chemical substances into new items possessing distinct chemical properties. Key signs of chemical activity include changes in temperature, color evolution, gas release, or precipitate formation.
-        </p>
-        <p style="font-size: 14px; line-height: 1.6;">
-          <strong>Law of Conservation of Mass:</strong> Total mass of reactants must equal total mass of products. Therefore, all chemical equations must be strictly balanced on both sides.
-        </p>
+        <h4>1-Page Chapter Summary</h4>
+        <div class="summary-text">
+          <p><strong>1. Chemical Change:</strong> A process where reactants transform into new substances with different properties. Indicators include evolution of gas, change in color, change in temperature, or formation of a precipitate.</p>
+          <p><strong>2. Law of Conservation of Mass:</strong> Matter can neither be created nor destroyed in a chemical reaction. The total mass of elements on the reactant side must equal the product side.</p>
+          <p><strong>3. Reaction Types:</strong> Combination (two combine into one), Decomposition (one breaks down into multiple), Single Displacement (reactive element displaces weaker one), Double Displacement (ion exchange), and Redox (simultaneous oxidation and reduction).</p>
+        </div>
       </div>
     </div>
 
-    <!-- MATHEMATICS CHAPTER 1 -->
+    <!-- 2. MATHEMATICS CHAPTER -->
     <div class="chapter-card subject-section maths" style="display:none;">
       <div class="chapter-header">
         <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=150&q=80" class="chapter-img" alt="Quadratic Equations">
@@ -302,25 +305,125 @@
         </div>
       </div>
 
+      <div class="video-container">
+        <iframe src="https://www.youtube-nocookie.com/embed/g2f44Y_A69w" title="AI Video Summary" allowfullscreen></iframe>
+      </div>
+
       <div class="download-bar">
-        <span style="font-size: 13px; font-weight: 600;">Chapter 4 Text Notes</span>
-        <button onclick="downloadChapterNotes('Quadratic Equations', 'Standard form: ax^2 + bx + c = 0.\nDiscriminant D = b^2 - 4ac.\nIf D > 0: Real and distinct roots.\nIf D = 0: Real and equal roots.\nIf D < 0: No real roots.')" class="download-btn">1-Click Download Notes</button>
+        <span style="font-size: 13px; font-weight: 600;">Chapter 4 PDF Notes (3 Pages)</span>
+        <button onclick="downloadPDF('Maths - Quadratic Equations', mathsPDFText)" class="download-btn">1-Click PDF Download</button>
       </div>
 
       <div class="formula-box">
-        <div class="formula-title">⚡ Important Formulas</div>
+        <div class="formula-title">⚡ Essential Formulas</div>
         <ul style="margin: 0; padding-left: 18px; font-size: 13px;">
-          <li>Standard Form: $ax^2 + bx + c = 0$</li>
+          <li>Standard Form: $ax^2 + bx + c = 0 \quad (a \neq 0)$</li>
           <li>Quadratic Formula: $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$</li>
           <li>Discriminant: $D = b^2 - 4ac$</li>
         </ul>
       </div>
 
       <div>
-        <h4>1-Page Complete Chapter Summary</h4>
-        <p style="font-size: 14px; line-height: 1.6;">
-          A quadratic equation in the variable $x$ is an equation of the form $ax^2 + bx + c = 0$, where $a, b, c$ are real numbers and $a \neq 0$. The roots of the quadratic equation represent the values of $x$ that satisfy the relation.
-        </p>
+        <h4>1-Page Chapter Summary</h4>
+        <div class="summary-text">
+          <p><strong>1. Standard Definition:</strong> A second-degree polynomial equation of the form $ax^2 + bx + c = 0$. The roots of the equation are the values of $x$ that satisfy it.</p>
+          <p><strong>2. Methods of Solution:</strong> Factorization (splitting the middle term) and the Quadratic Formula.</p>
+          <p><strong>3. Nature of Roots (Discriminant D):</strong></p>
+          <ul>
+            <li>If $D > 0$: Two distinct real roots.</li>
+            <li>If $D = 0$: Two equal real roots ($x = -b/2a$).</li>
+            <li>If $D < 0$: No real roots (imaginary roots).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. SOCIAL SCIENCE CHAPTER -->
+    <div class="chapter-card subject-section sst" style="display:none;">
+      <div class="chapter-header">
+        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=150&q=80" class="chapter-img" alt="Nationalism in India">
+        <div class="chapter-title-box">
+          <span>SOCIAL SCIENCE - HISTORY CH 2</span>
+          <h3>Nationalism in India</h3>
+        </div>
+      </div>
+
+      <div class="video-container">
+        <iframe src="https://www.youtube-nocookie.com/embed/g2f44Y_A69w" title="AI Video Summary" allowfullscreen></iframe>
+      </div>
+
+      <div class="download-bar">
+        <span style="font-size: 13px; font-weight: 600;">History Ch 2 PDF Notes (3 Pages)</span>
+        <button onclick="downloadPDF('SST - Nationalism in India', sstPDFText)" class="download-btn">1-Click PDF Download</button>
+      </div>
+
+      <div>
+        <h4>1-Page Chapter Summary</h4>
+        <div class="summary-text">
+          <p><strong>1. The First World War & Satyagraha:</strong> World War I led to economic hardship in India. Mahatma Gandhi returned to India in 1915 and introduced Satyagraha—a method based on truth and non-violence (Champaran, Kheda, Ahmedabad).</p>
+          <p><strong>2. Rowlatt Act & Jallianwala Bagh (1919):</strong> The Rowlatt Act permitted detention without trial. On April 13, 1919, General Dyer opened fire on peaceful demonstrators at Jallianwala Bagh, Amritsar.</p>
+          <p><strong>3. Non-Cooperation Movement (1921-1922):</strong> Launched jointly with the Khilafat Movement. Boycotts of foreign cloth, schools, and courts took place. It was called off after the Chauri Chaura violence in 1922.</p>
+          <p><strong>4. Civil Disobedience Movement (1930):</strong> Started with the famous Dandi Salt March (380 km from Sabarmati to Dandi). Ended with the Gandhi-Irwin Pact in 1931.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. ENGLISH CHAPTER -->
+    <div class="chapter-card subject-section english" style="display:none;">
+      <div class="chapter-header">
+        <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=150&q=80" class="chapter-img" alt="A Letter to God">
+        <div class="chapter-title-box">
+          <span>ENGLISH - FIRST FLIGHT CH 1</span>
+          <h3>A Letter to God</h3>
+        </div>
+      </div>
+
+      <div class="video-container">
+        <iframe src="https://www.youtube-nocookie.com/embed/g2f44Y_A69w" title="AI Video Summary" allowfullscreen></iframe>
+      </div>
+
+      <div class="download-bar">
+        <span style="font-size: 13px; font-weight: 600;">English Ch 1 PDF Notes (3 Pages)</span>
+        <button onclick="downloadPDF('English - A Letter to God', englishPDFText)" class="download-btn">1-Click PDF Download</button>
+      </div>
+
+      <div>
+        <h4>1-Page Chapter Summary</h4>
+        <div class="summary-text">
+          <p><strong>1. Plot Overview:</strong> Lencho, a hardworking farmer, expects a good harvest from his cornfield. However, a severe hailstorm completely destroys his crop, leaving his family on the verge of starvation.</p>
+          <p><strong>2. Unshakable Faith:</strong> Possessing firm belief in God, Lencho writes a letter to God requesting 100 pesos to re-sow his field and sustain his family.</p>
+          <p><strong>3. Postmaster's Gesture:</strong> The postmaster reads the letter and decides to help to keep Lencho's faith alive. He collects 70 pesos from post office employees and sends it back in an envelope signed 'God'.</p>
+          <p><strong>4. Irony of the Ending:</strong> Upon receiving 70 pesos instead of 100, Lencho suspects the post office staff of stealing the remaining 30 pesos and calls them a "bunch of crooks."</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. HINDI CHAPTER -->
+    <div class="chapter-card subject-section hindi" style="display:none;">
+      <div class="chapter-header">
+        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=150&q=80" class="chapter-img" alt="Netaji Ka Chashma">
+        <div class="chapter-title-box">
+          <span>HINDI - KSHITIJ CH 1</span>
+          <h3>नेताजी का चश्मा (Netaji Ka Chashma)</h3>
+        </div>
+      </div>
+
+      <div class="video-container">
+        <iframe src="https://www.youtube-nocookie.com/embed/g2f44Y_A69w" title="AI Video Summary" allowfullscreen></iframe>
+      </div>
+
+      <div class="download-bar">
+        <span style="font-size: 13px; font-weight: 600;">Hindi Ch 1 PDF Notes (3 Pages)</span>
+        <button onclick="downloadPDF('Hindi - Netaji Ka Chashma', hindiPDFText)" class="download-btn">1-Click PDF Download</button>
+      </div>
+
+      <div>
+        <h4>1-Page Chapter Summary</h4>
+        <div class="summary-text">
+          <p><strong>1. मुख्य कहानी:</strong> हालदार साहब हर पंद्रहवें दिन कस्बे से गुजरते थे, जहाँ चौराहे पर नेताजी सुभाषचंद्र बोस की संगमरमर की मूर्ति लगी थी। मूर्तिकार मूर्ति का चश्मा बनाना भूल गया था।</p>
+          <p><strong>2. कैप्टन चश्मेवाला:</strong> कस्बे का एक देशभक्त, जिसे लोग 'कैप्टन' कहते थे, रोज मूर्ति पर नया असली चश्मा लगा देता था। हालदार साहब उसकी देशभक्ति से बहुत प्रभावित हुए।</p>
+          <p><strong>3. कैप्टन की मृत्यु और अंत:</strong> कैप्टन की मृत्यु के बाद मूर्ति बिना चश्मे के रह गई। लेकिन कुछ दिनों बाद हालदार साहब ने देखा कि मूर्ति पर सरकंडे का छोटा चश्मा लगा था, जिसे बच्चों ने बनाया था। यह देखकर हालदार साहब भावुक हो गए कि नई पीढ़ी में भी देशभक्ति जीवित है।</p>
+        </div>
       </div>
     </div>
 
@@ -352,45 +455,44 @@
     <!-- LOCKED 3-PAGE MASTER NOTES (UNLOCKS ONLY AFTER PAYMENT SUBMISSION) -->
     <div id="premium-section" class="locked-content">
       <div class="chapter-card">
-        <h2 style="color: var(--accent); margin-top: 0;">📚 3-Page Science Complete Book Master Notes</h2>
+        <h2 style="color: var(--accent); margin-top: 0;">📚 Complete Book Master Revision Notes (3 Pages)</h2>
         
-        <h3>Page 1: Chemical World & Reactions</h3>
+        <h3>Page 1: Science & Mathematics High-Weightage Revision</h3>
         <p style="font-size: 14px; line-height: 1.6;">
-          <strong>Chemical Reactions:</strong> Conservation of mass dictates balance. Types: Combination, Decomposition, Displacement, Double Displacement, Oxidation & Reduction.<br>
-          <strong>Acids, Bases & Salts:</strong> $\text{pH} < 7$ (Acidic), $\text{pH} = 7$ (Neutral), $\text{pH} > 7$ (Basic). Important Compounds: Bleaching Powder ($\text{CaOCl}_2$), Baking Soda ($\text{NaHCO}_3$), Washing Soda ($\text{Na}_2\text{CO}_3\cdot 10\text{H}_2\text{O}$), Plaster of Paris ($\text{CaSO}_4\cdot \frac{1}{2}\text{H}_2\text{O}$).<br>
-          <strong>Metals & Non-Metals:</strong> Reactivity series governs displacement. Ionic compounds have high melting points due to strong electrostatic attraction.
+          <strong>Chemical Equations & pH:</strong> Acids react with metals to give $H_2$ gas. Neutralization produces salt + water. Important compounds: Bleaching powder ($\text{CaOCl}_2$), Baking soda ($\text{NaHCO}_3$), Plaster of Paris ($\text{CaSO}_4 \cdot \frac{1}{2}\text{H}_2\text{O}$).<br>
+          <strong>Life Processes & Physics:</strong> Aerobic respiration releases 38 ATP. Double circulation in human heart. Lens formula: $\frac{1}{f} = \frac{1}{v} - \frac{1}{u}$. Ohm's law: $V = IR$.<br>
+          <strong>Maths Master Formulas:</strong> Quadratic $x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$. Arithmetic Progression $a_n = a + (n-1)d$. Trigonometric identity $\sin^2\theta + \cos^2\theta = 1$.
         </p>
 
-        <h3>Page 2: Life Processes & Control System</h3>
+        <h3>Page 2: Social Science Key Events & Map Points</h3>
         <p style="font-size: 14px; line-height: 1.6;">
-          <strong>Nutrition & Respiration:</strong> Autotrophic vs Heterotrophic. Aerobic respiration produces 38 ATP molecules; anaerobic produces lactic acid or ethanol.<br>
-          <strong>Transportation & Excretion:</strong> Double circulation system in human heart. Nephrons serve as basic filtration units in kidneys.<br>
-          <strong>Control & Coordination:</strong> Nervous system employs electrical impulses; endocrine system utilizes chemical hormones (Insulin, Thyroxin, Adrenaline).
+          <strong>History Timelines:</strong> 1919 Rowlatt Act & Jallianwala Bagh. 1921 Non-Cooperation Movement. 1930 Dandi March & Civil Disobedience.<br>
+          <strong>Geography & Economics:</strong> Alluvial soil is fertile. Dams are multi-purpose projects. Primary sector = Agriculture, Secondary = Manufacturing, Tertiary = Services. GDP measures total value of final goods and services.
         </p>
 
-        <h3>Page 3: Physics - Light, Electricity & Magnetism</h3>
+        <h3>Page 3: English & Hindi Core Grammar Rules</h3>
         <p style="font-size: 14px; line-height: 1.6;">
-          <strong>Light Reflection & Refraction:</strong> Mirror formula $\frac{1}{f} = \frac{1}{v} + \frac{1}{u}$. Lens formula $\frac{1}{f} = \frac{1}{v} - \frac{1}{u}$. Power of lens $P = \frac{1}{f\text{ (in meters)}}$.<br>
-          <strong>Electricity:</strong> Ohm's Law $V = IR$. Series resistance $R_s = R_1 + R_2 + R_3$. Parallel resistance $\frac{1}{R_p} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3}$. Joule's Law of Heating $H = I^2Rt$.<br>
-          <strong>Magnetic Effects:</strong> Fleming's Left-Hand Rule determines force direction on a current-carrying conductor in a magnetic field.
+          <strong>English Grammar:</strong> Subject-Verb Agreement, Direct-to-Indirect Speech rules, Formal Letter Writing layout.<br>
+          <strong>हिंदी व्याकरण:</strong> समास (तत्पुरुष, द्विगु, द्वंद्व, बहुव्रीहि), पदबंध के भेद, और औपचारिक पत्र लेखन प्रारूप।
         </p>
       </div>
     </div>
 
   </div>
 
-  <!-- THANKING GREETING CARD MODAL (SHOWS ONLY AFTER SUBMITTING SCREENSHOT) -->
+  <!-- THANKING GREETING CARD MODAL -->
   <div class="modal" id="thankyou-modal">
     <div class="modal-card">
       <h3>🎉 Thank You for Your Payment!</h3>
       <p style="font-size: 14px; color: #334155;">
-        Your payment screenshot has been submitted successfully. The complete 3-page master revision notes for the book are now fully unlocked below!
+        Your payment screenshot has been submitted successfully. The complete 3-page master revision notes for all subjects are now unlocked below!
       </p>
       <button class="btn" onclick="closeModal()">Access 3-Page Master Notes</button>
     </div>
   </div>
 
   <script>
+    // Tab switching handler
     function filterSubject(subjectClass) {
       const buttons = document.querySelectorAll('.subject-btn');
       buttons.forEach(btn => btn.classList.remove('active'));
@@ -406,15 +508,155 @@
       });
     }
 
-    // Direct 1-Click File Download Function
-    function downloadChapterNotes(chapterName, contentText) {
-      const element = document.createElement("a");
-      const file = new Blob([`Phogat Study Hub - Notes\n\nChapter: ${chapterName}\n\n${contentText}`], {type: 'text/plain'});
-      element.href = URL.createObjectURL(file);
-      element.download = `${chapterName}_Notes.txt`;
-      document.body.appendChild(element);
-      element.click();
-      document.body.removeChild(element);
+    // PDF Text content definitions for 2-3 page dynamic PDF generation
+    const sciencePDFText = [
+      "PAGE 1: CHEMICAL REACTIONS & EQUATIONS",
+      "--------------------------------------------------",
+      "1. Definition: Transformation of reactants into products with distinct physical and chemical properties.",
+      "2. Balancing Equations: Required by the Law of Conservation of Mass. Atoms on LHS = Atoms on RHS.",
+      "3. Types of Reactions:",
+      "   - Combination: A + B -> AB (e.g., 2Mg + O2 -> 2MgO)",
+      "   - Decomposition: AB -> A + B (Thermal, Electrolytic, Photolytic)",
+      "   - Displacement: Fe + CuSO4 -> FeSO4 + Cu",
+      "   - Double Displacement: Na2SO4 + BaCl2 -> BaSO4 + 2NaCl",
+      "   - Redox: Simultaneous Oxidation (gain of O2 / loss of H2) and Reduction.",
+      "",
+      "PAGE 2: ACIDS, BASES AND SALTS",
+      "--------------------------------------------------",
+      "1. pH Scale: Measures H+ ion concentration. pH < 7 (Acidic), pH = 7 (Neutral), pH > 7 (Basic).",
+      "2. Salts Preparation & Chemical Formulas:",
+      "   - Bleaching Powder: CaOCl2 (Used as disinfectant)",
+      "   - Baking Soda: NaHCO3 (Used in cooking & antacids)",
+      "   - Washing Soda: Na2CO3.10H2O (Used in glass and paper industry)",
+      "   - Plaster of Paris: CaSO4.1/2H2O (Used for setting fractured bones)",
+      "",
+      "PAGE 3: METALS AND NON-METALS & SUMMARY",
+      "--------------------------------------------------",
+      "1. Physical Properties: Metals are malleable, ductile, and good conductors of heat/electricity.",
+      "2. Chemical Properties: Metals form basic oxides; non-metals form acidic or neutral oxides.",
+      "3. Reactivity Series: K > Na > Ca > Mg > Al > Zn > Fe > Pb > H > Cu > Hg > Ag > Au.",
+      "4. Ionic Bonding: Transfer of electrons from metals to non-metals leading to high melting point compounds."
+    ];
+
+    const mathsPDFText = [
+      "PAGE 1: QUADRATIC EQUATIONS",
+      "--------------------------------------------------",
+      "1. Standard Form: ax^2 + bx + c = 0 (a != 0)",
+      "2. Discriminant Formula: D = b^2 - 4ac",
+      "3. Nature of Roots:",
+      "   - Case 1: D > 0 -> Two distinct real roots.",
+      "   - Case 2: D = 0 -> Two equal real roots (x = -b / 2a).",
+      "   - Case 3: D < 0 -> No real roots.",
+      "",
+      "PAGE 2: QUADRATIC FORMULA & DERIVATIONS",
+      "--------------------------------------------------",
+      "1. Quadratic Formula: x = (-b +/- sqrt(b^2 - 4ac)) / (2a)",
+      "2. Sum of Roots (alpha + beta) = -b / a",
+      "3. Product of Roots (alpha * beta) = c / a",
+      "4. Word Problem Applications: Speed-time, geometry dimensions, consecutive integer problems.",
+      "",
+      "PAGE 3: REVISION EXERCISES & FORMULA SHEET",
+      "--------------------------------------------------",
+      "1. Example 1: Solve 2x^2 - 5x + 3 = 0 using factorization -> (2x-3)(x-1) = 0 => x = 3/2, x = 1.",
+      "2. Example 2: Find D for x^2 + 4x + 5 = 0 -> D = 16 - 20 = -4 (< 0, No real roots).",
+      "3. Key Takeaway: Always convert word problems into standard form before applying formulas."
+    ];
+
+    const sstPDFText = [
+      "PAGE 1: NATIONALISM IN INDIA - EARLY PHASE",
+      "--------------------------------------------------",
+      "1. Impact of World War I: Income tax introduced, forced recruitment, crop failure led to famine.",
+      "2. Mahatma Gandhi & Satyagraha: Champaran (1917), Kheda (1917), Ahmedabad Cotton Mill (1918).",
+      "3. Rowlatt Act (1919) & Jallianwala Bagh Massacre on April 13, 1919 in Amritsar.",
+      "",
+      "PAGE 2: NON-COOPERATION & KHILAFAT MOVEMENTS",
+      "--------------------------------------------------",
+      "1. Khilafat Issue: Led by Muhammad Ali and Shaukat Ali to support the Ottoman Emperor.",
+      "2. Non-Cooperation Movement (1921): Boycott of foreign goods, schools, and liquor shops.",
+      "3. Calling off Movement: Ended abruptly in Feb 1922 following the Chauri Chaura incident.",
+      "",
+      "PAGE 3: CIVIL DISOBEDIENCE MOVEMENT",
+      "--------------------------------------------------",
+      "1. Dandi Salt March: March 12 to April 6, 1930. 240 miles from Sabarmati to Dandi.",
+      "2. Gandhi-Irwin Pact (1931): Gandhi agreed to attend the Second Round Table Conference in London.",
+      "3. Differences: Civil Disobedience involved breaking colonial laws, unlike Non-Cooperation."
+    ];
+
+    const englishPDFText = [
+      "PAGE 1: A LETTER TO GOD - SUMMARY",
+      "--------------------------------------------------",
+      "1. Protagonist: Lencho, a dedicated farmer living on a low crest hill.",
+      "2. The Tragedy: A destructive hailstorm devastates his corn field completely.",
+      "3. Unshakable Faith: Writes a direct letter to God requesting 100 pesos.",
+      "",
+      "PAGE 2: CHARACTER ANALYSIS & THEMES",
+      "--------------------------------------------------",
+      "1. Postmaster's Kindness: Collects 70 pesos from colleagues to preserve Lencho's faith.",
+      "2. Lencho's Reaction: Receives 70 pesos, suspects post office workers of theft, calls them 'a bunch of crooks'.",
+      "3. Central Theme: The innocence of faith contrasted with human irony.",
+      "",
+      "PAGE 3: GRAMMAR & WRITING SKILLS",
+      "--------------------------------------------------",
+      "1. Formal Letter Layout: Sender's Address -> Date -> Receiver's Address -> Subject -> Salutation -> Body -> Closing.",
+      "2. Key Vocabulary: Crest, Downpour, Solitary, Pesos, Conscience."
+    ];
+
+    const hindiPDFText = [
+      "PAGE 1: नेताजी का चश्मा - मुख्य सार",
+      "--------------------------------------------------",
+      "1. कहानी का परिचय: हालदार साहब हर 15वें दिन कस्बे से गुजरते थे।",
+      "2. नेताजी की मूर्ति: संगमरमर की मूर्ति पर चश्मा नहीं था।",
+      "3. कैप्टन की देशभक्ति: चश्मेवाला कैप्टन रोज नया असली चश्मा लगाता था।",
+      "",
+      "PAGE 2: पात्र चरित्र चित्रण",
+      "--------------------------------------------------",
+      "1. हालदार साहब: संवेदनशील और देशभक्त व्यक्ति।",
+      "2. पानवाला: चश्मेवाले का मजाक उड़ाने वाला व्यक्ति।",
+      "3. कैप्टन: देशप्रेमी, जो शारीरिक रूप से विकलांग होने पर भी देशभक्त था।",
+      "",
+      "PAGE 3: महत्वपूर्ण प्रश्न व व्याकरण",
+      "--------------------------------------------------",
+      "1. सरकंडे का चश्मा: बच्चों द्वारा बनाया गया चश्मा, जो दर्शाता है कि नई पीढ़ी में भी देशभक्ति है।",
+      "2. व्याकरण बिंदु: पदबंध, वाच्य परिवर्तन और समास।"
+    ];
+
+    // Real 1-Click PDF Generation Function using jsPDF
+    function downloadPDF(title, linesArray) {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+
+      doc.setFont("Helvetica", "bold");
+      doc.setFontSize(16);
+      doc.text(`Phogat Study Hub - Class 10 Notes`, 15, 15);
+      
+      doc.setFontSize(13);
+      doc.setTextColor(37, 99, 235);
+      doc.text(title, 15, 23);
+
+      doc.setFont("Helvetica", "normal");
+      doc.setFontSize(10);
+      doc.setTextColor(30, 41, 59);
+
+      let yPos = 32;
+      linesArray.forEach((line) => {
+        if (yPos > 280) {
+          doc.addPage();
+          yPos = 15;
+        }
+        
+        if (line.startsWith("PAGE ")) {
+          doc.setFont("Helvetica", "bold");
+          doc.setTextColor(15, 23, 42);
+        } else {
+          doc.setFont("Helvetica", "normal");
+          doc.setTextColor(51, 65, 85);
+        }
+
+        doc.text(line, 15, yPos);
+        yPos += 6;
+      });
+
+      doc.save(`${title.replace(/\s+/g, '_')}_Notes.pdf`);
     }
 
     // Submit Payment Screenshot & Unlock Greeting + 3-Page Notes
